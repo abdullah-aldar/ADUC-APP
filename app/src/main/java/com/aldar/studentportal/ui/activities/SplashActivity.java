@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 
 import com.aldar.studentportal.R;
@@ -15,13 +16,18 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        new CountDownTimer(2500, 1000) {
+
             @Override
-            public void run() {
-                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+            public void onTick(long millisUntilFinished) {
+
             }
-        },2500);
+
+            @Override
+            public void onFinish() {
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            }
+        }.start();
 
 
     }

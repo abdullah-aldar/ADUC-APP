@@ -1,30 +1,85 @@
 package com.aldar.studentportal.viewModels;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.databinding.BaseObservable;
-import androidx.databinding.ObservableField;
-import androidx.databinding.ObservableInt;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-
+import com.aldar.studentportal.models.LoginResponseModel;
+import com.aldar.studentportal.remote.APIService;
+import com.aldar.studentportal.remote.RetroClass;
 import org.json.JSONObject;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginViewModel extends AndroidViewModel {
-     MutableLiveData<String> userName = new MutableLiveData<>();
-     MutableLiveData<String> password = new MutableLiveData<>();
+    public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
+    public MutableLiveData<String> username = new MutableLiveData<>();
+    public MutableLiveData<String> password = new MutableLiveData<>();
+    public MutableLiveData<String> errorMessageUsername = new MutableLiveData<>();
+    public MutableLiveData<String> errorMessagePassword = new MutableLiveData<>();
+    private boolean valid = false;
+
 
     public LoginViewModel(@NonNull Application application) {
         super(application);
+        progressBar.setValue(8);
     }
+
+    public void onClick(View view) {
+        if(validate()){
+            apiCallUpdatePassword();
+        }
+    }
+
+    private void apiCallUpdatePassword(){
+        progressBar.setValue(0);
+        APIService services = RetroClass.getApiClient().create(APIService.class);
+        Call<LoginResponseModel> allUsers = services.userLogin(username.getValue(),password.getValue());
+        allUsers.enqueue(new Callback<LoginResponseModel>() {
+            @Override
+            public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
+                progressBar.setValue(8);
+                if (response.body() == null) {
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        Toast.makeText(getApplication().getApplicationContext(), jObjError.getString("message"), Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        Log.d("", e.getMessage());
+                    }
+
+                } else  {
+                    Toast.makeText(getApplication().getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponseModel> call, Throwable t) {
+                progressBar.setValue(8);
+                Toast.makeText(getApplication().getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    private boolean validate() {
+        valid = true;
+
+        if (username.getValue() == null || username.getValue().isEmpty()) {
+            valid = false;
+            errorMessageUsername.setValue("Please enter your username");
+        }
+
+
+        if (password.getValue() == null || password.getValue().isEmpty()) {
+            valid = false;
+            errorMessagePassword.setValue("Please confirm your password");
+        }
+
+        return valid;
+    }
+
 }
