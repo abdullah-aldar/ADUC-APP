@@ -1,34 +1,42 @@
 package com.aldar.studentportal.models;
 
+import android.service.autofill.UserData;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class LoginResponseModel {
+    @SerializedName("success")
     @Expose
-    private Boolean success;
+    private String success;
     @SerializedName("status")
     @Expose
-    private Integer status;
+    private String status;
     @SerializedName("message")
     @Expose
     private String message;
-    @SerializedName("user")
+    @SerializedName("userdata")
     @Expose
-    private LoginDataModel user;
+    private List<LoginDataModel> userdata = null;
+    @SerializedName("nexttbl")
+    @Expose
+    private Object nexttbl;
 
-    public Boolean getSuccess() {
+    public String getSuccess() {
         return success;
     }
 
-    public void setSuccess(Boolean success) {
+    public void setSuccess(String success) {
         this.success = success;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -40,11 +48,19 @@ public class LoginResponseModel {
         this.message = message;
     }
 
-    public LoginDataModel getUser() {
-        return user;
+    public List<LoginDataModel> getUserdata() {
+        return userdata;
     }
 
-    public void setUser(LoginDataModel user) {
-        this.user = user;
+    public void setUserdata(List<LoginDataModel> userdata) {
+        this.userdata = userdata;
+    }
+
+    public Object getNexttbl() {
+        return nexttbl;
+    }
+
+    public void setNexttbl(Object nexttbl) {
+        this.nexttbl = nexttbl;
     }
 }

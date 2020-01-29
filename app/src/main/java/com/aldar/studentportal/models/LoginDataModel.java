@@ -5,379 +5,183 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginDataModel {
 
-    @SerializedName("id")
+
+    @SerializedName("studentID")
     @Expose
-    private String id;
-    @SerializedName("first_name")
+    private Integer studentID;
+    @SerializedName("userName")
     @Expose
-    private String firstName;
-    @SerializedName("last_name")
+    private Object userName;
+    @SerializedName("password")
     @Expose
-    private String lastName;
+    private Object password;
+    @SerializedName("mobile")
+    @Expose
+    private Object mobile;
+    @SerializedName("altMobile")
+    @Expose
+    private Object altMobile;
     @SerializedName("email")
     @Expose
-    private String email;
-    @SerializedName("goal")
+    private Object email;
+    @SerializedName("changedate")
     @Expose
-    private String goal;
-    @SerializedName("date_of_birth")
+    private Object changedate;
+    @SerializedName("userId")
     @Expose
-    private String dateOfBirth;
-    @SerializedName("terms_acceptance")
+    private Object userId;
+    @SerializedName("counter")
     @Expose
-    private String termsAcceptance;
-    @SerializedName("target_weight")
+    private Object counter;
+    @SerializedName("alLowAccess")
     @Expose
-    private String targetWeight;
-    @SerializedName("target_description")
+    private Object alLowAccess;
+    @SerializedName("givenStudentId")
     @Expose
-    private String targetDescription;
-    @SerializedName("relation_status")
+    private String givenStudentId;
+    @SerializedName("studentName")
     @Expose
-    private String relationStatus;
-    @SerializedName("no_childs")
+    private String studentName;
+    @SerializedName("mobileNo")
     @Expose
-    private String noChilds;
-    @SerializedName("occupation")
+    private String mobileNo;
+    @SerializedName("emailVerify")
     @Expose
-    private String occupation;
-    @SerializedName("hours_per_week")
+    private Integer emailVerify;
+    @SerializedName("mobileVerify")
     @Expose
-    private String hoursPerWeek;
-    @SerializedName("nationality")
+    private Integer mobileVerify;
+    @SerializedName("gender")
     @Expose
-    private String nationality;
-    @SerializedName("current_living")
-    @Expose
-    private String currentLiving;
-    @SerializedName("height")
-    @Expose
-    private String height;
-    @SerializedName("weight")
-    @Expose
-    private String weight;
-    @SerializedName("health_parents")
-    @Expose
-    private String healthParents;
-    @SerializedName("sleep")
-    @Expose
-    private String sleep;
-    @SerializedName("allergies")
-    @Expose
-    private String allergies;
-    @SerializedName("serious_illness")
-    @Expose
-    private String seriousIllness;
-    @SerializedName("major_addiction")
-    @Expose
-    private String majorAddiction;
-    @SerializedName("medications")
-    @Expose
-    private String medications;
-    @SerializedName("therapies")
-    @Expose
-    private String therapies;
-    @SerializedName("interests")
-    @Expose
-    private String interests;
-    @SerializedName("preferred_style")
-    @Expose
-    private String preferredStyle;
-    @SerializedName("email_token")
-    @Expose
-    private String emailToken;
-    @SerializedName("coach_id")
-    @Expose
-    private String coachId;
-    @SerializedName("user_role")
-    @Expose
-    private String userRole;
-    @SerializedName("createdAt")
-    @Expose
-    private String createdAt;
-    @SerializedName("is_active")
-    @Expose
-    private String isActive;
-    @SerializedName("is_deleted")
-    @Expose
-    private String isDeleted;
-    @SerializedName("device_id")
-    @Expose
-    private String deviceId;
-    @SerializedName("device")
-    @Expose
-    private String device;
+    private String gender;
 
-    public String getId() {
-        return id;
+    public Integer getStudentID() {
+        return studentID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStudentID(Integer studentID) {
+        this.studentID = studentID;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Object getUserName() {
+        return userName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setUserName(Object userName) {
+        this.userName = userName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Object getPassword() {
+        return password;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPassword(Object password) {
+        this.password = password;
     }
 
-    public String getEmail() {
+    public Object getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(Object mobile) {
+        this.mobile = mobile;
+    }
+
+    public Object getAltMobile() {
+        return altMobile;
+    }
+
+    public void setAltMobile(Object altMobile) {
+        this.altMobile = altMobile;
+    }
+
+    public Object getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(Object email) {
         this.email = email;
     }
 
-    public String getGoal() {
-        return goal;
+    public Object getChangedate() {
+        return changedate;
     }
 
-    public void setGoal(String goal) {
-        this.goal = goal;
+    public void setChangedate(Object changedate) {
+        this.changedate = changedate;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public Object getUserId() {
+        return userId;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setUserId(Object userId) {
+        this.userId = userId;
     }
 
-    public String getTermsAcceptance() {
-        return termsAcceptance;
+    public Object getCounter() {
+        return counter;
     }
 
-    public void setTermsAcceptance(String termsAcceptance) {
-        this.termsAcceptance = termsAcceptance;
+    public void setCounter(Object counter) {
+        this.counter = counter;
     }
 
-    public String getTargetWeight() {
-        return targetWeight;
+    public Object getAlLowAccess() {
+        return alLowAccess;
     }
 
-    public void setTargetWeight(String targetWeight) {
-        this.targetWeight = targetWeight;
+    public void setAlLowAccess(Object alLowAccess) {
+        this.alLowAccess = alLowAccess;
     }
 
-    public String getTargetDescription() {
-        return targetDescription;
+    public String getGivenStudentId() {
+        return givenStudentId;
     }
 
-    public void setTargetDescription(String targetDescription) {
-        this.targetDescription = targetDescription;
+    public void setGivenStudentId(String givenStudentId) {
+        this.givenStudentId = givenStudentId;
     }
 
-    public String getRelationStatus() {
-        return relationStatus;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setRelationStatus(String relationStatus) {
-        this.relationStatus = relationStatus;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public String getNoChilds() {
-        return noChilds;
+    public String getMobileNo() {
+        return mobileNo;
     }
 
-    public void setNoChilds(String noChilds) {
-        this.noChilds = noChilds;
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
     }
 
-    public String getOccupation() {
-        return occupation;
+    public Integer getEmailVerify() {
+        return emailVerify;
     }
 
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setEmailVerify(Integer emailVerify) {
+        this.emailVerify = emailVerify;
     }
 
-    public String getHoursPerWeek() {
-        return hoursPerWeek;
+    public Integer getMobileVerify() {
+        return mobileVerify;
     }
 
-    public void setHoursPerWeek(String hoursPerWeek) {
-        this.hoursPerWeek = hoursPerWeek;
+    public void setMobileVerify(Integer mobileVerify) {
+        this.mobileVerify = mobileVerify;
     }
 
-    public String getNationality() {
-        return nationality;
+    public String getGender() {
+        return gender;
     }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getCurrentLiving() {
-        return currentLiving;
-    }
-
-    public void setCurrentLiving(String currentLiving) {
-        this.currentLiving = currentLiving;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getHealthParents() {
-        return healthParents;
-    }
-
-    public void setHealthParents(String healthParents) {
-        this.healthParents = healthParents;
-    }
-
-    public String getSleep() {
-        return sleep;
-    }
-
-    public void setSleep(String sleep) {
-        this.sleep = sleep;
-    }
-
-    public String getAllergies() {
-        return allergies;
-    }
-
-    public void setAllergies(String allergies) {
-        this.allergies = allergies;
-    }
-
-    public String getSeriousIllness() {
-        return seriousIllness;
-    }
-
-    public void setSeriousIllness(String seriousIllness) {
-        this.seriousIllness = seriousIllness;
-    }
-
-    public String getMajorAddiction() {
-        return majorAddiction;
-    }
-
-    public void setMajorAddiction(String majorAddiction) {
-        this.majorAddiction = majorAddiction;
-    }
-
-    public String getMedications() {
-        return medications;
-    }
-
-    public void setMedications(String medications) {
-        this.medications = medications;
-    }
-
-    public String getTherapies() {
-        return therapies;
-    }
-
-    public void setTherapies(String therapies) {
-        this.therapies = therapies;
-    }
-
-    public String getInterests() {
-        return interests;
-    }
-
-    public void setInterests(String interests) {
-        this.interests = interests;
-    }
-
-    public String getPreferredStyle() {
-        return preferredStyle;
-    }
-
-    public void setPreferredStyle(String preferredStyle) {
-        this.preferredStyle = preferredStyle;
-    }
-
-    public String getEmailToken() {
-        return emailToken;
-    }
-
-    public void setEmailToken(String emailToken) {
-        this.emailToken = emailToken;
-    }
-
-    public String getCoachId() {
-        return coachId;
-    }
-
-    public void setCoachId(String coachId) {
-        this.coachId = coachId;
-    }
-
-    public String getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getIsActive() {
-        return isActive;
-    }
-
-    public void setIsActive(String isActive) {
-        this.isActive = isActive;
-    }
-
-    public String getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(String isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDevice() {
-        return device;
-    }
-
-    public void setDevice(String device) {
-        this.device = device;
-    }
 }
 

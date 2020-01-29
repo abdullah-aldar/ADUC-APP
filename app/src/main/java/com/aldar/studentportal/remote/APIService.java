@@ -19,9 +19,9 @@ import retrofit2.http.Part;
 public interface APIService {
 
     @FormUrlEncoded
-    @POST("signup/login")
-    Call<LoginResponseModel> userLogin(@Field("email") String email,
-                                       @Field("password") String password);
+    @POST("api/Login")
+    Call<LoginResponseModel> userLogin(@Field("UserName") String email,
+                                       @Field("Password") String password);
 
 //    @FormUrlEncoded
 //    @POST("signup/register")

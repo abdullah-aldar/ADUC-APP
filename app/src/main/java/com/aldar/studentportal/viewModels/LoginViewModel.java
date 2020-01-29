@@ -52,7 +52,7 @@ public class LoginViewModel extends AndroidViewModel {
                     }
 
                 } else  {
-                    Toast.makeText(getApplication().getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplication().getApplicationContext(), response.body().getUserdata().get(0).getStudentName(), Toast.LENGTH_SHORT).show();
                 }
             }
 
