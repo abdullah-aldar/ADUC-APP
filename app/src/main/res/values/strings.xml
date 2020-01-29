@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">ADUC Student Portal</string>
     <string name="uni_name">ALDAR University</string>
-    <string name="welcome">Welcome to ALDAR University College</string>
+    <string name="welcome">Apply for Admission</string>
+    <string name="welcome_text">Welcome to ALDAR University College, We don’t just give students an education and experiences that set them up
+        for success in a career.\n\nYour career path begins Here, Take the first step and Apply Now</string>
+    <string name="affordable_price">Affordable tuition fees In addition to financial support through scholarship and financial aids</string>
+    <string name="flexible_course">ALDAR designs flexible courses offerings that allow students to attend classes during weekdays and weekends</string>
+    <string name="accomodation">In ALDAR University College Dubai the Accomodation is availble</string>
 
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

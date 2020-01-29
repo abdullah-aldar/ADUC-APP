@@ -6,4 +6,6 @@
     <dimen name="standarize_spacing">16dp</dimen>
     <dimen name="medium_margin">8dp</dimen>
     <dimen name="high_margin">40dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="btn_height">40dp</dimen>
 </resources>
