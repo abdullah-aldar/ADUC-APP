@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ADUC Student Portal</string>
+    <string name="app_name">ADUC</string>
     <string name="uni_name">ALDAR University</string>
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
@@ -11,6 +11,12 @@
     <string name="affordable_price">Affordable tuition fees In addition to financial support through scholarship and financial aids</string>
     <string name="flexible_course">ALDAR designs flexible courses offerings that allow students to attend classes during weekdays and weekends</string>
     <string name="accomodation">In ALDAR University College Dubai the Accomodation is availble</string>
+    <string name="transport_text">FREE transportation for the student is provided from DUBAI, Sharjah, and, Ajman .</string>
+    <string name="tution_text">Affordable tuition fees In addition to financial support through scholarship and financial aids</string>
+    <string name="visa_text">ALDAR University College provides Student Visa.</string>
+    <string name="support">Expert Support</string>
+    <string name="support_text">Aldar University, in-house expert team, is always on hand to help, answer your questions, and guide you in the proper direction.
+        \nYou can call, chat, or email us!</string>
     <string name="fee">FEE</string>
     <string name="portal">Portal</string>
     <string name="faq">FAQ</string>
@@ -19,7 +25,7 @@
     <string name="flexible">Flexible course</string>
     <string name="transportation">FREE transportation</string>
     <string name="student_visa">Student visa</string>
-    <string name="std_accomodation">Accomodation</string>
+    <string name="tution_fee">Affordable tuition fees</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -27,6 +33,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="faq_question">Frequently Asked Questions (FAQs)</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_admission">Admission</string>

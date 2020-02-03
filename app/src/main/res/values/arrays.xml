@@ -12,4 +12,22 @@
         <item>MY INBOX\nصندوق الوارد</item>
         <item>GOOGLE CLASSROOM\nجوجل الفصول الدراسية</item>
     </array>
+
+    <array name="faq_question">
+        <item>Who can register for different programs?</item>
+        <item>Does Al Dar offer scholarships?</item>
+        <item>Does Al Dar accept transfer students?</item>
+        <item>Does Al Dar accept visiting students?</item>
+        <item>Can I visit the college before admission?</item>
+        <item>Does Al Dar provide residence visa to the students?</item>
+    </array>
+
+    <array name="faq_answer">
+        <item>All students who fulfill the minimum admission criteria of Al Dar are eligible for the admission and the registration for various programs available at Al Dar University College.</item>
+        <item>Yes, Al Dar offers a wide range of scholarships and discounts intended to support students in continuing their education. There are many types of scholarships/ grants (High School, sibling, government employee, international student, financial aid) available to the students.</item>
+        <item>Yes, Al Dar accepts transfer students as per the transfer policy of the Al DarUniversity College.</item>
+        <item>Yes, Al Dar accepts visiting students based on the permission granted by their university.</item>
+        <item>Yes, Al Dar gladly welcomes all the prospective students and their parents/relatives to visit the campus and have a campus tour of all the facilities provided to the students. They are also welcome to have interaction with faculties and the staff if they wish so.</item>
+        <item>Yes, Al Dar provides residence visa to all the admitted students based on the approval of visa request by the UAE Immigration Authority.</item>
+    </array>
 </resources>
