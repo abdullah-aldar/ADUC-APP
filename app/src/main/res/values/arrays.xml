@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="dashboard_items">
+        <item>MY COURSE SCHEDULE\nجدول دراستي</item>
+        <item>MY MARKS\nعلاماتي</item>
+        <item>MY STUDY PLAN\nخطة دراستي</item>
+        <item>MY COURSE ADVICE\nنصيحة بالطبع بلدي</item>
+        <item>LETTER REQUEST\nطلب رسالة</item>
+        <item>MY FINANCE\nأموالي</item>
+        <item>MY PROFILE\nملفي</item>
+        <item>MY INBOX\nصندوق الوارد</item>
+        <item>GOOGLE CLASSROOM\nجوجل الفصول الدراسية</item>
+    </array>
+</resources>

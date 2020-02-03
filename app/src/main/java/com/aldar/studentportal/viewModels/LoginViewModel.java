@@ -7,10 +7,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import com.aldar.studentportal.models.LoginResponseModel;
+import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
 import org.json.JSONObject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,6 +22,7 @@ public class LoginViewModel extends AndroidViewModel {
     public MutableLiveData<String> password = new MutableLiveData<>();
     public MutableLiveData<String> errorMessageUsername = new MutableLiveData<>();
     public MutableLiveData<String> errorMessagePassword = new MutableLiveData<>();
+    private MutableLiveData<LoginResponseModel> loginResponseData = new MutableLiveData<>();
     private boolean valid = false;
 
 
@@ -38,7 +40,7 @@ public class LoginViewModel extends AndroidViewModel {
     private void apiCallUpdatePassword(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<LoginResponseModel> allUsers = services.userLogin(username.getValue(),password.getValue());
+        Call<LoginResponseModel> allUsers = services.userLogin("BBA1311373","she123456");
         allUsers.enqueue(new Callback<LoginResponseModel>() {
             @Override
             public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
@@ -52,7 +54,12 @@ public class LoginViewModel extends AndroidViewModel {
                     }
 
                 } else  {
-                    Toast.makeText(getApplication().getApplicationContext(), response.body().getUserdata().get(0).getStudentName(), Toast.LENGTH_SHORT).show();
+                    LoginResponseModel responseModel = new LoginResponseModel();
+                    responseModel.setStatus(response.body().getStatus());
+                    responseModel.setMessage(response.body().getMessage());
+                    responseModel.setSuccess(response.body().getSuccess());
+                    responseModel.setUserdata(response.body().getUserdata());
+                    loginResponseData.setValue(responseModel);
                 }
             }
 
@@ -62,6 +69,10 @@ public class LoginViewModel extends AndroidViewModel {
                 Toast.makeText(getApplication().getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public MutableLiveData<LoginResponseModel> getLoginResponseData(){
+        return loginResponseData;
     }
 
 

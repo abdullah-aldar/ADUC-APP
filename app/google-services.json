@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "902942246959",
+    "firebase_url": "https://aduc-app.firebaseio.com",
+    "project_id": "aduc-app",
+    "storage_bucket": "aduc-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902942246959:android:aacec359fdfa227c049eda",
+        "android_client_info": {
+          "package_name": "com.aldar.studentportal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902942246959-2snmjtg33i6cp5lftdhmepf73k27507m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aldar.studentportal",
+            "certificate_hash": "4ba358bae70741bfe53f448adae4353478c074ea"
+          }
+        },
+        {
+          "client_id": "902942246959-m8cb4jlcp4s1nn6f5jn3slor62rm1g7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoFVKB_mweyCvXhqALaYrH4pQ-t5AfzOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902942246959-m8cb4jlcp4s1nn6f5jn3slor62rm1g7j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

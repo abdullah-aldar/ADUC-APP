@@ -15,6 +15,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        ((AppCompatActivity)this).getSupportActionBar().hide();
+
 
         new CountDownTimer(2500, 1000) {
 

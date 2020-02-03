@@ -10,23 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/test"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@id/linear_layout"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/linear_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/main"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
 
+            />
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/iv_main"
+        app:layout_constraintTop_toBottomOf="@+id/iv_header"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -34,18 +36,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginStart="@dimen/small_margin"
             android:gravity="center"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/logo"/>
+                android:padding="@dimen/small_margin"
+                android:src="@drawable/rome"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Portal"/>
+                android:textStyle="bold"
+                android:text="@string/portal"/>
         </LinearLayout>
 
 
@@ -55,17 +60,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginStart="@dimen/small_margin"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/logo"/>
+                android:src="@drawable/dollar"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FEE"/>
+                android:textStyle="bold"
+                android:text="@string/fee"/>
         </LinearLayout>
 
         <LinearLayout
@@ -74,17 +81,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/logo"/>
+                android:src="@drawable/questionmark"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FAQ"/>
+                android:textStyle="bold"
+                android:text="@string/faq"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -94,7 +104,7 @@
         android:id="@+id/layout_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/gradient"
         android:padding="@dimen/medium_margin"
         app:layout_constraintTop_toBottomOf="@id/linear_layout">
 
@@ -125,7 +135,7 @@
             android:id="@+id/btn_apply"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Apply Now"
+            android:text="@string/apply"
             android:textColor="@color/white"
             android:padding="@dimen/small_margin"
             app:layout_constraintEnd_toStartOf="@+id/btn_download_boucher"
@@ -139,7 +149,7 @@
             android:id="@+id/btn_download_boucher"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Download Brocher"
+            android:text="@string/download_boucher"
             android:padding="@dimen/small_margin"
             android:textColor="@color/white"
             android:background="@drawable/button_style"
@@ -157,6 +167,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="@dimen/small_margin"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/layout_apply"
         app:layout_constraintStart_toStartOf="parent">
@@ -170,15 +181,15 @@
             android:layout_marginStart="@dimen/small_margin"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/logo"/>
+                android:src="@drawable/network"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flexible course"
+                android:text="@string/flexible"
                 android:textStyle="bold" />
 
             <TextView
@@ -199,16 +210,16 @@
             android:layout_marginStart="@dimen/small_margin"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/logo"/>
+                android:src="@drawable/university"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="FREE transportation"/>
+                android:text="@string/transportation"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -240,16 +251,16 @@
                 android:layout_marginStart="@dimen/small_margin"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/logo"/>
+                    android:src="@drawable/cap"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Student visa"/>
+                    android:text="@string/student_visa"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -267,16 +278,16 @@
                 android:layout_marginStart="@dimen/small_margin"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/logo"/>
+                    android:src="@drawable/university"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Accomodation"/>
+                    android:text="@string/std_accomodation"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -289,9 +300,10 @@
 
 
         <RelativeLayout
+            android:id="@+id/calendar_view"
             app:layout_constraintTop_toBottomOf="@+id/other_facilities"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="#DEDEDE"
+            android:background="@color/tranparent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -323,6 +335,8 @@
                 android:layout_margin="@dimen/medium_margin"
                 android:layout_alignParentEnd="true"/>
         </RelativeLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 

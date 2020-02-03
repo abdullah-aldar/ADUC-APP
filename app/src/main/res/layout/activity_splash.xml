@@ -9,12 +9,11 @@
     tools:context=".ui.activities.SplashActivity">
 
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:scaleType="fitXY"
-        android:src="@mipmap/logo"/>
+        android:src="@drawable/logo"/>
 
 </RelativeLayout>

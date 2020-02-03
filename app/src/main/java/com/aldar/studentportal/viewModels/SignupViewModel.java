@@ -1,19 +1,11 @@
 package com.aldar.studentportal.viewModels;
 
 import android.app.Application;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import com.aldar.studentportal.models.LoginResponseModel;
-import com.aldar.studentportal.remote.APIService;
-import com.aldar.studentportal.remote.RetroClass;
-import org.json.JSONObject;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class SignupViewModel extends AndroidViewModel {
 
