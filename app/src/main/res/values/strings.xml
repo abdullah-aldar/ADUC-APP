@@ -3,7 +3,7 @@
     <string name="uni_name">ALDAR University</string>
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
-    <string name="youtube_apikey">AIzaSyCrEaaM88W3z8abUC3gvhkpQ-561L-6djo</string>
+    <string name="map_apikey">AIzaSyAepQhzH42X9rObxzFGXMLp6iXsbt2xZlI</string>
 
     <string name="welcome">Apply for Admission</string>
     <string name="welcome_text">Welcome to ALDAR University College, We don’t just give students an education and experiences that set them up

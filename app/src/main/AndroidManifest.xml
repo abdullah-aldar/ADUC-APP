@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.FaqActivity"></activity>
+        <activity android:name=".ui.activities.InquireUsActivity"></activity>
+        <activity android:name=".ui.activities.FaqActivity" />
         <activity
             android:name=".ui.activities.SplashActivity"
             android:noHistory="true">
@@ -30,8 +31,7 @@
             android:name=".ui.activities.NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.activities.StudentPortalMainActivity" />
-        <activity android:name=".ui.activities.SignUpActivity" />
-
+        <activity android:name=".ui.activities.SignUpActivity" /> <!-- firebase notification here -->
         <service
             android:name=".firebase.MyFirebaseMessagingService"
             android:exported="false">
@@ -45,7 +45,15 @@
             android:resource="@drawable/main" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="@string/default_notification_channel_id" />
+            android:value="@string/default_notification_channel_id" /> <!-- end firebase notification -->
+        <!-- MAP data here -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_apikey" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>

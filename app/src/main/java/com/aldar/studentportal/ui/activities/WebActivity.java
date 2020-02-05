@@ -23,7 +23,7 @@ public class WebActivity extends AppCompatActivity {
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setUseWideViewPort(true);
         webSettings.setAllowUniversalAccessFromFileURLs(true);
-        String pdfLink = "https://www.aldar.ac.ae/wp-content/uploads/2019/11/prospectus.pdf";
+        String pdfLink = "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Aademic%20Calendar_2019_2020.pdf";
         webView.loadUrl(pdfLink);
     }
 }
