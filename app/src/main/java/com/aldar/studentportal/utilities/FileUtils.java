@@ -17,7 +17,7 @@ import java.net.URL;
 public class FileUtils {
     private static final String TAG = "Download Task";
     private Context context;
-    private String downloadUrl = "", downloadFileName = "boucher";
+    private String downloadUrl, downloadFileName = "boucher";
     private ProgressDialog progressDialog;
 
     public FileUtils(Context context, String downloadUrl) {

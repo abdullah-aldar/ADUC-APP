@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
@@ -34,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         ((AppCompatActivity)this).getSupportActionBar().hide();
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_login);
-        loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
+       // loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
+        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         binding.setLifecycleOwner(this);
         binding.setLoginViewModel(loginViewModel);
 

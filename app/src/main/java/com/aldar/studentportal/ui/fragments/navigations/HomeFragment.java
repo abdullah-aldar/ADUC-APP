@@ -12,19 +12,15 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavDirections;
-import androidx.navigation.Navigation;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.ui.activities.FaqActivity;
 import com.aldar.studentportal.ui.activities.InquireUsActivity;
-import com.aldar.studentportal.ui.activities.LoginActivity;
 import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
 import com.aldar.studentportal.ui.activities.WebActivity;
 import com.aldar.studentportal.utilities.FileUtils;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+import com.aldar.studentportal.utilities.PermissionUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -73,8 +69,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), StudentPortalMainActivity.class));
                 break;
             case R.id.btn_download_boucher:
+                PermissionUtils.checkPermision(getActivity());
                 try {
-                    new FileUtils(getActivity(), "https://www.aldar.ac.ae/wp-content/uploads/2019/11/prospectus.pdf");
+                    new FileUtils(getActivity(), "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
