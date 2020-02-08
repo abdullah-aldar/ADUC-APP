@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/small_margin">
+
+    <TextView
+        android:id="@+id/course_code"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Course Code :"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_course_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CME301"
+        android:layout_toEndOf="@+id/course_code"
+        android:layout_marginStart="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/tv_section"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Section"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:layout_marginStart="@dimen/medium_margin" />
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_code"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Course Name :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/tv_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Communication Systems"
+        android:layout_below="@+id/course_code"
+        android:layout_toEndOf="@+id/course_name"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/day_time"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Day/Time :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/tv_day_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thursday 04:00 PM - 07:00 PM"
+        android:layout_below="@+id/course_name"
+        android:layout_toEndOf="@+id/day_time"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/room"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/day_time"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Room :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/tv_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="203"
+        android:layout_below="@+id/day_time"
+        android:layout_toEndOf="@+id/room"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/lecture"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/room"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Lecturer :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <TextView
+        android:id="@+id/tv_lecture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dr. Enoch"
+        android:layout_below="@+id/room"
+        android:layout_toEndOf="@+id/lecture"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lecture"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:background="@drawable/box_style">
+
+    <LinearLayout
+        android:id="@+id/layout_midterm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/small_margin"
+       >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="MidTerm Date"
+            android:textStyle="bold" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_midterm_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Dr. Enoch"
+            android:layout_marginStart="@dimen/small_margin" />
+
+    </LinearLayout>
+
+        <View
+            android:id="@+id/mid_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.01dp"
+            android:layout_below="@id/layout_midterm"
+            android:background="@color/black"/>
+
+    <LinearLayout
+        android:id="@+id/layout_finalterm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_margin"
+        android:orientation="horizontal"
+        android:layout_below="@id/mid_line">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Final Exam Date"
+            android:textStyle="bold" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_finalterm_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Dr. Enoch"
+            android:layout_marginStart="@dimen/small_margin" />
+
+    </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

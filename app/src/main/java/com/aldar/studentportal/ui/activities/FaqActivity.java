@@ -1,20 +1,16 @@
 package com.aldar.studentportal.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.adapters.DashboardItemsAdapter;
 import com.aldar.studentportal.adapters.FAQAdapter;
-import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
 import com.aldar.studentportal.models.faqModels.FAQModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;

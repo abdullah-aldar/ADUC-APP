@@ -5,13 +5,14 @@
     android:orientation="vertical"
     android:background="@drawable/shadow"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/item_layout">
 
 
         <ImageView
             android:id="@+id/iv_dashboard"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_gravity="center"
             app:layout_constraintTop_toTopOf="parent"

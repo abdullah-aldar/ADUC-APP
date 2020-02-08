@@ -1,9 +1,11 @@
 package com.aldar.studentportal.remote;
+import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -18,20 +20,11 @@ public interface APIService {
     Call<LoginResponseModel> userLogin(@Field("UserName") String email,
                                        @Field("Password") String password);
 
-//    @FormUrlEncoded
-//    @POST("signup/register")
-//    Call<SignupResponseModel> userSignup(@Field("first_name") String firstname,
-//                                         @Field("last_name") String lastname,
-//                                         @Field("email") String email,
-//                                         @Field("password") String pass,
-//                                         @Field("interest_id") String interestID,
-//                                         @Field("style") String style,
-//                                         @Field("goal") String goal,
-//                                         @Field("dob") String dob,
-//                                         @Field("terms") String terms,
-//                                         @Field("device") String device,
-//                                         @Field("device_id") String device_id);
-//
+
+    @FormUrlEncoded
+    @GET
+    Call<CourseScheduleResponseModel> getCourseSchedule();
+
 //    @FormUrlEncoded
 //    @POST("signup/forgot")
 //    Call<ForgotModel> sentEmail(@Field("email") String email);
