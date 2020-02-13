@@ -3,8 +3,8 @@
     package="com.aldar.studentportal">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.InquireUsActivity"></activity>
+        <activity android:name=".ui.activities.FeeActivity"></activity>
+        <activity android:name=".ui.activities.inquireUs.InquireUsActivity" />
         <activity android:name=".ui.activities.FaqActivity" />
         <activity
             android:name=".ui.activities.SplashActivity"
@@ -27,13 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.LoginActivity" />
+        <activity android:name=".ui.activities.login.LoginActivity" />
         <activity android:name=".ui.activities.WebActivity" />
         <activity
             android:name=".ui.activities.NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.activities.StudentPortalMainActivity" />
-        <activity android:name=".ui.activities.SignUpActivity" /> <!-- firebase notification here -->
+        <activity android:name=".ui.activities.signup.SignUpActivity" /> <!-- firebase notification here -->
         <service
             android:name=".firebase.MyFirebaseMessagingService"
             android:exported="false">

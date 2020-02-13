@@ -19,29 +19,27 @@ import butterknife.ButterKnife;
 public class FaqActivity extends AppCompatActivity {
     @BindView(R.id.rv_faq)
     RecyclerView rvFAQ;
-    private FAQAdapter faqAdapter;
-    private List<FAQModel> faqModelList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
-        this.setTitle(getResources().getString(R.string.faq_question));
         ButterKnife.bind(this);
+        this.setTitle(getResources().getString(R.string.faq_question));
 
         initViews();
     }
 
     private void initViews() {
-        rvFAQ.setLayoutManager(new LinearLayoutManager(this));
-        faqAdapter = new FAQAdapter(this, preparedFAQItems());
+        rvFAQ.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        FAQAdapter faqAdapter = new FAQAdapter(getApplicationContext(), preparedFAQItems());
         rvFAQ.setAdapter(faqAdapter);
 
     }
 
 
     private List<FAQModel> preparedFAQItems() {
-        faqModelList = new ArrayList<>();
+        List<FAQModel> faqModelList = new ArrayList<>();
         String[] questionsList = getResources().getStringArray(R.array.faq_question);
         String[] answerList = getResources().getStringArray(R.array.faq_answer);
 

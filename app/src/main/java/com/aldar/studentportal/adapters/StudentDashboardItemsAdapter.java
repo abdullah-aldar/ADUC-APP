@@ -6,13 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.letterRequest.LetterRequestFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myCourseAdvice.MyCourseAdviceFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myCourseSchedule.CourseScheduleFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myFinance.MyFinanceFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myMarks.MyMarksFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myProfile.StudentProfileFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myStudyPlan.MyStudyPlanFragment;
+import com.aldar.studentportal.utilities.GeneralUtilities;
 
 import java.util.List;
 
@@ -70,19 +77,25 @@ public class StudentDashboardItemsAdapter extends RecyclerView.Adapter<StudentDa
     private void goToScreen(Context context, int position){
         switch (position){
             case 0:
-                Toast.makeText(context, ""+String.valueOf(position), Toast.LENGTH_SHORT).show();
+                GeneralUtilities.connectFragmentWithBack(context,new CourseScheduleFragment());
                 break;
             case 1:
+                GeneralUtilities.connectFragmentWithBack(context,new MyMarksFragment());
                 break;
             case 2:
+                GeneralUtilities.connectFragmentWithBack(context,new MyStudyPlanFragment());
                 break;
             case 3:
+                GeneralUtilities.connectFragmentWithBack(context,new MyCourseAdviceFragment());
                 break;
             case 4:
+                GeneralUtilities.connectFragmentWithBack(context,new LetterRequestFragment());
                 break;
             case 5:
+                GeneralUtilities.connectFragmentWithBack(context,new MyFinanceFragment());
                 break;
             case 6:
+                GeneralUtilities.connectFragmentWithBack(context,new StudentProfileFragment());
                 break;
             case 7:
                 break;

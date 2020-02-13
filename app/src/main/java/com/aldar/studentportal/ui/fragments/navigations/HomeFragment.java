@@ -1,8 +1,11 @@
 package com.aldar.studentportal.ui.fragments.navigations;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +19,15 @@ import androidx.fragment.app.Fragment;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.ui.activities.FaqActivity;
-import com.aldar.studentportal.ui.activities.InquireUsActivity;
+import com.aldar.studentportal.ui.activities.FeeActivity;
+import com.aldar.studentportal.ui.activities.SplashActivity;
+import com.aldar.studentportal.ui.activities.inquireUs.InquireUsActivity;
 import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
 import com.aldar.studentportal.ui.activities.WebActivity;
 import com.aldar.studentportal.utilities.FileUtils;
 import com.aldar.studentportal.utilities.PermissionUtils;
+
+import java.lang.ref.WeakReference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +36,8 @@ import butterknife.ButterKnife;
 public class HomeFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.layout_portal)
     LinearLayout layoutPortal;
+    @BindView(R.id.layout_fee)
+    LinearLayout layoutFee;
     @BindView(R.id.btn_download_boucher)
     Button btnBoucher;
     @BindView(R.id.layout_faq)
@@ -44,6 +53,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.btn_inquire_us)
     Button btnInquireUs;
 
+    private LeakyClass leakyClass;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +62,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         ButterKnife.bind(this, root);
 
         layoutPortal.setOnClickListener(this);
+        layoutFee.setOnClickListener(this);
         btnBoucher.setOnClickListener(this);
         layoutFAQ.setOnClickListener(this);
         btnCalendar.setOnClickListener(this);
@@ -68,6 +80,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_portal:
                 startActivity(new Intent(getActivity(), StudentPortalMainActivity.class));
                 break;
+            case R.id.layout_fee:
+                startActivity(new Intent(getActivity(), FeeActivity.class));
+                break;
             case R.id.btn_download_boucher:
                 PermissionUtils.checkPermision(getActivity());
                 try {
@@ -77,10 +92,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
             case R.id.layout_faq:
-                startActivity(new Intent(getActivity(), FaqActivity.class));
+                new LeakyClass(getActivity()).redirectToFAQ();
                 break;
             case R.id.btn_calendar:
-                startActivity(new Intent(getActivity(), WebActivity.class));
+                new LeakyClass(getActivity()).redirectToWeview();
                 break;
             case R.id.iv_whatsapp:
                 showWhatsApp();
@@ -92,9 +107,41 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 loadEmail();
                 break;
             case R.id.btn_inquire_us:
-                startActivity(new Intent(getActivity(),InquireUsActivity.class));
+                new LeakyClass(getActivity()).redirectToInqureUS();
                 break;
         }
+    }
+
+    private static class LeakyClass {
+
+        private final WeakReference<Activity> messageViewReference;
+
+        private LeakyClass(Activity activity) {
+            this.messageViewReference = new WeakReference<>(activity);
+        }
+
+        private void redirectToFAQ() {
+            Activity activity = messageViewReference.get();
+            if(activity != null) {
+                activity.startActivity(new Intent(activity, FaqActivity.class));
+            }
+        }
+
+        private void redirectToWeview() {
+            Activity activity = messageViewReference.get();
+            if(activity != null) {
+                activity.startActivity(new Intent(activity, WebActivity.class));
+            }
+        }
+
+
+        private void redirectToInqureUS() {
+            Activity activity = messageViewReference.get();
+            if(activity != null) {
+                activity.startActivity(new Intent(activity, InquireUsActivity.class));
+            }
+        }
+
     }
 
     private void showWhatsApp(){
@@ -121,17 +168,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         emailIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         emailIntent.setSelector( emailSelectorIntent );
-//
-//        Uri attachment = FileProvider.getUriForFile(this, "my_fileprovider", myFile);
-//        emailIntent.putExtra(Intent.EXTRA_STREAM, attachment);
-//
-//        if( emailIntent.resolveActivity(getPackageManager()) != null )
-//            startActivity(emailIntent);
+
         try {
             startActivity(emailIntent);
         }
         catch (Exception e){
             Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        leakyClass = null;
     }
 }

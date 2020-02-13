@@ -42,4 +42,58 @@
     <string name="menu_research">Research</string>
     <string name="menu_login">Login</string>
 
+
+    <string name="computer_school">School Of Engineering &amp; Technology</string>
+    <string name="computer_text">We are proud to offer a wide range of accredited programs in Engineering and Technology that will equip students with the knowledge needed to pursue the career</string>
+    <string name="business_school">School Of Business Administration</string>
+    <string name="business_text">The School of Business Administration (SBA) at ADUC caters to the need of multicultural workforce in the field of Business and Management.</string>
+    <string name="art_school">School Of Arts And Social Sciences</string>
+    <string name="art_text">The School of Arts and Social Sciences (SBA) at ADUC caters to the need of multicultural workforce in the field of Business and Management.</string>
+
+
+    <string name="campus_life">Campus life at ALDAR University College, enjoys the benefits of an urban campus
+        as it is located in the heart of the historic business district of Dubai. Movie theaters, shopping centers,
+        banks, restaurants, and other facilities are located in the vicinity of the College.\n\n
+        The College is situated near the Deira City Centre Metro Station and the GGICO Metro Station. Students commuting from all
+        over Dubai have an easy access to the College. Transportation services are provided by the College to major locations in the Northern Emirates.\n\n
+        <b>ALDAR University College provides students with the following facilities to enhance their learning experience:</b>\n\n
+        Library, fully equipped with books, e-books, journals, magazines, online databases, CDs/DVDs, multimedia rooms, discussion rooms, computers workstations,
+        wireless Internet connection, scanning, photocopying, and printing services provides faculty and students a conducive environment for their scholarlyactivities.
+        Classrooms and computer laboratories are equipped with smart interactive boards and state-of-the-art workstations.
+        Students have access to a spacious lounge to conduct their various extra-curricular activities in a convenient and friendly spot.\n\n
+        The College also provides ample parking space with three basement floors.\n</string>
+
+
+    <string name="ieee_text">
+        IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefits of humanity.
+        IEEE and its members inspire a global community to innovate for a better tomorrow through its highly cited publications, conferences,
+        technology standards, and professional and educational activities. IEEE is the trusted “voice” for engineering, computing, and technology
+        information around the globe.\n\n
+        ALDAR IEEE student’s branch was established in 2015 and is led by a committed team of students and faculty from the school of Engineering
+        and Technology (SET).\n\n
+        Its main purpose is to give students the opportunity to be a part of professional community, get exposed to the technological advancement
+        and educational aspects occurring worldwide.\n\n
+        <b>Students of the IEEE student branch conduct the following activities:</b>\n\n
+        Formulate technical workshops and competitions
+        Regulate professional networking through participation in technical events, international conferences and seminars
+        Participate in international competitions and enhance the technical knowledge and skills of students in SET
+        Coordinate with and organize trips to companies in related fields.
+        Encourage IEEE members to connect with local IEEE Sections, share individual benefits and gain volunteering skills\n\n
+        To become an IEEE member, you can contact an executive committee member through the following contacts:\n
+    </string>
+
+    <string name="about_uae">
+        The UAE is a federation of seven Emirates located in the Middle East. The country has emerged as both a dynamic international business centre
+        and a laid-back tourist escape. From unspoiled beaches to rugged mountains, and picturesque heritage sites to ultra-modern shopping malls, the
+        UAE offers a truly unique lifestyle experience.\n\n
+        As the gateway between east and west, the UAE has become a safe and accessible base for leading multinationals from across the globe to establish a
+        foothold in the Middle East market, and to explore emerging economies further afield. This expanding business base attracts students and professionals
+        from around the world, giving the UAE a unique multicultural identity, where nationals from more than 200 countries live in harmony with the Emirati people.\n\n
+         The higher educational landscape in the UAE reflects the cultural mix of the country. With a thirst for innovation, the UAE is also gathering a growing reputation
+        for its advancements in research and technological development.\n\n
+        One of the fastest growing cities in the world, Dubai is the place where the sophistication of the 21st century meets the unique charm of an ancient trading port.
+        With world-class infrastructure and facilities, the city combines the cosmopolitan lifestyle of the western world with eastern traditions and hospitality.\n\n
+         Already renowned for its bold ambition, as the home of the world’s tallest building and the world’s largest man-made island, Dubai will continue to grow its
+        international stature when it hosts the World Expo in 2020.\n
+    </string>
 </resources>

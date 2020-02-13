@@ -4,7 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/small_margin">
+    android:background="@drawable/shadow"
+    android:layout_marginTop="@dimen/small_margin"
+    android:layout_marginStart="@dimen/small_margin"
+    android:layout_marginEnd="@dimen/small_margin"
+    android:padding="@dimen/medium_margin">
 
     <TextView
         android:id="@+id/course_code"
@@ -48,7 +52,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:text="Course Name :"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <TextView
         android:id="@+id/tv_course_name"
@@ -58,7 +62,7 @@
         android:layout_below="@+id/course_code"
         android:layout_toEndOf="@+id/course_name"
         android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <TextView
         android:id="@+id/day_time"
@@ -68,7 +72,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:text="Day/Time :"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <TextView
         android:id="@+id/tv_day_time"
@@ -78,7 +82,7 @@
         android:layout_below="@+id/course_name"
         android:layout_toEndOf="@+id/day_time"
         android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <TextView
         android:id="@+id/room"
@@ -88,7 +92,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:text="Room :"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <TextView
         android:id="@+id/tv_room"
@@ -98,7 +102,7 @@
         android:layout_below="@+id/day_time"
         android:layout_toEndOf="@+id/room"
         android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <TextView
         android:id="@+id/lecture"
@@ -108,7 +112,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:text="Lecturer :"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <TextView
         android:id="@+id/tv_lecture"
@@ -118,12 +122,13 @@
         android:layout_below="@+id/room"
         android:layout_toEndOf="@+id/lecture"
         android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/small_margin"/>
+        android:layout_marginTop="@dimen/text_gap"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/lecture"
+
         android:layout_marginTop="@dimen/medium_margin"
         android:background="@drawable/box_style">
 
@@ -132,8 +137,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="@dimen/small_margin"
-       >
+        android:padding="@dimen/small_margin">
 
         <TextView
             android:layout_width="0dp"
@@ -155,7 +159,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Dr. Enoch"
+            android:text=""
             android:layout_marginStart="@dimen/small_margin" />
 
     </LinearLayout>
@@ -195,7 +199,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Dr. Enoch"
+            android:text=""
             android:layout_marginStart="@dimen/small_margin" />
 
     </LinearLayout>

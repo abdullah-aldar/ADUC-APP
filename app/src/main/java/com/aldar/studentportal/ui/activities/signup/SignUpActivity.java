@@ -1,0 +1,35 @@
+package com.aldar.studentportal.ui.activities.signup;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
+
+import android.os.Bundle;
+import android.view.View;
+
+import com.aldar.studentportal.R;
+import com.aldar.studentportal.databinding.ActivitySignUpBinding;
+
+public class SignUpActivity extends AppCompatActivity {
+    private SignupViewModel signupViewModel;
+    private ActivitySignUpBinding binding;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up);
+
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_sign_up);
+        signupViewModel = ViewModelProviders.of(this).get(SignupViewModel.class);
+        binding.setLifecycleOwner(this);
+        binding.setSignupViewModel(signupViewModel);
+
+        binding.tvLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+}

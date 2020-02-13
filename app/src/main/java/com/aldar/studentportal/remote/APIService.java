@@ -20,24 +20,12 @@ public interface APIService {
     Call<LoginResponseModel> userLogin(@Field("UserName") String email,
                                        @Field("Password") String password);
 
-
     @FormUrlEncoded
-    @GET
-    Call<CourseScheduleResponseModel> getCourseSchedule();
+    @POST("api/StudentRegisteredData")
+    Call<CourseScheduleResponseModel> getCourseSchedule(@Field("GivenstudentId") String studendID,
+                                       @Field("semId") String semesterID);
 
-//    @FormUrlEncoded
-//    @POST("signup/forgot")
-//    Call<ForgotModel> sentEmail(@Field("email") String email);
-//
-//    @FormUrlEncoded
-//    @POST("signup/checkcode")
-//    Call<VerifyCodeModel> verifyCode(@Field("email") String email,
-//                                     @Field("code") String code);
-//
-//    @FormUrlEncoded
-//    @POST("signup/resetpassword")
-//    Call<ChangePasswordModel> changePassword(@Field("code") String email,
-//                                             @Field("password") String code);
+
 
 
 }
