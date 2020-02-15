@@ -91,7 +91,7 @@
         <LinearLayout
             android:id="@+id/others"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:layout_below="@id/tv_course_name"
             android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginStart="@dimen/medium_margin"

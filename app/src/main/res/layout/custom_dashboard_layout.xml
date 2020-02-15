@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/iv_dashboard"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_gravity="center"
             app:layout_constraintTop_toTopOf="parent"
