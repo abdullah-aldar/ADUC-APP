@@ -4,13 +4,15 @@
     <color name="colorPrimaryDark">#203E58</color>
     <color name="colorAccent">#D6AA30</color>
 
+    <color name="loginBkColor">#f0f0f0</color>
+    <color name="screen_color">#F5F5F5</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="green">#19B83B</color>
     <color name="red">#CA441D</color>
     <color name="dark_transparent">#363B4E</color>
     <color name="cyen">#5775CF</color>
-    <color name="cyan">#33d6ea</color>
+    <color name="cyan">#4587A9</color>
     <color name="tranparent">#80DEDEDE</color>
     <color name="gray">#DEDEDE</color>
     <color name="light_gray">#F9F9F9</color>

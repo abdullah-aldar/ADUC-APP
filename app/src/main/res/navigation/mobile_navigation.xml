@@ -33,6 +33,6 @@
         android:id="@+id/nav_login"
         tools:layout="@layout/activity_login"
         android:label="@string/menu_login"
-        android:name="com.aldar.studentportal.ui.activities.login.LoginActivity"/>
+        android:name="com.aldar.studentportal.ui.activities.containerActivities.LoginSignUpActivity"/>
 
 </navigation>

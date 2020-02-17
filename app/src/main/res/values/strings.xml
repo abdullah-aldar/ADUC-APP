@@ -41,6 +41,20 @@
     <string name="menu_campus">Campus Life</string>
     <string name="menu_research">Research</string>
     <string name="menu_login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="logout_text">Are you sure to logout ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="verify">Verify</string>
+    <string name="forgot_text">We will send an email and Message, ensure its your personal and correct Username ID</string>
+    <string name="verify_text">We have sent you the code on the Phone Number and email you provided, please verify yourself.</string>
+    <string name="change_password_text">Please change your password here make sure the password is easy to remember</string>
+    <string name="student_id">Student ID</string>
+    <string name="studnet_name">Student Name</string>
+    <string name="student_course">Programe</string>
+    <string name="advisor">Advisor</string>
+    <string name="concentration">Concentration</string>
 
 
     <string name="computer_school">School Of Engineering &amp; Technology</string>
@@ -96,4 +110,7 @@
          Already renowned for its bold ambition, as the home of the world’s tallest building and the world’s largest man-made island, Dubai will continue to grow its
         international stature when it hosts the World Expo in 2020.\n
     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

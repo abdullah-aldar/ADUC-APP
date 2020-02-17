@@ -1,4 +1,4 @@
-package com.aldar.studentportal.ui.activities.login;
+package com.aldar.studentportal.ui.fragments.login;
 
 import android.app.Application;
 import android.util.Log;
@@ -25,7 +25,6 @@ public class LoginViewModel extends AndroidViewModel {
     private MutableLiveData<LoginResponseModel> loginResponseData = new MutableLiveData<>();
     private boolean valid = false;
 
-
     public LoginViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
@@ -40,7 +39,7 @@ public class LoginViewModel extends AndroidViewModel {
     private void apiCallUpdatePassword(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<LoginResponseModel> allUsers = services.userLogin("BBA1311373","she123456");
+        Call<LoginResponseModel> allUsers = services.userLogin("BMC1412383","123456");
         allUsers.enqueue(new Callback<LoginResponseModel>() {
             @Override
             public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
@@ -58,7 +57,7 @@ public class LoginViewModel extends AndroidViewModel {
                     responseModel.setStatus(response.body().getStatus());
                     responseModel.setMessage(response.body().getMessage());
                     responseModel.setSuccess(response.body().getSuccess());
-                    responseModel.setUserdata(response.body().getUserdata());
+                    responseModel.setData(response.body().getData());
                     loginResponseData.setValue(responseModel);
                 }
             }

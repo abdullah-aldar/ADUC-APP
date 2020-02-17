@@ -2,15 +2,15 @@
 <resources>
 
     <array name="dashboard_items">
-        <item>MY COURSE SCHEDULE\nجدول دراستي</item>
-        <item>MY MARKS\nعلاماتي</item>
-        <item>MY STUDY PLAN\nخطة دراستي</item>
-        <item>MY COURSE ADVICE\nنصيحة بالطبع بلدي</item>
-        <item>LETTER REQUEST\nطلب رسالة</item>
-        <item>MY FINANCE\nأموالي</item>
-        <item>MY PROFILE\nملفي</item>
-        <item>MY INBOX\nصندوق الوارد</item>
-        <item>GOOGLE CLASSROOM\nجوجل الفصول الدراسية</item>
+        <item>My Course Schedule\nجدول دراستي</item>
+        <item>My Marks\nعلاماتي</item>
+        <item>My Study Plan\nخطة دراستي</item>
+        <item>MY Course Advice\nنصيحة بالطبع بلدي</item>
+        <item>Letter Request\nطلب رسالة</item>
+        <item>My Finance\nأموالي</item>
+        <item>My Profile\nملفي</item>
+        <item>My Inbox\nصندوق الوارد</item>
+        <item>Google ClassRoom\nجوجل الفصول الدراسية</item>
     </array>
 
     <array name="faq_question">

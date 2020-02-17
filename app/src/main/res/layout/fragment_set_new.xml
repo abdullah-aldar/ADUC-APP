@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="changeViewModel"
+            type="com.aldar.studentportal.ui.fragments.forgotPassword.ChangePasswordViewModel"/>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_color">
+
+        <RelativeLayout
+            android:id="@+id/rl_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing">
+
+            <TextView
+                android:id="@+id/verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/high_margin"
+                android:text="Change Password"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lorem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/verify"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/change_password_text"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_password"
+                android:layout_below="@+id/rl_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:theme="@style/AppTheme"
+                android:hint="New Password">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:text="@{changeViewModel.newPassword}"
+                    app:error="@{changeViewModel.errorMessagePassword}"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_confirm_password"
+                android:layout_below="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:theme="@style/AppTheme"
+                android:hint="Confirm Password">
+
+                <EditText
+                    android:id="@+id/et_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:text="@{changeViewModel.newConfirmPassword}"
+                    app:error="@{changeViewModel.errorMessagePassword}"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <Button
+            android:id="@+id/btn_change_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_confirm_password"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:onClick="@{(v) -> changeViewModel.onClick(v)}"
+            android:text="Change Password"
+            android:background="@color/colorPrimaryDark"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progess"
+            android:visibility="gone"
+            app:visibility="@{changeViewModel.progressBar}"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+</layout>

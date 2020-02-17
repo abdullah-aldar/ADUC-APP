@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/light_gray"
-    tools:context=".ui.fragments.studentDashboardFragments.mainDashboardScreen.StudentDashboardFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- 015C94 -->
+
+
+    <data>
+        <variable
+            name="studnetDasboarViewModel"
+            type="com.aldar.studentportal.ui.fragments.studentDashboardFragments.mainDashboardScreen.StudentDashboradItemsViewmodel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            />
+
+
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         android:paddingTop="@dimen/standarize_spacing"
-        android:paddingBottom="@dimen/medium_margin"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingBottom="@dimen/medium_margin">
 
         <TextView
             android:id="@+id/tv_title"
@@ -24,8 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:text="Student Dashboard"
-            android:textColor="#4587A9"
-            android:textSize="@dimen/title_text_size"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/large_text_size"
             android:textStyle="bold" />
 
 
@@ -35,6 +46,7 @@
             android:layout_height="wrap_content"
             android:text="Logout"
             android:layout_alignParentEnd="true"
+            android:fontFamily="@font/poppins_bold"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginEnd="@dimen/medium_margin"
             android:textStyle="bold"
@@ -43,57 +55,124 @@
 
         <ImageView
             android:id="@+id/iv_mortarboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
+            android:tint="@color/gray"
             android:layout_alignBaseline="@id/tv_title"
             android:src="@drawable/cap" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Name"
+            android:textColor="@color/gray" />
 
         <TextView
             android:id="@+id/tv_student_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_title"
+            android:layout_toRightOf="@+id/name"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:fontFamily="@font/poppins_light"
+            android:text="Abdullah khan"
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_student_name"
+            android:fontFamily="@font/poppins_bold"
             android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:text="Hello Abdullah khan"
-            android:textColor="#4587A9"
-            android:textStyle="bold" />
+            android:text="ID"
+            android:textColor="@color/gray" />
 
         <TextView
             android:id="@+id/tv_student_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_student_name"
-            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_toRightOf="@+id/code"
+            android:fontFamily="@font/poppins_light"
             android:text="cee20192116"
-            android:textColor="#4587A9" />
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/adviser"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_student_code"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:text="Advisor "
+            android:textColor="@color/gray" />
+
 
         <TextView
             android:id="@+id/tv_student_adviser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_student_code"
+            android:layout_toRightOf="@+id/adviser"
+            android:fontFamily="@font/poppins_light"
+            android:text="Abdul Salam"
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_student_adviser"
             android:layout_marginStart="@dimen/standarize_spacing"
-            android:text="Mr Khan"
-            android:textColor="#4587A9" />
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/student_course"
+            android:textColor="@color/gray" />
+
 
         <TextView
             android:id="@+id/tv_course_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_student_adviser"
-            android:layout_marginStart="@dimen/standarize_spacing"
+            android:fontFamily="@font/poppins_light"
+            android:layout_toRightOf="@id/course_name"
             android:text="Bachelor of Science in Computer Science"
-            android:textColor="#4587A9" />
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/concentration"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_course_name"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Major"
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/tv_concentration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_course_name"
+            android:layout_toRightOf="@+id/concentration"
+            android:fontFamily="@font/poppins_light"
+            android:text="Public Relations"
+            android:textColor="@color/gray" />
 
 
         <LinearLayout
             android:id="@+id/others"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_below="@id/tv_course_name"
-            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_height="60dp"
+            android:layout_below="@id/tv_concentration"
+            android:layout_marginTop="@dimen/medium_margin"
             android:layout_marginStart="@dimen/medium_margin"
             android:orientation="horizontal">
 
@@ -103,10 +182,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Digital Library"
-                android:textColor="@color/white"
+                android:textColor="@color/gray"
                 android:textAllCaps="false"
                 android:layout_margin="@dimen/medium_margin"
-                android:background="@drawable/orange_background"/>
+                android:background="@drawable/transparent_button"/>
 
 
             <Button
@@ -114,10 +193,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Nofication"
-                android:textColor="@color/white"
+                android:textColor="@color/gray"
                 android:textAllCaps="false"
                 android:layout_margin="@dimen/medium_margin"
-                android:background="@drawable/button_style"/>
+                android:background="@drawable/transparent_button"/>
 
             <Button
                 android:layout_width="0dp"
@@ -126,33 +205,40 @@
                 android:text="Announcement"
                 android:padding="@dimen/small_margin"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="@color/gray"
                 android:layout_margin="@dimen/medium_margin"
-                android:background="@drawable/purple_style"/>
+                android:background="@drawable/transparent_button"/>
 
         </LinearLayout>
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/header"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/btn_height"
-            android:background="@color/colorPrimary" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_dashboard_item"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation" />
+            android:background="@drawable/gradient"
+            android:layout_below="@+id/header"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:layout_margin="@dimen/medium_margin"
+                android:background="@color/screen_color"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_dashboard_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layoutAnimation="@anim/fade_animation" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
 
     </RelativeLayout>
 
-
-</RelativeLayout>
+</layout>

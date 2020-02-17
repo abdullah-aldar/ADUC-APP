@@ -138,7 +138,7 @@
         <Button
             android:id="@+id/btn_apply"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/btn_height"
             android:text="@string/apply"
             android:textColor="@color/white"
             android:padding="@dimen/small_margin"
@@ -153,7 +153,7 @@
         <Button
             android:id="@+id/btn_download_boucher"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/btn_height"
             android:text="@string/download_boucher"
             android:padding="@dimen/small_margin"
             android:textColor="@color/white"
@@ -190,6 +190,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tint="@color/colorPrimaryDark"
                 android:src="@drawable/network"/>
 
             <TextView
@@ -219,6 +220,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tint="@color/colorPrimaryDark"
                 android:src="@drawable/university"/>
 
             <TextView
@@ -260,6 +262,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:tint="@color/colorPrimaryDark"
                     android:src="@drawable/university"/>
 
                 <TextView
@@ -288,6 +291,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:tint="@color/colorPrimaryDark"
                     android:src="@drawable/graduation"/>
 
                 <TextView
@@ -415,7 +419,7 @@
                 <Button
                     android:id="@+id/btn_inquire_us"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/btn_height"
                     android:text="Inquire Us"
                     android:layout_weight="2"
                     android:textColor="@color/cyan"

@@ -10,8 +10,8 @@ import com.aldar.studentportal.R;
 
 
 public class GeneralUtilities {
-    public static SharedPreferences sharedPreferences;
-    public static SharedPreferences.Editor editor;
+    private static SharedPreferences sharedPreferences;
+    private static SharedPreferences.Editor editor;
 
     public static Fragment connectFragmentWithoutBack(Context context, Fragment fragment){
         ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
@@ -42,6 +42,13 @@ public class GeneralUtilities {
         sharedPreferences = getSharedPreferences(context);
         editor = sharedPreferences.edit();
         editor.putInt(key, value).apply();
+        return editor;
+    }
+
+    public static SharedPreferences.Editor removeValueFromEditor(Context context,String key){
+        sharedPreferences = getSharedPreferences(context);
+        sharedPreferences = getSharedPreferences(context);
+        editor.remove(key).apply();
         return editor;
     }
 

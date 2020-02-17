@@ -1,77 +1,121 @@
 package com.aldar.studentportal.ui.fragments.studentDashboardFragments.mainDashboardScreen;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.storage.OnObbStateChangeListener;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.StudentDashboardItemsAdapter;
+import com.aldar.studentportal.databinding.FragmentStudentDashboardBinding;
 import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
+import com.aldar.studentportal.ui.activities.NavigationActivity;
+import com.aldar.studentportal.ui.fragments.login.LoginFragment;
+import com.aldar.studentportal.utilities.GeneralUtilities;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class StudentDashboardFragment extends Fragment {
-
-    private RecyclerView rvDashboardItems;
-
-    private int[] dashboardImages = {
-            R.drawable.course_schedule, R.drawable.marks,
-            R.drawable.study_plan, R.drawable.advice,
-            R.drawable.letter, R.drawable.coins,
-            R.drawable.profile, R.drawable.inbox,
-            R.drawable.newsletter
-    };
-
-    public StudentDashboardFragment() {
-        // Required empty public constructor
-    }
+    private FragmentStudentDashboardBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_student_dashboard, container, false);
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_student_dashboard,container,false);
         ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-        rvDashboardItems = root.findViewById(R.id.rv_dashboard_item);
         initViews();
-        return root;
+
+        return binding.getRoot();
     }
 
 
     private void initViews() {
-        rvDashboardItems.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        StudentDashboardItemsAdapter dashboardItemsAdapter = new StudentDashboardItemsAdapter(getContext(), preparedDashboardItems());
-        rvDashboardItems.setAdapter(dashboardItemsAdapter);
+
+        String base64 = GeneralUtilities.getSharedPreferences(getActivity()).getString("student_image","");
+
+        StudentDashboradItemsViewmodel viewmodel = new ViewModelProvider(this).get(StudentDashboradItemsViewmodel.class);
+        binding.setLifecycleOwner(this);
+        binding.setStudnetDasboarViewModel(viewmodel);
+
+
+        viewmodel.getItemData().observe(getViewLifecycleOwner(), new Observer<List<DashboardItemModel>>() {
+            @Override
+            public void onChanged(List<DashboardItemModel> dashboardItemModels) {
+                binding.rvDashboardItem.setLayoutManager(new GridLayoutManager(getContext(), 2));
+                StudentDashboardItemsAdapter dashboardItemsAdapter = new StudentDashboardItemsAdapter(getContext(), dashboardItemModels);
+                binding.rvDashboardItem.setAdapter(dashboardItemsAdapter);
+            }
+        });
+
+
+//        Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+//
+//        binding.ivMortarboard.setImageBitmap(Bitmap.createScaledBitmap(bmp, binding.ivMortarboard.getWidth(),
+//                binding.ivMortarboard.getHeight(), false));
+
+
+
+        binding.tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
+
 
     }
 
+    private void showDialog(){
+        Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.custom_dialog);
+        Button btnLogout = dialog.findViewById(R.id.btn_logout);
+        Button btnCancel = dialog.findViewById(R.id.btn_cancel);
 
-    private List<DashboardItemModel> preparedDashboardItems() {
-        List<DashboardItemModel> dashboardItemList = new ArrayList<>();
-        String[] titles = getResources().getStringArray(R.array.dashboard_items);
-
-        int count = 0;
-        for (String titleName : titles) {
-            dashboardItemList.add(new DashboardItemModel(titleName, dashboardImages[count]));
-            count++;
-        }
-
-        return dashboardItemList;
-
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+                startActivity(new Intent(getActivity(), NavigationActivity.class));
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        rvDashboardItems.setAdapter(null);
-        rvDashboardItems = null;
+        binding.rvDashboardItem.setAdapter(null);
     }
 }

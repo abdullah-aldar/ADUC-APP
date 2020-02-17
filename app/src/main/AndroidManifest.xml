@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.FeeActivity"></activity>
+        <activity android:name=".ui.activities.containerActivities.ForgotPasswordActivity" />
+        <activity android:name=".ui.activities.FeeActivity" />
         <activity android:name=".ui.activities.inquireUs.InquireUsActivity" />
         <activity android:name=".ui.activities.FaqActivity" />
         <activity
@@ -28,13 +29,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.login.LoginActivity" />
+        <activity android:name=".ui.activities.containerActivities.LoginSignUpActivity" />
         <activity android:name=".ui.activities.WebActivity" />
         <activity
             android:name=".ui.activities.NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.StudentPortalMainActivity" />
-        <activity android:name=".ui.activities.signup.SignUpActivity" /> <!-- firebase notification here -->
+        <activity
+            android:name=".ui.activities.StudentPortalMainActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- firebase notification here -->
         <service
             android:name=".firebase.MyFirebaseMessagingService"
             android:exported="false">

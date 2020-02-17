@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class LoginResponseModel {
+
     @SerializedName("success")
     @Expose
     private String success;
@@ -15,12 +16,9 @@ public class LoginResponseModel {
     @SerializedName("message")
     @Expose
     private String message;
-    @SerializedName("userdata")
+    @SerializedName("data")
     @Expose
-    private List<LoginDataModel> userdata = null;
-    @SerializedName("nexttbl")
-    @Expose
-    private Object nexttbl;
+    private LoginDataModel data;
 
     public String getSuccess() {
         return success;
@@ -46,19 +44,11 @@ public class LoginResponseModel {
         this.message = message;
     }
 
-    public List<LoginDataModel> getUserdata() {
-        return userdata;
+    public LoginDataModel getData() {
+        return data;
     }
 
-    public void setUserdata(List<LoginDataModel> userdata) {
-        this.userdata = userdata;
-    }
-
-    public Object getNexttbl() {
-        return nexttbl;
-    }
-
-    public void setNexttbl(Object nexttbl) {
-        this.nexttbl = nexttbl;
+    public void setData(LoginDataModel data) {
+        this.data = data;
     }
 }
