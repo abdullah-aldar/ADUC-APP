@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.remote.APIService;
@@ -22,11 +23,11 @@ import retrofit2.Response;
 
 public class ForgotPasswordViewModel extends AndroidViewModel {
 
+    private MutableLiveData<Boolean> check = new MutableLiveData<>();
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
     public MutableLiveData<String> username = new MutableLiveData<>();
     public MutableLiveData<String> errorMessageUsername = new MutableLiveData<>();
     private MutableLiveData<ForgotPasswordResponseModel> forgotPasswordLiveData = new MutableLiveData<>();
-
 
     public ForgotPasswordViewModel(@NonNull Application application) {
         super(application);
@@ -43,7 +44,7 @@ public class ForgotPasswordViewModel extends AndroidViewModel {
     private void apiCallForgotPasswordPassword(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<ForgotPasswordResponseModel> allUsers = services.forgotPassword("BMC1412383");
+        Call<ForgotPasswordResponseModel> allUsers = services.forgotPassword(username.getValue());
         allUsers.enqueue(new Callback<ForgotPasswordResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<ForgotPasswordResponseModel> call, @NotNull Response<ForgotPasswordResponseModel> response) {
@@ -57,6 +58,7 @@ public class ForgotPasswordViewModel extends AndroidViewModel {
                     }
 
                 } else  {
+                    check.setValue(false);
                     ForgotPasswordResponseModel model = new ForgotPasswordResponseModel();
                     model.setMessage(response.body().getMessage());
                     model.setSuccess(response.body().getSuccess());
@@ -64,6 +66,8 @@ public class ForgotPasswordViewModel extends AndroidViewModel {
                     model.setOtp(response.body().getOtp());
                     forgotPasswordLiveData.setValue(model);
                     showToast(getApplication().getApplicationContext(),response.body().getMessage());
+
+
                 }
             }
 
@@ -78,6 +82,11 @@ public class ForgotPasswordViewModel extends AndroidViewModel {
     public MutableLiveData<ForgotPasswordResponseModel> getForgotPasswordLiveData(){
         return forgotPasswordLiveData;
     }
+
+    public MutableLiveData<Boolean> check(){
+        return check;
+    }
+
 
     private void showToast(Context context, String message){
         Toast.makeText(context, ""+message, Toast.LENGTH_SHORT).show();

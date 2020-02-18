@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +20,8 @@ import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.FragmentLoginBinding;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
-import com.aldar.studentportal.ui.activities.containerActivities.ForgotPasswordActivity;
 import com.aldar.studentportal.ui.fragments.forgotPassword.ForgotPasswordFragment;
-import com.aldar.studentportal.ui.fragments.signUp.SignUpFragment;
+import com.aldar.studentportal.ui.fragments.signUp.CheckUsernameFragment;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -62,7 +60,7 @@ public class LoginFragment extends Fragment {
 
                 if(loginResponseModel.getStatus().equals("200")){
                     GeneralUtilities.putIntValueInEditor(getContext(),"student_id",loginResponseModel.getData().getStudentID());
-                    GeneralUtilities.putStringValueInEditor(getContext(),"givenStudentId",loginResponseModel.getData().getGivenStudentId());
+                    GeneralUtilities.putStringValueInEditor(getContext(),"student_username",loginResponseModel.getData().getGivenStudentId());
                     GeneralUtilities.putStringValueInEditor(getContext(),"student_name",loginResponseModel.getData().getStudentName());
                     GeneralUtilities.putStringValueInEditor(getContext(),"student_advisor",loginResponseModel.getData().getAdvisor());
                     GeneralUtilities.putStringValueInEditor(getContext(),"student_programe",loginResponseModel.getData().getProgram());
@@ -80,7 +78,7 @@ public class LoginFragment extends Fragment {
         binding.tvSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GeneralUtilities.connectFragmentWithBack(getContext(),new SignUpFragment());
+                GeneralUtilities.connectFragmentWithBack(getContext(),new CheckUsernameFragment());
             }
         });
 

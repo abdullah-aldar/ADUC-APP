@@ -14,8 +14,11 @@ import android.view.ViewGroup;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.CourseScheduleAdapter;
 import com.aldar.studentportal.databinding.FragmentCourseScheduleBinding;
+import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
+import com.aldar.studentportal.utilities.GeneralUtilities;
 
+import java.util.List;
 import java.util.Objects;
 
 public class CourseScheduleFragment extends Fragment {
@@ -38,19 +41,16 @@ public class CourseScheduleFragment extends Fragment {
 
         CourseScheduleViewModel viewModel =  new ViewModelProvider(this).get(CourseScheduleViewModel.class);
         binding.rvCourseSchedule.setLayoutManager(new LinearLayoutManager(getActivity()));
-        binding.setLifecycleOwner(this);
+        binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setCourseScheduleViewModel(viewModel);
 
-        viewModel.getcourseScheduleData().observe(Objects.requireNonNull(getActivity()), new Observer<CourseScheduleResponseModel>() {
-            @Override
-            public void onChanged(CourseScheduleResponseModel courseScheduleResponseModel) {
 
-                if(courseScheduleResponseModel != null){
-                    adapter = new CourseScheduleAdapter(getActivity(),courseScheduleResponseModel.getData());
-                    binding.rvCourseSchedule.setAdapter(adapter);
-                }
-
-            }
-        });
+       viewModel.getcourseScheduleData().observe(getViewLifecycleOwner(), new Observer<List<CourseScheduleDataModel>>() {
+           @Override
+           public void onChanged(List<CourseScheduleDataModel> courseScheduleDataModels) {
+               adapter = new CourseScheduleAdapter(getActivity(), courseScheduleDataModels);
+               binding.rvCourseSchedule.setAdapter(adapter);
+           }
+       });
     }
 }

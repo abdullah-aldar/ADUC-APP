@@ -39,7 +39,7 @@ public class LoginViewModel extends AndroidViewModel {
     private void apiCallUpdatePassword(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<LoginResponseModel> allUsers = services.userLogin("BMC1412383","123456");
+        Call<LoginResponseModel> allUsers = services.userLogin(username.getValue(),password.getValue());
         allUsers.enqueue(new Callback<LoginResponseModel>() {
             @Override
             public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {

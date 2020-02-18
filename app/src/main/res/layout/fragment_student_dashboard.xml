@@ -81,7 +81,7 @@
             android:layout_toRightOf="@+id/name"
             android:layout_marginTop="@dimen/medium_margin"
             android:fontFamily="@font/poppins_light"
-            android:text="Abdullah khan"
+            android:text="@{studnetDasboarViewModel.studentName}"
             android:textColor="@color/gray" />
 
         <TextView
@@ -101,7 +101,7 @@
             android:layout_below="@id/tv_student_name"
             android:layout_toRightOf="@+id/code"
             android:fontFamily="@font/poppins_light"
-            android:text="cee20192116"
+            android:text="@{studnetDasboarViewModel.studentID}"
             android:textColor="@color/gray" />
 
         <TextView
@@ -122,7 +122,7 @@
             android:layout_below="@id/tv_student_code"
             android:layout_toRightOf="@+id/adviser"
             android:fontFamily="@font/poppins_light"
-            android:text="Abdul Salam"
+            android:text="@{studnetDasboarViewModel.advisor}"
             android:textColor="@color/gray" />
 
         <TextView
@@ -143,7 +143,7 @@
             android:layout_below="@id/tv_student_adviser"
             android:fontFamily="@font/poppins_light"
             android:layout_toRightOf="@id/course_name"
-            android:text="Bachelor of Science in Computer Science"
+            android:text="@{studnetDasboarViewModel.course}"
             android:textColor="@color/gray" />
 
         <TextView
@@ -163,7 +163,7 @@
             android:layout_below="@id/tv_course_name"
             android:layout_toRightOf="@+id/concentration"
             android:fontFamily="@font/poppins_light"
-            android:text="Public Relations"
+            android:text="@{studnetDasboarViewModel.major}"
             android:textColor="@color/gray" />
 
 

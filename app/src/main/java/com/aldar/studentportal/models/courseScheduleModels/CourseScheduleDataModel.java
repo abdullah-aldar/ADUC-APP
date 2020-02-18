@@ -34,7 +34,7 @@ public class CourseScheduleDataModel {
     @SerializedName("midTerm_Exam_Time")
     @Expose
     private String midTermExamTime;
-    @SerializedName("section_Id")
+    @SerializedName("sectionId")
     @Expose
     private Integer sectionId;
     @SerializedName("sem_Name")
@@ -136,4 +136,5 @@ public class CourseScheduleDataModel {
     public void setSemName(String semName) {
         this.semName = semName;
     }
+
 }

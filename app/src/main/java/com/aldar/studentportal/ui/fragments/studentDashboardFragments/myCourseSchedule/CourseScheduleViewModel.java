@@ -9,12 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
+import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
+import com.aldar.studentportal.utilities.GeneralUtilities;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,18 +26,21 @@ import retrofit2.Response;
 
 public class CourseScheduleViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
+    private MutableLiveData<List<CourseScheduleDataModel>> allCourseData = new MutableLiveData<>();
     private MutableLiveData<CourseScheduleResponseModel> courseScheduleData = new MutableLiveData<>();
+    public MutableLiveData<String> studentID = new MutableLiveData<>();
 
     public CourseScheduleViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
+        studentID.setValue(GeneralUtilities.getSharedPreferences(application).getString("student_username",""));
         apiCallUpdatePassword();
     }
 
     private void apiCallUpdatePassword(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule("bba20161059","96");
+        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule(studentID.getValue(),"97");
         allUsers.enqueue(new Callback<CourseScheduleResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<CourseScheduleResponseModel> call, @NotNull Response<CourseScheduleResponseModel> response) {
@@ -51,7 +58,7 @@ public class CourseScheduleViewModel extends AndroidViewModel {
                     responseModel.setMessage(response.body().getMessage());
                     responseModel.setSuccess(response.body().getSuccess());
                     responseModel.setData(response.body().getData());
-                    courseScheduleData.setValue(responseModel);
+                    allCourseData.setValue(response.body().getData());
                 }
             }
 
@@ -63,8 +70,8 @@ public class CourseScheduleViewModel extends AndroidViewModel {
         });
     }
 
-    public MutableLiveData<CourseScheduleResponseModel> getcourseScheduleData(){
-        return courseScheduleData;
+    public MutableLiveData<List<CourseScheduleDataModel>> getcourseScheduleData(){
+        return allCourseData;
     }
 
     private void showToast(Context context,String message){

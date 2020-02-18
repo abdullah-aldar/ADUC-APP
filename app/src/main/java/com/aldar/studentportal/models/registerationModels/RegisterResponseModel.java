@@ -15,7 +15,8 @@ public class RegisterResponseModel {
     private String message;
     @SerializedName("otp")
     @Expose
-    private Object otp;
+    private String otp;
+
 
     public String getSuccess() {
         return success;
@@ -41,11 +42,11 @@ public class RegisterResponseModel {
         this.message = message;
     }
 
-    public Object getOtp() {
+    public String getOtp() {
         return otp;
     }
 
-    public void setOtp(Object otp) {
+    public void setOtp(String otp) {
         this.otp = otp;
     }
 

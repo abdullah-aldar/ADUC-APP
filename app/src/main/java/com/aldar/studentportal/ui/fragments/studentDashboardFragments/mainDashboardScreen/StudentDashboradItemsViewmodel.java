@@ -39,7 +39,7 @@ public class StudentDashboradItemsViewmodel extends AndroidViewModel {
 
     private void initDasboardData(){
         studentID.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("student_name",""));
-        studentName.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("givenStudentId",""));
+        studentName.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("student_username",""));
         advisor.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("student_advisor",""));
         course.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("student_programe",""));
         major.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("concentration",""));

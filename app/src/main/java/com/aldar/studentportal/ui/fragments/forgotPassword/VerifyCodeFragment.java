@@ -93,7 +93,7 @@ public class VerifyCodeFragment extends Fragment implements View.OnClickListener
                     @Override
                     public void onClick(View v) {
                         if (checkOTP()) {
-                            GeneralUtilities.connectFragmentWithoutBack(getContext(), new SetNewFragment());
+                            GeneralUtilities.connectFragmentWithBack(getContext(), new SetNewFragment());
                         }
                     }
                 });
