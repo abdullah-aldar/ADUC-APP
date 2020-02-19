@@ -9,7 +9,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.OnLifecycleEvent;
 
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
 import com.aldar.studentportal.remote.APIService;
@@ -22,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CheckUsernameViewModel extends AndroidViewModel {
+public class CheckUsernameViewModel extends AndroidViewModel implements LifecycleObserver {
     private MutableLiveData<Boolean> check = new MutableLiveData<>();
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
     public MutableLiveData<String> username = new MutableLiveData<>();
@@ -103,5 +106,16 @@ public class CheckUsernameViewModel extends AndroidViewModel {
 
     private void showToat(Context context,String message){
         Toast.makeText(context, ""+message,Toast.LENGTH_SHORT).show();
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    private void onDestroy(){
+        Log.i("Base","Execute this method when Activity is destroyed");
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    private void onPause(){
+        Log.i("Base","Execute this method when Activity is pause");
+        signUpLiveData.setValue(null);
     }
 }

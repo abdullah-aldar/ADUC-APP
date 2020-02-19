@@ -43,7 +43,7 @@ public class SetNewFragment extends Fragment {
             @Override
             public void onChanged(UpdatePasswordResponseModel updatePasswordResponseModel) {
                 if(Boolean.parseBoolean(updatePasswordResponseModel.getSuccess())){
-                    GeneralUtilities.connectFragmentWithoutBack(getActivity(),new LoginFragment());
+                    GeneralUtilities.connectFragmentWithBack(getActivity(),new LoginFragment());
                 }
             }
         });

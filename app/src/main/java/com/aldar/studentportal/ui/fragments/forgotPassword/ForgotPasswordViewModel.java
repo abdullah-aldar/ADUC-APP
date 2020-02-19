@@ -8,8 +8,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.OnLifecycleEvent;
+
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
@@ -21,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ForgotPasswordViewModel extends AndroidViewModel {
+public class ForgotPasswordViewModel extends AndroidViewModel implements LifecycleObserver {
 
     private MutableLiveData<Boolean> check = new MutableLiveData<>();
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
@@ -83,11 +87,6 @@ public class ForgotPasswordViewModel extends AndroidViewModel {
         return forgotPasswordLiveData;
     }
 
-    public MutableLiveData<Boolean> check(){
-        return check;
-    }
-
-
     private void showToast(Context context, String message){
         Toast.makeText(context, ""+message, Toast.LENGTH_SHORT).show();
     }
@@ -102,6 +101,17 @@ public class ForgotPasswordViewModel extends AndroidViewModel {
 
 
         return valid;
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    private void onDestroy(){
+        Log.i("Base","Execute this method when Activity is destroyed");
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    private void onPause(){
+        Log.i("Base","Execute this method when Activity is pause");
+        forgotPasswordLiveData.setValue(null);
     }
 
 }

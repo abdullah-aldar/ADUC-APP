@@ -43,14 +43,13 @@ public class CheckUsernameFragment extends Fragment {
         signupViewModel.getSignUpData().observe(getViewLifecycleOwner(), new Observer<RegisterResponseModel>() {
             @Override
             public void onChanged(RegisterResponseModel registerResponseModel) {
-                if(Boolean.parseBoolean(registerResponseModel.getSuccess())){
-
-                    if(!signupViewModel.getCheck().getValue()){
+                if(registerResponseModel != null){
+                    if(Boolean.parseBoolean(registerResponseModel.getSuccess())){
                         GeneralUtilities.connectFragmentWithBack(getActivity(),
                                 new VerifyUserFragment()).setArguments(passBundleData(registerResponseModel.getOtp()));
                         signupViewModel.getCheck().setValue(true);
-                    }
 
+                    }
                 }
             }
         });
