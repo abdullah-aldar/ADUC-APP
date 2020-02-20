@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow"
+    android:layout_marginTop="@dimen/small_margin"
+    android:layout_marginStart="@dimen/small_margin"
+    android:layout_marginEnd="@dimen/small_margin"
+    android:padding="@dimen/medium_margin">
+
+    <TextView
+        android:id="@+id/course_code"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Course Code :"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_course_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CME301"
+        android:layout_toEndOf="@+id/course_code"
+        android:layout_marginStart="@dimen/small_margin"/>
+
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_code"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Course Name :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Communication Systems"
+        android:layout_below="@+id/course_code"
+        android:layout_toEndOf="@+id/course_name"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/prerequeste"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Prerequisite :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_prerequiste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ELE301"
+        android:layout_below="@+id/course_name"
+        android:layout_toEndOf="@+id/prerequeste"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/grade"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_prerequiste"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Grade :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A+"
+        android:layout_below="@+id/tv_prerequiste"
+        android:layout_toEndOf="@+id/grade"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grade"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Status :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currently Registered"
+        android:layout_below="@+id/tv_grade"
+        android:layout_toEndOf="@+id/status"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+</RelativeLayout>

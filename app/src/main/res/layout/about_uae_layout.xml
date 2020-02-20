@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginEnd="@dimen/standarize_spacing"
+        android:layout_marginBottom="@dimen/high_margin"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lasting_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_student"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintHeight_default="percent"
+                card_view:layout_constraintHeight_percent="0.3"
+                android:src="@drawable/campus_life" />
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_horizontal"
+                card_view:layout_constraintTop_toBottomOf="@id/iv_student"
+                android:text="About UAE"
+                android:textSize="@dimen/large_text"/>
+
+
+            <ScrollView
+                card_view:layout_constraintTop_toBottomOf="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/standarize_spacing"
+                        android:text="@string/about_uae"
+                        android:textSize="14sp" />
+
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

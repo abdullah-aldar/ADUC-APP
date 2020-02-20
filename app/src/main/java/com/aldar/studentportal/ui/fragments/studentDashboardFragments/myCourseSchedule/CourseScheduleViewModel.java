@@ -26,7 +26,6 @@ import retrofit2.Response;
 
 public class CourseScheduleViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
-    private MutableLiveData<List<CourseScheduleDataModel>> allCourseData = new MutableLiveData<>();
     private MutableLiveData<CourseScheduleResponseModel> courseScheduleData = new MutableLiveData<>();
     public MutableLiveData<String> studentID = new MutableLiveData<>();
 
@@ -58,7 +57,7 @@ public class CourseScheduleViewModel extends AndroidViewModel {
                     responseModel.setMessage(response.body().getMessage());
                     responseModel.setSuccess(response.body().getSuccess());
                     responseModel.setData(response.body().getData());
-                    allCourseData.setValue(response.body().getData());
+                    courseScheduleData.setValue(responseModel);
                 }
             }
 
@@ -70,8 +69,8 @@ public class CourseScheduleViewModel extends AndroidViewModel {
         });
     }
 
-    public MutableLiveData<List<CourseScheduleDataModel>> getcourseScheduleData(){
-        return allCourseData;
+    public MutableLiveData<CourseScheduleResponseModel> getcourseScheduleData(){
+        return courseScheduleData;
     }
 
     private void showToast(Context context,String message){

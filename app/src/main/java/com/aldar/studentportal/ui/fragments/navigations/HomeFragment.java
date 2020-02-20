@@ -95,7 +95,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 new LeakyClass(getActivity()).redirectToFAQ();
                 break;
             case R.id.btn_calendar:
-                new LeakyClass(getActivity()).redirectToWeview();
+                new LeakyClass(getActivity()).redirectToWebview();
                 break;
             case R.id.iv_whatsapp:
                 showWhatsApp();
@@ -114,21 +114,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private static class LeakyClass {
 
-        private final WeakReference<Activity> messageViewReference;
+        private final WeakReference<Activity> weakReference;
 
         private LeakyClass(Activity activity) {
-            this.messageViewReference = new WeakReference<>(activity);
+            this.weakReference = new WeakReference<>(activity);
         }
 
         private void redirectToFAQ() {
-            Activity activity = messageViewReference.get();
+            Activity activity = weakReference.get();
             if(activity != null) {
                 activity.startActivity(new Intent(activity, FaqActivity.class));
             }
         }
 
-        private void redirectToWeview() {
-            Activity activity = messageViewReference.get();
+        private void redirectToWebview() {
+            Activity activity = weakReference.get();
             if(activity != null) {
                 activity.startActivity(new Intent(activity, WebActivity.class));
             }
@@ -136,7 +136,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
         private void redirectToInqureUS() {
-            Activity activity = messageViewReference.get();
+            Activity activity = weakReference.get();
             if(activity != null) {
                 activity.startActivity(new Intent(activity, InquireUsActivity.class));
             }

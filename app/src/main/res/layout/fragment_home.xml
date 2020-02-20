@@ -20,7 +20,6 @@
             android:src="@drawable/main"
             app:layout_constraintBottom_toTopOf="@id/linear_layout"
             app:layout_constraintTop_toTopOf="parent"
-
             tools:layout_editor_absoluteX="108dp" />
 
         <LinearLayout

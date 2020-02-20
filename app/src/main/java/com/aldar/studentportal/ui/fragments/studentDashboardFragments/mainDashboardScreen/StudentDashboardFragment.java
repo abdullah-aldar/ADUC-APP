@@ -31,6 +31,8 @@ import com.aldar.studentportal.databinding.FragmentStudentDashboardBinding;
 import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
 import com.aldar.studentportal.ui.activities.NavigationActivity;
 import com.aldar.studentportal.ui.fragments.login.LoginFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.announcment.AnnouncementFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.library.LibraryFragment;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.bumptech.glide.Glide;
 
@@ -81,10 +83,26 @@ public class StudentDashboardFragment extends Fragment {
 
 
 
-        binding.tvLogout.setOnClickListener(new View.OnClickListener() {
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+                startActivity(new Intent(getActivity(),NavigationActivity.class));
+
+            }
+        });
+
+        binding.ivLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialog();
+            }
+        });
+
+        binding.layoutAnnouncement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GeneralUtilities.connectFragmentWithBack(getActivity(),new AnnouncementFragment());
             }
         });
 
@@ -102,6 +120,7 @@ public class StudentDashboardFragment extends Fragment {
             public void onClick(View v) {
                 getActivity().finish();
                 startActivity(new Intent(getActivity(), NavigationActivity.class));
+                GeneralUtilities.putBooleanValueInEditor(getContext(),"isLogin",false);
             }
         });
         btnCancel.setOnClickListener(new View.OnClickListener() {

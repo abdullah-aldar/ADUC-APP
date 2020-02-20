@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class CourseScheduleFragment extends Fragment {
-    private CourseScheduleAdapter adapter;
     private FragmentCourseScheduleBinding binding;
 
     @Override
@@ -45,12 +44,16 @@ public class CourseScheduleFragment extends Fragment {
         binding.setCourseScheduleViewModel(viewModel);
 
 
-       viewModel.getcourseScheduleData().observe(getViewLifecycleOwner(), new Observer<List<CourseScheduleDataModel>>() {
-           @Override
-           public void onChanged(List<CourseScheduleDataModel> courseScheduleDataModels) {
-               adapter = new CourseScheduleAdapter(getActivity(), courseScheduleDataModels);
-               binding.rvCourseSchedule.setAdapter(adapter);
-           }
-       });
+        viewModel.getcourseScheduleData().observe(getViewLifecycleOwner(), new Observer<CourseScheduleResponseModel>() {
+            @Override
+            public void onChanged(CourseScheduleResponseModel courseScheduleResponseModel) {
+
+                if(courseScheduleResponseModel != null){
+                    CourseScheduleAdapter adapter = new CourseScheduleAdapter(getActivity(), courseScheduleResponseModel.getData());
+                    binding.rvCourseSchedule.setAdapter(adapter);
+                }
+            }
+        });
+
     }
 }

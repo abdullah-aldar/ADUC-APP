@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow"
+    android:layout_marginTop="@dimen/medium_margin"
+    android:layout_marginStart="@dimen/medium_margin"
+    android:layout_marginEnd="@dimen/medium_margin"
+    android:padding="@dimen/standarize_spacing">
+
+
+    <ImageView
+        android:id="@+id/iv_bell"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:tint="@color/colorAccent"
+        android:src="@drawable/bell"
+        />
+
+    <TextView
+        android:id="@+id/tv_announcement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest Announcment"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_toEndOf="@+id/iv_bell"
+        android:fontFamily="@font/poppins_light"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

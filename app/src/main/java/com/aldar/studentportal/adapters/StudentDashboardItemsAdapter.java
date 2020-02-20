@@ -20,6 +20,7 @@ import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myMarks.My
 import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myProfile.StudentProfileFragment;
 import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myStudyPlan.MyStudyPlanFragment;
 import com.aldar.studentportal.utilities.GeneralUtilities;
+import com.aldar.studentportal.utilities.OtherUtils;
 
 import java.util.List;
 
@@ -100,6 +101,7 @@ public class StudentDashboardItemsAdapter extends RecyclerView.Adapter<StudentDa
             case 7:
                 break;
             case 8:
+                OtherUtils.googleClassRoom(context);
                 break;
         }
     }

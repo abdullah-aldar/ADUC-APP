@@ -65,6 +65,7 @@ public class LoginFragment extends Fragment {
                     GeneralUtilities.putStringValueInEditor(getContext(),"student_advisor",loginResponseModel.getData().getAdvisor());
                     GeneralUtilities.putStringValueInEditor(getContext(),"student_programe",loginResponseModel.getData().getProgram());
                     GeneralUtilities.putStringValueInEditor(getContext(),"concentration",loginResponseModel.getData().getConcentration());
+                    GeneralUtilities.putBooleanValueInEditor(getContext(),"isLogin",true);
 
                     base64Image = loginResponseModel.getData().getPhoto();
                     startActivity(new Intent(getContext(), StudentPortalMainActivity.class));
@@ -108,4 +109,6 @@ public class LoginFragment extends Fragment {
                     }
                 });
     }
+
+
 }

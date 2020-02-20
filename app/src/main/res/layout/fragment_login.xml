@@ -56,7 +56,7 @@
             android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
-            android:background="@color/white"
+            android:background="@drawable/shadow"
             android:padding="@dimen/standarize_spacing">
 
             <TextView
