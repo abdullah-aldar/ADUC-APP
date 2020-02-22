@@ -1,9 +1,13 @@
 package com.aldar.studentportal.ui.fragments.studentDashboardFragments.myCourseSchedule;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +20,7 @@ import com.aldar.studentportal.adapters.CourseScheduleAdapter;
 import com.aldar.studentportal.databinding.FragmentCourseScheduleBinding;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
+import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 
 import java.util.List;
@@ -23,6 +28,7 @@ import java.util.Objects;
 
 public class CourseScheduleFragment extends Fragment {
     private FragmentCourseScheduleBinding binding;
+    private  CourseScheduleAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,25 +41,35 @@ public class CourseScheduleFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         CourseScheduleViewModel viewModel =  new ViewModelProvider(this).get(CourseScheduleViewModel.class);
         binding.rvCourseSchedule.setLayoutManager(new LinearLayoutManager(getActivity()));
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setCourseScheduleViewModel(viewModel);
 
+        getCourseData(viewModel.getcourseScheduleData());
 
-        viewModel.getcourseScheduleData().observe(getViewLifecycleOwner(), new Observer<CourseScheduleResponseModel>() {
-            @Override
-            public void onChanged(CourseScheduleResponseModel courseScheduleResponseModel) {
+        binding.ivBack.setOnClickListener(v -> {
+        getActivity().onBackPressed();
+        });
+    }
 
-                if(courseScheduleResponseModel != null){
-                    CourseScheduleAdapter adapter = new CourseScheduleAdapter(getActivity(), courseScheduleResponseModel.getData());
-                    binding.rvCourseSchedule.setAdapter(adapter);
-                }
+
+    private void getCourseData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData){
+        mutableLiveData.observe(getViewLifecycleOwner(), courseScheduleResponseModel -> {
+            if(courseScheduleResponseModel != null){
+                adapter = new CourseScheduleAdapter(getActivity(), courseScheduleResponseModel.getData());
+                binding.rvCourseSchedule.setAdapter(adapter);
             }
         });
-
     }
+
+    @Override
+    public void onDestroy() {
+        binding = null;
+        adapter = null;
+        super.onDestroy();
+    }
+
 }

@@ -44,6 +44,7 @@ import butterknife.ButterKnife;
 
 public class StudentDashboardFragment extends Fragment {
     private FragmentStudentDashboardBinding binding;
+    private StudentDashboardItemsAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,8 +71,8 @@ public class StudentDashboardFragment extends Fragment {
             @Override
             public void onChanged(List<DashboardItemModel> dashboardItemModels) {
                 binding.rvDashboardItem.setLayoutManager(new GridLayoutManager(getContext(), 2));
-                StudentDashboardItemsAdapter dashboardItemsAdapter = new StudentDashboardItemsAdapter(getContext(), dashboardItemModels);
-                binding.rvDashboardItem.setAdapter(dashboardItemsAdapter);
+                adapter = new StudentDashboardItemsAdapter(getContext(), dashboardItemModels);
+                binding.rvDashboardItem.setAdapter(adapter);
             }
         });
 
@@ -134,7 +135,8 @@ public class StudentDashboardFragment extends Fragment {
 
     @Override
     public void onDestroy() {
+        binding = null;
+        adapter = null;
         super.onDestroy();
-        binding.rvDashboardItem.setAdapter(null);
     }
 }

@@ -11,6 +11,7 @@
         <item>My Profile\nملفي</item>
         <item>My Inbox\nصندوق الوارد</item>
         <item>Google ClassRoom\nجوجل الفصول الدراسية</item>
+        <item>Library\nمكتبة</item>
     </array>
 
     <array name="faq_question">
@@ -29,5 +30,12 @@
         <item>Yes, Al Dar accepts visiting students based on the permission granted by their university.</item>
         <item>Yes, Al Dar gladly welcomes all the prospective students and their parents/relatives to visit the campus and have a campus tour of all the facilities provided to the students. They are also welcome to have interaction with faculties and the staff if they wish so.</item>
         <item>Yes, Al Dar provides residence visa to all the admitted students based on the approval of visa request by the UAE Immigration Authority.</item>
+    </array>
+
+    <array name="books">
+        <item>Title</item>
+        <item>Author</item>
+        <item>Call Number</item>
+        <item>Publisher</item>
     </array>
 </resources>

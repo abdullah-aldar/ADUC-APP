@@ -72,11 +72,12 @@
 
 
          <TextView
-             android:layout_width="wrap_content"
+             android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:textColor="@color/gray"
-             android:text="Here is your course schedule"
+             android:text="@string/your_course_schedule"
              android:fontFamily="@font/poppins_light"
+             android:gravity="center"
              android:layout_below="@id/tv_student_name"
              android:layout_centerHorizontal="true"
              android:textSize="12sp"/>

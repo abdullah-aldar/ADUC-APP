@@ -4,9 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +27,7 @@ import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myCourseSc
 
 public class MyStudyPlanFragment extends Fragment {
     private FragmentMyStudyPlanBinding binding;
+    private StudyPlanAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,25 +39,33 @@ public class MyStudyPlanFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         CourseScheduleViewModel viewModel =  new ViewModelProvider(this).get(CourseScheduleViewModel.class);
         binding.rvStudyPlan.setLayoutManager(new LinearLayoutManager(getActivity()));
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setStudyPlanViewModel(viewModel);
 
+        studyPlanData(viewModel.getcourseScheduleData());
 
-        viewModel.getcourseScheduleData().observe(getViewLifecycleOwner(), new Observer<CourseScheduleResponseModel>() {
-            @Override
-            public void onChanged(CourseScheduleResponseModel courseScheduleResponseModel) {
+        binding.ivBack.setOnClickListener(v -> {
+            getActivity().onBackPressed();
+        });
+    }
 
-                if(courseScheduleResponseModel != null){
-                    StudyPlanAdapter adapter = new StudyPlanAdapter(getActivity(), courseScheduleResponseModel.getData());
-                    binding.rvStudyPlan.setAdapter(adapter);
-                }
+    private void studyPlanData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData){
+        mutableLiveData.observe(getViewLifecycleOwner(),courseScheduleResponseModel -> {
+            if(courseScheduleResponseModel != null){
+                adapter = new StudyPlanAdapter(getActivity(), courseScheduleResponseModel.getData());
+                binding.rvStudyPlan.setAdapter(adapter);
             }
         });
+    }
 
+    @Override
+    public void onDestroy() {
+        binding = null;
+        adapter = null;
+        super.onDestroy();
     }
 }

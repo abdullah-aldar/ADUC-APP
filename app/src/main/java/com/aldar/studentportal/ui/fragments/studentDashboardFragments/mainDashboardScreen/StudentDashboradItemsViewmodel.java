@@ -15,11 +15,11 @@ import java.util.List;
 
 public class StudentDashboradItemsViewmodel extends AndroidViewModel {
     private int[] dashboardImages = {
-            R.drawable.course_schedule, R.drawable.marks,
-            R.drawable.study_plan, R.drawable.advice,
+            R.drawable.course, R.drawable.marks,
+            R.drawable.plan, R.drawable.advice,
             R.drawable.letter, R.drawable.coins,
             R.drawable.profile, R.drawable.inbox,
-            R.drawable.newsletter
+            R.drawable.classroom,R.drawable.library
     };
 
 

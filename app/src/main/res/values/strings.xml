@@ -17,6 +17,7 @@
     <string name="support">Expert Support</string>
     <string name="support_text">Aldar University, in-house expert team, is always on hand to help, answer your questions, and guide you in the proper direction.
         \nYou can call, chat, or email us!</string>
+
     <string name="fee">FEE</string>
     <string name="portal">Portal</string>
     <string name="faq">FAQ</string>
@@ -55,6 +56,11 @@
     <string name="student_course">Programe</string>
     <string name="advisor">Advisor</string>
     <string name="concentration">Concentration</string>
+    <string name="my_course_advise">Your Academic Status\nالحالة الاكاديمية</string>
+    <string name="your_marks">Here is your marks\n علاماتك</string>
+    <string name="your_course_schedule">Here is your course schedule\nجدول دراستك</string>
+    <string name="financial_statement">Here is your Financial Statement\nالشهادة المالية</string>
+    <string name="profile_statement">Here is your profile info\nمعلومات الشخصي</string>
 
 
     <string name="computer_school">School Of Engineering &amp; Technology</string>
@@ -111,6 +117,4 @@
         international stature when it hosts the World Expo in 2020.\n
     </string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -6,66 +6,96 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/grey">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:src="@drawable/gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/back_white"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/medium_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Books Available In Library"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RelativeLayout
-            android:id="@+id/header_layout"
-            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradient">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="Books Available In Library"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/large_text"
-                android:fontFamily="@font/poppins_medium"/>
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingBottom="@dimen/medium_margin"
+            app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
             <LinearLayout
                 android:id="@+id/layout_search"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/title"
-                android:layout_marginTop="@dimen/standarize_spacing"
                 android:orientation="vertical"
                 android:padding="@dimen/medium_margin"
                 android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/transparent_button">
+                android:layout_centerHorizontal="true">
 
 
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:orientation="horizontal">
-                   <TextView
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:textColor="@color/gray"
-                       android:layout_weight="1"
-                       android:text="Search Book By!"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:layout_weight="1"
+                        android:text="Search Book By!"/>
 
-                   <Spinner
-                       android:id="@+id/spinner_books"
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:textColor="@color/gray"
-                       android:layout_weight="1"
-                       android:gravity="center"
-                       android:dropDownWidth="fill_parent" />
-               </LinearLayout>
+                    <Spinner
+                        android:id="@+id/spinner_books"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:dropDownWidth="match_parent" />
+                </LinearLayout>
 
 
                 <EditText
                     android:id="@+id/et_book_title"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:backgroundTint="@color/white"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@drawable/shadow"
+                    android:hint="Enter title here"
+                    android:paddingStart="@dimen/medium_margin"
+                    android:paddingEnd="@dimen/medium_margin"
                     android:layout_marginEnd="@dimen/medium_margin"
                     />
             </LinearLayout>
@@ -73,25 +103,34 @@
 
             <Button
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/btn_height"
                 android:layout_below="@+id/layout_search"
                 android:layout_centerHorizontal="true"
                 android:text="Search Book"
                 android:background="@drawable/transparent_button"
                 android:textColor="@color/white"
-                android:layout_marginTop="@dimen/standarize_spacing"
-                android:layout_marginBottom="@dimen/btn_height"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/medium_margin"
                 />
-        </RelativeLayout>
 
+        </RelativeLayout>
 
         <RelativeLayout
-            app:layout_constraintTop_toBottomOf="@+id/header_layout"
-            android:layout_marginTop="-35dp"
+            android:id="@+id/rv_course_schedule"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:background="@drawable/shadow"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:layoutAnimation="@anim/fade_animation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
 
-        </RelativeLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
+
+
+
