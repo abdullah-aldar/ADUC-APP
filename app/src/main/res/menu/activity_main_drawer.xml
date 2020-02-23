@@ -6,27 +6,45 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_admission"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/network"
             android:title="@string/menu_admission" />
         <item
             android:id="@+id/nav_academic"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/academic"
             android:title="@string/menu_academic" />
         <item
             android:id="@+id/nav_campus"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/graduation"
             android:title="@string/menu_campus" />
 
         <item
             android:id="@+id/nav_login"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/login"
             android:title="@string/menu_login" />
     </group>
 
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/contact"
+                android:title="Contact US" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/about"
+                android:title="About Us" />
+
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/career"
+                android:title="Feedback" />
+        </menu>
+    </item>
 
 
 </menu>

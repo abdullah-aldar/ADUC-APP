@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,288 +22,288 @@
             tools:layout_editor_absoluteX="108dp" />
 
         <LinearLayout
-        android:id="@+id/linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/iv_header"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:id="@+id/layout_portal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="@dimen/small_margin"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/rome"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="@string/portal"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/layout_fee"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginStart="@dimen/small_margin"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_margin="@dimen/small_margin"
-                android:src="@drawable/dollar"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="@string/fee"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout_faq"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginStart="@dimen/small_margin"
-            android:layout_marginEnd="@dimen/small_margin"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/questionmark"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="@string/faq"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_apply"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient"
-        android:padding="@dimen/medium_margin"
-        app:layout_constraintTop_toBottomOf="@id/linear_layout">
-
-        <TextView
-            android:id="@+id/tv_welcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_apply" />
-
-
-        <TextView
-            android:id="@+id/tv_apply"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_text"
-            android:textColor="@color/white"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
-
-
-        <Button
-            android:id="@+id/btn_apply"
-            android:layout_width="150dp"
-            android:layout_height="@dimen/btn_height"
-            android:text="@string/apply"
-            android:textColor="@color/white"
-            android:padding="@dimen/small_margin"
-            app:layout_constraintEnd_toStartOf="@+id/btn_download_boucher"
-            app:layout_constraintHorizontal_bias="0.5"
-            android:background="@drawable/button_style"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/tv_apply"
-            android:layout_marginTop="@dimen/medium_margin"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btn_download_boucher"
-            android:layout_width="150dp"
-            android:layout_height="@dimen/btn_height"
-            android:text="@string/download_boucher"
-            android:padding="@dimen/small_margin"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:background="@drawable/button_style"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            android:layout_marginTop="@dimen/medium_margin"
-            app:layout_constraintTop_toBottomOf="@+id/tv_apply"
-            app:layout_constraintStart_toEndOf="@+id/btn_apply" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linear_facilities"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/small_margin"
-        android:gravity="center|top"
-        app:layout_constraintTop_toBottomOf="@+id/layout_apply"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:id="@+id/layout_flexible_course"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginStart="@dimen/small_margin"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:tint="@color/colorPrimaryDark"
-                android:src="@drawable/network"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/flexible"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/flexible_course"
-                android:gravity="center" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/layout_transportation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginStart="@dimen/small_margin"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:tint="@color/colorPrimaryDark"
-                android:src="@drawable/university"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
-                android:text="@string/transportation"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/transport_text"
-                android:gravity="center" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/other_facilities"
+            android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/small_margin"
-            android:gravity="center|top"
-            app:layout_constraintBottom_toTopOf="@+id/calendar_view"
-            app:layout_constraintTop_toBottomOf="@+id/linear_facilities"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_header">
 
             <LinearLayout
+                android:id="@+id/layout_portal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginStart="@dimen/small_margin"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tint="@color/colorPrimaryDark"
-                    android:src="@drawable/university"/>
+                    android:src="@drawable/rome" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="@string/portal"
                     android:textColor="@color/colorPrimaryDark"
-                    android:text="@string/tution_fee"/>
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_fee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/small_margin"
+                    android:src="@drawable/dollar" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tution_text"
-                    android:gravity="center" />
+                    android:text="@string/fee"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_faq"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/questionmark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/faq"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient"
+            android:padding="@dimen/medium_margin"
+            app:layout_constraintTop_toBottomOf="@id/linear_layout">
+
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_apply" />
+
+
+            <TextView
+                android:id="@+id/tv_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_text"
+                android:textColor="@color/white"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
+
+
+            <Button
+                android:id="@+id/btn_apply"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@drawable/button_style"
+                android:padding="@dimen/small_margin"
+                android:text="@string/apply"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/btn_download_boucher"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_apply" />
+
+            <Button
+                android:id="@+id/btn_download_boucher"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:background="@drawable/button_style"
+                android:padding="@dimen/small_margin"
+                android:text="@string/download_boucher"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_apply"
+                app:layout_constraintTop_toBottomOf="@+id/tv_apply" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear_facilities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_apply">
+
+            <LinearLayout
+                android:id="@+id/layout_flexible_course"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/network"
+                    android:tint="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/flexible"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/flexible_course" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_transportation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/university"
+                    android:tint="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/transportation"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/transport_text" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/other_facilities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/calendar_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_facilities">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/university"
+                    android:tint="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tution_fee"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/tution_text" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layout_accomodation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginStart="@dimen/small_margin"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tint="@color/colorPrimaryDark"
-                    android:src="@drawable/graduation"/>
+                    android:src="@drawable/graduation"
+                    android:tint="@color/colorPrimaryDark" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="@string/student_visa"
                     android:textColor="@color/colorPrimaryDark"
-                    android:text="@string/student_visa"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/visa_text"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:text="@string/visa_text" />
             </LinearLayout>
 
 
@@ -313,52 +312,52 @@
 
         <RelativeLayout
             android:id="@+id/calendar_view"
-            app:layout_constraintTop_toBottomOf="@+id/other_facilities"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/tranparent"
             android:padding="@dimen/medium_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/other_facilities">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:text="Academic Calendar 2019 / 2020"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:text="Academic Calendar 2019 / 2020"/>
+                android:textStyle="bold" />
 
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
-                android:background="@color/cyan"
                 android:layout_marginEnd="@dimen/small_margin"
-                android:layout_toStartOf="@+id/btn_calendar"/>
+                android:layout_toStartOf="@+id/btn_calendar"
+                android:background="@color/cyan" />
 
             <Button
                 android:id="@+id/btn_calendar"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/btn_height"
-                android:text="Calendar"
-                android:background="@color/cyan"
-                android:textColor="@color/white"
+                android:layout_alignParentEnd="true"
                 android:layout_margin="@dimen/medium_margin"
-                android:layout_alignParentEnd="true"/>
+                android:background="@color/cyan"
+                android:text="Calendar"
+                android:textColor="@color/white" />
         </RelativeLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            app:layout_constraintTop_toBottomOf="@id/calendar_view"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gray_gradient"
             android:padding="@dimen/medium_margin"
-            android:background="@drawable/gray_gradient">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calendar_view">
 
             <TextView
                 android:id="@+id/tv_support"
@@ -368,8 +367,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/tv_support_text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                />
+                app:layout_constraintLeft_toLeftOf="parent" />
 
 
             <TextView
@@ -386,43 +384,43 @@
                 android:id="@+id/layout_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tv_support_text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_support_text">
 
 
-               <ImageView
-                   android:id="@+id/iv_whatsapp"
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:src="@drawable/whatsapp"/>
+                <ImageView
+                    android:id="@+id/iv_whatsapp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/whatsapp" />
 
                 <ImageView
                     android:id="@+id/iv_call"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/call"/>
+                    android:src="@drawable/call" />
 
                 <ImageView
                     android:id="@+id/iv_email"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/mail"/>
+                    android:src="@drawable/mail" />
 
                 <Button
                     android:id="@+id/btn_inquire_us"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/btn_height"
-                    android:text="Inquire Us"
                     android:layout_weight="2"
-                    android:textColor="@color/cyan"
-                    android:background="@drawable/transparent_button" />
+                    android:background="@drawable/transparent_button"
+                    android:text="Inquire Us"
+                    android:textColor="@color/cyan" />
 
             </LinearLayout>
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/lasting_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:layout_marginBottom="@dimen/high_margin"
+            android:background="@drawable/shadow"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/extreme_margin"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_horizontal"
+                    android:text="Mission"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/large_text" />
+
+
+                <ScrollView
+                    android:layout_below="@id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/standarize_spacing"
+                        android:gravity="center"
+                        android:text="@string/mission_text" />
+
+                </ScrollView>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_student"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mission" />
+</RelativeLayout>

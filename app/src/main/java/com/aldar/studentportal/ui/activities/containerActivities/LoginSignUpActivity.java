@@ -22,7 +22,7 @@ public class LoginSignUpActivity extends AppCompatActivity {
             GeneralUtilities.connectFragmentWithoutBack(LoginSignUpActivity.this,new LoginFragment());
         }
         else {
-            GeneralUtilities.connectFragmentWithBack(LoginSignUpActivity.this,new StudentDashboardFragment());
+            GeneralUtilities.connectFragmentWithoutBack(LoginSignUpActivity.this,new StudentDashboardFragment());
         }
 
 

@@ -30,7 +30,7 @@
                 card_view:layout_constraintTop_toTopOf="parent"
                 card_view:layout_constraintHeight_default="percent"
                 card_view:layout_constraintHeight_percent="0.3"
-                android:src="@drawable/campus_life" />
+                android:src="@drawable/uae" />
 
 
             <TextView
@@ -42,6 +42,7 @@
                 android:gravity="center_horizontal"
                 card_view:layout_constraintTop_toBottomOf="@id/iv_student"
                 android:text="About UAE"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/large_text"/>
 
 

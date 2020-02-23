@@ -22,6 +22,7 @@ import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
 import com.aldar.studentportal.ui.fragments.forgotPassword.ForgotPasswordFragment;
 import com.aldar.studentportal.ui.fragments.signUp.CheckUsernameFragment;
+import com.aldar.studentportal.ui.fragments.studentDashboardFragments.mainDashboardScreen.StudentDashboardFragment;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -68,7 +69,7 @@ public class LoginFragment extends Fragment {
                     GeneralUtilities.putBooleanValueInEditor(getContext(),"isLogin",true);
 
                     base64Image = loginResponseModel.getData().getPhoto();
-                    startActivity(new Intent(getContext(), StudentPortalMainActivity.class));
+                    GeneralUtilities.connectFragmentWithoutBack(getContext(),new StudentDashboardFragment());
                 }
                 Toast.makeText(getContext(), ""+loginResponseModel.getMessage(), Toast.LENGTH_SHORT).show();
 
@@ -110,5 +111,10 @@ public class LoginFragment extends Fragment {
                 });
     }
 
-
+    @Override
+    public void onDestroy() {
+        base64Image = null;
+        binding = null;
+        super.onDestroy();
+    }
 }

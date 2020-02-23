@@ -61,6 +61,8 @@
     <string name="your_course_schedule">Here is your course schedule\nجدول دراستك</string>
     <string name="financial_statement">Here is your Financial Statement\nالشهادة المالية</string>
     <string name="profile_statement">Here is your profile info\nمعلومات الشخصي</string>
+    <string name="letter_request">please add a new request below\nطلب جديد</string>
+    <string name="announcement_text">Here is the latest announcement\nأحدث إعلان</string>
 
 
     <string name="computer_school">School Of Engineering &amp; Technology</string>
@@ -115,6 +117,16 @@
         With world-class infrastructure and facilities, the city combines the cosmopolitan lifestyle of the western world with eastern traditions and hospitality.\n\n
          Already renowned for its bold ambition, as the home of the world’s tallest building and the world’s largest man-made island, Dubai will continue to grow its
         international stature when it hosts the World Expo in 2020.\n
+    </string>
+
+    <string name="mission_text">
+        To offer competitive educational programs in real-world settings and focus on developing and strengthening careers of a diverse population.
+        To engage with the society in the creation of knowledge and promotion of research to achieve local and regional development.
+    </string>
+
+    <string name="vision_text">
+        To be a leading and an internationally recognized higher education institution, contributing to the knowledge society and sustainable development
+        of the United Arab Emirates and the Region.
     </string>
 
 </resources>

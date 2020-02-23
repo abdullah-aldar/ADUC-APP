@@ -21,6 +21,7 @@ import com.aldar.studentportal.R;
 import com.aldar.studentportal.ui.activities.FaqActivity;
 import com.aldar.studentportal.ui.activities.FeeActivity;
 import com.aldar.studentportal.ui.activities.SplashActivity;
+import com.aldar.studentportal.ui.activities.containerActivities.LoginSignUpActivity;
 import com.aldar.studentportal.ui.activities.inquireUs.InquireUsActivity;
 import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
 import com.aldar.studentportal.ui.activities.WebActivity;
@@ -78,7 +79,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.layout_portal:
-                startActivity(new Intent(getActivity(), StudentPortalMainActivity.class));
+                startActivity(new Intent(getActivity(), LoginSignUpActivity.class));
                 break;
             case R.id.layout_fee:
                 startActivity(new Intent(getActivity(), FeeActivity.class));

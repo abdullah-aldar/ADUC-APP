@@ -19,103 +19,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="256f8899-a1d6-453c-a7ee-fbc0909573a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_android_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/utilities/PermissionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/classroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/course.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/library.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/plan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/marks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/classroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/library.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/plan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/classroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/course.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/library.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/plan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/classroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/course.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/library.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/plan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/classroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/course.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/library.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/plan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/ic_contact-web.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/AboutUsFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_action_name.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_action_name.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/uae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_action_name.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/uae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_action_name.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/uae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_action_name.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/uae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/uae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/about.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/academic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/career.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/contact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mission.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_gradient.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/vision.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about_us.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/mission_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/vision_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/StudentDashboardItemsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/StudentDashboardItemsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/NavigationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/NavigationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/library/LibraryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/library/LibraryFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboardFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboardFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboradItemsViewmodel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboradItemsViewmodel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseSchedule/CourseScheduleFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseSchedule/CourseScheduleFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myFinance/MyFinanceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myFinance/MyFinanceFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myProfile/StudentProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myProfile/StudentProfileFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myStudyPlan/MyStudyPlanFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myStudyPlan/MyStudyPlanFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/advice.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/advice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/coins.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/coins.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/course_schedule.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/inbox.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/inbox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/letter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/letter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/marks.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/marks.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/profile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/study_plan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/advice.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/advice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/coins.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/coins.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/course_schedule.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/course.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/inbox.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/inbox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/letter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/letter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/marks.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/marks.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/profile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/study_plan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/advice.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/advice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/coins.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/coins.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/course_schedule.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/inbox.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/inbox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/letter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/letter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/marks.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/marks.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/profile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/study_plan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/advice.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/advice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/coins.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/coins.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/course_schedule.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/inbox.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/inbox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/letter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/letter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/marks.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/marks.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/profile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/study_plan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/advice.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/advice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/coins.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/coins.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/course_schedule.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/inbox.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/inbox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/letter.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/letter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/marks.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/marks.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/profile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/study_plan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_dashboard_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_dashboard_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_marks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_marks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/containerActivities/LoginSignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/containerActivities/LoginSignUpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/inquireUs/InquireUsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/inquireUs/InquireUsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/login/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/login/LoginFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/announcment/AnnouncementFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/announcment/AnnouncementFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_camera.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_gallery.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_manage.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_send.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_share.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_slideshow.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/gradient.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/about_uae_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/about_uae_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/announcement_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/announcement_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_letter_request.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_letter_request.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/library_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/library_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/spinner_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/spinner_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ieee_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ieee_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/student_services_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/student_services_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -170,16 +133,16 @@
     <favorites_list name="Al Dar Student Portal" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="JUnit4 Test Class" />
-        <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -219,47 +182,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fat_slider2.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fat_slider3.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_campus.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/student_services_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/ieee_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/about_uae_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/campusLife/CampusFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable-ldpi/tab_indicator_default.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_dialog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/shadow.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/utilities/OtherUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseSchedule/CourseScheduleViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/announcment/AnnouncementViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/announcement_fragment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/announcment/AnnouncementFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/AnnouncementAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_announcement_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/CustomSpinnerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myStudyPlan/MyStudyPlanViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_studyplan_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/StudyPlanAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/HomeFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimen.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/circle_red.xml" />
         <option value="$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/aldar/studentportal/DataBinderMapperImpl.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/NavigationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/utilities/PermissionUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_marks.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseSchedule/CourseScheduleFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myStudyPlan/MyStudyPlanFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_dashboard_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboradItemsViewmodel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboardFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/StudentDashboardItemsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_layout.xml" />
@@ -267,13 +200,43 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/library/LibraryFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myFinance/MyFinanceFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myProfile/StudentProfileFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/round_gradient.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_contact_foreground.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/containerActivities/LoginSignUpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/login/LoginFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/inquireUs/InquireUsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/student_services_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/ieee_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/about_uae_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_letter_request.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/announcement_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/announcment/AnnouncementFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_about_us.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/NavigationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/AboutUsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/mission_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/vision_layout.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="746" />
   </component>
@@ -289,18 +252,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Al Dar Student Portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Al-Dar-Student-Portal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -334,24 +285,17 @@
               <item name="aldar" type="462c0819:PsiDirectoryNode" />
               <item name="studentportal" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="Al Dar Student Portal" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="aldar" type="462c0819:PsiDirectoryNode" />
-              <item name="studentportal" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Al Dar Student Portal" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="aldar" type="462c0819:PsiDirectoryNode" />
-              <item name="studentportal" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="fragments" type="462c0819:PsiDirectoryNode" />
+              <item name="Al Dar Student Portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Al-Dar-Student-Portal" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -362,7 +306,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="26EBB18415153131" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-02-22T12:30:24.375Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-02-23T07:23:48.938Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="algorithm" value="Scalr" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -370,8 +314,8 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="format" value="PNG" />
     <property name="lastFolderRoot" value="$USER_HOME$/Downloads/call.png" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="method" value="Automatic" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -385,6 +329,9 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.aldar.studentportal.ui.activities" />
     </key>
@@ -397,27 +344,24 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.aldar.studentportal.ui.fragments.navigations" />
       <recent name="com.aldar.studentportal.adapters" />
       <recent name="com.aldar.studentportal.utilities" />
       <recent name="com.aldar.studentportal.viewModels" />
       <recent name="com.aldar.studentportal.models.faqModels" />
-      <recent name="com.aldar.studentportal.firebase" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout-sw600dp" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-hdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
     </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -742,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582205239883</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="more screen added in student dashboard">
+      <created>1582375978709</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1582375978709</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -763,7 +714,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.6064581" side_tool="true" weight="0.254818" />
       <window_info id="Capture Tool" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.39354187" visible="true" weight="0.2617773" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.39354187" visible="true" weight="0.23875803" />
       <window_info id="Resources Explorer" order="7" sideWeight="0.49949545" weight="0.32976446" />
       <window_info id="Structure" order="8" sideWeight="0.6315789" side_tool="true" weight="0.254818" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.29969728" />
@@ -840,7 +791,8 @@
     <MESSAGE value="login sign up work done" />
     <MESSAGE value="issue of back presses solved" />
     <MESSAGE value="design updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="design updated" />
+    <MESSAGE value="more screen added in student dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="more screen added in student dashboard" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -877,393 +829,417 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/back.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/bounce.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/font/poppins_bold.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/font/poppins_light.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/font/poppins_medium.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/fade_animation.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/login/LoginFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/circle_red.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/circle_red.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/announcement.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/aldar/studentportal/DataBinderMapperImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="70" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/NavigationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="56" column="75" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-livedata-core/2.2.0/6dcd7f31093b360c4a8bced748159e6fd237ba52/lifecycle-livedata-core-2.2.0-sources.jar!/androidx/lifecycle/Observer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/utilities/PermissionUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-          <folding>
-            <element signature="e#4446#4468#0" expanded="true" />
-            <element signature="e#4506#4528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseAdvice/MyCourseAdvice.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/login.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+        <state relative-caret-position="301">
+          <caret line="187" column="16" selection-start-line="187" selection-start-column="16" selection-end-line="187" selection-end-column="16" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseSchedule/CourseScheduleFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_contact_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_contact.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_contact_background.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_contact.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="54" column="11" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="54" selection-end-column="11" />
+        <state relative-caret-position="85">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myMarks/MyMarksFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myStudyPlan/MyStudyPlanFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="52" column="11" lean-forward="true" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/logo.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseAdvice/MyCourseAdviceFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        <state relative-caret-position="221">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/StudentPortalMainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="18" column="77" lean-forward="true" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
+          <caret line="18" column="93" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/marks.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/marks.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/marks.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/marks.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/course_schedule.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/course_schedule.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/custom_dashboard_layout.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/login/LoginFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/coins.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboradItemsViewmodel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+        <state relative-caret-position="766">
+          <caret line="116" column="23" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
           <folding>
-            <element signature="e#2220#2247#0" expanded="true" />
-            <element signature="e#3739#3761#0" expanded="true" />
-            <element signature="e#11664#11686#0" expanded="true" />
+            <element signature="method#getFcmToken#0;class#LoginFragment#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/StudentDashboardItemsAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/containerActivities/LoginSignUpActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        <state relative-caret-position="357">
+          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/academics/AcademicFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="122" column="66" selection-start-line="122" selection-start-column="66" selection-end-line="122" selection-end-column="66" />
+          <folding>
+            <element signature="e#3354#3381#0" expanded="true" />
+            <element signature="e#3425#3447#0" expanded="true" />
+            <element signature="e#3489#3511#0" expanded="true" />
+            <element signature="e#3556#3578#0" expanded="true" />
+            <element signature="e#5746#5773#0" expanded="true" />
+            <element signature="e#5817#5839#0" expanded="true" />
+            <element signature="e#5881#5903#0" expanded="true" />
+            <element signature="e#5948#5970#0" expanded="true" />
+            <element signature="e#6325#6347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ieee.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ieee.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/inquireUs/InquireUsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="141" column="67" selection-start-line="141" selection-start-column="67" selection-end-line="141" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.1.0/7ba5bcd622e3d6d7ab6b9833717c4385e4ba0a51/material-1.1.0-sources.jar!/com/google/android/material/internal/NavigationMenuItemView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ieee_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/about_uae_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="59" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/mainDashboardScreen/StudentDashboardFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state relative-caret-position="153">
+          <caret line="52" column="72" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
           <folding>
             <element signature="method#showDialog#0;class#StudentDashboardFragment#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="97" selection-end-column="9" />
+        <state relative-caret-position="574">
+          <caret line="231" column="68" selection-start-line="231" selection-start-column="68" selection-end-line="231" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myStudyPlan/MyStudyPlanFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="77" column="53" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_my_marks.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <caret line="38" column="36" lean-forward="true" selection-end-line="111" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/library_fragment.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_letter_request.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
-          <caret line="94" column="57" lean-forward="true" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+        <state relative-caret-position="443">
+          <caret line="73" column="52" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
           <folding>
-            <element signature="e#4234#4256#0" expanded="true" />
-            <element signature="e#4296#4318#0" expanded="true" />
+            <element signature="e#951#973#0" expanded="true" />
+            <element signature="e#1011#1033#0" expanded="true" />
+            <element signature="e#1343#1370#0" expanded="true" />
+            <element signature="e#1408#1429#0" expanded="true" />
+            <element signature="e#1539#1563#0" expanded="true" />
+            <element signature="e#1968#1990#0" expanded="true" />
+            <element signature="e#2028#2055#0" expanded="true" />
+            <element signature="e#2093#2115#0" expanded="true" />
+            <element signature="e#2147#2169#0" expanded="true" />
+            <element signature="e#2204#2226#0" expanded="true" />
+            <element signature="e#3671#3693#0" expanded="true" />
+            <element signature="e#3731#3753#0" expanded="true" />
+            <element signature="e#3794#3816#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/library/LibraryFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/letterRequest/LetterRequestFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding>
-            <element signature="e#2184#2185#0" expanded="true" />
-            <element signature="e#2253#2254#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="83" lean-forward="true" selection-end-line="109" selection-end-column="9" />
+        <state relative-caret-position="836">
+          <caret line="108" column="52" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="108" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myFinance/MyFinanceViewModel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myCourseSchedule/CourseScheduleFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="31" />
+        <state relative-caret-position="221">
+          <caret line="37" column="44" lean-forward="true" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myFinance/MyFinanceFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-          <folding>
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="114" selection-end-column="56" />
-          <folding>
-            <element signature="e#1141#1163#0" expanded="true" />
-            <element signature="e#1201#1223#0" expanded="true" />
-            <element signature="e#1533#1560#0" expanded="true" />
-            <element signature="e#1598#1619#0" expanded="true" />
-            <element signature="e#1728#1752#0" expanded="true" />
-            <element signature="e#2157#2179#0" expanded="true" />
-            <element signature="e#2217#2244#0" expanded="true" />
-            <element signature="e#2282#2304#0" expanded="true" />
-            <element signature="e#2336#2358#0" expanded="true" />
-            <element signature="e#2393#2415#0" expanded="true" />
-            <element signature="e#3266#3295#0" expanded="true" />
-            <element signature="e#3830#3852#0" expanded="true" />
-            <element signature="e#3890#3912#0" expanded="true" />
-            <element signature="e#3953#3975#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/announcement_fragment.xml">
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding>
+            <element signature="e#1106#1128#0" expanded="true" />
+            <element signature="e#1166#1188#0" expanded="true" />
+            <element signature="e#1498#1525#0" expanded="true" />
+            <element signature="e#1563#1584#0" expanded="true" />
+            <element signature="e#1701#1725#0" expanded="true" />
+            <element signature="e#2130#2152#0" expanded="true" />
+            <element signature="e#2190#2217#0" expanded="true" />
+            <element signature="e#2255#2277#0" expanded="true" />
+            <element signature="e#2309#2331#0" expanded="true" />
+            <element signature="e#2366#2388#0" expanded="true" />
+            <element signature="e#3779#3801#0" expanded="true" />
+            <element signature="e#3839#3861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_my_marks.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/AnnouncementAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/custom_announcement_layout.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="105" selection-end-column="14" />
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimen.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/announcment/AnnouncementFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="578">
+          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/campusLife/CampusViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/campusLife/CampusFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/fragment_about_us.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="40" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_about_us.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="e#797#817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="86" selection-start-line="33" selection-start-column="86" selection-end-line="33" selection-end-column="86" />
+        </state>
+      </provider>
+      <provider editor-type-id="nav-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/NavigationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="50" column="79" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/student_services_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="35" column="21" lean-forward="true" selection-end-line="63" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="62" column="78" selection-start-line="62" selection-start-column="78" selection-end-line="62" selection-end-column="78" />
+        <state relative-caret-position="854">
+          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/vision_layout.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="285" column="56" lean-forward="true" selection-start-line="285" selection-start-column="56" selection-end-line="285" selection-end-column="56" />
+        <state relative-caret-position="395">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
           <folding>
-            <element signature="e#2232#2254#0" expanded="true" />
-            <element signature="e#3315#3342#0" expanded="true" />
-            <element signature="e#6369#6386#0" expanded="true" />
-            <element signature="e#6895#6916#0" expanded="true" />
-            <element signature="e#7410#7427#0" expanded="true" />
-            <element signature="e#7928#7949#0" expanded="true" />
-            <element signature="e#8444#8461#0" expanded="true" />
-            <element signature="e#8905#8926#0" expanded="true" />
-            <element signature="e#8976#8993#0" expanded="true" />
-            <element signature="e#9477#9494#0" expanded="true" />
-            <element signature="e#9924#9945#0" expanded="true" />
-            <element signature="e#9995#10012#0" expanded="true" />
-            <element signature="e#10482#10499#0" expanded="true" />
-            <element signature="e#10919#10940#0" expanded="true" />
-            <element signature="e#10990#11007#0" expanded="true" />
-            <element signature="e#11496#11513#0" expanded="true" />
-            <element signature="e#11954#11975#0" expanded="true" />
-            <element signature="e#12025#12042#0" expanded="true" />
-            <element signature="e#12530#12547#0" expanded="true" />
-            <element signature="e#12989#13010#0" expanded="true" />
-            <element signature="e#13060#13077#0" expanded="true" />
-            <element signature="e#13516#13537#0" expanded="true" />
-            <element signature="e#13870#13892#0" expanded="true" />
-            <element signature="e#14297#14318#0" expanded="true" />
-            <element signature="e#14364#14385#0" expanded="true" />
-            <element signature="e#14701#14722#0" expanded="true" />
-            <element signature="e#15134#15155#0" expanded="true" />
-            <element signature="e#15269#15290#0" expanded="true" />
-            <element signature="e#15776#15793#0" expanded="true" />
-            <element signature="e#16235#16256#0" expanded="true" />
-            <element signature="e#16306#16323#0" expanded="true" />
-            <element signature="e#16797#16814#0" expanded="true" />
-            <element signature="e#17267#17288#0" expanded="true" />
-            <element signature="e#17338#17355#0" expanded="true" />
-            <element signature="e#17794#17815#0" expanded="true" />
-            <element signature="e#18155#18177#0" expanded="true" />
-            <element signature="e#18576#18597#0" expanded="true" />
-            <element signature="e#18643#18664#0" expanded="true" />
-            <element signature="e#18987#19008#0" expanded="true" />
-            <element signature="e#19420#19441#0" expanded="true" />
-            <element signature="e#19562#19583#0" expanded="true" />
-            <element signature="e#20090#20107#0" expanded="true" />
-            <element signature="e#20579#20600#0" expanded="true" />
-            <element signature="e#20650#20667#0" expanded="true" />
-            <element signature="e#21164#21181#0" expanded="true" />
-            <element signature="e#21626#21647#0" expanded="true" />
-            <element signature="e#21697#21714#0" expanded="true" />
-            <element signature="e#22209#22226#0" expanded="true" />
-            <element signature="e#22671#22692#0" expanded="true" />
-            <element signature="e#22742#22759#0" expanded="true" />
+            <element signature="e#487#514#0" expanded="true" />
+            <element signature="e#548#575#0" expanded="true" />
+            <element signature="e#612#632#0" expanded="true" />
+            <element signature="e#1066#1089#0" expanded="true" />
+            <element signature="e#1332#1351#0" expanded="true" />
+            <element signature="e#1719#1746#0" expanded="true" />
+            <element signature="e#1825#1846#0" expanded="true" />
+            <element signature="e#2124#2146#0" expanded="true" />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/studentDashboardFragments/myProfile/StudentProfileFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mission_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding>
+            <element signature="e#517#544#0" expanded="true" />
+            <element signature="e#754#781#0" expanded="true" />
+            <element signature="e#822#842#0" expanded="true" />
+            <element signature="e#2469#2491#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/AboutUsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-          <folding>
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-          </folding>
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>

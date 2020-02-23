@@ -18,7 +18,7 @@ public class InquireUsActivity extends AppCompatActivity implements OnMapReadyCa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inquire_us);
-        this.setTitle("ADUC Contact Us");
+        this.setTitle("Contact Us");
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

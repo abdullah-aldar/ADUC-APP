@@ -7,7 +7,4 @@
         android:endColor="#22425e"
         android:angle="135"/>
 
-    <corners
-        android:bottomLeftRadius="@dimen/high_margin"
-        android:bottomRightRadius="@dimen/high_margin"/>
 </shape>

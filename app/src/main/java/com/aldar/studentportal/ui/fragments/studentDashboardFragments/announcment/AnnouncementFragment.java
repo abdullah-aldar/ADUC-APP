@@ -24,7 +24,8 @@ import com.aldar.studentportal.databinding.AnnouncementFragmentBinding;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 
 public class AnnouncementFragment extends Fragment {
-    AnnouncementFragmentBinding binding;
+   private AnnouncementFragmentBinding binding;
+   private AnnouncementAdapter adapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -36,8 +37,9 @@ public class AnnouncementFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         AnnouncementViewModel mViewModel = new ViewModelProvider(this).get(AnnouncementViewModel.class);
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setAnnouncementViewModel(mViewModel);
@@ -47,11 +49,18 @@ public class AnnouncementFragment extends Fragment {
             @Override
             public void onChanged(CourseScheduleResponseModel courseScheduleResponseModel) {
                 if(courseScheduleResponseModel != null){
-                    AnnouncementAdapter adapter = new AnnouncementAdapter(getActivity(), courseScheduleResponseModel.getData());
+                    adapter = new AnnouncementAdapter(getActivity(), courseScheduleResponseModel.getData());
                     binding.rvAnnouncement.setAdapter(adapter);
                 }
             }
         });
     }
 
+
+    @Override
+    public void onDestroy() {
+        binding = null;
+        adapter = null;
+        super.onDestroy();
+    }
 }
