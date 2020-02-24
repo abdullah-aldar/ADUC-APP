@@ -16,14 +16,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.ui.activities.FaqActivity;
 import com.aldar.studentportal.ui.activities.FeeActivity;
-import com.aldar.studentportal.ui.activities.SplashActivity;
 import com.aldar.studentportal.ui.activities.containerActivities.LoginSignUpActivity;
-import com.aldar.studentportal.ui.activities.inquireUs.InquireUsActivity;
-import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
 import com.aldar.studentportal.ui.activities.WebActivity;
 import com.aldar.studentportal.utilities.FileUtils;
 import com.aldar.studentportal.utilities.PermissionUtils;
@@ -139,7 +137,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         private void redirectToInqureUS() {
             Activity activity = weakReference.get();
             if(activity != null) {
-                activity.startActivity(new Intent(activity, InquireUsActivity.class));
+                NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
+                navController.navigate(R.id.nav_contact);
+                //activity.startActivity(new Intent(activity, InquireUsActivity.class));
             }
         }
 

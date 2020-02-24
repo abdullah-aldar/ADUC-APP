@@ -1,13 +1,16 @@
 package com.aldar.studentportal.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.FAQAdapter;
+import com.aldar.studentportal.databinding.ActivityFaqBinding;
 import com.aldar.studentportal.models.faqModels.FAQModel;
 
 import java.util.ArrayList;
@@ -17,23 +20,29 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FaqActivity extends AppCompatActivity {
-    @BindView(R.id.rv_faq)
-    RecyclerView rvFAQ;
+    private ActivityFaqBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_faq);
-        ButterKnife.bind(this);
-        this.setTitle(getResources().getString(R.string.faq_question));
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_faq);
+        binding.setLifecycleOwner(this);
+        this.getSupportActionBar().hide();
 
         initViews();
     }
 
     private void initViews() {
-        rvFAQ.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        binding.rvFaq.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         FAQAdapter faqAdapter = new FAQAdapter(getApplicationContext(), preparedFAQItems());
-        rvFAQ.setAdapter(faqAdapter);
+        binding.rvFaq.setAdapter(faqAdapter);
+
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
     }
 

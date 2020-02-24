@@ -17,8 +17,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.activities.containerActivities.ForgotPasswordActivity" />
         <activity android:name=".ui.activities.FeeActivity" />
-        <activity android:name=".ui.activities.inquireUs.InquireUsActivity"
-            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".ui.activities.FaqActivity" />
         <activity
             android:name=".ui.activities.SplashActivity"

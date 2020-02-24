@@ -33,6 +33,7 @@ public class AboutUsFragment extends Fragment{
         binding.viewpagerAboutUs.setPageTransformer(true, new ZoomOutPageTransformer());
         binding.tabDots.setupWithViewPager(binding.viewpagerAboutUs, true);
         int[] layouts = new int[]{
+                R.layout.about_layout,
                 R.layout.mission_layout,
                 R.layout.vision_layout};
 

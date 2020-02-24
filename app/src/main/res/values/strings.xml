@@ -63,6 +63,7 @@
     <string name="profile_statement">Here is your profile info\nمعلومات الشخصي</string>
     <string name="letter_request">please add a new request below\nطلب جديد</string>
     <string name="announcement_text">Here is the latest announcement\nأحدث إعلان</string>
+    <string name="faq_text">Frequently Asked Questions\nأسئلة مكررة</string>
 
 
     <string name="computer_school">School Of Engineering &amp; Technology</string>
@@ -117,6 +118,21 @@
         With world-class infrastructure and facilities, the city combines the cosmopolitan lifestyle of the western world with eastern traditions and hospitality.\n\n
          Already renowned for its bold ambition, as the home of the world’s tallest building and the world’s largest man-made island, Dubai will continue to grow its
         international stature when it hosts the World Expo in 2020.\n
+    </string>
+
+    <string name="about_text">
+        ALDAR University College  is a university college of higher learning established in 1994. Since our opening, it has been our endeavor to infuse our
+        students with industry-relevant skills and a high level of practical aptitude. This is a challenge and an objective that we continue to pursue to this day.\n\n
+        Al Dar draws its student body from several different countries across the region and the world. Therefore, we are extremely proud of the atmosphere
+        of diversity that is nourished within our walls and of the eclectic student base visible here every day.\n\n
+        We offer a wide portfolio of programs ranging from undergraduate studies to short courses aimed at both students and professionals. Our range of programs
+        consists of Bachelor’s Degrees, Associate Degrees, English Language courses and Exam Preparation courses. In line with our plans for growth, our aim is
+        to steadily increase our program offerings to cater to the ever-growing demand for quality education. All our programs are industry-related and aim to
+        empower our students with the required skills and aptitudes to operate effectively in the modern business environment.\n\n
+        As part of our strategy, the university conducts both indoor and outdoor extra-curricular activities to broaden the spectrum of our students’ knowledge
+        in order to facilitate personal, professional and academic growth. We fundamentally appreciate that classroom sessions need to be coupled with practical
+        training so as to hone student skill sets. With course curriculum modeled on emphasizing core concepts and ultra-modern case studies, we are confident that
+        our students are poised to take up the challenges faced in industry today.
     </string>
 
     <string name="mission_text">

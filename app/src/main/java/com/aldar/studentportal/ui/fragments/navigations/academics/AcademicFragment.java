@@ -4,33 +4,39 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.adapters.CampusLifeViewPagerAdapter;
+import com.aldar.studentportal.databinding.FragmentAcademicBinding;
+import com.aldar.studentportal.utilities.ZoomOutPageTransformer;
 
 public class AcademicFragment extends Fragment {
-    private AcademicViewModel academicViewModel;
+    private FragmentAcademicBinding binding;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        academicViewModel =
-                new ViewModelProvider(this).get(AcademicViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_academic,container,false);
 
-        academicViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
+        setTabLayout();
 
-            }
-        });
-        return root;
+        return binding.getRoot();
     }
+
+    private void setTabLayout() {
+        binding.viewpageAcademics.setPageTransformer(true, new ZoomOutPageTransformer());
+        binding.tabDots.setupWithViewPager(binding.viewpageAcademics, true);
+        int[] layouts = new int[]{
+                R.layout.engineering_school_layout,
+                R.layout.business_layout,
+                R.layout.arts_layout};
+
+        CampusLifeViewPagerAdapter sliderViewPagerAdapter = new CampusLifeViewPagerAdapter(layouts, getContext());
+        binding.viewpageAcademics.setAdapter(sliderViewPagerAdapter);
+    }
+
 
 }
