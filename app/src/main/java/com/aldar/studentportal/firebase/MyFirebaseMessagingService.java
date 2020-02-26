@@ -10,6 +10,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
 import com.aldar.studentportal.R;
+
 import com.aldar.studentportal.ui.activities.SplashActivity;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.google.firebase.messaging.FirebaseMessagingService;

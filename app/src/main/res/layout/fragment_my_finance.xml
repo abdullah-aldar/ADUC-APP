@@ -94,9 +94,15 @@
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/medium_margin"
             android:layout_marginBottom="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+            <include
+                layout="@layout/custom_finance_layout">
+            </include>
+
+        </RelativeLayout>
 
         <ProgressBar
             android:id="@+id/progess"

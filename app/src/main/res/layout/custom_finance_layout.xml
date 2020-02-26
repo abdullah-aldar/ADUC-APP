@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shadow"
+    android:layout_marginTop="@dimen/small_margin"
+    android:layout_marginStart="@dimen/small_margin"
+    android:layout_marginEnd="@dimen/small_margin"
+    android:padding="@dimen/medium_margin">
+
+    <TextView
+        android:id="@+id/transaction_date"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Transaction Date :"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_transaction_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01/02/2020"
+        android:layout_toEndOf="@+id/transaction_date"
+        android:layout_marginStart="@dimen/small_margin"/>
+
+
+    <TextView
+        android:id="@+id/transaction"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transaction_date"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Transaction ID :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RVP2012810"
+        android:layout_below="@+id/transaction_date"
+        android:layout_toEndOf="@+id/transaction"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transaction"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Description :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spring Semester fees"
+        android:layout_below="@+id/transaction"
+        android:layout_toEndOf="@+id/description"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/check"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_description"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Cheque# :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100093"
+        android:layout_below="@+id/tv_description"
+        android:layout_toEndOf="@+id/check"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/debit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_check"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Debit :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_debit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1250"
+        android:layout_below="@+id/tv_check"
+        android:layout_toEndOf="@+id/debit"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/credit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_debit"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Credit :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5187"
+        android:layout_below="@+id/tv_debit"
+        android:layout_toEndOf="@+id/credit"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+</RelativeLayout>

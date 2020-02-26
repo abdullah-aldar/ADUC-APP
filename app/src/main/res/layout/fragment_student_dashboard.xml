@@ -202,7 +202,7 @@
                         android:layout_marginTop="@dimen/medium_margin"
                         android:background="@drawable/circle_red"
                         android:gravity="center"
-                        android:text="2"
+                        android:text="5"
                         android:textColor="@color/white" />
 
                     <TextView

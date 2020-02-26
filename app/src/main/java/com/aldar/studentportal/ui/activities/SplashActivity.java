@@ -6,48 +6,41 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.ImageView;
 
 import com.aldar.studentportal.R;
+import com.google.android.gms.tasks.Task;
+
 import java.lang.ref.WeakReference;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
-    private final LeakyHandler leakyHandler = new LeakyHandler(this);
+   Handler handler = new Handler();
+   ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        ((AppCompatActivity) this).getSupportActionBar().hide();
+        imageView = findViewById(R.id.iv_splash);
 
-
-        leakyHandler.postDelayed(leakyRunnable,2500);
-
-
-
-
-    }
-
-    private static class LeakyHandler extends Handler {
-
-
-        private WeakReference<SplashActivity> weakReference;
-        public LeakyHandler(SplashActivity activity) {
-            weakReference = new WeakReference<>(activity);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            SplashActivity activity = weakReference.get();
-            if (activity != null) {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(getApplicationContext(),NavigationActivity.class));
+                finish();
             }
-        }
+        },2000);
+
+
+
+
     }
-
-    private final Runnable leakyRunnable = new Runnable() {
-        @Override
-        public void run() {
-            startActivity(new Intent(getApplicationContext(),NavigationActivity.class));
-        }
-    };
-
+    @Override
+    protected void onDestroy() {
+        imageView = null;
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
+    }
 }

@@ -54,6 +54,13 @@ public class AnnouncementFragment extends Fragment {
                 }
             }
         });
+
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
     }
 
 
