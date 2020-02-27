@@ -33,11 +33,11 @@ public class StudentDashboradItemsViewmodel extends AndroidViewModel {
 
     public StudentDashboradItemsViewmodel(@NonNull Application application) {
         super(application);
-        initDasboardData();
+        initViewInDasboard();
     }
 
 
-    private void initDasboardData(){
+    private void initViewInDasboard(){
         studentID.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("student_name",""));
         studentName.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("student_username",""));
         advisor.setValue(GeneralUtilities.getSharedPreferences(getApplication().getApplicationContext()).getString("student_advisor",""));
@@ -57,7 +57,7 @@ public class StudentDashboradItemsViewmodel extends AndroidViewModel {
 
         int count = 0;
         for (String titleName : titles) {
-            dashboardItemList.add(new DashboardItemModel(titleName, dashboardImages[count]));
+            dashboardItemList.add(new DashboardItemModel(count,titleName, dashboardImages[count]));
             count++;
         }
 

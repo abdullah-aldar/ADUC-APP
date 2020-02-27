@@ -6,9 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -18,15 +16,9 @@ import android.view.ViewGroup;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.CourseScheduleAdapter;
 import com.aldar.studentportal.databinding.FragmentCourseScheduleBinding;
-import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
-import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
-import com.aldar.studentportal.utilities.GeneralUtilities;
 
-import java.util.List;
-import java.util.Objects;
-
-public class CourseScheduleFragment extends Fragment {
+public class CourseScheduleFragment extends Fragment{
     private FragmentCourseScheduleBinding binding;
     private  CourseScheduleAdapter adapter;
 
@@ -59,7 +51,7 @@ public class CourseScheduleFragment extends Fragment {
     private void getCourseData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData){
         mutableLiveData.observe(getViewLifecycleOwner(), courseScheduleResponseModel -> {
             if(courseScheduleResponseModel != null){
-                adapter = new CourseScheduleAdapter(getActivity(), courseScheduleResponseModel.getData());
+                adapter = new CourseScheduleAdapter(courseScheduleResponseModel.getData());
                 binding.rvCourseSchedule.setAdapter(adapter);
             }
         });
@@ -71,5 +63,4 @@ public class CourseScheduleFragment extends Fragment {
         adapter = null;
         super.onDestroy();
     }
-
 }

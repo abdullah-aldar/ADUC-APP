@@ -7,10 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.databinding.CustomDashboardLayoutBinding;
+import com.aldar.studentportal.interfaces.ItemClickCallBack;
 import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
 import com.aldar.studentportal.ui.fragments.studentDashboardFragments.letterRequest.LetterRequestFragment;
 import com.aldar.studentportal.ui.fragments.studentDashboardFragments.library.LibraryFragment;
@@ -23,91 +27,61 @@ import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myStudyPla
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.aldar.studentportal.utilities.OtherUtils;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class StudentDashboardItemsAdapter extends RecyclerView.Adapter<StudentDashboardItemsAdapter.MyViewHolder> {
 
-    private final LayoutInflater inflater;
-    private List<DashboardItemModel> dashboardItemList;
-    private Context context;
+    private List<? extends DashboardItemModel> mItemList;
 
-    public StudentDashboardItemsAdapter(Context context, List<DashboardItemModel> dashboardItemList) {
+    @Nullable
+    private ItemClickCallBack mItemClickCallback;
 
-        inflater = LayoutInflater.from(context);
-        this.context = context;
-        this.dashboardItemList = dashboardItemList;
+    public StudentDashboardItemsAdapter(@Nullable ItemClickCallBack mClickCallback) {
+        mItemClickCallback = mClickCallback;
     }
 
+    public void setProductList(final List<? extends DashboardItemModel> dashboardItemModels){
+        if(mItemList == null){
+           mItemList = dashboardItemModels;
+        }
+    }
+
+    @NotNull
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.custom_dashboard_layout, parent, false);
-        return new MyViewHolder(view);
+    public MyViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+        CustomDashboardLayoutBinding binding = DataBindingUtil
+                .inflate(LayoutInflater.from(parent.getContext()), R.layout.custom_dashboard_layout,
+                        parent, false);
+        binding.setCallback(mItemClickCallback);
+        return new MyViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        DashboardItemModel model = dashboardItemList.get(position);
-        holder.ivDashboard.setImageResource(model.getImageID());
-        holder.tvTitle.setText(model.getTitle());
-
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToScreen(context, position);
-            }
-        });
+        DashboardItemModel model = mItemList.get(position);
+        holder.binding.ivDashboard.setImageResource(model.getImageID());
+        holder.binding.setItem(mItemList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return dashboardItemList.size();
+        return mItemList.size();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return mItemList.get(position).getId();
     }
 
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView tvTitle;
-        ImageView ivDashboard;
-        ConstraintLayout itemLayout;
+        static class MyViewHolder extends RecyclerView.ViewHolder {
+        CustomDashboardLayoutBinding binding;
 
-        private MyViewHolder(View itemView) {
-            super(itemView);
-            itemLayout = itemView.findViewById(R.id.item_layout);
-            ivDashboard = itemView.findViewById(R.id.iv_dashboard);
-            tvTitle = itemView.findViewById(R.id.title);
-        }
-    }
-
-    private void goToScreen(Context context, int position) {
-        switch (position) {
-            case 0:
-                GeneralUtilities.connectFragmentWithBack(context, new CourseScheduleFragment());
-                break;
-            case 1:
-                GeneralUtilities.connectFragmentWithBack(context, new MyMarksFragment());
-                break;
-            case 2:
-                GeneralUtilities.connectFragmentWithBack(context, new MyStudyPlanFragment());
-                break;
-            case 3:
-                GeneralUtilities.connectFragmentWithBack(context, new MyCourseAdviceFragment());
-                break;
-            case 4:
-                GeneralUtilities.connectFragmentWithBack(context, new LetterRequestFragment());
-                break;
-            case 5:
-                GeneralUtilities.connectFragmentWithBack(context, new MyFinanceFragment());
-                break;
-            case 6:
-                GeneralUtilities.connectFragmentWithBack(context, new StudentProfileFragment());
-                break;
-            case 7:
-                break;
-            case 8:
-                OtherUtils.googleClassRoom(context);
-                break;
-            case 9:
-                GeneralUtilities.connectFragmentWithBack(context, new LibraryFragment());
-                break;
+        private MyViewHolder(CustomDashboardLayoutBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }

@@ -2,56 +2,42 @@ package com.aldar.studentportal.ui.fragments.studentDashboardFragments.mainDashb
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.storage.OnObbStateChangeListener;
-import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.StudentDashboardItemsAdapter;
 import com.aldar.studentportal.databinding.FragmentStudentDashboardBinding;
-import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
+import com.aldar.studentportal.interfaces.ItemClickCallBack;
 import com.aldar.studentportal.ui.activities.NavigationActivity;
-import com.aldar.studentportal.ui.fragments.login.LoginFragment;
+import com.aldar.studentportal.ui.activities.containerActivities.LoginSignUpActivity;
 import com.aldar.studentportal.ui.fragments.studentDashboardFragments.announcment.AnnouncementFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.library.LibraryFragment;
 import com.aldar.studentportal.utilities.GeneralUtilities;
-import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import java.util.Objects;
+
 
 public class StudentDashboardFragment extends Fragment {
     private FragmentStudentDashboardBinding binding;
     private StudentDashboardItemsAdapter adapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_student_dashboard,container,false);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+
+        adapter = new StudentDashboardItemsAdapter(mItemClickCallback);
         initViews();
 
         return binding.getRoot();
@@ -59,21 +45,16 @@ public class StudentDashboardFragment extends Fragment {
 
 
     private void initViews() {
-
-        String base64 = GeneralUtilities.getSharedPreferences(getActivity()).getString("student_image","");
-
         StudentDashboradItemsViewmodel viewmodel = new ViewModelProvider(this).get(StudentDashboradItemsViewmodel.class);
-        binding.setLifecycleOwner(this);
+        binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setStudnetDasboarViewModel(viewmodel);
 
 
-        viewmodel.getItemData().observe(getViewLifecycleOwner(), new Observer<List<DashboardItemModel>>() {
-            @Override
-            public void onChanged(List<DashboardItemModel> dashboardItemModels) {
-                binding.rvDashboardItem.setLayoutManager(new GridLayoutManager(getContext(), 2));
-                adapter = new StudentDashboardItemsAdapter(getContext(), dashboardItemModels);
-                binding.rvDashboardItem.setAdapter(adapter);
-            }
+        viewmodel.getItemData().observe(getViewLifecycleOwner(), dashboardItemModels -> {
+
+            binding.rvDashboardItem.setLayoutManager(new GridLayoutManager(getContext(), 2));
+            adapter.setProductList(dashboardItemModels);
+            binding.rvDashboardItem.setAdapter(adapter);
         });
 
 
@@ -84,52 +65,30 @@ public class StudentDashboardFragment extends Fragment {
 
 
 
-        binding.ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-                startActivity(new Intent(getActivity(),NavigationActivity.class));
+        binding.ivBack.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(),NavigationActivity.class));
+            Objects.requireNonNull(getActivity()).finish();
 
-            }
         });
 
-        binding.ivLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog();
-            }
-        });
+        binding.ivLogout.setOnClickListener(v -> showDialog());
 
-        binding.layoutAnnouncement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralUtilities.connectFragmentWithBack(getActivity(),new AnnouncementFragment());
-            }
-        });
-
-
+        binding.layoutAnnouncement.setOnClickListener(v -> GeneralUtilities.connectFragmentWithBack(getActivity(),new AnnouncementFragment()));
     }
 
     private void showDialog(){
-        Dialog dialog = new Dialog(getActivity());
+        Dialog dialog = new Dialog(Objects.requireNonNull(getContext()));
         dialog.setContentView(R.layout.custom_dialog);
         Button btnLogout = dialog.findViewById(R.id.btn_logout);
         Button btnCancel = dialog.findViewById(R.id.btn_cancel);
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-                startActivity(new Intent(getActivity(), NavigationActivity.class));
-                GeneralUtilities.putBooleanValueInEditor(getContext(),"isLogin",false);
-            }
+        btnLogout.setOnClickListener(v -> {
+            Objects.requireNonNull(getActivity()).finish();
+            startActivity(new Intent(getActivity(), NavigationActivity.class));
+            GeneralUtilities.putBooleanValueInEditor(getContext(),"isLogin",false);
         });
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        btnCancel.setOnClickListener(v -> dialog.dismiss());
+
         dialog.show();
     }
 
@@ -139,4 +98,11 @@ public class StudentDashboardFragment extends Fragment {
         adapter = null;
         super.onDestroy();
     }
+
+
+    private final ItemClickCallBack mItemClickCallback = item -> {
+        if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+            ((LoginSignUpActivity) requireActivity()).show(item);
+        }
+    };
 }

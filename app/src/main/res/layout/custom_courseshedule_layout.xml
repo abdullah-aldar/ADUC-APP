@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable name="couseSheduleModel"
+            type="com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel"/>
+    </data>
+
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/shadow"
@@ -22,7 +30,7 @@
         android:id="@+id/tv_course_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CME301"
+        android:text="@{couseSheduleModel.courseCode}"
         android:layout_toEndOf="@+id/course_code"
         android:layout_marginStart="@dimen/small_margin"/>
 
@@ -58,7 +66,7 @@
         android:id="@+id/tv_course_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Communication Systems"
+        android:text="@{couseSheduleModel.courseName}"
         android:layout_below="@+id/course_code"
         android:layout_toEndOf="@+id/course_name"
         android:layout_marginStart="@dimen/small_margin"
@@ -78,7 +86,7 @@
         android:id="@+id/tv_day_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thursday 04:00 PM - 07:00 PM"
+        android:text="@{couseSheduleModel.dayTime}"
         android:layout_below="@+id/course_name"
         android:layout_toEndOf="@+id/day_time"
         android:layout_marginStart="@dimen/small_margin"
@@ -98,7 +106,7 @@
         android:id="@+id/tv_room"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="203"
+        android:text="@{couseSheduleModel.room}"
         android:layout_below="@+id/day_time"
         android:layout_toEndOf="@+id/room"
         android:layout_marginStart="@dimen/small_margin"
@@ -118,7 +126,7 @@
         android:id="@+id/tv_lecture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dr. Enoch"
+        android:text="@{couseSheduleModel.lecturer}"
         android:layout_below="@+id/room"
         android:layout_toEndOf="@+id/lecture"
         android:layout_marginStart="@dimen/small_margin"
@@ -128,7 +136,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/lecture"
-
         android:layout_marginTop="@dimen/medium_margin"
         android:background="@drawable/box_style">
 
@@ -159,7 +166,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text=""
+            android:text="@{couseSheduleModel.midTermExamDate}"
             android:layout_marginStart="@dimen/small_margin" />
 
     </LinearLayout>
@@ -199,10 +206,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text=""
+            android:text="@{couseSheduleModel.finalExamDate}"
             android:layout_marginStart="@dimen/small_margin" />
 
     </LinearLayout>
     </RelativeLayout>
 
 </RelativeLayout>
+
+</layout>

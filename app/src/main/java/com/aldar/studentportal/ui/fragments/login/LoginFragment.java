@@ -19,7 +19,6 @@ import android.widget.Toast;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.FragmentLoginBinding;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
-import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
 import com.aldar.studentportal.ui.fragments.forgotPassword.ForgotPasswordFragment;
 import com.aldar.studentportal.ui.fragments.signUp.CheckUsernameFragment;
 import com.aldar.studentportal.ui.fragments.studentDashboardFragments.mainDashboardScreen.StudentDashboardFragment;
@@ -55,7 +54,7 @@ public class LoginFragment extends Fragment {
             getFcmToken();
         }
 
-        loginViewModel.getLoginResponseData().observe(getActivity(), new Observer<LoginResponseModel>() {
+        loginViewModel.getLoginResponseData().observe(getViewLifecycleOwner(), new Observer<LoginResponseModel>() {
             @Override
             public void onChanged(LoginResponseModel loginResponseModel) {
 

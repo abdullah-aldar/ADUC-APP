@@ -26,14 +26,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.containerActivities.LoginSignUpActivity"/>
+        <activity android:name=".ui.activities.containerActivities.LoginSignUpActivity"
+            android:theme="@style/AppTheme.Splash"/>
         <activity android:name=".ui.activities.WebActivity" />
         <activity
             android:name=".ui.activities.NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activities.StudentPortalMainActivity"
-            android:screenOrientation="portrait"/>
+            android:theme="@style/AppTheme.Splash"
+            android:screenOrientation="fullSensor"/>
 
         <!-- firebase notification here -->
         <service
