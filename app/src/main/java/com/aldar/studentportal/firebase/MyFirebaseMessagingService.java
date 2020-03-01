@@ -11,8 +11,8 @@ import androidx.core.app.NotificationCompat;
 
 import com.aldar.studentportal.R;
 
-import com.aldar.studentportal.ui.activities.SplashActivity;
-import com.aldar.studentportal.utilities.GeneralUtilities;
+import com.aldar.studentportal.ui.activities.common.SplashActivity;
+import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -48,8 +48,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String token) {
         super.onNewToken(token);
-        GeneralUtilities.putStringValueInEditor(this,"fcm_token",token).commit();
-
+        SharedPreferencesManager.getInstance(getApplicationContext()).setStringValueInEditor("fcm_token",token);
     }
 
 }

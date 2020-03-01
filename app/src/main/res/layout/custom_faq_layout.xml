@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable name="faqModel"
+            type="com.aldar.studentportal.models.faqModels.FAQModel"/>
+    </data>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -28,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginEnd="@dimen/small_margin"
-            android:text="@string/faq_text"
+            android:text="@{faqModel.question}"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_toStartOf="@+id/iv_arrow"
             android:textColor="@color/black"/>
@@ -47,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/medium_margin"
+            android:text="@{faqModel.answer}"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_below="@+id/tv_faq_question"
             android:visibility="gone"
@@ -54,8 +63,5 @@
 
     </RelativeLayout>
 
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

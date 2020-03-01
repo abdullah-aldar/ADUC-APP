@@ -6,7 +6,7 @@
     <data>
         <variable
             name="changeViewModel"
-            type="com.aldar.studentportal.ui.fragments.forgotPassword.ChangePasswordViewModel"/>
+            type="com.aldar.studentportal.ui.studentPortal.forgotPassword.ChangePasswordViewModel"/>
     </data>
 
 

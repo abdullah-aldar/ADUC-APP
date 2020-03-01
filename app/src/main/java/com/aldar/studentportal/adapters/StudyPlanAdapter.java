@@ -5,24 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel;
-
+import com.aldar.studentportal.models.studyplan.StudyPlanDataModel;
 import java.util.List;
 
 public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyViewHolder> {
 
     private Context context;
     private final LayoutInflater inflater;
-    private List<CourseScheduleDataModel> CourseScheduleDataModelList;
+    private List<StudyPlanDataModel> StudyPlanDataModelList;
 
-    public StudyPlanAdapter(Context context, List<CourseScheduleDataModel> CourseScheduleDataModelList) {
+    public StudyPlanAdapter(Context context, List<StudyPlanDataModel> StudyPlanDataModelList) {
         inflater = LayoutInflater.from(context);
         this.context = context;
-        this.CourseScheduleDataModelList = CourseScheduleDataModelList;
+        this.StudyPlanDataModelList = StudyPlanDataModelList;
     }
 
     @Override
@@ -33,7 +30,7 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-     CourseScheduleDataModel model = CourseScheduleDataModelList.get(position);
+     StudyPlanDataModel model = StudyPlanDataModelList.get(position);
 
      holder.tvCourseCode.setText(model.getCourseCode());
      holder.tvCourseName.setText(model.getCourseName());
@@ -46,7 +43,7 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
 
     @Override
     public int getItemCount() {
-        return CourseScheduleDataModelList.size();
+        return StudyPlanDataModelList.size();
     }
 
 

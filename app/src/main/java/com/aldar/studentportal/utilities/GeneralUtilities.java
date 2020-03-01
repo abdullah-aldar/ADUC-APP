@@ -24,38 +24,4 @@ public class GeneralUtilities {
         return fragment;
     }
 
-    public static SharedPreferences.Editor putBooleanValueInEditor(Context context, String key, boolean value) {
-        sharedPreferences = getSharedPreferences(context);
-        editor = sharedPreferences.edit();
-        editor.putBoolean(key, value).apply();
-        return editor;
-    }
-
-    public static SharedPreferences.Editor putStringValueInEditor(Context context, String key, String value) {
-        sharedPreferences = getSharedPreferences(context);
-        editor = sharedPreferences.edit();
-        editor.putString(key, value).apply();
-        return editor;
-    }
-
-    public static SharedPreferences.Editor putIntValueInEditor(Context context, String key, int value) {
-        sharedPreferences = getSharedPreferences(context);
-        editor = sharedPreferences.edit();
-        editor.putInt(key, value).apply();
-        return editor;
-    }
-
-    public static SharedPreferences.Editor removeValueFromEditor(Context context,String key){
-        sharedPreferences = getSharedPreferences(context);
-        sharedPreferences = getSharedPreferences(context);
-        editor.remove(key).apply();
-        return editor;
-    }
-
-
-
-    public static SharedPreferences getSharedPreferences(Context context) {
-        return context.getSharedPreferences("ADUC", 0);
-    }
-
 }

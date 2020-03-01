@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "902942246959",
-    "firebase_url": "https://aduc-app.firebaseio.com",
-    "project_id": "aduc-app",
-    "storage_bucket": "aduc-app.appspot.com"
+    "project_number": "389850108910",
+    "firebase_url": "https://aldar-university-app.firebaseio.com",
+    "project_id": "aldar-university-app",
+    "storage_bucket": "aldar-university-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:902942246959:android:aacec359fdfa227c049eda",
+        "mobilesdk_app_id": "1:389850108910:android:eb1ee36aa705458adb34ff",
         "android_client_info": {
           "package_name": "com.aldar.studentportal"
         }
       },
       "oauth_client": [
         {
-          "client_id": "902942246959-2snmjtg33i6cp5lftdhmepf73k27507m.apps.googleusercontent.com",
+          "client_id": "389850108910-uhud1ebsq1a536hbhtr11ud8c52mhn3o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.aldar.studentportal",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "902942246959-m8cb4jlcp4s1nn6f5jn3slor62rm1g7j.apps.googleusercontent.com",
+          "client_id": "389850108910-s6h5ln5n29i5pvkr0u7khjemugode2g8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDoFVKB_mweyCvXhqALaYrH4pQ-t5AfzOA"
+          "current_key": "AIzaSyBJHSJu40BEhHaHL6JxJc5nJJ_ngdx5lWQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "902942246959-m8cb4jlcp4s1nn6f5jn3slor62rm1g7j.apps.googleusercontent.com",
+              "client_id": "389850108910-s6h5ln5n29i5pvkr0u7khjemugode2g8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

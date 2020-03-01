@@ -7,7 +7,7 @@
     <data>
         <variable
             name="studyPlanViewModel"
-            type="com.aldar.studentportal.ui.fragments.studentDashboardFragments.myCourseSchedule.CourseScheduleViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myStudyPlan.MyStudyPlanViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

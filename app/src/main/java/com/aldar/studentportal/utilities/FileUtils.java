@@ -92,7 +92,7 @@ public class FileUtils {
 
                 apkStorage = new File(
                         Environment.getExternalStorageDirectory() + "/"
-                                + "ADUC");
+                                + "ADUC Folder");
 
                 if (!apkStorage.exists()) {
                     apkStorage.mkdir();

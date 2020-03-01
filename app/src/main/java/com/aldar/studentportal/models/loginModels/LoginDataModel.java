@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginDataModel {
 
-
     @SerializedName("studentID")
     @Expose
     private Integer studentID;
@@ -54,6 +53,12 @@ public class LoginDataModel {
     @SerializedName("creditHoursCompleted")
     @Expose
     private Integer creditHoursCompleted;
+    @SerializedName("studyPlanId")
+    @Expose
+    private String studyPlanId;
+    @SerializedName("academicWarningLetter")
+    @Expose
+    private String academicWarningLetter;
 
     public Integer getStudentID() {
         return studentID;
@@ -119,16 +124,16 @@ public class LoginDataModel {
         this.photo = photo;
     }
 
-    public String getConcentration() {
-        return concentration;
-    }
-
     public String getProgram() {
         return program;
     }
 
     public void setProgram(String program) {
         this.program = program;
+    }
+
+    public String getConcentration() {
+        return concentration;
     }
 
     public void setConcentration(String concentration) {
@@ -181,6 +186,22 @@ public class LoginDataModel {
 
     public void setCreditHoursCompleted(Integer creditHoursCompleted) {
         this.creditHoursCompleted = creditHoursCompleted;
+    }
+
+    public String getStudyPlanId() {
+        return studyPlanId;
+    }
+
+    public void setStudyPlanId(String studyPlanId) {
+        this.studyPlanId = studyPlanId;
+    }
+
+    public String getAcademicWarningLetter() {
+        return academicWarningLetter;
+    }
+
+    public void setAcademicWarningLetter(String academicWarningLetter) {
+        this.academicWarningLetter = academicWarningLetter;
     }
 
 }

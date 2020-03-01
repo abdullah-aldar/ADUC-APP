@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_color"
-    tools:context=".ui.fragments.signUp.VerifyUserFragment">
+    tools:context=".ui.studentPortal.signUp.VerifyUserFragment">
 
     <RelativeLayout
         android:id="@+id/rl_parent"

@@ -6,6 +6,7 @@ import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordRespons
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
+import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -33,12 +34,17 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/Login")
     Call<LoginResponseModel> userLogin(@Field("UserName") String email,
-                                       @Field("Password") String password);
+                                       @Field("Password") String password,
+                                       @Field("token_id") String fcmToken);
 
     @FormUrlEncoded
     @POST("aduc/StudentRegisteredData")
     Call<CourseScheduleResponseModel> getCourseSchedule(@Field("GivenstudentId") String studendID,
                                                         @Field("semId") String semesterID);
+
+    @FormUrlEncoded
+    @POST("aduc/Studyplan")
+    Call<StudyPlanResponseModel> getStudyPlan(@Field("StudentID") String studendID);
 
     @FormUrlEncoded
     @POST("aduc/ForgotPassword")

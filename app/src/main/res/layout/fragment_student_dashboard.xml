@@ -9,7 +9,7 @@
 
         <variable
             name="studnetDasboarViewModel"
-            type="com.aldar.studentportal.ui.fragments.studentDashboardFragments.mainDashboardScreen.StudentDashboradItemsViewmodel" />
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.mainDashboardScreen.StudentDashboradItemsViewmodel" />
     </data>
 
 
@@ -44,9 +44,9 @@
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
             android:text="Student Dashboard"
+            android:fontFamily="@font/montserrat_semibold"
             android:textColor="@color/gray"
             android:textSize="@dimen/large_text_size"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -95,7 +95,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginStart="14dp"
                 android:layout_toRightOf="@+id/iv_profile"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="@{studnetDasboarViewModel.studentName}" />
 
 
@@ -105,17 +105,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_student_name"
                 android:layout_toRightOf="@+id/iv_profile"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/montserrat_semibold"
                 android:layout_marginStart="14dp"
-                android:text="@{studnetDasboarViewModel.studentID}" />
+                android:text="@{studnetDasboarViewModel.studentGivenID}" />
 
             <TextView
                 android:id="@+id/adviser"
-                android:layout_width="75dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_profile"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Advisor " />
 
 
@@ -125,16 +125,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_profile"
                 android:layout_toRightOf="@+id/adviser"
-                android:fontFamily="@font/poppins_light"
                 android:text="@{studnetDasboarViewModel.advisor}" />
 
             <TextView
                 android:id="@+id/course_name"
-                android:layout_width="75dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_student_adviser"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="@string/student_course" />
 
 
@@ -144,16 +143,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_student_adviser"
                 android:layout_toRightOf="@id/course_name"
-                android:fontFamily="@font/poppins_light"
                 android:text="@{studnetDasboarViewModel.course}" />
 
             <TextView
                 android:id="@+id/concentration"
-                android:layout_width="75dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_course_name"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Major" />
 
             <TextView
@@ -162,7 +160,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_course_name"
                 android:layout_toRightOf="@+id/concentration"
-                android:fontFamily="@font/poppins_light"
                 android:text="@{studnetDasboarViewModel.major}" />
 
 
@@ -212,7 +209,6 @@
                         android:layout_marginStart="12dp"
                         android:layout_toRightOf="@+id/iv_mail"
                         android:text="Announcement"
-                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/black" />
                 </RelativeLayout>
 
@@ -261,7 +257,6 @@
                         android:layout_marginStart="10dp"
                         android:layout_toRightOf="@+id/iv_alaram"
                         android:text="Notification"
-                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@color/black" />
                 </RelativeLayout>
             </RelativeLayout>

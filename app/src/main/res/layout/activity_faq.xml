@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <data>
+        <variable
+            name="faqViewMode"
+            type="com.aldar.studentportal.ui.activities.common.faq.FaqViewmodel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

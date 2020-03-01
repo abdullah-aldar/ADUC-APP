@@ -15,12 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:contentDescription="TODO"
             android:scaleType="centerCrop"
             android:src="@drawable/main"
             app:layout_constraintBottom_toTopOf="@id/linear_layout"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="108dp"
-            android:contentDescription="TODO" />
+            tools:layout_editor_absoluteX="108dp" />
 
         <LinearLayout
             android:id="@+id/linear_layout"

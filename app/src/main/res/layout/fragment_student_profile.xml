@@ -6,7 +6,7 @@
     <data>
         <variable
             name="studenProfileViewModel"
-            type="com.aldar.studentportal.ui.fragments.studentDashboardFragments.myProfile.StudentProfileViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myProfile.StudentProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

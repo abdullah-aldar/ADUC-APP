@@ -1,34 +1,15 @@
 package com.aldar.studentportal.adapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.CustomDashboardLayoutBinding;
 import com.aldar.studentportal.interfaces.ItemClickCallBack;
 import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.letterRequest.LetterRequestFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.library.LibraryFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myCourseAdvice.MyCourseAdviceFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myCourseSchedule.CourseScheduleFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myFinance.MyFinanceFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myMarks.MyMarksFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myProfile.StudentProfileFragment;
-import com.aldar.studentportal.ui.fragments.studentDashboardFragments.myStudyPlan.MyStudyPlanFragment;
-import com.aldar.studentportal.utilities.GeneralUtilities;
-import com.aldar.studentportal.utilities.OtherUtils;
-
 import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public class StudentDashboardItemsAdapter extends RecyclerView.Adapter<StudentDashboardItemsAdapter.MyViewHolder> {

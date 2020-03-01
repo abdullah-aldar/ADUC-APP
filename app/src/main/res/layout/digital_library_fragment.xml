@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.studentDashboardFragments.digitalLibrary.DigitalLibraryFragment">
+    tools:context=".ui.studentPortal.studentDashboardFragments.digitalLibrary.DigitalLibraryFragment">
 
     <TextView
         android:layout_width="match_parent"

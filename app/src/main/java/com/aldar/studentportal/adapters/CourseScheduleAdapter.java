@@ -32,7 +32,7 @@ public class CourseScheduleAdapter extends RecyclerView.Adapter<CourseScheduleAd
 
     @NotNull
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         CustomCoursesheduleLayoutBinding binding = DataBindingUtil
                 .inflate(LayoutInflater.from(parent.getContext()), R.layout.custom_courseshedule_layout,
                         parent, false);

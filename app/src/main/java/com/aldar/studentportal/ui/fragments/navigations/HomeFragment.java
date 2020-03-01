@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +17,10 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.ui.activities.FaqActivity;
-import com.aldar.studentportal.ui.activities.FeeActivity;
-import com.aldar.studentportal.ui.activities.containerActivities.LoginSignUpActivity;
-import com.aldar.studentportal.ui.activities.WebActivity;
+import com.aldar.studentportal.ui.activities.common.faq.FaqActivity;
+import com.aldar.studentportal.ui.activities.common.FeeActivity;
+import com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity;
+import com.aldar.studentportal.ui.activities.common.WebActivity;
 import com.aldar.studentportal.utilities.FileUtils;
 import com.aldar.studentportal.utilities.PermissionUtils;
 
@@ -181,7 +179,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         leakyClass = null;
+        super.onDestroy();
+
     }
 }
