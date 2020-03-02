@@ -40,6 +40,12 @@ public class StudyPlanDataModel {
     @SerializedName("preReq")
     @Expose
     private String preReq;
+    @SerializedName("courseCH")
+    @Expose
+    private Integer courseCH;
+    @SerializedName("compCourseCH")
+    @Expose
+    private Integer compCourseCH;
 
     public Integer getCourseID() {
         return courseID;
@@ -135,5 +141,21 @@ public class StudyPlanDataModel {
 
     public void setPreReq(String preReq) {
         this.preReq = preReq;
+    }
+
+    public Integer getCourseCH() {
+        return courseCH;
+    }
+
+    public void setCourseCH(Integer courseCH) {
+        this.courseCH = courseCH;
+    }
+
+    public Integer getCompCourseCH() {
+        return compCourseCH;
+    }
+
+    public void setCompCourseCH(Integer compCourseCH) {
+        this.compCourseCH = compCourseCH;
     }
 }

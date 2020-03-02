@@ -1,11 +1,11 @@
-package com.aldar.studentportal.models.studyplan;
+package com.aldar.studentportal.models.mymarksmodels;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class StudyPlanResponseModel {
+public class MarksResponseModel {
     @SerializedName("success")
     @Expose
     private Boolean success;
@@ -18,12 +18,12 @@ public class StudyPlanResponseModel {
     @SerializedName("cgpa")
     @Expose
     private Double cgpa;
-    @SerializedName("totalCreditHours")
+    @SerializedName("totalCreditHourCompleted")
     @Expose
-    private Double totalCreditHours;
+    private Double totalCreditHourCompleted;
     @SerializedName("data")
     @Expose
-    private List<StudyPlanYearly> data = null;
+    private List<MarksSemesterModel> data = null;
 
     public Boolean getSuccess() {
         return success;
@@ -57,19 +57,19 @@ public class StudyPlanResponseModel {
         this.cgpa = cgpa;
     }
 
-    public Double getTotalCreditHours() {
-        return totalCreditHours;
+    public Double getTotalCreditHourCompleted() {
+        return totalCreditHourCompleted;
     }
 
-    public void setTotalCreditHours(Double totalCreditHours) {
-        this.totalCreditHours = totalCreditHours;
+    public void setTotalCreditHourCompleted(Double totalCreditHourCompleted) {
+        this.totalCreditHourCompleted = totalCreditHourCompleted;
     }
 
-    public List<StudyPlanYearly> getData() {
+    public List<MarksSemesterModel> getData() {
         return data;
     }
 
-    public void setData(List<StudyPlanYearly> data) {
+    public void setData(List<MarksSemesterModel> data) {
         this.data = data;
     }
 

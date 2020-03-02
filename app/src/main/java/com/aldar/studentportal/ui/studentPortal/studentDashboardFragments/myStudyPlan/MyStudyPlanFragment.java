@@ -15,8 +15,8 @@ import android.view.ViewGroup;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.StudyPlanAdapter;
 import com.aldar.studentportal.databinding.FragmentMyStudyPlanBinding;
+import com.aldar.studentportal.interfaces.StudyPlanInterface;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
-import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseSchedule.CourseScheduleViewModel;
 
 
 public class MyStudyPlanFragment extends Fragment {
@@ -50,7 +50,8 @@ public class MyStudyPlanFragment extends Fragment {
     private void studyPlanData(MutableLiveData<StudyPlanResponseModel> mutableLiveData){
         mutableLiveData.observe(getViewLifecycleOwner(),studyPlanResponseModel -> {
             if(studyPlanResponseModel != null){
-                adapter = new StudyPlanAdapter(getActivity(), studyPlanResponseModel.getData());
+                adapter = new StudyPlanAdapter(getActivity(), studyPlanResponseModel.getData(),studyPlanResponseModel.getData().get(0).getCourses(),
+                        studyPlanInterface);
                 binding.rvStudyPlan.setAdapter(adapter);
             }
         });
@@ -62,4 +63,9 @@ public class MyStudyPlanFragment extends Fragment {
         adapter = null;
         super.onDestroy();
     }
+
+    private final StudyPlanInterface studyPlanInterface = (total, passed) -> {
+        binding.tvTotalCreditHour.setText(total);
+        binding.tvPassCreditsHours.setText(passed);
+    };
 }

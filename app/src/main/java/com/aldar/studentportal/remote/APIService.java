@@ -4,6 +4,7 @@ import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleRespons
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordResponseModel;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
+import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
@@ -41,6 +42,10 @@ public interface APIService {
     @POST("aduc/StudentRegisteredData")
     Call<CourseScheduleResponseModel> getCourseSchedule(@Field("GivenstudentId") String studendID,
                                                         @Field("semId") String semesterID);
+
+    @FormUrlEncoded
+    @POST("aduc/StudentMarks")
+    Call<MarksResponseModel> getStudentMarks(@Field("StudentID") String studendID);
 
     @FormUrlEncoded
     @POST("aduc/Studyplan")

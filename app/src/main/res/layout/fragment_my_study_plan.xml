@@ -62,24 +62,47 @@
 
 
             <TextView
-                android:id="@+id/tv_student_name"
+                android:id="@+id/credit_hour"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Total Credit Hours\t\t\t\t= "
+                android:textColor="@color/gray"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/tv_total_credit_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hi\nAbdullah Khan"
+                android:text=""
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_toEndOf="@+id/credit_hour"
                 android:textColor="@color/gray"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/poppins_bold"
                 android:layout_centerHorizontal="true" />
 
 
             <TextView
+                android:id="@+id/pass_credit"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Passed Credit Hours\t\= "
+                android:layout_below="@id/credit_hour"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/tv_pass_credits_hours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
-                android:text="Here is your study plan"
-                android:fontFamily="@font/poppins_light"
-                android:layout_below="@id/tv_student_name"
-                android:layout_centerHorizontal="true"
-                android:textSize="12sp"/>
+                android:text=""
+                android:layout_marginStart="@dimen/small_margin"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_below="@id/credit_hour"
+                android:layout_toEndOf="@id/pass_credit"
+                android:layout_centerHorizontal="true"/>
 
         </RelativeLayout>
 
