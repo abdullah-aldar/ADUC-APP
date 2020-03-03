@@ -1,20 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+        <variable name="financeModel"
+            type="com.aldar.studentportal.models.financeModel.FinanceDataModel"/>
+    </data>
+
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/shadow"
     android:layout_marginTop="@dimen/small_margin"
     android:layout_marginStart="@dimen/small_margin"
     android:layout_marginEnd="@dimen/small_margin"
-    android:padding="@dimen/medium_margin">
+    android:paddingStart="@dimen/standarize_spacing"
+    android:paddingEnd="@dimen/medium_margin"
+    android:paddingTop="@dimen/medium_margin"
+    android:paddingBottom="@dimen/medium_margin">
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="#1"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_toEndOf="@id/tv_count"
+        android:paddingStart="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:layout_marginStart="@dimen/standarize_spacing"
+        android:text="@{financeModel.symbol}"
+        android:background="@color/maroon"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/transaction_date"
         android:layout_width="150dp"
+        android:layout_below="@id/tv_count"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="@dimen/small_margin"
         android:text="Transaction Date :"
         android:textStyle="bold"/>
 
@@ -22,7 +53,9 @@
         android:id="@+id/tv_transaction_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="01/02/2020"
+        android:layout_below="@id/tv_count"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@{financeModel.tranDate}"
         android:layout_toEndOf="@+id/transaction_date"
         android:layout_marginStart="@dimen/small_margin"/>
 
@@ -41,7 +74,7 @@
         android:id="@+id/tv_transaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RVP2012810"
+        android:text="@{financeModel.jounalID}"
         android:layout_below="@+id/transaction_date"
         android:layout_toEndOf="@+id/transaction"
         android:layout_marginStart="@dimen/small_margin"
@@ -61,7 +94,7 @@
         android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Spring Semester fees"
+        android:text="@{financeModel.descrption}"
         android:layout_below="@+id/transaction"
         android:layout_toEndOf="@+id/description"
         android:layout_marginStart="@dimen/small_margin"
@@ -81,7 +114,7 @@
         android:id="@+id/tv_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100093"
+        android:text="@{financeModel.chequeNo}"
         android:layout_below="@+id/tv_description"
         android:layout_toEndOf="@+id/check"
         android:layout_marginStart="@dimen/small_margin"
@@ -101,7 +134,7 @@
         android:id="@+id/tv_debit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1250"
+        android:text="@{financeModel.amountD}"
         android:layout_below="@+id/tv_check"
         android:layout_toEndOf="@+id/debit"
         android:layout_marginStart="@dimen/small_margin"
@@ -121,10 +154,31 @@
         android:id="@+id/tv_credit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5187"
+        android:text="@{financeModel.amountC}"
         android:layout_below="@+id/tv_debit"
         android:layout_toEndOf="@+id/credit"
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/text_gap"/>
 
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/credit"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Balance :"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/text_gap"/>
+
+    <TextView
+        android:id="@+id/tv_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/credit"
+        android:background="@color/gray"
+        android:layout_toEndOf="@+id/balance"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"/>
+
 </RelativeLayout>
+</layout>

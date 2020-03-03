@@ -108,7 +108,7 @@
                 android:id="@+id/personal_info_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/medium_margin"
+                android:layout_margin="@dimen/small_margin"
                 android:background="@color/white"
                 tools:layout_editor_absoluteY="28dp">
 
@@ -132,7 +132,7 @@
                         android:id="@+id/tv_student_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CME301"
+                        android:text="@{studenProfileViewModel.profileData.get(0).studentID}"
                         android:layout_marginTop="@dimen/high_spacing"
                         android:layout_toEndOf="@+id/student_id"
                         android:layout_marginEnd="@dimen/small_margin"/>
@@ -142,7 +142,7 @@
                         android:id="@+id/student_name"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/student_id"
+                        android:layout_below="@+id/tv_student_id"
                         android:textColor="@color/colorPrimaryDark"
                         android:text="Student Name :"
                         android:textStyle="bold"
@@ -152,7 +152,7 @@
                         android:id="@+id/tv_student_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Abdullah Khan"
+                        android:text="@{studenProfileViewModel.profileData.get(0).studentName}"
                         android:layout_below="@+id/tv_student_id"
                         android:layout_alignParentEnd="true"
                         android:layout_toEndOf="@+id/student_name"
@@ -162,7 +162,7 @@
                         android:id="@+id/arabic_name"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/student_name"
+                        android:layout_below="@+id/tv_student_name"
                         android:textColor="@color/colorPrimaryDark"
                         android:text="Arabic Student Name :"
                         android:textStyle="bold"
@@ -172,7 +172,7 @@
                         android:id="@+id/tv_arabic_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0 0 0"
+                        android:text="@{studenProfileViewModel.profileData.get(0).arabicStudentName}"
                         android:layout_below="@+id/tv_student_name"
                         android:layout_alignParentEnd="true"
                         android:layout_toEndOf="@+id/arabic_name"
@@ -192,7 +192,7 @@
                         android:id="@+id/tv_academic_adviser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="203"
+                        android:text="@{studenProfileViewModel.profileData.get(0).academicAdvisor}"
                         android:layout_below="@+id/arabic_name"
                         android:layout_toEndOf="@+id/academic_adviser"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -212,7 +212,7 @@
                         android:id="@+id/tv_dob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24-05-1994"
+                        android:text="@{studenProfileViewModel.profileData.get(0).dateofBirth}"
                         android:layout_below="@+id/academic_adviser"
                         android:layout_toEndOf="@+id/dob"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -232,7 +232,7 @@
                         android:id="@+id/tv_gender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Male"
+                        android:text="@{studenProfileViewModel.profileData.get(0).gender}"
                         android:layout_below="@+id/tv_dob"
                         android:layout_toEndOf="@+id/gender"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -252,7 +252,7 @@
                         android:id="@+id/tv_marital_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Single"
+                        android:text="@{studenProfileViewModel.profileData.get(0).maritalStatus}"
                         android:layout_below="@+id/tv_gender"
                         android:layout_toEndOf="@+id/marital_status"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -272,7 +272,7 @@
                         android:id="@+id/tv_nationality"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pakistan"
+                        android:text="@{studenProfileViewModel.profileData.get(0).residence}"
                         android:layout_below="@+id/marital_status"
                         android:layout_toEndOf="@+id/nationality"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -298,7 +298,7 @@
                 android:id="@+id/contact_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/medium_margin"
+                android:layout_margin="@dimen/small_margin"
                 android:layout_below="@+id/personal_info_layout"
                 android:background="@color/white"
                 tools:layout_editor_absoluteY="28dp">
@@ -323,7 +323,7 @@
                         android:id="@+id/tv_mobile_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="+971501167810"
+                        android:text="@{studenProfileViewModel.profileData.get(0).mobileNumber}"
                         android:layout_marginTop="@dimen/high_spacing"
                         android:layout_toEndOf="@+id/mobile_no"
                         android:layout_marginEnd="@dimen/small_margin"/>
@@ -343,7 +343,8 @@
                         android:id="@+id/tv_telephone_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="03459044797"
+                        android:hint="No"
+                        android:text="@{studenProfileViewModel.profileData.get(0).telephoneNumber}"
                         android:layout_below="@+id/mobile_no"
                         android:layout_toEndOf="@+id/telephone_no"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -363,7 +364,7 @@
                         android:id="@+id/tv_student_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="abdullah.khan@aldar.ac.ae"
+                        android:text="@{studenProfileViewModel.profileData.get(0).emailID}"
                         android:layout_below="@+id/telephone_no"
                         android:layout_toEndOf="@+id/email"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -390,7 +391,7 @@
                 android:id="@+id/high_school_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/medium_margin"
+                android:layout_margin="@dimen/small_margin"
                 android:layout_below="@+id/contact_layout"
                 android:background="@color/white"
                 tools:layout_editor_absoluteY="28dp">
@@ -415,7 +416,7 @@
                         android:id="@+id/tv_high_school"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="IBMS"
+                        android:text="@{studenProfileViewModel.profileData.get(0).highSchoolName}"
                         android:layout_marginTop="@dimen/high_spacing"
                         android:layout_toEndOf="@+id/high_school_name"
                         android:layout_marginEnd="@dimen/small_margin"/>
@@ -435,7 +436,7 @@
                         android:id="@+id/tv_high_school_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Port Saeed dubai uae"
+                        android:text="@{studenProfileViewModel.profileData.get(0).highSchoolAddress}"
                         android:layout_below="@+id/high_school_name"
                         android:layout_toEndOf="@+id/high_school_address"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -445,7 +446,7 @@
                         android:id="@+id/awarded_score"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/high_school_address"
+                        android:layout_below="@+id/tv_high_school_address"
                         android:textColor="@color/colorPrimaryDark"
                         android:text="Awarded Score :"
                         android:textStyle="bold"
@@ -455,8 +456,8 @@
                         android:id="@+id/tv_awarded_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="60"
-                        android:layout_below="@+id/high_school_address"
+                        android:text="@{studenProfileViewModel.profileData.get(0).highSchoolPer}"
+                        android:layout_below="@+id/tv_high_school_address"
                         android:layout_toEndOf="@+id/awarded_score"
                         android:layout_marginEnd="@dimen/small_margin"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -475,7 +476,7 @@
                         android:id="@+id/tv_graduation_year"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2017"
+                        android:text="@{studenProfileViewModel.profileData.get(0).yearofCompletion}"
                         android:layout_below="@+id/awarded_score"
                         android:layout_toEndOf="@+id/graduation_year"
                         android:layout_marginEnd="@dimen/small_margin"
@@ -495,6 +496,117 @@
                     android:padding="@dimen/small_margin" />
             </RelativeLayout>
             <!-- end high school layout -->
+
+            <!-- visa layout -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_below="@+id/high_school_layout"
+                android:background="@color/white"
+                tools:layout_editor_absoluteY="28dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:padding="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/high_spacing">
+
+                    <TextView
+                        android:id="@+id/visa_no"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_marginTop="@dimen/high_spacing"
+                        android:text="Visa Number :"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_visa_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{studenProfileViewModel.profileData.get(0).visaNumber}"
+                        android:layout_marginTop="@dimen/high_spacing"
+                        android:layout_toEndOf="@+id/visa_no"
+                        android:layout_marginEnd="@dimen/small_margin"/>
+
+
+                    <TextView
+                        android:id="@+id/emirate_id"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_visa_no"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Emirate ID :"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/text_gap"/>
+
+                    <TextView
+                        android:id="@+id/tv_emirate_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="No"
+                        android:text="@{studenProfileViewModel.profileData.get(0).emirateID}"
+                        android:layout_below="@+id/tv_visa_no"
+                        android:layout_toEndOf="@+id/emirate_id"
+                        android:layout_marginEnd="@dimen/small_margin"
+                        android:layout_marginTop="@dimen/text_gap"/>
+
+                    <TextView
+                        android:id="@+id/visa_expiry"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_emirate_id"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Visa Expiry Date :"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/text_gap"/>
+
+                    <TextView
+                        android:id="@+id/tv_visa_expiry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="null"
+                        android:text="@{studenProfileViewModel.profileData.get(0).visaExpiryDate}"
+                        android:layout_below="@+id/tv_emirate_id"
+                        android:layout_toEndOf="@+id/visa_expiry"
+                        android:layout_marginEnd="@dimen/small_margin"
+                        android:layout_marginTop="@dimen/text_gap"/>
+
+                    <TextView
+                        android:id="@+id/visa_issue"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_visa_expiry"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:hint="null"
+                        android:text="Visa Issue Date :"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/text_gap"/>
+
+                    <TextView
+                        android:id="@+id/tv_visa_issue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="null"
+                        android:text="@{studenProfileViewModel.profileData.get(0).visaExpiryDate}"
+                        android:layout_below="@+id/tv_visa_expiry"
+                        android:layout_toEndOf="@+id/visa_issue"
+                        android:layout_marginEnd="@dimen/small_margin"
+                        android:layout_marginTop="@dimen/text_gap"/>
+
+
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VISA INFORMATION"
+                    android:background="@drawable/transparent_button"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="@dimen/small_margin" />
+            </RelativeLayout>
         </RelativeLayout>
 
         </ScrollView>

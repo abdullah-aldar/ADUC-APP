@@ -1,4 +1,4 @@
-package com.aldar.studentportal.ui.fragments.navigations.campusLife;
+package com.aldar.studentportal.ui.fragments.navigations;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,7 +1,6 @@
 package com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myMarks;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -9,20 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.MarksAdapter;
-import com.aldar.studentportal.adapters.StudyPlanAdapter;
 import com.aldar.studentportal.databinding.FragmentMyMarksBinding;
-import com.aldar.studentportal.databinding.FragmentMyStudyPlanBinding;
-import com.aldar.studentportal.interfaces.StudyPlanInterface;
 import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
-import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
-import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myStudyPlan.MyStudyPlanViewModel;
 
 public class MyMarksFragment extends Fragment {
     private FragmentMyMarksBinding binding;

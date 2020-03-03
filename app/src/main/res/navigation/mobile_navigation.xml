@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_campus"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.campusLife.CampusFragment"
+        android:name="com.aldar.studentportal.ui.fragments.navigations.CampusFragment"
         android:label="@string/menu_campus"
         tools:layout="@layout/fragment_campus" />
 
@@ -40,6 +40,12 @@
         android:name="com.aldar.studentportal.ui.fragments.navigations.AboutUsFragment"
         android:label="About Us"
         tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/nav_feedback"
+        android:name="com.aldar.studentportal.ui.fragments.navigations.AllumniFragment"
+        android:label="Allumni Us"
+        tools:layout="@layout/fragment_allumni" />
 
 
 
