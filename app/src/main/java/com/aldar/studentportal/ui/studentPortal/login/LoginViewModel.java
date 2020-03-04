@@ -4,9 +4,11 @@ import android.app.Application;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
@@ -34,16 +36,16 @@ public class LoginViewModel extends AndroidViewModel {
     }
 
     public void onClick(View view) {
-        if(validate()){
+        if (validate()) {
             fcmToken.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("fcm_token"));
             apiCallUpdatePassword();
         }
     }
 
-    private void apiCallUpdatePassword(){
+    private void apiCallUpdatePassword() {
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<LoginResponseModel> allUsers = services.userLogin(username.getValue(),password.getValue(),fcmToken.getValue());
+        Call<LoginResponseModel> allUsers = services.userLogin(username.getValue(), password.getValue(), fcmToken.getValue());
         allUsers.enqueue(new Callback<LoginResponseModel>() {
             @Override
             public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
@@ -56,7 +58,7 @@ public class LoginViewModel extends AndroidViewModel {
                         Log.d("", e.getMessage());
                     }
 
-                } else  {
+                } else {
                     LoginResponseModel responseModel = new LoginResponseModel();
                     responseModel.setStatus(response.body().getStatus());
                     responseModel.setMessage(response.body().getMessage());
@@ -74,7 +76,7 @@ public class LoginViewModel extends AndroidViewModel {
         });
     }
 
-    public MutableLiveData<LoginResponseModel> getLoginResponseData(){
+    public MutableLiveData<LoginResponseModel> getLoginResponseData() {
         return loginResponseData;
     }
 

@@ -4,10 +4,12 @@ import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleRespons
 import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordResponseModel;
+import com.aldar.studentportal.models.inboxModels.StudentInboxResponseModel;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
+import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.models.studentProfileModel.ProfileResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
 
@@ -40,6 +42,10 @@ public interface APIService {
                                        @Field("Password") String password,
                                        @Field("token_id") String fcmToken);
 
+
+    @GET("aduc/StudentCourseScheduleSemester")
+    Call<SemesterResponseModel> getSemesterSchedule();
+
     @FormUrlEncoded
     @POST("aduc/StudentRegisteredData")
     Call<CourseScheduleResponseModel> getCourseSchedule(@Field("GivenstudentId") String studendID,
@@ -69,6 +75,10 @@ public interface APIService {
     @POST("aduc/UpdatePassword")
     Call<UpdatePasswordResponseModel> updatePassword(@Field("UserName") String username,
                                                      @Field("Password") String password);
+
+    @FormUrlEncoded
+    @POST("aduc/getStudentInternalMessage")
+    Call<StudentInboxResponseModel> getStudentInbox(@Field("StudentID") String studendID);
 
 
 }

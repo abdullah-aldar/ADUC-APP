@@ -12,24 +12,24 @@ import com.aldar.studentportal.R;
 public class CustomSpinnerAdapter extends ArrayAdapter<String> {
 
     Context context;
-    String[] objects;
+    String[] list;
     String firstElement;
     boolean isFirstTime;
 
-    public CustomSpinnerAdapter(Context context, int textViewResourceId, String[] objects, String defaultText) {
-        super(context, textViewResourceId, objects);
+    public CustomSpinnerAdapter(Context context, int textViewResourceId, String[] list, String defaultText) {
+        super(context, textViewResourceId, list);
         this.context = context;
-        this.objects = objects;
+        this.list = list;
         this.isFirstTime = true;
-       // setDefaultText(defaultText);
+        setDefaultText(defaultText);
     }
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-//        if(isFirstTime) {
-//            objects[0] = firstElement;
-//            isFirstTime = false;
-//        }
+        if(isFirstTime) {
+            list[0] = firstElement;
+            isFirstTime = false;
+        }
         return getCustomView(position, convertView, parent);
     }
 
@@ -40,8 +40,8 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
     }
 
     public void setDefaultText(String defaultText) {
-        this.firstElement = objects[0];
-        objects[0] = defaultText;
+        this.firstElement = list[0];
+        list[0] = defaultText;
     }
 
     public View getCustomView(int position, View convertView, ViewGroup parent) {
@@ -49,7 +49,7 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.spinner_layout, parent, false);
         TextView label = (TextView) row.findViewById(R.id.spinner_text);
-        label.setText(objects[position]);
+        label.setText(list[position]);
 
         return row;
     }

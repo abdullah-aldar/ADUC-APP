@@ -7,20 +7,27 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.CourseScheduleAdapter;
+import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
 import com.aldar.studentportal.databinding.FragmentCourseScheduleBinding;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
+import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 
 public class CourseScheduleFragment extends Fragment{
     private FragmentCourseScheduleBinding binding;
     private  CourseScheduleAdapter adapter;
+    private CourseScheduleViewModel viewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,16 +42,54 @@ public class CourseScheduleFragment extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        CourseScheduleViewModel viewModel =  new ViewModelProvider(this).get(CourseScheduleViewModel.class);
+        viewModel =  new ViewModelProvider(this).get(CourseScheduleViewModel.class);
         binding.rvCourseSchedule.setLayoutManager(new LinearLayoutManager(getActivity()));
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setCourseScheduleViewModel(viewModel);
 
+        getSemesterData(viewModel.getSemsterScheduleData());
         getCourseData(viewModel.getcourseScheduleData());
 
         binding.ivBack.setOnClickListener(v -> {
         getActivity().onBackPressed();
         });
+    }
+
+    private void getSemesterData(MutableLiveData<SemesterResponseModel> semsterScheduleData){
+        semsterScheduleData.observe(getViewLifecycleOwner(), semesterResponseModel -> {
+
+            if(semesterResponseModel.getData().size()>0){
+                //converting arraylist to string array
+                String[] namesArr = new String[semesterResponseModel.getData().size()];
+                for (int i = 0; i < semesterResponseModel.getData().size(); i++) {
+                    namesArr[i] = String.valueOf(semesterResponseModel.getData().get(i).getSemName());
+                }
+                binding.scheduleSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, namesArr, "Select"));
+                binding.scheduleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        switch (position){
+                            case 0:
+                                viewModel.semesterID.setValue("96");
+                                viewModel.apiCallCouseSchedule();
+                                break;
+                            case 1:
+                                viewModel.semesterID.setValue("97");
+                                viewModel.apiCallCouseSchedule();
+                                break;
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+            }
+
+
+        });
+
     }
 
 

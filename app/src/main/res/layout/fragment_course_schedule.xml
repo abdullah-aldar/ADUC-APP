@@ -62,25 +62,42 @@
 
 
          <TextView
-             android:id="@+id/tv_student_name"
+             android:id="@+id/shedule"
              android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="Hi\nAbdullah Khan"
-             android:textColor="@color/gray"
-             android:fontFamily="@font/poppins_regular"
-             android:layout_centerHorizontal="true" />
-
-
-         <TextView
-             android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:textColor="@color/gray"
              android:text="@string/your_course_schedule"
              android:fontFamily="@font/poppins_light"
              android:gravity="center"
-             android:layout_below="@id/tv_student_name"
-             android:layout_centerHorizontal="true"
-             android:textSize="12sp"/>
+             android:layout_centerHorizontal="true"/>
+
+         <RelativeLayout
+             android:layout_below="@+id/shedule"
+             android:layout_width="200dp"
+             android:layout_height="wrap_content"
+             android:paddingStart="@dimen/medium_margin"
+             android:paddingEnd="@dimen/medium_margin"
+             android:background="@drawable/transparent_button"
+             android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:gravity="center"
+                android:text="Please Select Semester"/>
+
+            <Spinner
+                android:id="@+id/schedule_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:pointerIcon="arrow"
+                android:layout_below="@id/select"
+                />
+         </RelativeLayout>
+
 
       </RelativeLayout>
 

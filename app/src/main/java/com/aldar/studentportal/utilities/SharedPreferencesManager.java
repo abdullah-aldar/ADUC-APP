@@ -11,7 +11,7 @@ public class SharedPreferencesManager {
 
     private SharedPreferencesManager() {
         //Prevent form the reflection api.
-        if (preferencesManagerInstance != null){
+        if (preferencesManagerInstance != null) {
             throw new RuntimeException("Use getInstance() method to get the single instance of this class.");
         }
     }
@@ -21,8 +21,10 @@ public class SharedPreferencesManager {
         if (preferencesManagerInstance == null) { //Check for the first time
             synchronized (SharedPreferencesManager.class) {   //Check for the second time.
                 //if there is no instance available... create new one
-                if (preferencesManagerInstance == null) preferencesManagerInstance = new SharedPreferencesManager();
-                if(sharedPreferences == null) sharedPreferences = context.getApplicationContext().getSharedPreferences(context.getPackageName(), Activity.MODE_PRIVATE);
+                if (preferencesManagerInstance == null)
+                    preferencesManagerInstance = new SharedPreferencesManager();
+                if (sharedPreferences == null)
+                    sharedPreferences = context.getApplicationContext().getSharedPreferences(context.getPackageName(), Activity.MODE_PRIVATE);
 
             }
         }
@@ -36,8 +38,8 @@ public class SharedPreferencesManager {
         editor.putString(key, value).apply();
     }
 
-    public String getStringValue(String key){
-       return  sharedPreferences.getString(key,"");
+    public String getStringValue(String key) {
+        return sharedPreferences.getString(key, "");
     }
 
     public void setIntValueInEditor(String key, int value) {
@@ -45,16 +47,16 @@ public class SharedPreferencesManager {
         editor.putInt(key, value).apply();
     }
 
-    public int getIntValue(String key){
-        return  sharedPreferences.getInt(key,0);
+    public int getIntValue(String key) {
+        return sharedPreferences.getInt(key, 0);
     }
 
-    public void setBooleaninEditor(String key, boolean value){
+    public void setBooleaninEditor(String key, boolean value) {
         editor = sharedPreferences.edit();
         editor.putBoolean(key, value).apply();
     }
 
-    public boolean getBooleanValue(String key){
-        return  sharedPreferences.getBoolean(key,false);
+    public boolean getBooleanValue(String key) {
+        return sharedPreferences.getBoolean(key, false);
     }
 }

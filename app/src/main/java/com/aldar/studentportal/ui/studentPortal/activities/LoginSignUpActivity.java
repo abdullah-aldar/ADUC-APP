@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel;
 import com.aldar.studentportal.ui.studentPortal.login.LoginFragment;
-import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.InboxFragment;
+import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.inbox.InboxFragment;
 import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.letterRequest.LetterRequestFragment;
 import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.library.LibraryFragment;
 import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.mainDashboardScreen.StudentDashboardFragment;
