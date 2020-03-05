@@ -20,5 +20,7 @@
     <color name="gray">#DEDEDE</color>
     <color name="light_gray">#F9F9F9</color>
     <color name="grey">#F0F0F0</color>
+    <color name="gray_black">#4E4D55</color>
+    <color name="button_black">#272823</color>
 
 </resources>

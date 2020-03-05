@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +19,12 @@ import android.widget.LinearLayout;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.InboxAdapter;
-import com.aldar.studentportal.adapters.MarksAdapter;
 import com.aldar.studentportal.databinding.InboxFragmentBinding;
 import com.aldar.studentportal.models.inboxModels.StudentInboxResponseModel;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseSchedule.CourseScheduleViewModel;
 
 public class InboxFragment extends Fragment {
     private InboxFragmentBinding binding;
-    private LinearLayout bottomSheetContainer;
     private InboxAdapter adapter;
 
     @Override
@@ -33,29 +32,18 @@ public class InboxFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.inbox_fragment, container, false);
-       // bottomSheetContainer = binding.getRoot().findViewById(R.id.bottom_sheet);
         return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        InboxViewModel viewModel = new ViewModelProvider(this).get(InboxViewModel.class);
+        StudentInboxViewModel viewModel = new ViewModelProvider(this).get(StudentInboxViewModel.class);
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setInboxViewModel(viewModel);
+        binding.rvInbox.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         getSudentInboxData(viewModel.getStudentInboxData());
-
-//        binding.tvComposeEmail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity(),R.style.BottomsheetTheme);
-//                View bottomSheetView = LayoutInflater.from(getContext()).inflate(R.layout.bottom_sheet,bottomSheetContainer);
-//
-//                bottomSheetDialog.setContentView(bottomSheetView);
-//                bottomSheetDialog.show();
-//            }
-//        });
 
         binding.ivBack.setOnClickListener(v -> {
             getActivity().onBackPressed();
@@ -75,4 +63,10 @@ public class InboxFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onDestroy() {
+        binding = null;
+        adapter = null;
+        super.onDestroy();
+    }
 }

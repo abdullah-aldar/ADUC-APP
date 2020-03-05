@@ -8,13 +8,27 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.activities.common.SplashActivity">
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_splash"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+    <TextView
+        android:id="@+id/aldar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:fontFamily="@font/montserrat_semibold"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/splash_drawable"/>
+        android:text="ALDAR"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_below="@id/aldar"
+        android:textSize="18sp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="University"/>
+
 
 </RelativeLayout>

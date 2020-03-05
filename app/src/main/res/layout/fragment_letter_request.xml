@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <data>
+        <variable
+            name="letterViewModel"
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.letterRequest.LetterRequestViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -55,28 +61,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
-
             <TextView
-                android:id="@+id/tv_student_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi\nAbdullah Khan"
-                android:textColor="@color/gray"
-                android:fontFamily="@font/poppins_regular"
-                android:gravity="center"
-                android:layout_centerHorizontal="true" />
-
-
-            <TextView
+                android:id="@+id/letter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
                 android:text="@string/letter_request"
                 android:fontFamily="@font/poppins_light"
-                android:layout_below="@id/tv_student_name"
                 android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:textSize="12sp"/>
+
+            <RelativeLayout
+                android:layout_below="@+id/letter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
+                android:layout_centerHorizontal="true">
+                <TextView
+                    android:id="@+id/select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:gravity="center"
+                    android:text="Please Select here"/>
+
+                <Spinner
+                    android:id="@+id/letter_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:pointerIcon="arrow"
+                    android:layout_below="@id/select"
+                    />
+            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -90,7 +110,9 @@
             android:layout_marginBottom="@dimen/medium_margin"
             android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+        </RelativeLayout>
 
         <ProgressBar
             android:id="@+id/progess"

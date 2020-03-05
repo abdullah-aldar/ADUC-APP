@@ -7,7 +7,7 @@
     <data>
         <variable
             name="inboxViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.inbox.InboxViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.inbox.StudentInboxViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -107,7 +107,7 @@
             android:layout_centerInParent="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"
+            app:visibility="@{inboxViewModel.progressBar}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />

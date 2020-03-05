@@ -32,7 +32,7 @@ public class CourseScheduleViewModel extends AndroidViewModel {
     public CourseScheduleViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        semesterID.setValue("97");
+        semesterID.setValue("");
         studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
         apiGetSemester();
         apiCallCouseSchedule();
@@ -84,7 +84,8 @@ public class CourseScheduleViewModel extends AndroidViewModel {
                         Log.d("", e.getMessage());
                     }
 
-                } else  {
+                }
+                else {
                     CourseScheduleResponseModel responseModel = new CourseScheduleResponseModel();
                     responseModel.setMessage(response.body().getMessage());
                     responseModel.setSuccess(response.body().getSuccess());

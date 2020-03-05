@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.CourseScheduleAdapter;
@@ -64,20 +65,13 @@ public class CourseScheduleFragment extends Fragment{
                 for (int i = 0; i < semesterResponseModel.getData().size(); i++) {
                     namesArr[i] = String.valueOf(semesterResponseModel.getData().get(i).getSemName());
                 }
+
                 binding.scheduleSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, namesArr, "Select"));
                 binding.scheduleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        switch (position){
-                            case 0:
-                                viewModel.semesterID.setValue("96");
-                                viewModel.apiCallCouseSchedule();
-                                break;
-                            case 1:
-                                viewModel.semesterID.setValue("97");
-                                viewModel.apiCallCouseSchedule();
-                                break;
-                        }
+                        viewModel.semesterID.setValue(String.valueOf(semesterResponseModel.getData().get(1).getSemID()));
+                        viewModel.apiCallCouseSchedule();
                     }
 
                     @Override
@@ -86,8 +80,6 @@ public class CourseScheduleFragment extends Fragment{
                     }
                 });
             }
-
-
         });
 
     }
@@ -95,9 +87,12 @@ public class CourseScheduleFragment extends Fragment{
 
     private void getCourseData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData){
         mutableLiveData.observe(getViewLifecycleOwner(), courseScheduleResponseModel -> {
-            if(courseScheduleResponseModel != null){
+            if(courseScheduleResponseModel != null && courseScheduleResponseModel.getData() != null){
                 adapter = new CourseScheduleAdapter(courseScheduleResponseModel.getData());
                 binding.rvCourseSchedule.setAdapter(adapter);
+            }
+            else {
+                Toast.makeText(getContext(), "No data availabe in this semester", Toast.LENGTH_SHORT).show();
             }
         });
     }

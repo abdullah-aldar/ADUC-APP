@@ -6,31 +6,82 @@ import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
+import com.aldar.studentportal.databinding.FragmentLetterRequestBinding;
+import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
+import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseSchedule.CourseScheduleViewModel;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class LetterRequestFragment extends Fragment {
-
-
+    private FragmentLetterRequestBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_letter_request, container, false);
-        generateNoteOnSD("Hello Adar");
-        return root;
+        binding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_letter_request, container, false);
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        LetterRequestViewModel viewModel =  new ViewModelProvider(this).get(LetterRequestViewModel.class);
+        binding.setLifecycleOwner(getViewLifecycleOwner());
+        binding.setLetterViewModel(viewModel);
+
+        getletterTypeData(viewModel.getletterTypeData());
+
+        binding.ivBack.setOnClickListener(v -> {
+            getActivity().onBackPressed();
+        });
+    }
+
+    private void getletterTypeData(MutableLiveData<LetterRequestResponseModel> getletterTypeData) {
+        getletterTypeData.observe(getViewLifecycleOwner(), letterRequestResponseModel -> {
+            if(letterRequestResponseModel != null && letterRequestResponseModel.getData().size()>0){
+                //converting arraylist to string array
+                String[] namesArr = new String[letterRequestResponseModel.getData().size()];
+                for (int i = 0; i < letterRequestResponseModel.getData().size(); i++) {
+                    namesArr[i] = String.valueOf(letterRequestResponseModel.getData().get(i).getServiceName());
+                }
+
+                binding.letterSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, namesArr, "Select"));
+                binding.letterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+            }
+        });
     }
 
 

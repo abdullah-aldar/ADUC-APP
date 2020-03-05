@@ -11,13 +11,11 @@ import com.aldar.studentportal.R;
 
 public class SplashActivity extends AppCompatActivity {
    Handler handler = new Handler();
-   ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        imageView = findViewById(R.id.iv_splash);
 
         handler.postDelayed(new Runnable() {
             @Override
@@ -30,7 +28,6 @@ public class SplashActivity extends AppCompatActivity {
     }
     @Override
     protected void onDestroy() {
-        imageView = null;
         handler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }

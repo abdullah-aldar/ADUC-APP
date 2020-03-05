@@ -5,6 +5,7 @@ import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordResponseModel;
 import com.aldar.studentportal.models.inboxModels.StudentInboxResponseModel;
+import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
@@ -45,6 +46,9 @@ public interface APIService {
 
     @GET("aduc/StudentCourseScheduleSemester")
     Call<SemesterResponseModel> getSemesterSchedule();
+
+    @GET("aduc/servicerequest")
+    Call<LetterRequestResponseModel> getLetterTypes();
 
     @FormUrlEncoded
     @POST("aduc/StudentRegisteredData")

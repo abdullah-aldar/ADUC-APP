@@ -13,23 +13,23 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.MyViewHolder
 
     private List<? extends StudentInboxDataModel> mDataList;
 
-    public InboxAdapter(List<? extends StudentInboxDataModel> StudentInboxDataModelList) {
-        mDataList = StudentInboxDataModelList;
+    public InboxAdapter(List<? extends StudentInboxDataModel> courseScheduleDataModelList) {
+        mDataList = courseScheduleDataModelList;
     }
 
     @NotNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+    public InboxAdapter.MyViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         CustomInboxLayoutBinding binding = DataBindingUtil
                 .inflate(LayoutInflater.from(parent.getContext()), R.layout.custom_inbox_layout,
                         parent, false);
-        return new MyViewHolder(binding);
+        return new InboxAdapter.MyViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, final int position) {
-     StudentInboxDataModel model = mDataList.get(position);
-     holder.binding.setInboxDataModel(model);
+    public void onBindViewHolder(final InboxAdapter.MyViewHolder holder, final int position) {
+        StudentInboxDataModel model = mDataList.get(position);
+        holder.binding.setInboxDataModel(model);
 
     }
 
