@@ -1,76 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/bottom_sheet"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/shadow"
-    android:orientation="vertical"
-    android:padding="16dp"
-    app:behavior_hideable="false"
-    app:behavior_peekHeight="90dp"
-    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    app:ignore="NamespaceTypo">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <RelativeLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:orientation="vertical">
+            android:background="@drawable/shadow"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="90dp"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/compose_write"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:src="@drawable/close" />
 
-            <View
+            <ImageView
+                android:id="@+id/uni_logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/standarize_spacing"/>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
-                android:background="#5d5d5d" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_below="@id/uni_logo"
+                android:padding="@dimen/standarize_spacing">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm your service request"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
 
-    </LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/standarize_spacing"
+                    android:layout_marginTop="@dimen/standarize_spacing"
+                    android:layout_marginRight="@dimen/standarize_spacing"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardElevation="4dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/whatsapp"
-        android:drawablePadding="16dp"
-        android:text="740 Valencia St, San Fracisco, CA" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/mail"
-        android:drawablePadding="16dp"
-        android:text="(415) 349-0942" />
+                    <TextView
+                        android:id="@+id/tv_letter_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/standarize_spacing"
+                        android:layout_gravity="center"
+                        android:text="52.50 DHS Will be Deducted From Your Account For This Service(Inclusive of VAT)\n\nسوف يتم خصم مبلغ 210.00 درهم من حسابك نظير هذه الخدمة"
+                        android:textColor="@color/black" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/whatsapp"
-        android:drawablePadding="16dp"
-        android:text="Wed, 10 AM - 9 PM" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_style"
-        android:text="SEND"
-        android:textColor="#fff" />
 
-</LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/gradient"
+                    android:text="Confirm"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </layout>
+

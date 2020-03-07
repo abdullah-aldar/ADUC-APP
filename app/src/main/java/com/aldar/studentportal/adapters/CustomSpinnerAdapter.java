@@ -42,7 +42,7 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
     public void setDefaultText(String defaultText) {
         this.firstElement = list[0];
         //list[0] = defaultText;
-    }
+    };
 
     public View getCustomView(int position, View convertView, ViewGroup parent) {
 

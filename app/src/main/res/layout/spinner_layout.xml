@@ -18,11 +18,10 @@
         android:textColor="@color/black" />
 
     <View
+        android:id="@+id/view"
         android:layout_below="@id/spinner_text"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginEnd="@dimen/small_margin"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/white"/>
 
 </RelativeLayout>

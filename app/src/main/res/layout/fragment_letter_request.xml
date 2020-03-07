@@ -61,21 +61,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
-            <TextView
-                android:id="@+id/letter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:text="@string/letter_request"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:layout_centerHorizontal="true"
-                android:textSize="12sp"/>
 
             <RelativeLayout
-                android:layout_below="@+id/letter"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:paddingStart="@dimen/medium_margin"
                 android:paddingEnd="@dimen/medium_margin"
                 android:layout_centerHorizontal="true">
@@ -87,14 +76,17 @@
                     android:gravity="center"
                     android:text="Please Select here"/>
 
+
                 <Spinner
                     android:id="@+id/letter_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:textColor="@color/white"
-                    android:gravity="center"
+                    android:backgroundTint="@color/white"
                     android:pointerIcon="arrow"
+                    android:spinnerMode="dropdown"
                     android:layout_below="@id/select"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light"
                     />
             </RelativeLayout>
 
@@ -108,24 +100,109 @@
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/medium_margin"
             android:layout_marginBottom="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header">
 
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+               android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <RadioButton
+                    android:id="@+id/radio_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English" />
+
+                <RadioButton
+                    android:id="@+id/radio_arabic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="العربية" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_whome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radio_group"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:text="Letter To :"/>
+
+            <EditText
+                android:id="@+id/et_whom_concern"
+                android:layout_below="@id/tv_whome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:textSize="12sp"
+                android:text="To Whom it May Concern" />
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_whom_concern"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:text="Note :"/>
+
+
+            <EditText
+                android:id="@+id/et_note"
+                android:layout_below="@id/tv_note"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:background="@color/tranparent"
+                android:paddingStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:gravity="top"
+                android:textSize="12sp"
+                android:hint="your note" />
+
+            <LinearLayout
+                android:layout_below="@id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_continue"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_weight="1"
+                    android:text="Continue"
+                    android:textColor="@color/white"
+                    android:background="@drawable/gradient"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_weight="1"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:background="@drawable/gradient"/>
+
+            </LinearLayout>
         </RelativeLayout>
 
-        <ProgressBar
-            android:id="@+id/progess"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminateTint="@color/green"
-            android:layout_centerInParent="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
