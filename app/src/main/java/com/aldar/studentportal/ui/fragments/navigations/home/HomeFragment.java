@@ -1,4 +1,4 @@
-package com.aldar.studentportal.ui.fragments.navigations;
+package com.aldar.studentportal.ui.fragments.navigations.home;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,6 +31,8 @@ import butterknife.ButterKnife;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
+    @BindView(R.id.layout_blog)
+    LinearLayout layoutBlog;
     @BindView(R.id.layout_portal)
     LinearLayout layoutPortal;
     @BindView(R.id.layout_fee)
@@ -47,6 +49,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     ImageView ivCall;
     @BindView(R.id.iv_email)
     ImageView ivEmail;
+    @BindView(R.id.btn_share_feedback)
+    Button btnShareFeedback;
     @BindView(R.id.btn_inquire_us)
     Button btnInquireUs;
 
@@ -58,6 +62,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, root);
 
+        layoutBlog.setOnClickListener(this);
         layoutPortal.setOnClickListener(this);
         layoutFee.setOnClickListener(this);
         btnBoucher.setOnClickListener(this);
@@ -66,6 +71,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         ivWhatsapp.setOnClickListener(this);
         ivCall.setOnClickListener(this);
         ivEmail.setOnClickListener(this);
+        btnShareFeedback.setOnClickListener(this);
         btnInquireUs.setOnClickListener(this);
 
         return root;
@@ -74,6 +80,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.layout_blog:
+                new LeakyClass(getActivity()).redirectToWebview("https://www.aldar.ac.ae/category/english-content-blog/");
+                break;
             case R.id.layout_portal:
                 startActivity(new Intent(getActivity(), LoginSignUpActivity.class));
                 break;
@@ -92,7 +101,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 new LeakyClass(getActivity()).redirectToFAQ();
                 break;
             case R.id.btn_calendar:
-                new LeakyClass(getActivity()).redirectToWebview();
+                new LeakyClass(getActivity()).redirectToWebview("");
                 break;
             case R.id.iv_whatsapp:
                 showWhatsApp();
@@ -102,6 +111,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.iv_email:
                 loadEmail();
+                break;
+            case R.id.btn_share_feedback:
+                new LeakyClass(getActivity()).redirectToFeedback();
                 break;
             case R.id.btn_inquire_us:
                 new LeakyClass(getActivity()).redirectToInqureUS();
@@ -124,10 +136,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         }
 
-        private void redirectToWebview() {
+        private void redirectToWebview(String message) {
             Activity activity = weakReference.get();
             if(activity != null) {
-                activity.startActivity(new Intent(activity, WebActivity.class));
+                Bundle bundle = new Bundle();
+                bundle.putString("link",message);
+                activity.startActivity(new Intent(activity, WebActivity.class).putExtras(bundle));
             }
         }
 
@@ -137,7 +151,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             if(activity != null) {
                 NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
                 navController.navigate(R.id.nav_contact);
-                //activity.startActivity(new Intent(activity, InquireUsActivity.class));
+            }
+        }
+
+        private void redirectToFeedback() {
+            Activity activity = weakReference.get();
+            if(activity != null) {
+                NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
+                navController.navigate(R.id.nav_feedback);
             }
         }
 

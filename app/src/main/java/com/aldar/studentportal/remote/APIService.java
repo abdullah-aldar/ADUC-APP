@@ -1,5 +1,6 @@
 package com.aldar.studentportal.remote;
 
+import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
@@ -13,6 +14,8 @@ import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.models.studentProfileModel.ProfileResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -83,6 +86,11 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/getStudentInternalMessage")
     Call<StudentInboxResponseModel> getStudentInbox(@Field("StudentID") String studendID);
+
+    @FormUrlEncoded
+    @POST("aduc/StudentRegisteredData")
+    Call<ContactDataModel> sendContactsToServer(@Field("GivenstudentId") String studendID,
+                                                @Field("semId") ArrayList<String> contactList);
 
 
 }

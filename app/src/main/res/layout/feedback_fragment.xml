@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:paddingTop="@dimen/standarize_spacing"
+            android:paddingBottom="@dimen/medium_margin"
+            app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/tv_student_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Hi"
+                android:textColor="@color/gray" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_student_name"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="Your feeback will be highly appreciated"
+                android:textColor="@color/gray"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rv_course_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@drawable/shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+            <TextView
+                android:id="@+id/tv_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="Comments"
+                android:fontFamily="@font/poppins_bold"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_below="@+id/tv_comments"
+                android:theme="@style/AppTheme">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/tranparent"
+                    android:gravity="top|left"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/medium_margin" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feedback"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="Email"
+                android:fontFamily="@font/poppins_bold"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_below="@+id/tv_email"
+                android:theme="@style/AppTheme">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_feedback_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:background="@color/tranparent"
+                    android:gravity="left|center"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/medium_margin" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/tv_ratting"
+                android:layout_below="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin"
+                android:text="Ratting"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rattingbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_ratting"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/medium_margin" />
+
+
+            <Button
+                android:id="@+id/btn_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rattingbar"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:layout_marginBottom="@dimen/small_margin"
+                android:background="@drawable/button_style"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="Send Feedback"/>
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

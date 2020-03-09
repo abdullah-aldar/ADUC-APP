@@ -1,39 +1,64 @@
 package com.aldar.studentportal.ui.activities.common;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.graphics.pdf.PdfRenderer;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.ParcelFileDescriptor;
-import android.webkit.WebChromeClient;
+import android.view.KeyEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-
+import android.widget.ProgressBar;
 import com.aldar.studentportal.R;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import com.aldar.studentportal.worker.WebClient;
 
 public class WebActivity extends AppCompatActivity {
-
+    private String strLink;
+    private WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            strLink = bundle.getString("link");
+        }
 
-        WebView webView = findViewById(R.id.web_view);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        String myPdfUrl = "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf";
-        String url = "https://docs.google.com/gview?embedded=true&url="+myPdfUrl;
-        webView.loadUrl(url);
+        ProgressBar progressBar = findViewById(R.id.progressbar);
+        webView = findViewById(R.id.web_view);
 
+        webView.clearHistory();
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setBuiltInZoomControls(false);
+        webView.getSettings().setPluginState(WebSettings.PluginState.ON);
+        webView.setWebViewClient(new WebClient(getApplicationContext(),progressBar));
+        webView.loadUrl(strLink);
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_BACK:
+                    if (webView.canGoBack()) {
+                        webView.goBack();
+                    } else {
+                        finish();
+                    }
+                    return true;
+            }
+
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

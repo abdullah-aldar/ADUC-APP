@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:adjustViewBounds="true"
-            android:contentDescription="TODO"
             android:scaleType="centerCrop"
             android:src="@drawable/main"
             app:layout_constraintBottom_toTopOf="@id/button_layout"
@@ -274,6 +273,8 @@
             android:layout_height="wrap_content"
             android:measureAllChildren="false"
             android:scrollbars="none"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
             app:layout_constraintBottom_toTopOf="@+id/tv_news"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/definit_text">
@@ -281,14 +282,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/standarize_spacing"
-                android:layout_marginEnd="@dimen/standarize_spacing"
                 android:gravity="center|top"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/layout_flexible_course"
-                    android:layout_width="180dp"
+                    android:layout_width="170dp"
                     android:layout_height="180dp"
                     android:background="@drawable/shadow"
                     android:gravity="center|top"
@@ -312,7 +311,7 @@
 
                 <LinearLayout
                     android:id="@+id/layout_transportation"
-                    android:layout_width="180dp"
+                    android:layout_width="170dp"
                     android:layout_height="180dp"
                     android:layout_marginStart="@dimen/small_margin"
                     android:background="@drawable/shadow"
@@ -335,7 +334,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="180dp"
+                    android:layout_width="170dp"
                     android:layout_height="180dp"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
@@ -407,19 +406,19 @@
             android:layout_height="wrap_content"
             android:measureAllChildren="false"
             android:scrollbars="none"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_news">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/standarize_spacing"
-                android:layout_marginEnd="@dimen/standarize_spacing"
                 android:gravity="center|top"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="180dp"
+                    android:layout_width="170dp"
                     android:layout_height="180dp"
                     android:background="@drawable/shadow"
                     android:gravity="center|top"
@@ -442,7 +441,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="180dp"
+                    android:layout_width="170dp"
                     android:layout_height="180dp"
                     android:layout_marginStart="@dimen/small_margin"
                     android:background="@drawable/shadow"
@@ -465,7 +464,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="180dp"
+                    android:layout_width="170dp"
                     android:layout_height="180dp"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
@@ -510,8 +509,9 @@
                 android:text="@string/support"
                 android:textColor="@color/black"
                 android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:textStyle="bold"
+                android:textSize="@dimen/large_text"
                 app:layout_constraintBottom_toTopOf="@id/tv_support_text"
                 app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -532,7 +532,6 @@
                 android:id="@+id/layout_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_margin"
                 android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -565,7 +564,7 @@
                     android:id="@+id/btn_inquire_us"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/btn_height"
-                    android:layout_weight="2"
+                    android:layout_weight="2.5"
                     android:background="@drawable/transparent_button"
                     android:text="Inquire Us"
                     android:textColor="@color/cyan" />
