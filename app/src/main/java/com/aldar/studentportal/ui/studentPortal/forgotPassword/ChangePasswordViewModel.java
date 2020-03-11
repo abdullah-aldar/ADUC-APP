@@ -88,22 +88,6 @@ public class ChangePasswordViewModel extends AndroidViewModel {
         valid = true;
 
 
-//        if (newPassword != null || newPassword.isEmpty()) {
-//            valid = false;
-//            errorMessagePassword.setValue("Please set your password");
-//        }
-//
-//        if (newPassword.length() < 6) {
-//            valid = false;
-//            errorMessagePassword.setValue("password should be at least 6 characters");
-//        }
-//
-//         if (!confirmPassword.equals(newPassword)) {
-//            valid = false;
-//            errorMessagePassword.setValue("password not matched");
-//        }
-
-
         return valid;
     }
 

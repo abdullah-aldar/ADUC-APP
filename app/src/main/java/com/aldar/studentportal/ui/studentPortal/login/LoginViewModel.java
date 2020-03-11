@@ -38,11 +38,11 @@ public class LoginViewModel extends AndroidViewModel {
     public void onClick(View view) {
         if (validate()) {
             fcmToken.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("fcm_token"));
-            apiCallUpdatePassword();
+            //apiCallLogin();
         }
     }
 
-    private void apiCallUpdatePassword() {
+    public void apiCallLogin(String email,String pass,String fcrToken) {
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
         Call<LoginResponseModel> allUsers = services.userLogin(username.getValue(), password.getValue(), fcmToken.getValue());

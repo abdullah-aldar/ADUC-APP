@@ -39,18 +39,15 @@ public class ForgotPasswordFragment extends Fragment {
 
         getLifecycle().addObserver(viewModel);
 
-        viewModel.getForgotPasswordLiveData().observe(getViewLifecycleOwner(), new Observer<ForgotPasswordResponseModel>() {
-            @Override
-            public void onChanged(ForgotPasswordResponseModel forgotPasswordResponseModel) {
-               if(forgotPasswordResponseModel != null){
-                   if(Boolean.parseBoolean(forgotPasswordResponseModel.getSuccess())){
+        viewModel.getForgotPasswordLiveData().observe(getViewLifecycleOwner(), forgotPasswordResponseModel -> {
+           if(forgotPasswordResponseModel != null){
+               if(Boolean.parseBoolean(forgotPasswordResponseModel.getSuccess())){
 
-                       SharedPreferencesManager.getInstance(getActivity()).setStringValueInEditor("otp",forgotPasswordResponseModel.getOtp());
-                       GeneralUtilities.connectFragmentWithBack(getContext(),new VerifyCodeFragment());
+                   SharedPreferencesManager.getInstance(getActivity()).setStringValueInEditor("otp",forgotPasswordResponseModel.getOtp());
+                   GeneralUtilities.connectFragmentWithBack(getContext(),new VerifyCodeFragment());
 
-                   }
                }
-            }
+           }
         });
 
 

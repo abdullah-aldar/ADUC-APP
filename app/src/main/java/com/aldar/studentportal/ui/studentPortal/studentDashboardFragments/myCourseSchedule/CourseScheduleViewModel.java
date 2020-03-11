@@ -18,6 +18,12 @@ import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -113,5 +119,4 @@ public class CourseScheduleViewModel extends AndroidViewModel {
     private void showToast(Context context,String message){
         Toast.makeText(context, ""+message, Toast.LENGTH_SHORT).show();
     }
-
 }

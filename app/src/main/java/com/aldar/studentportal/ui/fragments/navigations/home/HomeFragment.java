@@ -54,9 +54,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.btn_inquire_us)
     Button btnInquireUs;
 
-    private LeakyClass leakyClass;
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -101,7 +98,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 new LeakyClass(getActivity()).redirectToFAQ();
                 break;
             case R.id.btn_calendar:
-                new LeakyClass(getActivity()).redirectToWebview("");
+                String myPdfUrl = "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf";
+                String url = "https://docs.google.com/gview?embedded=true&url="+myPdfUrl;
+                new LeakyClass(getActivity()).redirectToWebview(url);
                 break;
             case R.id.iv_whatsapp:
                 showWhatsApp();
@@ -200,7 +199,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onDestroy() {
-        leakyClass = null;
         super.onDestroy();
 
     }

@@ -49,7 +49,7 @@ public class MyStudyPlanFragment extends Fragment {
 
     private void studyPlanData(MutableLiveData<StudyPlanResponseModel> mutableLiveData){
         mutableLiveData.observe(getViewLifecycleOwner(),studyPlanResponseModel -> {
-            if(studyPlanResponseModel != null){
+            if(studyPlanResponseModel.getData() != null){
                 adapter = new StudyPlanAdapter(getActivity(), studyPlanResponseModel.getData(),studyPlanResponseModel.getData().get(0).getCourses(),
                         studyPlanInterface);
                 binding.rvStudyPlan.setAdapter(adapter);

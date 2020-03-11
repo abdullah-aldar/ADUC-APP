@@ -10,18 +10,19 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.adapters.MarksAdapter;
 import com.aldar.studentportal.adapters.StudentFinanceAdapter;
 import com.aldar.studentportal.databinding.FragmentMyFinanceBinding;
 import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
-import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
-import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myMarks.MyMarksViewModel;
+
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class  MyFinanceFragment extends Fragment {
     private FragmentMyFinanceBinding binding;

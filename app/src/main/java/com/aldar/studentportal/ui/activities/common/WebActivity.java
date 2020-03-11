@@ -30,6 +30,8 @@ public class WebActivity extends AppCompatActivity {
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setBuiltInZoomControls(false);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
         webView.setWebViewClient(new WebClient(getApplicationContext(),progressBar));
         webView.loadUrl(strLink);

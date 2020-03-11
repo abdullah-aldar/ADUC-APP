@@ -17,6 +17,7 @@ import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
 
 import java.util.ArrayList;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -56,7 +57,7 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/StudentRegisteredData")
     Call<CourseScheduleResponseModel> getCourseSchedule(@Field("GivenstudentId") String studendID,
-                                                        @Field("semId") String semesterID);
+                                                              @Field("semId") String semesterID);
 
     @FormUrlEncoded
     @POST("aduc/StudentProfile")
