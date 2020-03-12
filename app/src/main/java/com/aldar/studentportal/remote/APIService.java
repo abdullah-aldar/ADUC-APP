@@ -16,6 +16,7 @@ import com.aldar.studentportal.models.studentProfileModel.ProfileResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.Call;
@@ -57,7 +58,7 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/StudentRegisteredData")
     Call<CourseScheduleResponseModel> getCourseSchedule(@Field("GivenstudentId") String studendID,
-                                                              @Field("semId") String semesterID);
+                                                        @Field("semId") String semesterID);
 
     @FormUrlEncoded
     @POST("aduc/StudentProfile")
@@ -89,9 +90,10 @@ public interface APIService {
     Call<StudentInboxResponseModel> getStudentInbox(@Field("StudentID") String studendID);
 
     @FormUrlEncoded
-    @POST("aduc/StudentRegisteredData")
-    Call<ContactDataModel> sendContactsToServer(@Field("GivenstudentId") String studendID,
-                                                @Field("semId") ArrayList<String> contactList);
+    @POST("aduc/StudentContacts")
+    Call<CommonApiResponse> sendContactsToServer(@Field("GivenstudentId") String studendID,
+                                                 @Field("ContactName") String contactName,
+                                                 @Field("ContactMobile") String contactMobile);
 
 
 }

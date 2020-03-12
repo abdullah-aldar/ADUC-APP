@@ -43,9 +43,9 @@
 
     <fragment
         android:id="@+id/nav_feedback"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.feedback.FeedbackFragment"
+        android:name="com.aldar.studentportal.ui.fragments.navigations.AllumniFragment"
         android:label="Feedback"
-        tools:layout="@layout/feedback_fragment" />
+        tools:layout="@layout/fragment_allumni" />
 
 
 

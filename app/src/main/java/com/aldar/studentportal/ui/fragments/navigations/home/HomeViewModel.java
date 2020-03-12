@@ -2,49 +2,40 @@ package com.aldar.studentportal.ui.fragments.navigations.home;
 
 import android.app.Application;
 import android.content.Context;
-import android.database.Cursor;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-
-import com.aldar.studentportal.models.contactsModel.ContactDataModel;
-import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
+import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeViewModel extends AndroidViewModel {
-    private ArrayList<String> contactList = new ArrayList<>();
-    private MutableLiveData<ArrayList<String>> contactMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<CommonApiResponse> contactMutableLiveData = new MutableLiveData<>();
     public MutableLiveData<String> studentID = new MutableLiveData<>();
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
         studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
-        sendContactToServer();
     }
 
 
-    private void sendContactToServer() {
+    public void sendContactToServer(String name,String phone) {
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<ContactDataModel> allUsers = services.sendContactsToServer(studentID.getValue(), contactList);
-        allUsers.enqueue(new Callback<ContactDataModel>() {
+        Call<CommonApiResponse> allUsers = services.sendContactsToServer("7450", name,phone);
+        allUsers.enqueue(new Callback<CommonApiResponse>() {
             @Override
-            public void onResponse(@NotNull Call<ContactDataModel> call, @NotNull Response<ContactDataModel> response) {
+            public void onResponse(@NotNull Call<CommonApiResponse> call, @NotNull Response<CommonApiResponse> response) {
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
@@ -54,17 +45,17 @@ public class HomeViewModel extends AndroidViewModel {
                     }
 
                 } else {
-
+                  contactMutableLiveData.setValue(response.body());
                 }
             }
             @Override
-            public void onFailure(Call<ContactDataModel> call, Throwable t) {
+            public void onFailure(Call<CommonApiResponse> call, Throwable t) {
                 Log.d("contact_error", "" + t.getMessage());
             }
         });
     }
 
-    public MutableLiveData<ArrayList<String>> getContact() {
+    public MutableLiveData<CommonApiResponse> getContact() {
         return contactMutableLiveData;
     }
 
