@@ -8,6 +8,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+
+import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
@@ -22,11 +24,13 @@ import retrofit2.Response;
 
 public class HomeViewModel extends AndroidViewModel {
     private MutableLiveData<CommonApiResponse> contactMutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<NewsResponseModel> newsLiveData = new MutableLiveData<>();
     public MutableLiveData<String> studentID = new MutableLiveData<>();
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
         studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
+        apiCallNews();
     }
 
 
@@ -55,8 +59,38 @@ public class HomeViewModel extends AndroidViewModel {
         });
     }
 
+    public void apiCallNews() {
+        APIService services = RetroClass.getApiClient().create(APIService.class);
+        Call<NewsResponseModel> allUsers = services.getNews();
+        allUsers.enqueue(new Callback<NewsResponseModel>() {
+            @Override
+            public void onResponse(@NotNull Call<NewsResponseModel> call, @NotNull Response<NewsResponseModel> response) {
+                if (response.body() == null) {
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
+                    } catch (Exception e) {
+                        Log.d("", e.getMessage());
+                    }
+
+                } else {
+                    newsLiveData.setValue(response.body());
+                }
+            }
+            @Override
+            public void onFailure(Call<NewsResponseModel> call, Throwable t) {
+                Log.d("contact_error", "" + t.getMessage());
+            }
+        });
+    }
+
+
     public MutableLiveData<CommonApiResponse> getContact() {
         return contactMutableLiveData;
+    }
+
+    public MutableLiveData<NewsResponseModel> getNews() {
+        return newsLiveData;
     }
 
     private void showToast(Context context, String message) {

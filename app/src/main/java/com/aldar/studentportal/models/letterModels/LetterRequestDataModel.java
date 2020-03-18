@@ -19,6 +19,12 @@ public class LetterRequestDataModel {
     @SerializedName("retailPrice")
     @Expose
     private Double retailPrice;
+    @SerializedName("path_EN")
+    @Expose
+    private String pathEN;
+    @SerializedName("path_AR")
+    @Expose
+    private String pathAR;
 
     public Integer getServiceId() {
         return serviceId;
@@ -59,5 +65,22 @@ public class LetterRequestDataModel {
     public void setRetailPrice(Double retailPrice) {
         this.retailPrice = retailPrice;
     }
+
+    public String getPathEN() {
+        return pathEN;
+    }
+
+    public void setPathEN(String pathEN) {
+        this.pathEN = pathEN;
+    }
+
+    public String getPathAR() {
+        return pathAR;
+    }
+
+    public void setPathAR(String pathAR) {
+        this.pathAR = pathAR;
+    }
+
 
 }

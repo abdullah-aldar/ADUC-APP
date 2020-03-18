@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class SharedPreferencesManager {
     private static volatile SharedPreferencesManager preferencesManagerInstance;
     private static SharedPreferences sharedPreferences;
@@ -59,4 +62,6 @@ public class SharedPreferencesManager {
     public boolean getBooleanValue(String key) {
         return sharedPreferences.getBoolean(key, false);
     }
+
+
 }

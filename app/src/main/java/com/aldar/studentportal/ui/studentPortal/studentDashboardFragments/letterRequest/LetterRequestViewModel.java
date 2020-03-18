@@ -8,9 +8,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-
-import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
+import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
@@ -23,15 +22,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LetterRequestViewModel extends AndroidViewModel {
-    public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
-    public MutableLiveData<String> letterID = new MutableLiveData<>();
-    private MutableLiveData<CourseScheduleResponseModel> courseScheduleData = new MutableLiveData<>();
-    private MutableLiveData<LetterRequestResponseModel> letterTypeData = new MutableLiveData<>();
+    public MutableLiveData<String> note = new MutableLiveData<>();
+    private MutableLiveData<CommonApiResponse> requestResponseData = new MutableLiveData<>();
+    private MutableLiveData<LetterRequestResponseModel> allLetterData = new MutableLiveData<>();
     public MutableLiveData<String> studentID = new MutableLiveData<>();
 
     public LetterRequestViewModel(@NonNull Application application) {
         super(application);
-        progressBar.setValue(8);
         studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
         apiCallLetterType();
     }
@@ -55,7 +52,7 @@ public class LetterRequestViewModel extends AndroidViewModel {
                     responseModel.setMessage(response.body().getMessage());
                     responseModel.setSuccess(response.body().getSuccess());
                     responseModel.setData(response.body().getData());
-                    letterTypeData.setValue(responseModel);
+                    allLetterData.setValue(responseModel);
                 }
             }
 
@@ -66,47 +63,46 @@ public class LetterRequestViewModel extends AndroidViewModel {
         });
     }
 
-    public void apiCallCouseSchedule(){
-//        progressBar.setValue(0);
-//        APIService services = RetroClass.getApiClient().create(APIService.class);
-//        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule(studentID.getValue(),letterID.getValue());
-//        allUsers.enqueue(new Callback<CourseScheduleResponseModel>() {
-//            @Override
-//            public void onResponse(@NotNull Call<CourseScheduleResponseModel> call, @NotNull Response<CourseScheduleResponseModel> response) {
-//                progressBar.setValue(8);
-//                if (response.body() == null) {
-//                    try {
-//                        JSONObject jObjError = new JSONObject(response.errorBody().string());
-//                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
-//                    } catch (Exception e) {
-//                        Log.d("", e.getMessage());
-//                    }
-//
-//                }
-//                else {
-//                    CourseScheduleResponseModel responseModel = new CourseScheduleResponseModel();
-//                    responseModel.setMessage(response.body().getMessage());
-//                    responseModel.setSuccess(response.body().getSuccess());
-//                    responseModel.setData(response.body().getData());
-//                    courseScheduleData.setValue(responseModel);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<CourseScheduleResponseModel> call, Throwable t) {
-//                progressBar.setValue(8);
-//                showToast(getApplication().getApplicationContext(),t.getMessage());
-//            }
-//        });
+    public void apiCallRequestLetter(String letterTo,String letterID){
+        APIService services = RetroClass.getApiClient().create(APIService.class);
+        Call<CommonApiResponse> allUsers = services.letterRequest(letterID,studentID.getValue(),letterTo,note.getValue());
+        allUsers.enqueue(new Callback<CommonApiResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<CommonApiResponse> call, @NotNull Response<CommonApiResponse> response) {
+                if (response.body() == null) {
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
+                    } catch (Exception e) {
+                        Log.d("", e.getMessage());
+                    }
+
+                }
+                else {
+                    CommonApiResponse responseModel = new CommonApiResponse();
+                    responseModel.setStatus(response.body().getStatus());
+                    responseModel.setMessage(response.body().getMessage());
+                    responseModel.setSuccess(response.body().getSuccess());
+                    requestResponseData.setValue(responseModel);
+
+                    showToast(getApplication().getApplicationContext(),response.body().getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CommonApiResponse> call, Throwable t) {
+                showToast(getApplication().getApplicationContext(),t.getMessage());
+            }
+        });
+    }
+    public MutableLiveData<LetterRequestResponseModel> getAllLetterResponseData(){
+        return allLetterData;
     }
 
-    public MutableLiveData<CourseScheduleResponseModel> getcourseScheduleData(){
-        return courseScheduleData;
+    public MutableLiveData<CommonApiResponse> getRequestResponseData(){
+        return requestResponseData;
     }
 
-    public MutableLiveData<LetterRequestResponseModel> getletterTypeData(){
-        return letterTypeData;
-    }
 
     private void showToast(Context context, String message){
         Toast.makeText(context, ""+message, Toast.LENGTH_SHORT).show();

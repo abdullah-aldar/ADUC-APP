@@ -15,10 +15,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.adapters.FAQAdapter;
+import com.aldar.studentportal.adapters.NewsAdapter;
+import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
 import com.aldar.studentportal.ui.activities.common.faq.FaqActivity;
 import com.aldar.studentportal.ui.activities.common.FeeActivity;
 import com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity;
@@ -55,6 +62,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     Button btnShareFeedback;
     @BindView(R.id.btn_inquire_us)
     Button btnInquireUs;
+    @BindView(R.id.rv_news)
+    RecyclerView rvNews;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -79,7 +88,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
+
+        homeViewModel.getNews().observe(getViewLifecycleOwner(), newsResponseModel -> {
+            if(newsResponseModel != null){
+                rvNews.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+                NewsAdapter newsAdapter = new NewsAdapter(newsResponseModel.getData());
+                rvNews.setAdapter(newsAdapter);
+            }
+        });
     }
 
     @Override

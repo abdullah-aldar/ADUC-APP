@@ -171,10 +171,23 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:gravity="top"
                 android:textSize="12sp"
+                android:text="@={letterViewModel.note}"
                 android:hint="your note" />
 
+            <TextView
+                android:id="@+id/tv_preview_letter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:padding="@dimen/small_margin"
+                android:background="@color/tranparent"
+                android:text="Preview Letter"
+                android:layout_below="@+id/et_note"/>
+
             <LinearLayout
-                android:layout_below="@id/et_note"
+                android:id="@+id/buttons"
+                android:layout_below="@id/tv_preview_letter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/standarize_spacing"
@@ -201,6 +214,8 @@
                     android:background="@drawable/gradient"/>
 
             </LinearLayout>
+
+
         </RelativeLayout>
 
 

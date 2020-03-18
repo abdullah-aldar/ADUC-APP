@@ -35,36 +35,36 @@ public class AnnouncementViewModel extends AndroidViewModel {
     }
 
     private void apiAnnouncement(){
-//        progressBar.setValue(0);
-//        APIService services = RetroClass.getApiClient().create(APIService.class);
-//        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule("BMC1412383","97");
-//        allUsers.enqueue(new Callback<CourseScheduleResponseModel>() {
-//            @Override
-//            public void onResponse(@NotNull Call<CourseScheduleResponseModel> call, @NotNull Response<CourseScheduleResponseModel> response) {
-//                progressBar.setValue(8);
-//                if (response.body() == null) {
-//                    try {
-//                        JSONObject jObjError = new JSONObject(response.errorBody().string());
-//                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
-//                    } catch (Exception e) {
-//                        Log.d("", e.getMessage());
-//                    }
-//
-//                } else  {
-//                    CourseScheduleResponseModel responseModel = new CourseScheduleResponseModel();
-//                    responseModel.setMessage(response.body().getMessage());
-//                    responseModel.setSuccess(response.body().getSuccess());
-//                    responseModel.setData(response.body().getData());
-//                    courseScheduleData.setValue(responseModel);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<CourseScheduleResponseModel> call, Throwable t) {
-//                progressBar.setValue(8);
-//                showToast(getApplication().getApplicationContext(),t.getMessage());
-//            }
-//        });
+        progressBar.setValue(0);
+        APIService services = RetroClass.getApiClient().create(APIService.class);
+        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule("BMC1412383","97");
+        allUsers.enqueue(new Callback<CourseScheduleResponseModel>() {
+            @Override
+            public void onResponse(@NotNull Call<CourseScheduleResponseModel> call, @NotNull Response<CourseScheduleResponseModel> response) {
+                progressBar.setValue(8);
+                if (response.body() == null) {
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
+                    } catch (Exception e) {
+                        Log.d("", e.getMessage());
+                    }
+
+                } else  {
+                    CourseScheduleResponseModel responseModel = new CourseScheduleResponseModel();
+                    responseModel.setMessage(response.body().getMessage());
+                    responseModel.setSuccess(response.body().getSuccess());
+                    responseModel.setData(response.body().getData());
+                    courseScheduleData.setValue(responseModel);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CourseScheduleResponseModel> call, Throwable t) {
+                progressBar.setValue(8);
+                showToast(getApplication().getApplicationContext(),t.getMessage());
+            }
+        });
     }
 
     public MutableLiveData<CourseScheduleResponseModel> getAnnouncementData(){

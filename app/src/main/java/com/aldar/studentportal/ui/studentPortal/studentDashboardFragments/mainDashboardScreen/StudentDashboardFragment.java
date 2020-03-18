@@ -2,6 +2,8 @@ package com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.mainD
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -10,6 +12,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +27,7 @@ import com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity;
 import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.announcment.AnnouncementFragment;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
+import com.bumptech.glide.Glide;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -59,13 +63,6 @@ public class StudentDashboardFragment extends Fragment {
             adapter.setProductList(dashboardItemModels);
             binding.rvDashboardItem.setAdapter(adapter);
         });
-
-
-//        Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-//
-//        binding.ivMortarboard.setImageBitmap(Bitmap.createScaledBitmap(bmp, binding.ivMortarboard.getWidth(),
-//                binding.ivMortarboard.getHeight(), false));
-
 
 
         binding.ivBack.setOnClickListener(v -> {

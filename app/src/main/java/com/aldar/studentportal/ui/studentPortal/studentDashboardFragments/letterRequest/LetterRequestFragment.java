@@ -1,28 +1,28 @@
 package com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.letterRequest;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
+import android.graphics.pdf.PdfRenderer;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.os.Environment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
@@ -30,15 +30,28 @@ import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
 import com.aldar.studentportal.databinding.CustomConfirmLetterrDialogBinding;
 import com.aldar.studentportal.databinding.FragmentLetterRequestBinding;
 import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
-import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseSchedule.CourseScheduleViewModel;
+import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
+import com.github.barteksc.pdfviewer.PDFView;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.functions.Supplier;
+import io.reactivex.rxjava3.observers.DisposableObserver;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class LetterRequestFragment extends Fragment {
     private FragmentLetterRequestBinding binding;
-    private String amount;
+    private String amount, strPDfLink, strLetterID, strLetterTo;
+    private boolean checkEnglisArabic = false;
+    private boolean checkPreview = false;
+
+    private LetterRequestViewModel viewModel;
+    private final CompositeDisposable disposables = new CompositeDisposable();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,40 +63,48 @@ public class LetterRequestFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        LetterRequestViewModel viewModel =  new ViewModelProvider(this).get(LetterRequestViewModel.class);
+        viewModel = new ViewModelProvider(this).get(LetterRequestViewModel.class);
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setLetterViewModel(viewModel);
 
-        getletterTypeData(viewModel.getletterTypeData());
-
-
+        getletterTypeData(viewModel.getAllLetterResponseData());
 
         binding.radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-                switch (checkedId){
-                    case R.id.radio_english:
-                        binding.etWhomConcern.setText("To Whom it May Concern");
-                        break;
-                    case R.id.radio_arabic:
-                        binding.etWhomConcern.setText("الى من يهمه الامر");
-                        break;
-                }
+            switch (checkedId) {
+                case R.id.radio_english:
+                    checkEnglisArabic = false;
+                    strLetterTo = "To Whom it May Concern";
+                    binding.etWhomConcern.setText("To Whom it May Concern");
+                    break;
+                case R.id.radio_arabic:
+                    checkEnglisArabic = true;
+                    strLetterTo = "الى من يهمه الامر";
+                    binding.etWhomConcern.setText("الى من يهمه الامر");
+                    break;
+            }
         });
 
-        binding.btnContinue.setOnClickListener(v->{
+        binding.btnContinue.setOnClickListener(v -> {
             showConfirmDialog();
         });
 
         binding.ivBack.setOnClickListener(v -> {
             getActivity().onBackPressed();
         });
+
+        binding.tvPreviewLetter.setOnClickListener(v -> {
+            checkPreview = true;
+            showPdfDialog();
+        });
     }
 
-    private void getletterTypeData(MutableLiveData<LetterRequestResponseModel> getletterTypeData) {
-        getletterTypeData.observe(getViewLifecycleOwner(), letterRequestResponseModel -> {
-            if(letterRequestResponseModel != null && letterRequestResponseModel.getData().size()>0){
+    private void getletterTypeData(MutableLiveData<LetterRequestResponseModel> allLetterResponseData) {
+        allLetterResponseData.observe(getViewLifecycleOwner(), letterRequestResponseModel -> {
+            if (letterRequestResponseModel != null && letterRequestResponseModel.getData().size() > 0) {
                 //converting arraylist to string array
                 String[] namesArr = new String[letterRequestResponseModel.getData().size()];
                 for (int i = 0; i < letterRequestResponseModel.getData().size(); i++) {
@@ -93,8 +114,15 @@ public class LetterRequestFragment extends Fragment {
                 binding.letterSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, namesArr, "Select"));
                 binding.letterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)    {
-                         amount = String.valueOf(letterRequestResponseModel.getData().get(position).getRetailPrice());
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        strLetterID = String.valueOf(letterRequestResponseModel.getData().get(position).getServiceId());
+                        amount = String.valueOf(letterRequestResponseModel.getData().get(position).getRetailPrice());
+                        if (checkEnglisArabic) {
+                            strPDfLink = letterRequestResponseModel.getData().get(position).getPathEN();
+                        } else {
+                            strPDfLink = letterRequestResponseModel.getData().get(position).getPathAR();
+                        }
+
                     }
 
                     @Override
@@ -106,51 +134,78 @@ public class LetterRequestFragment extends Fragment {
         });
     }
 
-    private void showConfirmDialog(){
+
+    private void showConfirmDialog() {
         Dialog dialog = new Dialog(getActivity());
-        CustomConfirmLetterrDialogBinding dialogBinding = DataBindingUtil.inflate(LayoutInflater.from(getContext()), R.layout. custom_confirm_letterr_dialog, null, false);
+        CustomConfirmLetterrDialogBinding dialogBinding = DataBindingUtil.inflate(LayoutInflater.from(getContext()), R.layout.custom_confirm_letterr_dialog, null, false);
         dialog.setContentView(dialogBinding.getRoot());
 
-        dialogBinding.tvLetterRate.setText(amount +" DHS Will be Deducted From Your Account For This Service(Inclusive of VAT)" +
-                "\n سوف يتم خصم مبلغ"+ amount +"درهم من حسابك نظير هذه الخدمة ");
+        dialogBinding.tvLetterRate.setText(amount + " DHS Will be Deducted From Your Account For This Service(Inclusive of VAT)" +
+                "\n سوف يتم خصم مبلغ" + amount + "درهم من حسابك نظير هذه الخدمة ");
 
+        dialogBinding.btnSave.setOnClickListener(v -> {
+            if (checkPreview) {
+                viewModel.apiCallRequestLetter(strLetterTo, strLetterID);
+                dialog.dismiss();
+            } else {
+                Toast.makeText(getActivity(), "please preview the letter first", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         dialog.show();
     }
 
-    private void generateNoteOnSD(String sBody) {
-        PdfDocument document = new PdfDocument();
-        // crate a page description
-        PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(300, 600, 1).create();
-        // start a page
-        PdfDocument.Page page = document.startPage(pageInfo);
-        Canvas canvas = page.getCanvas();
-        Paint paint = new Paint();
-        paint.setColor(Color.RED);
-        canvas.drawCircle(50, 50, 30, paint);
-        paint.setColor(Color.BLACK);
-        canvas.drawText(sBody, 80, 50, paint);
-
-        document.finishPage(page);
-
-        // write the document content
-        String directory_path = Environment.getExternalStorageDirectory().getPath() + "/ADUC/aldar.pdf";
-        File file = new File(directory_path);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        String targetPdf = directory_path+"aldar.pdf";
-        File filePath = new File(targetPdf);
-        try {
-            document.writeTo(new FileOutputStream(filePath));
-            Toast.makeText(getActivity(), "Pdf Document Created", Toast.LENGTH_LONG).show();
-        } catch (IOException e) {
-            Log.e("main", "error "+e.toString());
-            Toast.makeText(getActivity(), "Something wrong: " + e.toString(),  Toast.LENGTH_LONG).show();
-        }
-        // close the document
-        document.close();
-
-
+    private void showPdfDialog() {
+        Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.custom_pdf_layout);
+        PDFView pdfView = dialog.findViewById(R.id.pdf);
+        showPDF(pdfView);
+        dialog.show();
     }
+
+    private void showPDF(PDFView pdfView) {
+        disposables.add(Observable()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<InputStream>() {
+                    @Override
+                    public void onComplete() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNext(InputStream contactList) {
+                        pdfView.fromStream(contactList)
+                                .pages(0, 2, 1, 3, 3, 3)
+                                .enableSwipe(true)
+                                .swipeHorizontal(false)
+                                .enableDoubletap(true)
+                                .defaultPage(0)
+                                .enableAnnotationRendering(false)
+                                .scrollHandle(null)
+                                .spacing(0)
+                                .load();
+
+                    }
+                }));
+    }
+
+    Observable<InputStream> Observable() {
+        return Observable.defer((Supplier<Observable<InputStream>>) () -> {
+            // Do some long running operation
+            InputStream input = null;
+            try {
+                input = new URL(strPDfLink).openStream();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return Observable.just(input);
+        });
+    }
+
 }

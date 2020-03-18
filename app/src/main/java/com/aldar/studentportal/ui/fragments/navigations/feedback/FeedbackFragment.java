@@ -1,5 +1,7 @@
 package com.aldar.studentportal.ui.fragments.navigations.feedback;
 
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -12,28 +14,44 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.databinding.FeedbackFragmentBinding;
+import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
 
 public class FeedbackFragment extends Fragment {
-
-    private FeedbackViewModel mViewModel;
-
-    public static FeedbackFragment newInstance() {
-        return new FeedbackFragment();
-    }
+    private FeedbackFragmentBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.feedback_fragment, container, false);
+        binding = DataBindingUtil.bind(inflater.inflate(R.layout.feedback_fragment,container,false));
+        return binding.getRoot();
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(FeedbackViewModel.class);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        FeedbackViewModel mViewModel = new ViewModelProvider(this).get(FeedbackViewModel.class);
+        binding.setLifecycleOwner(getViewLifecycleOwner());
+        binding.setFeedbackViewModel(mViewModel);
 
+        mViewModel.getfeedBackData().observe(getViewLifecycleOwner(),commonApiResponse -> {
+            if(commonApiResponse != null){
+                Toast.makeText(getContext(), ""+commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.btnFeedback.setOnClickListener(v -> {
+            mViewModel.stars.setValue(binding.rattingbar.getRating());
+            mViewModel.onClick();
+        });
     }
 
+    @Override
+    public void onDestroyView() {
+        binding = null;
+        super.onDestroyView();
+    }
 }

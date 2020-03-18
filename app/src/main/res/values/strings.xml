@@ -56,16 +56,16 @@
     <string name="advisor">Advisor</string>
     <string name="concentration">Concentration</string>
     <string name="my_course_advise">Your Academic Status\nالحالة الاكاديمية</string>
-    <string name="your_marks">Here is your marks\n علاماتك</string>
+    <string name="your_marks">Here is your marks\n هذه هي درجاتك</string>
     <string name="instructor_msg">Messages From Instructors</string>
     <string name="compose_write">Compose/Write Mail</string>
-    <string name="your_course_schedule">Here is your course schedule\nجدول دراستك</string>
-    <string name="financial_statement">Here is your Financial Statement\nالشهادة المالية</string>
-    <string name="profile_statement">Here is your profile info\nمعلومات الشخصي</string>
-    <string name="letter_request">please add a new request below\nطلب جديد</string>
+    <string name="your_course_schedule">Here is your course schedule\nهذا هو جدولك الدراسي</string>
+    <string name="financial_statement">Here is your Financial Statement\nالحسابات</string>
+    <string name="profile_statement">Here is your profile info\nملف الطالب</string>
+    <string name="letter_request">please add a new request below\nطلب رسالة</string>
     <string name="announcement_text">Here is the latest announcement\nأحدث إعلان</string>
     <string name="faq_text">Frequently Asked Questions\nأسئلة مكررة</string>
-    <string name="feedback">Your feedback helps enhance the ALDAR Mobile Experience</string>
+    <string name="feedback">Your feedback helps enhance the ALDAR Mobile Experience\nيرجى مشاركتنا بملاحظاتك</string>
 
 
     <string name="computer_school">School Of Engineering &amp; Technology</string>
@@ -149,5 +149,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

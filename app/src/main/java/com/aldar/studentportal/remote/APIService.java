@@ -9,6 +9,7 @@ import com.aldar.studentportal.models.inboxModels.StudentInboxResponseModel;
 import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
+import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
@@ -56,6 +57,13 @@ public interface APIService {
     Call<LetterRequestResponseModel> getLetterTypes();
 
     @FormUrlEncoded
+    @POST("aduc/ServiceRequest")
+    Call<CommonApiResponse> letterRequest(@Field("serviceId") String studendID,
+                                          @Field("studentId") String letterID,
+                                          @Field("letterTo") String studendNote,
+                                          @Field("note") String letterTo);
+
+    @FormUrlEncoded
     @POST("aduc/StudentRegisteredData")
     Call<CourseScheduleResponseModel> getCourseSchedule(@Field("GivenstudentId") String studendID,
                                                         @Field("semId") String semesterID);
@@ -94,6 +102,16 @@ public interface APIService {
     Call<CommonApiResponse> sendContactsToServer(@Field("GivenstudentId") String studendID,
                                                  @Field("ContactName") String contactName,
                                                  @Field("ContactMobile") String contactMobile);
+
+
+    @FormUrlEncoded
+    @POST("aduc/Feedback")
+    Call<CommonApiResponse> feedBack(@Field("EmailId") String emailID,
+                                     @Field("Message") String message,
+                                     @Field("Points") String points);
+
+    @GET("aduc/News")
+    Call<NewsResponseModel> getNews();
 
 
 }

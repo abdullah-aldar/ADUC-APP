@@ -108,7 +108,7 @@ public class AllumniFragment extends Fragment {
                                     strNumber += "," + contactList.get(k).getNumContact();
                                 }
                             }
-                            viewModel.sendContactToServer(contactList.get(0).getNameContact(),"03459055");
+                           // viewModel.sendContactToServer(contactList.get(0).getNameContact(),"03459055");
                         }
                     }
                 }));

@@ -3,15 +3,15 @@
 
     <array name="dashboard_items">
         <item>My Course Schedule\nجدول دراستي</item>
-        <item>My Marks\nعلاماتي</item>
-        <item>My Study Plan\nخطة دراستي</item>
-        <item>MY Course Advice\nنصيحة بالطبع بلدي</item>
+        <item>My Marks\nالدرجات</item>
+        <item>My Study Plan\nالخطة الدراسية</item>
+        <item>MY Course Advice\nالارشاد الاكاديمي</item>
         <item>Letter Request\nطلب رسالة</item>
-        <item>My Finance\nأموالي</item>
-        <item>My Profile\nملفي</item>
+        <item>My Finance\nالحسابات</item>
+        <item>My Profile\nملف الطالب</item>
         <item>My Inbox\nصندوق الوارد</item>
-        <item>Google ClassRoom\nجوجل الفصول الدراسية</item>
-        <item>Library\nمكتبة</item>
+        <item>Google ClassRoom\nغرف جوجل الصفية</item>
+        <item>Library\nالمكتبة</item>
     </array>
 
     <array name="faq_question">
