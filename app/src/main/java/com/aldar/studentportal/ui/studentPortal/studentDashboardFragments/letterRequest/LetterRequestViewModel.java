@@ -29,7 +29,7 @@ public class LetterRequestViewModel extends AndroidViewModel {
 
     public LetterRequestViewModel(@NonNull Application application) {
         super(application);
-        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
+        studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
         apiCallLetterType();
     }
 

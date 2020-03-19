@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.interfaces.StudyPlanInterface;
+import com.aldar.studentportal.models.mymarksmodels.MarksSemesterModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanDataModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanYearly;
@@ -27,20 +28,18 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
     private final LayoutInflater inflater;
 
     private List<StudyPlanYearly> studyPlanYearlyList;
-    private List<StudyPlanDataModel> coursesList;
-
 
     private StudyPlanInterface studyPlanInterface;
     ArrayList<Integer> counter = new ArrayList<Integer>();
 
-    public StudyPlanAdapter(FragmentActivity activity, List<StudyPlanYearly> data, List<StudyPlanDataModel> courses, StudyPlanInterface studyPlanInterface) {
+    public StudyPlanAdapter(FragmentActivity activity, List<StudyPlanYearly> semester,  StudyPlanInterface studyPlanInterface) {
         this.context = activity;
         inflater = LayoutInflater.from(context);
-        this.studyPlanYearlyList = data;
-        this.coursesList = courses;
+        this.studyPlanYearlyList = semester;
+
         this.studyPlanInterface = studyPlanInterface;
 
-        for (int i = 0; i < data.size(); i++) {
+        for (int i = 0; i < semester.size(); i++) {
             counter.add(0);
         }
     }
@@ -61,8 +60,6 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         StudyPlanYearly model = studyPlanYearlyList.get(position);
-
-
         holder.tvSemester.setText(model.getYearLevel());
         holder.tvTotalCreditHour.setText("Total Credit Hours = "+String.valueOf(model.getTotalCH()));
         holder.tvCompletedCreditHours.setText("Passed Credit Hours = "+String.valueOf(model.getCompTotalCH()));
@@ -70,28 +67,21 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
         InnerStudyPlanAdapter itemInnerRecyclerView = new InnerStudyPlanAdapter(studyPlanYearlyList.get(position).getCourses());
         holder.cardRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        holder.cardView.setOnClickListener(view -> {
 
-                if (counter.get(position) % 2 == 0) {
-                    holder.cardRecyclerView.setVisibility(View.VISIBLE);
-                    holder.tvTotalCreditHour.setVisibility(View.VISIBLE);
-                    holder.tvCompletedCreditHours.setVisibility(View.VISIBLE);
-                } else {
-                    holder.cardRecyclerView.setVisibility(View.GONE);
-                    holder.tvTotalCreditHour.setVisibility(View.GONE);
-                    holder.tvCompletedCreditHours.setVisibility(View.GONE);
-                }
-
-                counter.set(position, counter.get(position) + 1);
-
-
+            if (counter.get(position) % 2 == 0) {
+                holder.cardRecyclerView.setVisibility(View.VISIBLE);
+            } else {
+                holder.cardRecyclerView.setVisibility(View.GONE);
             }
+
+            counter.set(position, counter.get(position) + 1);
+
+
         });
         holder.cardRecyclerView.setAdapter(itemInnerRecyclerView);
 
-        studyPlanInterface.onGetCreditHour("48", "30");
+        studyPlanInterface.onGetCreditHour(String.valueOf(model.getTotalCH()), String.valueOf(model.getCompTotalCH()));
     }
 
     @Override

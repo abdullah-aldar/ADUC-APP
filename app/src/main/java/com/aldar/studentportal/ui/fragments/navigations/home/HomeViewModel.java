@@ -29,14 +29,13 @@ public class HomeViewModel extends AndroidViewModel {
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
-        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
         apiCallNews();
     }
 
 
-    public void sendContactToServer(String name,String phone) {
+    public void sendContactToServer(String deviceID,String name,String phone) {
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<CommonApiResponse> allUsers = services.sendContactsToServer("7450", name,phone);
+        Call<CommonApiResponse> allUsers = services.sendContactsToServer(deviceID, name,phone);
         allUsers.enqueue(new Callback<CommonApiResponse>() {
             @Override
             public void onResponse(@NotNull Call<CommonApiResponse> call, @NotNull Response<CommonApiResponse> response) {

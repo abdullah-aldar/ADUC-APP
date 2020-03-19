@@ -11,10 +11,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.MarksAdapter;
 import com.aldar.studentportal.databinding.FragmentMyMarksBinding;
+import com.aldar.studentportal.models.mymarksmodels.MarksDataModel;
 import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyMarksFragment extends Fragment {
     private FragmentMyMarksBinding binding;
@@ -48,8 +54,9 @@ public class MyMarksFragment extends Fragment {
     private void marksData(MutableLiveData<MarksResponseModel> mutableLiveData){
         mutableLiveData.observe(getViewLifecycleOwner(),marksResponseModel -> {
             if(marksResponseModel != null){
-                adapter = new MarksAdapter(getActivity(), marksResponseModel.getData(),marksResponseModel.getData().get(0).getCourses());
+                adapter = new MarksAdapter(getActivity(), marksResponseModel.getData());
                 binding.rvMarks.setAdapter(adapter);
+
             }
         });
     }

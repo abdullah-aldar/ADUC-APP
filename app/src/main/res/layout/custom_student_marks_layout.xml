@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/small_margin"
+    android:layout_marginTop="@dimen/small_margin"
+    android:layout_marginEnd="@dimen/small_margin"
+    android:background="@drawable/shadow"
+    android:orientation="vertical"
+    android:padding="@dimen/medium_margin">
+
+    <TextView
+        android:id="@+id/tv_semester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year 1 FALL"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/course_code"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_semester"
+        android:text="Course Code :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_course_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_semester"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_toEndOf="@+id/course_code"
+        android:text="CME301" />
+
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_code"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Course Name :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_code"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/course_name"
+        android:text="Communication Systems" />
+
+    <TextView
+        android:id="@+id/prerequeste"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_name"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Course Work :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_course_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/course_name"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/prerequeste"
+        android:text="57" />
+
+    <TextView
+        android:id="@+id/final_exam"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_course_work"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Final Exam :"
+        android:fontFamily="@font/poppins_bold" />
+
+    <TextView
+        android:id="@+id/tv_final_exam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_course_work"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/final_exam"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/final_exam"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Total :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_final_exam"
+        android:layout_marginStart="@dimen/small_margin"
+        android:paddingEnd="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/total"
+        android:text="0" />
+
+
+    <TextView
+        android:id="@+id/grade"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_total"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Grade :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_total"
+        android:layout_marginStart="@dimen/small_margin"
+        android:paddingEnd="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/grade"
+        android:text="A+" />
+
+</RelativeLayout>

@@ -25,9 +25,9 @@ import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseMode
 
 import javax.inject.Inject;
 
-public class CourseScheduleFragment extends Fragment{
+public class CourseScheduleFragment extends Fragment {
     private FragmentCourseScheduleBinding binding;
-    private  CourseScheduleAdapter adapter;
+    private CourseScheduleAdapter adapter;
     private CourseScheduleViewModel viewModel;
 
     @Override
@@ -44,7 +44,7 @@ public class CourseScheduleFragment extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel =  new ViewModelProvider(this).get(CourseScheduleViewModel.class);
+        viewModel = new ViewModelProvider(this).get(CourseScheduleViewModel.class);
         binding.rvCourseSchedule.setLayoutManager(new LinearLayoutManager(getActivity()));
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setCourseScheduleViewModel(viewModel);
@@ -53,14 +53,14 @@ public class CourseScheduleFragment extends Fragment{
         getCourseData(viewModel.getcourseScheduleData());
 
         binding.ivBack.setOnClickListener(v -> {
-        getActivity().onBackPressed();
+            getActivity().onBackPressed();
         });
     }
 
-    private void getSemesterData(MutableLiveData<SemesterResponseModel> semsterScheduleData){
+    private void getSemesterData(MutableLiveData<SemesterResponseModel> semsterScheduleData) {
         semsterScheduleData.observe(getViewLifecycleOwner(), semesterResponseModel -> {
 
-            if(semesterResponseModel.getData().size()>0){
+            if (semesterResponseModel.getData().size() > 0) {
                 //converting arraylist to string array
                 String[] namesArr = new String[semesterResponseModel.getData().size()];
                 for (int i = 0; i < semesterResponseModel.getData().size(); i++) {
@@ -82,18 +82,18 @@ public class CourseScheduleFragment extends Fragment{
                 });
             }
         });
-
     }
 
 
-    private void getCourseData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData){
+    private void getCourseData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData) {
         mutableLiveData.observe(getViewLifecycleOwner(), courseScheduleResponseModel -> {
-            if(courseScheduleResponseModel.getData() != null){
+            if (courseScheduleResponseModel.getData() != null) {
                 adapter = new CourseScheduleAdapter(courseScheduleResponseModel.getData());
                 binding.rvCourseSchedule.setAdapter(adapter);
-            }
-            else {
-                Toast.makeText(getContext(), "No data availabe in this semester", Toast.LENGTH_SHORT).show();
+                binding.tvNoData.setVisibility(View.GONE);
+            } else {
+                binding.rvCourseSchedule.setAdapter(null);
+                binding.tvNoData.setVisibility(View.VISIBLE);
             }
         });
     }

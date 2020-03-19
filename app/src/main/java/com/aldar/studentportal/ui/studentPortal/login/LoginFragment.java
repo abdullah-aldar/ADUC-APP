@@ -70,6 +70,7 @@ public class LoginFragment extends Fragment {
                     SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_advisor", loginResponseModel.getData().getAdvisor());
                     SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_programe", loginResponseModel.getData().getProgram());
                     SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("concentration", loginResponseModel.getData().getConcentration());
+                    SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", loginResponseModel.getData().getIsContactStored());
                     SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin", true);
 
                     GeneralUtilities.connectFragmentWithoutBack(getContext(), new StudentDashboardFragment());

@@ -28,14 +28,14 @@ public class MyMarksViewModel extends AndroidViewModel {
     public MyMarksViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
-        apiStudyPlan();
+        studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
+        apiCallMarks();
     }
 
-    private void apiStudyPlan(){
+    private void apiCallMarks(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<MarksResponseModel> allUsers = services.getStudentMarks("7450");
+        Call<MarksResponseModel> allUsers = services.getStudentMarks(studentID.getValue());
         allUsers.enqueue(new Callback<MarksResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<MarksResponseModel> call, @NotNull Response<MarksResponseModel> response) {

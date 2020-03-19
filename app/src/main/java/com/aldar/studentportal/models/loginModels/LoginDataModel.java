@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginDataModel {
-
     @SerializedName("studentID")
     @Expose
     private Integer studentID;
@@ -59,6 +58,9 @@ public class LoginDataModel {
     @SerializedName("academicWarningLetter")
     @Expose
     private String academicWarningLetter;
+    @SerializedName("isContactStored")
+    @Expose
+    private Integer isContactStored;
 
     public Integer getStudentID() {
         return studentID;
@@ -202,6 +204,14 @@ public class LoginDataModel {
 
     public void setAcademicWarningLetter(String academicWarningLetter) {
         this.academicWarningLetter = academicWarningLetter;
+    }
+
+    public Integer getIsContactStored() {
+        return isContactStored;
+    }
+
+    public void setIsContactStored(Integer isContactStored) {
+        this.isContactStored = isContactStored;
     }
 
 }

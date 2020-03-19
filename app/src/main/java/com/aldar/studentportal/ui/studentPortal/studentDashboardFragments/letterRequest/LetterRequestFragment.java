@@ -152,6 +152,10 @@ public class LetterRequestFragment extends Fragment {
             }
         });
 
+        dialogBinding.ivClose.setOnClickListener(v -> {
+            dialog.dismiss();
+        });
+
         dialog.show();
     }
 

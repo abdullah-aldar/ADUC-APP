@@ -31,14 +31,14 @@ public class StudentProfileViewModel extends AndroidViewModel {
     public StudentProfileViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
+        studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
         apiCallProfile();
     }
 
     private void apiCallProfile(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<ProfileResponseModel> allUsers = services.getStudentProfile("7450");
+        Call<ProfileResponseModel> allUsers = services.getStudentProfile(studentID.getValue());
         allUsers.enqueue(new Callback<ProfileResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<ProfileResponseModel> call, @NotNull Response<ProfileResponseModel> response) {

@@ -30,7 +30,7 @@ public class AnnouncementViewModel extends AndroidViewModel {
     public AnnouncementViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
+        studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
         apiAnnouncement();
     }
 

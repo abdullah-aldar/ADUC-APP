@@ -41,8 +41,11 @@ public class CourseScheduleAdapter extends RecyclerView.Adapter<CourseScheduleAd
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-     CourseScheduleDataModel model = mDataList.get(position);
-     holder.binding.setCouseSheduleModel(model);
+        CourseScheduleDataModel model = mDataList.get(position);
+        holder.binding.setCouseSheduleModel(model);
+
+        String[] strings = model.getSectionCode().split("-");
+        holder.binding.tvSection.setText(strings[1]);
 
     }
 

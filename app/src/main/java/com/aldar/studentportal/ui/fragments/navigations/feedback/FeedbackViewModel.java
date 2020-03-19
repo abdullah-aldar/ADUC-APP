@@ -81,7 +81,7 @@ public class FeedbackViewModel extends AndroidViewModel {
 
         if (comment.getValue() == null || comment.getValue().isEmpty()) {
             valid = false;
-            errorMessageComment.setValue("Please enter your username");
+            errorMessageComment.setValue("Please enter your comment");
         }
 
         if(email.getValue() == null || email.getValue().isEmpty()){

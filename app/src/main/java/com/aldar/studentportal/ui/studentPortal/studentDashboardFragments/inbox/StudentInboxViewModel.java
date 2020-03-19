@@ -29,14 +29,14 @@ public class StudentInboxViewModel extends AndroidViewModel {
     public StudentInboxViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
+        studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
         apiCallStudentInbox();
     }
 
     private void apiCallStudentInbox(){
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<StudentInboxResponseModel> allUsers = services.getStudentInbox("7450");
+        Call<StudentInboxResponseModel> allUsers = services.getStudentInbox(studentID.getValue());
         allUsers.enqueue(new Callback<StudentInboxResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<StudentInboxResponseModel> call, @NotNull Response<StudentInboxResponseModel> response) {

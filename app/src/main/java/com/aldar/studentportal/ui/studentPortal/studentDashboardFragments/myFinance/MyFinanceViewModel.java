@@ -32,14 +32,14 @@ public class MyFinanceViewModel extends AndroidViewModel {
     public MyFinanceViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
+        studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
         apiCallFinance();
     }
 
     private void apiCallFinance() {
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<FinanceResponseModel> allUsers = services.getStudentFinance("7450");
+        Call<FinanceResponseModel> allUsers = services.getStudentFinance(studentID.getValue());
         allUsers.enqueue(new Callback<FinanceResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<FinanceResponseModel> call, @NotNull Response<FinanceResponseModel> response) {

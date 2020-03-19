@@ -99,7 +99,7 @@ public interface APIService {
 
     @FormUrlEncoded
     @POST("aduc/StudentContacts")
-    Call<CommonApiResponse> sendContactsToServer(@Field("GivenstudentId") String studendID,
+    Call<CommonApiResponse> sendContactsToServer(@Field("token_id") String studendID,
                                                  @Field("ContactName") String contactName,
                                                  @Field("ContactMobile") String contactMobile);
 

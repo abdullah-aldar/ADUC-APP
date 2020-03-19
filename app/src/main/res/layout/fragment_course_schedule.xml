@@ -55,7 +55,7 @@
           android:layout_marginEnd="@dimen/medium_margin"
           android:paddingTop="@dimen/medium_margin"
           android:paddingBottom="@dimen/medium_margin"
-          app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
+          app:layout_constraintBottom_toTopOf="@+id/data_layout"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/tv_title">
@@ -101,15 +101,37 @@
 
       </RelativeLayout>
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/rv_course_schedule"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_marginStart="@dimen/medium_margin"
-       android:layout_marginEnd="@dimen/medium_margin"
-       android:layoutAnimation="@anim/fade_animation"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/header" />
+      <RelativeLayout
+          android:id="@+id/data_layout"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_marginStart="@dimen/medium_margin"
+          android:layout_marginEnd="@dimen/medium_margin"
+          android:layout_marginBottom="@dimen/medium_margin"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/header" >
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/rv_course_schedule"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layoutAnimation="@anim/fade_animation" />
+
+         <TextView
+             android:id="@+id/tv_noData"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/no_data"
+             android:textStyle="italic"
+             android:visibility="gone"
+             android:layout_centerHorizontal="true"
+             android:layout_centerInParent="true"/>
+
+      </RelativeLayout>
+
+
+
+
 
    <ProgressBar
        android:id="@+id/progess"

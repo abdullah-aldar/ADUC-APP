@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.StudyPlanAdapter;
 import com.aldar.studentportal.databinding.FragmentMyStudyPlanBinding;
@@ -50,9 +52,15 @@ public class MyStudyPlanFragment extends Fragment {
     private void studyPlanData(MutableLiveData<StudyPlanResponseModel> mutableLiveData){
         mutableLiveData.observe(getViewLifecycleOwner(),studyPlanResponseModel -> {
             if(studyPlanResponseModel.getData() != null){
-                adapter = new StudyPlanAdapter(getActivity(), studyPlanResponseModel.getData(),studyPlanResponseModel.getData().get(0).getCourses(),
+
+                for(int j=0;j<=studyPlanResponseModel.getData().size();j++){
+
+                }
+
+                adapter = new StudyPlanAdapter(getActivity(), studyPlanResponseModel.getData(),
                         studyPlanInterface);
                 binding.rvStudyPlan.setAdapter(adapter);
+
             }
         });
     }
