@@ -1,5 +1,7 @@
 package com.aldar.studentportal.remote;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +29,7 @@ public class RetroClass {
 
         httpClient.addInterceptor(new Interceptor() {
             @Override
-            public Response intercept(Chain chain) throws IOException {
+            public Response intercept(@NotNull Chain chain) throws IOException {
                 Request original = chain.request();
 
                 Request request = original.newBuilder()
@@ -68,7 +70,7 @@ public class RetroClass {
                 .addInterceptor(interceptor1)
                 .addInterceptor(new Interceptor() {
                     @Override
-                    public Response intercept(Chain chain) throws IOException {
+                    public Response intercept(@NotNull Chain chain) throws IOException {
                         Request original = chain.request();
 
                         // Customize the request

@@ -31,36 +31,35 @@ import java.util.ArrayList;
 import java.util.Currency;
 import java.util.Locale;
 
-public class PaymentActivity extends AppCompatActivity implements MasterpassInitCallback, MasterpassCheckoutCallback,PaymentMethodCallback {
+public class PaymentActivity extends AppCompatActivity implements MasterpassInitCallback, MasterpassCheckoutCallback  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment2);
+
+
         MasterpassMerchantConfiguration sampleConfig = new MasterpassMerchantConfiguration.Builder()
                 .setContext(this.getApplicationContext()) //context
                 .setEnvironment(MasterpassMerchantConfiguration.SANDBOX) //environment
                 .setLocale(new Locale("en","UAE")) //locale
-                .setMerchantName("ADUC APP")
+                .setMerchantName("Merchant Name")
                 .setExpressCheckoutEnabled(true)//if merchant is express enabled
                 .setCheckoutId("3e184cd420994e069782b26a1f0a8222")
                 .build();
 
+
         MasterpassMerchant.initialize(sampleConfig, this);
     }
-
     @Override public void onInitSuccess() {
         try {
             MasterpassButton masterpassButton = MasterpassMerchant.getMasterpassButton(MasterpassButton.PAIRING_CHECKOUT_FLOW_ENABLED,this);
             this.addContentView(masterpassButton, new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
-        }catch (Exception ex){
-            Toast.makeText(this, "exceptioin "+ex.getMessage(), Toast.LENGTH_LONG).show();
-            Log.d("error",ex.getMessage());
         }
-
-
+        catch (Exception e){
+            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override public MasterpassCheckoutRequest getCheckoutRequest() {
@@ -70,17 +69,17 @@ public class PaymentActivity extends AppCompatActivity implements MasterpassInit
         allowedNetworkTypes.add(new NetworkType(NetworkType.MASTER));
         Tokenization tokenization = getSampleTokenizationObject();
 
-
         return new MasterpassCheckoutRequest.Builder()
-                .setMerchantUserId("00557038091b28e0a3dc1a548aaf39b9")
+                .setMerchantUserId("00557038091b28e0a3dc1a548aaf39b9") // I did't find any merchant key in dashboard
                 .setCheckoutId("3e184cd420994e069782b26a1f0a8222")
                 .setCartId("bb9410f9-e5a7-4f14-9c99-ea557d6fe2e8")
                 .setAmount(total)
-                .setMerchantName("ADUC APP")
+                .setMerchantName("Merchant Name")
                 .setTokenization(tokenization) // DSRP checkout is supported by Merchant
                 .setAllowedNetworkTypes(allowedNetworkTypes)
+                .setSuppress3Ds(false)
                 .setShippingProfileId("5886541")
-                .setCallBackUrl("http://masterpass.com")
+                .setCallBackUrl("https://rakbankpay.gateway.mastercard.com/checkout/")
                 .isShippingRequired(false)
                 .setCvc2Support(false)
                 .setValidityPeriodMinutes(0)
@@ -89,15 +88,16 @@ public class PaymentActivity extends AppCompatActivity implements MasterpassInit
 
     @Override public void onCheckoutComplete(Bundle bundle) {
         String transactionId = bundle.getString(CheckoutResponseConstants.TRANSACTION_ID);
+
         Toast.makeText(this, "Here is the transaction ID:" + transactionId, Toast.LENGTH_SHORT).show();
     }
 
     @Override public void onCheckoutError(MasterpassError masterpassError) {
-        Toast.makeText(this, "error = "+masterpassError.message(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, masterpassError.message(), Toast.LENGTH_SHORT).show();
     }
 
     @Override public void onInitError(MasterpassError masterpassError) {
-        Toast.makeText(this, "errro = "+masterpassError.message(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, masterpassError.message(), Toast.LENGTH_SHORT).show();
     }
 
     private Tokenization getSampleTokenizationObject() {
@@ -117,24 +117,5 @@ public class PaymentActivity extends AppCompatActivity implements MasterpassInit
         }
 
         return null;
-    }
-
-    @Override
-    public void onPaymentMethodAdded(MasterpassPaymentMethod masterpassPaymentMethod) {
-        Toast.makeText(this, "payment", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public AddPaymentMethodRequest getPaymentMethodRequest() {
-        ArrayList<NetworkType> allowedNetworkTypes = new ArrayList<>();
-        allowedNetworkTypes.add(new NetworkType(NetworkType.MASTER));
-        return new AddPaymentMethodRequest(allowedNetworkTypes,
-                "448db128c17f4abe8eb497f9e73f2ff9",
-                "testUserID");
-    }
-
-    @Override
-    public void onFailure(MasterpassError masterpassError) {
-        Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();
     }
 }

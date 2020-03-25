@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <data>
+        <variable
+            name="adviceViewModel"
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseAdvice.CourseAdviceViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +36,6 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
             android:text="My Course Advice"
             android:textColor="@color/gray"
@@ -55,43 +59,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
-
-            <TextView
-                android:id="@+id/tv_student_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hi\nAbdullah Khan"
-                android:textColor="@color/gray"
-                android:gravity="center"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_centerHorizontal="true" />
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
                 android:text="@string/my_course_advise"
                 android:fontFamily="@font/poppins_light"
-                android:layout_below="@id/tv_student_name"
                 android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:textSize="12sp"/>
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/rv_course_schedule"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_course_advice"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/shadow"
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/medium_margin"
-            android:layout_marginBottom="@dimen/medium_margin"
             android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header" />
 
+
+        <ProgressBar
+            android:id="@+id/progess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/green"
+            android:layout_centerInParent="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:visibility="@{adviceViewModel.progressBar}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

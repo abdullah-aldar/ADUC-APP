@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/small_margin"
+    android:layout_marginTop="@dimen/small_margin"
+    android:layout_marginEnd="@dimen/small_margin"
+    android:background="@drawable/shadow"
+    android:orientation="vertical"
+    android:padding="@dimen/medium_margin">
+
+
+    <TextView
+        android:id="@+id/sectionCode"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Section Code :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_sectionCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_toEndOf="@+id/sectionCode"
+        android:text="CME301" />
+
+
+    <TextView
+        android:id="@+id/courseName"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sectionCode"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Course Name :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_courseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sectionCode"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/courseName"
+        android:text="Communication Systems" />
+
+    <TextView
+        android:id="@+id/creditHours"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/courseName"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Credit Hours :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_creditHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/courseName"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/creditHours"
+        android:text="57" />
+
+    <TextView
+        android:id="@+id/remark1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/creditHours"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="Remark 1 :"
+        android:fontFamily="@font/poppins_bold" />
+
+    <TextView
+        android:id="@+id/tv_remark1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/creditHours"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/remark1"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/schedule"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_remark1"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="schedule :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_remark1"
+        android:layout_marginStart="@dimen/small_margin"
+        android:paddingEnd="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/schedule"
+        android:text="0" />
+
+
+    <TextView
+        android:id="@+id/insName"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/schedule"
+        android:layout_marginTop="@dimen/text_gap"
+        android:text="InsName :"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <TextView
+        android:id="@+id/tv_insName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/schedule"
+        android:layout_marginStart="@dimen/small_margin"
+        android:paddingEnd="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/text_gap"
+        android:layout_toEndOf="@+id/insName"
+        android:text="A+" />
+
+</RelativeLayout>

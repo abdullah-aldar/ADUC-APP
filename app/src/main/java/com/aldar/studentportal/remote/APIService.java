@@ -2,6 +2,7 @@ package com.aldar.studentportal.remote;
 
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
+import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
 import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordResponseModel;
@@ -83,6 +84,11 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/StudentFinance")
     Call<FinanceResponseModel> getStudentFinance(@Field("StudentID") String studendID);
+
+    @FormUrlEncoded
+    @POST("aduc/StudentCourseAdvise")
+    Call<CourseAdviceResponseModel> getCourseAdvice(@Field("StudentId") int studendID,
+                                                    @Field("SemId") int semesterID);
 
     @FormUrlEncoded
     @POST("aduc/ForgotPassword")
