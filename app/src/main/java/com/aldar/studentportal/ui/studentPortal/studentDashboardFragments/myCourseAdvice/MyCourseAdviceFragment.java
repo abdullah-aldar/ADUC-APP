@@ -1,5 +1,6 @@
 package com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseAdvice;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.aldar.studentportal.adapters.CourseAdviceAdapter;
 import com.aldar.studentportal.adapters.MarksAdapter;
 import com.aldar.studentportal.databinding.FragmentMyCourseAdviceBinding;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
+import com.aldar.studentportal.ui.studentPortal.activities.SelectedCoursesActivity;
 
 
 public class MyCourseAdviceFragment extends Fragment {
@@ -46,6 +48,10 @@ public class MyCourseAdviceFragment extends Fragment {
 
         binding.ivBack.setOnClickListener(v -> {
             getActivity().onBackPressed();
+        });
+
+        binding.btnSeeCourses.setOnClickListener(v -> {
+        startActivity(new Intent(getActivity(), SelectedCoursesActivity.class));
         });
     }
 

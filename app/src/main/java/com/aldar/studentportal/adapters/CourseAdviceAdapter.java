@@ -54,7 +54,7 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
         CoursesModel model = CoursesModelList.get(position);
         holder.tvSemester.setText(model.getCourseName());
 
-        InnerCourseAdviceAdapter itemInnerRecyclerView = new InnerCourseAdviceAdapter(CoursesModelList.get(position).getSections());
+        InnerCourseAdviceAdapter itemInnerRecyclerView = new InnerCourseAdviceAdapter(context,CoursesModelList.get(position).getSections());
         holder.cardRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         holder.cardView.setOnClickListener(view -> {

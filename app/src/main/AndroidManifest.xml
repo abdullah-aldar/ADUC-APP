@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.PaymentActivity"></activity>
+        <activity android:name=".ui.studentPortal.activities.SelectedCoursesActivity"></activity>
+        <activity android:name=".ui.activities.PaymentActivity" />
         <activity android:name=".ui.studentPortal.activities.ForgotPasswordActivity" />
         <activity
             android:name=".ui.activities.common.FeeActivity"

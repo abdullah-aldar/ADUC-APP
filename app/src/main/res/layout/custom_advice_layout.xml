@@ -9,6 +9,16 @@
     android:orientation="vertical"
     android:padding="@dimen/medium_margin">
 
+    <TextView
+        android:id="@+id/tv_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/standarize_spacing"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/green"
+        android:text="ADD"/>
+
 
     <TextView
         android:id="@+id/sectionCode"
