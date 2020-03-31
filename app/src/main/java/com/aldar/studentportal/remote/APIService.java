@@ -116,6 +116,13 @@ public interface APIService {
                                      @Field("Message") String message,
                                      @Field("Points") String points);
 
+    @FormUrlEncoded
+    @POST("aduc/SaveStudentCourseAdvise")
+    Call<CommonApiResponse> saveCourseAdvice(@Field("StudentId") String studentID,
+                                             @Field("SemId") String semesterID,
+                                             @Field("Sections") String sections);
+
+
     @GET("aduc/News")
     Call<NewsResponseModel> getNews();
 

@@ -60,23 +60,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
-            <TextView
-                android:id="@+id/title_text"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/semester"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:text="@string/my_course_advise"
-                android:textColor="@color/gray"
-                android:textSize="12sp" />
+                android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
+                android:background="@drawable/transparent_button"
+                android:layout_centerHorizontal="true">
+                <TextView
+                    android:id="@+id/select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:gravity="center"
+                    android:text="Please Select Semester"/>
 
+                <Spinner
+                    android:id="@+id/semster_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:pointerIcon="arrow"
+                    android:layout_below="@id/select"
+                    />
+            </RelativeLayout>
             <Button
                 android:id="@+id/btn_see_courses"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:text="See Courses"
-                android:layout_below="@+id/title_text"
+                android:layout_below="@+id/semester"
                 android:layout_centerHorizontal="true"/>
 
         </RelativeLayout>

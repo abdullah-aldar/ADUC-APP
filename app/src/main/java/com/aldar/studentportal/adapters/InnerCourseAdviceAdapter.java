@@ -1,72 +1,76 @@
 package com.aldar.studentportal.adapters;
 
 import android.content.Context;
+import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databases.ADUCCrud;
-import com.aldar.studentportal.models.coursesAdviceModels.CoursesDataModel;
+import com.aldar.studentportal.models.coursesAdviceModels.Time;
+import com.aldar.studentportal.models.coursesAdviceModels.Sections;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAdviceAdapter.ViewHolder> {
     private Context context;
     private ADUCCrud aducCrud;
-    private List<CoursesDataModel> marksDataList;
+    private List<Sections> sectionsList;
+    private List<Time> timingModelList = new ArrayList<>();
+    private String courseCode, courseName, strTiming = "";
 
-    public InnerCourseAdviceAdapter(Context context,List<CoursesDataModel> nameList) {
+    public InnerCourseAdviceAdapter(Context context, String courseCode, String courseName, List<Sections> nameList) {
         this.context = context;
-        this.marksDataList = nameList;
+        this.sectionsList = nameList;
+        this.courseCode = courseCode;
+        this.courseName = courseName;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.custom_advice_layout, parent, false);
-
-
         InnerCourseAdviceAdapter.ViewHolder vh = new InnerCourseAdviceAdapter.ViewHolder(v);
-
         return vh;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         aducCrud = new ADUCCrud(context);
-        holder.tvSectionCode.setText(String.valueOf(marksDataList.get(position).getSectionId()));
-        holder.tvCourseName.setText(marksDataList.get(position).getCourseName());
-        holder.tvCreditHours.setText(String.valueOf(marksDataList.get(position).getCreditHours()));
-        holder.tvRemark1.setText(marksDataList.get(position).getRemark1());
-        holder.tvSchedule.setText(marksDataList.get(position).getSchedule());
-        holder.tvInsName.setText(marksDataList.get(position).getInsName());
+
+        holder.tvSectionCode.setText(String.valueOf(sectionsList.get(position).getSectionId()));
+        holder.tvCourseName.setText(courseName);
+        holder.tvSchedule.setText(sectionsList.get(position).getSchedule());
+        holder.tvInsName.setText(sectionsList.get(position).getInsName());
 
         holder.tvAdd.setOnClickListener(v -> {
-          aducCrud.addCourseToCart(
-                  String.valueOf(marksDataList.get(position).getSectionId()),
-                  String.valueOf(marksDataList.get(position).getSectionCode()),
-                  String.valueOf(marksDataList.get(position).getCourseId()),
-                  String.valueOf(marksDataList.get(position).getCourseCode()),
-                  String.valueOf(marksDataList.get(position).getCourseName()),
-                  String.valueOf(marksDataList.get(position).getCreditHours()),
-                  String.valueOf(marksDataList.get(position).getSchedule()),
-                  String.valueOf(marksDataList.get(position).getInsName())
-          );
+            timingModelList.clear();
+            addCoursesToCard(timingModelList, sectionsList, position);
         });
+
 
     }
 
     @Override
     public int getItemCount() {
-        return marksDataList.size();
+        return sectionsList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvSemester, tvSectionCode, tvCourseName,tvCreditHours, tvRemark1, tvSchedule, tvInsName,tvAdd;
+        TextView tvSemester, tvSectionCode, tvCourseName, tvCreditHours, tvRemark1, tvSchedule, tvInsName, tvAdd;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -80,5 +84,37 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
         }
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void addCoursesToCard(List<Time> timingModelList, List<Sections> sectionsList, int position) {
+        timingModelList.addAll(sectionsList.get(position).getTime());
+        for (int i = 0; i < timingModelList.size(); i++) {
+            if (i == 0) {
+                strTiming += formatTime(timingModelList.get(i).getStartTime());
+            } else {
+                strTiming += "," + formatTime(timingModelList.get(i).getStartTime());
+            }
+        }
+
+
+        aducCrud.addCourseToCart(
+                String.valueOf(sectionsList.get(position).getSectionId()),
+                String.valueOf(sectionsList.get(position).getSectionCode()),
+                String.valueOf(courseCode),
+                String.valueOf(courseName),
+                String.valueOf(sectionsList.get(position).getSchedule()),
+                String.valueOf(sectionsList.get(position).getInsName()),
+                strTiming
+        );
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private String formatTime(String strTiming) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(strTiming, formatter);
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        return dateTime.format(formatter2);
+    }
 
 }

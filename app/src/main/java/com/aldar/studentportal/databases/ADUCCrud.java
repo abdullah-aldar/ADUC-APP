@@ -16,22 +16,20 @@ public class ADUCCrud {
         this.context = context;
     }
 
-    public void addCourseToCart(String sectionId, String sectionCode, String courseId, String courseCode, String courseName,
-                                String creditHours, String schedule, String insName) {
-        if (!checkExistData(courseCode)) {
+    public void addCourseToCart(String sectionId, String sectionCode, String courseCode, String courseName, String schedule, String insName, String timing) {
+        if (!checkExistData(courseCode, timing)) {
             ContentValues values = new ContentValues();
             values.put("sectionId", sectionId);
             values.put("sectionCode", sectionCode);
-            values.put("courseId", courseId);
             values.put("courseCode", courseCode);
             values.put("courseName", courseName);
-            values.put("creditHours", creditHours);
             values.put("schedule", schedule);
             values.put("insName", insName);
+            values.put("timing", timing);
             sqLiteDatabase.insert("CART", null, values);
             showToast("Your course saved successfully");
         } else {
-            updateCourse(sectionId, sectionCode, courseId, courseCode, courseName, creditHours, schedule, insName);
+            updateCourse(sectionId, sectionCode, courseCode, courseName, schedule, insName, timing);
         }
     }
 
@@ -51,9 +49,10 @@ public class ADUCCrud {
     }
 
     //check course if exist
-    private boolean checkExistData(String courseCode) {
-        Cursor cursor = this.sqLiteDatabase.rawQuery("SELECT * FROM CART WHERE courseCode = '" + courseCode + "' ", null);
+    private boolean checkExistData(String courseCode, String timing) {
         boolean isItemAddChart = false;
+        String query = "SELECT * FROM CART WHERE courseCode = '" + courseCode + "' ";
+        Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             isItemAddChart = true;
         }
@@ -62,17 +61,16 @@ public class ADUCCrud {
     }
 
     //updaing course
-    private void updateCourse(String sectionId, String sectionCode, String courseId, String courseCode, String courseName,
-                              String creditHours, String schedule, String insName) {
+    private void updateCourse(String sectionId, String sectionCode, String courseCode, String courseName,
+                              String schedule, String insName, String timing) {
         ContentValues values = new ContentValues();
         values.put("sectionId", sectionId);
         values.put("sectionCode", sectionCode);
-        values.put("courseId", courseId);
         values.put("courseCode", courseCode);
         values.put("courseName", courseName);
-        values.put("creditHours", creditHours);
         values.put("schedule", schedule);
         values.put("insName", insName);
+        values.put("timing", timing);
         sqLiteDatabase.update("CART", values, "courseCode= '" + courseCode + "'", null);
         Toast.makeText(context, "course updated", Toast.LENGTH_SHORT).show();
     }

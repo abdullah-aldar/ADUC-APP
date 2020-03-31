@@ -17,7 +17,7 @@ public class CourseAdviceResponseModel {
     private String message;
     @SerializedName("data")
     @Expose
-    private List<CoursesModel> data = null;
+    private List<CoursesDataModel> data = null;
 
     public Boolean getSuccess() {
         return success;
@@ -43,11 +43,11 @@ public class CourseAdviceResponseModel {
         this.message = message;
     }
 
-    public List<CoursesModel> getData() {
+    public List<CoursesDataModel> getData() {
         return data;
     }
 
-    public void setData(List<CoursesModel> data) {
+    public void setData(List<CoursesDataModel> data) {
         this.data = data;
     }
 }

@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
@@ -13,7 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.models.coursesAdviceModels.CoursesModel;
+import com.aldar.studentportal.models.coursesAdviceModels.Time;
+import com.aldar.studentportal.models.coursesAdviceModels.CoursesDataModel;
 
 
 import java.util.ArrayList;
@@ -23,13 +23,13 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
 
     private Context context;
     private final LayoutInflater inflater;
-    private List<CoursesModel> CoursesModelList;
+    private List<CoursesDataModel> coursesDataList;
     ArrayList<Integer> counter = new ArrayList<Integer>();
 
-    public CourseAdviceAdapter(FragmentActivity activity, List<CoursesModel> data) {
+    public CourseAdviceAdapter(FragmentActivity activity, List<CoursesDataModel> data) {
         this.context = activity;
         inflater = LayoutInflater.from(context);
-        this.CoursesModelList = data;
+        this.coursesDataList = data;
 
         for (int i = 0; i < data.size(); i++) {
             counter.add(0);
@@ -51,14 +51,18 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        CoursesModel model = CoursesModelList.get(position);
+        CoursesDataModel model = coursesDataList.get(position);
         holder.tvSemester.setText(model.getCourseName());
 
-        InnerCourseAdviceAdapter itemInnerRecyclerView = new InnerCourseAdviceAdapter(context,CoursesModelList.get(position).getSections());
+        InnerCourseAdviceAdapter itemInnerRecyclerView = new InnerCourseAdviceAdapter(
+                context,
+                model.getCourseName(),
+                model.getCourseName(),
+                coursesDataList.get(position).getSections());
+
         holder.cardRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         holder.cardView.setOnClickListener(view -> {
-
             if (counter.get(position) % 2 == 0) {
                 holder.cardRecyclerView.setVisibility(View.VISIBLE);
             } else {
@@ -75,7 +79,7 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
 
     @Override
     public int getItemCount() {
-        return CoursesModelList.size();
+        return coursesDataList.size();
     }
 
 

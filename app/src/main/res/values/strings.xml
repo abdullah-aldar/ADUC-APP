@@ -56,6 +56,7 @@
     <string name="advisor">Advisor</string>
     <string name="concentration">Concentration</string>
     <string name="my_course_advise">Your Academic Status\nالحالة الاكاديمية</string>
+    <string name="selected_course_advise">Your Selected Courses\nالحالة الاكاديمية</string>
     <string name="your_marks">Here is your marks\n هذه هي درجاتك</string>
     <string name="instructor_msg">Messages From Instructors</string>
     <string name="compose_write">Compose/Write Mail</string>

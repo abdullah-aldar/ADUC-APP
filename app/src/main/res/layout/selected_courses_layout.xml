@@ -65,30 +65,13 @@
             android:layout_toEndOf="@+id/courseName"
             android:text="@{selectModel.courseName}" />
 
-        <TextView
-            android:id="@+id/creditHours"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/courseName"
-            android:layout_marginTop="@dimen/text_gap"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Credit Hours :" />
 
-        <TextView
-            android:id="@+id/tv_creditHours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/courseName"
-            android:layout_marginStart="@dimen/small_margin"
-            android:layout_marginTop="@dimen/text_gap"
-            android:layout_toEndOf="@+id/creditHours"
-            android:text="@{selectModel.creditHours}" />
 
         <TextView
             android:id="@+id/remark1"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_creditHours"
+            android:layout_below="@+id/tv_courseName"
             android:layout_marginTop="@dimen/text_gap"
             android:fontFamily="@font/poppins_bold"
             android:text="Remark 1 :" />
@@ -97,11 +80,11 @@
             android:id="@+id/tv_remark1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_creditHours"
+            android:layout_below="@+id/tv_courseName"
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginTop="@dimen/text_gap"
             android:layout_toEndOf="@+id/remark1"
-            android:text="@{selectModel.creditHours}" />
+            android:text="@{selectModel.timing}" />
 
         <TextView
             android:id="@+id/schedule"
