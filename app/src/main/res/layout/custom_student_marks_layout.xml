@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_semester"
         android:text="Course Code :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -42,6 +43,7 @@
         android:layout_below="@+id/course_code"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Course Name :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -61,6 +63,7 @@
         android:layout_below="@+id/course_name"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Course Work :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -80,6 +83,7 @@
         android:layout_below="@+id/tv_course_work"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Final Exam :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold" />
 
     <TextView
@@ -99,6 +103,7 @@
         android:layout_below="@+id/final_exam"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Total :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -120,6 +125,7 @@
         android:layout_below="@+id/tv_total"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Grade :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView

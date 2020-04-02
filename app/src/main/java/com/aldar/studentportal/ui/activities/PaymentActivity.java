@@ -3,119 +3,118 @@ package com.aldar.studentportal.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
-import android.widget.LinearLayout;
+import android.view.KeyEvent;
+import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
-import com.mastercard.mp.checkout.AddPaymentMethodRequest;
-import com.mastercard.mp.checkout.Amount;
-import com.mastercard.mp.checkout.CheckoutResponseConstants;
-import com.mastercard.mp.checkout.CryptoOptions;
-import com.mastercard.mp.checkout.MasterpassButton;
-import com.mastercard.mp.checkout.MasterpassCheckoutCallback;
-import com.mastercard.mp.checkout.MasterpassCheckoutRequest;
-import com.mastercard.mp.checkout.MasterpassError;
-import com.mastercard.mp.checkout.MasterpassInitCallback;
-import com.mastercard.mp.checkout.MasterpassMerchant;
-import com.mastercard.mp.checkout.MasterpassMerchantConfiguration;
-import com.mastercard.mp.checkout.MasterpassPaymentMethod;
-import com.mastercard.mp.checkout.MasterpassServices;
-import com.mastercard.mp.checkout.NetworkType;
-import com.mastercard.mp.checkout.PaymentMethodCallback;
-import com.mastercard.mp.checkout.Tokenization;
+import com.aldar.studentportal.ui.activities.common.WebActivity;
+import com.aldar.studentportal.worker.WebClient;
 
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Currency;
-import java.util.Locale;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Maybe;
+import io.reactivex.rxjava3.core.MaybeEmitter;
+import io.reactivex.rxjava3.core.MaybeObserver;
+import io.reactivex.rxjava3.core.MaybeOnSubscribe;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class PaymentActivity extends AppCompatActivity implements MasterpassInitCallback, MasterpassCheckoutCallback  {
+
+public class PaymentActivity extends AppCompatActivity {
+    private String strLink;
+    private WebView webView;
+
+    private Disposable disposable;
+    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment2);
+        setContentView(R.layout.activity_payment);
 
-
-        MasterpassMerchantConfiguration sampleConfig = new MasterpassMerchantConfiguration.Builder()
-                .setContext(this.getApplicationContext()) //context
-                .setEnvironment(MasterpassMerchantConfiguration.SANDBOX) //environment
-                .setLocale(new Locale("en","UAE")) //locale
-                .setMerchantName("Merchant Name")
-                .setExpressCheckoutEnabled(true)//if merchant is express enabled
-                .setCheckoutId("3e184cd420994e069782b26a1f0a8222")
-                .build();
-
-
-        MasterpassMerchant.initialize(sampleConfig, this);
-    }
-    @Override public void onInitSuccess() {
-        try {
-            MasterpassButton masterpassButton = MasterpassMerchant.getMasterpassButton(MasterpassButton.PAIRING_CHECKOUT_FLOW_ENABLED,this);
-            this.addContentView(masterpassButton, new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        }
-        catch (Exception e){
-            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override public MasterpassCheckoutRequest getCheckoutRequest() {
-        // note that Amount value is a long, so $9.99 should be given as 999 and $10 as 1000 for USD
-        Amount total = new Amount(1000, Currency.getInstance(Locale.US).getCurrencyCode());  // $10.00 US
-        ArrayList<NetworkType> allowedNetworkTypes = new ArrayList<>();
-        allowedNetworkTypes.add(new NetworkType(NetworkType.MASTER));
-        Tokenization tokenization = getSampleTokenizationObject();
-
-        return new MasterpassCheckoutRequest.Builder()
-                .setMerchantUserId("00557038091b28e0a3dc1a548aaf39b9") // I did't find any merchant key in dashboard
-                .setCheckoutId("3e184cd420994e069782b26a1f0a8222")
-                .setCartId("bb9410f9-e5a7-4f14-9c99-ea557d6fe2e8")
-                .setAmount(total)
-                .setMerchantName("Merchant Name")
-                .setTokenization(tokenization) // DSRP checkout is supported by Merchant
-                .setAllowedNetworkTypes(allowedNetworkTypes)
-                .setSuppress3Ds(false)
-                .setShippingProfileId("5886541")
-                .setCallBackUrl("https://rakbankpay.gateway.mastercard.com/checkout/")
-                .isShippingRequired(false)
-                .setCvc2Support(false)
-                .setValidityPeriodMinutes(0)
-                .build();
-    }
-
-    @Override public void onCheckoutComplete(Bundle bundle) {
-        String transactionId = bundle.getString(CheckoutResponseConstants.TRANSACTION_ID);
-
-        Toast.makeText(this, "Here is the transaction ID:" + transactionId, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override public void onCheckoutError(MasterpassError masterpassError) {
-        Toast.makeText(this, masterpassError.message(), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override public void onInitError(MasterpassError masterpassError) {
-        Toast.makeText(this, masterpassError.message(), Toast.LENGTH_SHORT).show();
-    }
-
-    private Tokenization getSampleTokenizationObject() {
-        try {
-            ArrayList<String> format = new ArrayList<>();
-            CryptoOptions.Mastercard mastercard = new CryptoOptions.Mastercard();
-            CryptoOptions cryptoOptions = new CryptoOptions();
-            format.add("UCAF");
-            mastercard.setFormat(format);
-            cryptoOptions.setMastercard(mastercard);
-            String unpreditableNumber = Base64.encodeToString(
-                    Integer.toString(10000).getBytes("UTF-8"), Base64.NO_WRAP);
-
-            return new Tokenization(unpreditableNumber, cryptoOptions);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            strLink = bundle.getString("paymentLink");
         }
 
-        return null;
+        progressBar = findViewById(R.id.progressbar);
+        webView = findViewById(R.id.web_view);
+
+        Maybe<String> StringObservable = getStringObservable();
+        MaybeObserver<String> StringObserver = getStringObserver();
+        StringObservable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(StringObserver);
+
+
+    }
+
+    private MaybeObserver<String> getStringObserver() {
+        return new MaybeObserver<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                disposable = d;
+            }
+
+            @Override
+            public void onSuccess(String string) {
+                loadWebView(string);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                progressBar.setVisibility(View.GONE);
+                progressBar = null;
+                Toast.makeText(PaymentActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onComplete() {
+            }
+        };
+    }
+
+    private Maybe<String> getStringObservable() {
+        return Maybe.create(emitter -> {
+            if (!emitter.isDisposed()) {
+                emitter.onSuccess(strLink);
+
+            }
+        });
+    }
+
+    private void loadWebView(String link) {
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setBuiltInZoomControls(false);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setPluginState(WebSettings.PluginState.ON);
+        webView.setWebViewClient(new WebClient(getApplicationContext(), progressBar));
+        webView.loadUrl(link);
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_BACK:
+                    finish();
+                    return true;
+            }
+
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

@@ -123,7 +123,7 @@
                         android:id="@+id/student_id"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:layout_marginTop="@dimen/high_spacing"
                         android:text="Student ID :"
                         android:textStyle="bold"/>
@@ -143,7 +143,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_student_id"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Student Name :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -163,7 +163,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_student_name"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Arabic Student Name :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -183,7 +183,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/arabic_name"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Academic Advisor :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -203,7 +203,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/academic_adviser"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Date Of Birth :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -223,7 +223,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_dob"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Gender :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -243,7 +243,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_gender"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Marital Status :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -263,7 +263,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/marital_status"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Nationality :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -314,7 +314,7 @@
                         android:id="@+id/mobile_no"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:layout_marginTop="@dimen/high_spacing"
                         android:text="Mobile No :"
                         android:textStyle="bold"/>
@@ -334,7 +334,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/mobile_no"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Telephone No :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -355,7 +355,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/telephone_no"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Email :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -407,7 +407,7 @@
                         android:id="@+id/high_school_name"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:layout_marginTop="@dimen/high_spacing"
                         android:text="High School Name :"
                         android:textStyle="bold"/>
@@ -427,7 +427,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/high_school_name"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="High School Address :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -447,7 +447,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_high_school_address"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Awarded Score :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -467,7 +467,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/awarded_score"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Graduation Year :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -517,7 +517,7 @@
                         android:id="@+id/visa_no"
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:layout_marginTop="@dimen/high_spacing"
                         android:text="Visa Number :"
                         android:textStyle="bold"/>
@@ -537,7 +537,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_visa_no"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Emirate ID :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -558,7 +558,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_emirate_id"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:text="Visa Expiry Date :"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/text_gap"/>
@@ -579,7 +579,7 @@
                         android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_visa_expiry"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/gray_black"
                         android:hint="null"
                         android:text="Visa Issue Date :"
                         android:textStyle="bold"

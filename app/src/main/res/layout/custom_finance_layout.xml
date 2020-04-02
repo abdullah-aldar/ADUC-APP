@@ -23,14 +23,14 @@
         android:id="@+id/tv_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="#1"
         android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:layout_toEndOf="@id/tv_count"
         android:paddingStart="@dimen/medium_margin"
         android:paddingEnd="@dimen/medium_margin"
@@ -44,7 +44,7 @@
         android:layout_width="150dp"
         android:layout_below="@id/tv_count"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:layout_marginTop="@dimen/small_margin"
         android:text="Transaction Date :"
         android:textStyle="bold"/>
@@ -65,7 +65,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/transaction_date"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Transaction ID :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -85,7 +85,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/transaction"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Description :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -105,7 +105,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_description"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Cheque# :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -125,7 +125,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_check"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Debit :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -145,7 +145,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_debit"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Credit :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -165,7 +165,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/credit"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Balance :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>

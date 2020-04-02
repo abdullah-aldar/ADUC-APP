@@ -1,5 +1,6 @@
 package com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseSchedule;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
@@ -73,6 +75,7 @@ public class CourseScheduleFragment extends Fragment {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         viewModel.semesterID.setValue(String.valueOf(semesterResponseModel.getData().get(position).getSemID()));
                         viewModel.apiCallCouseSchedule();
+
                     }
 
                     @Override

@@ -1,11 +1,14 @@
 package com.aldar.studentportal.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 
@@ -20,13 +23,13 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
         super(context, textViewResourceId, list);
         this.context = context;
         this.list = list;
-       // this.isFirstTime = true;
+        // this.isFirstTime = true;
         setDefaultText(defaultText);
     }
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        if(isFirstTime) {
+        if (isFirstTime) {
             list[0] = firstElement;
             isFirstTime = false;
         }
@@ -35,6 +38,7 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         notifyDataSetChanged();
         return getCustomView(position, convertView, parent);
     }
@@ -42,16 +46,20 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
     public void setDefaultText(String defaultText) {
         this.firstElement = list[0];
         //list[0] = defaultText;
-    };
+    }
+
+    ;
 
     public View getCustomView(int position, View convertView, ViewGroup parent) {
+        View view = convertView;
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.spinner_layout, parent, false);
-        TextView label = (TextView) row.findViewById(R.id.spinner_text);
+        view = inflater.inflate(R.layout.spinner_layout, parent, false);
+        TextView label = (TextView) view.findViewById(R.id.spinner_text);
         label.setText(list[position]);
 
-        return row;
+
+        return view;
     }
 
 }

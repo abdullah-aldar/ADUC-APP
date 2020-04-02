@@ -6,4 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.activities.PaymentActivity">
 
+    <WebView
+        android:id = "@+id/web_view"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminateTint="@color/colorPrimaryDark"
+        android:indeterminate="true"
+        android:layout_width="150dp"
+        android:layout_height="30dp"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

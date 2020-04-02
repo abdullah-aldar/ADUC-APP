@@ -20,7 +20,7 @@
         android:id="@+id/course_code"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Subject :"
         android:textStyle="bold"/>
 
@@ -37,7 +37,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/course_code"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Sent By :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -57,7 +57,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/course_name"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Send To :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -77,7 +77,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/day_time"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Date :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>
@@ -97,7 +97,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/room"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/gray_black"
         android:text="Sent/Recieved :"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/text_gap"/>

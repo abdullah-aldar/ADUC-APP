@@ -2,6 +2,7 @@ package com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.lette
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -31,6 +32,9 @@ import com.aldar.studentportal.databinding.CustomConfirmLetterrDialogBinding;
 import com.aldar.studentportal.databinding.FragmentLetterRequestBinding;
 import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
+import com.aldar.studentportal.ui.activities.PaymentActivity;
+import com.aldar.studentportal.ui.activities.common.WebActivity;
+import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import com.github.barteksc.pdfviewer.PDFView;
 
 import java.io.IOException;
@@ -52,6 +56,7 @@ public class LetterRequestFragment extends Fragment {
 
     private LetterRequestViewModel viewModel;
     private final CompositeDisposable disposables = new CompositeDisposable();
+    private int studentID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,6 +64,8 @@ public class LetterRequestFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_letter_request, container, false);
+
+        studentID = SharedPreferencesManager.getInstance(getActivity()).getIntValue("student_id");
 
         return binding.getRoot();
     }
@@ -145,6 +152,7 @@ public class LetterRequestFragment extends Fragment {
 
         dialogBinding.btnSave.setOnClickListener(v -> {
             if (checkPreview) {
+                //proceedToPayment("http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment_App.aspx?StudentId="+studentID+"&ServiceId="+strLetterID+"&Lang=EN&LetterTo=To%20Whom%20It%20May%20Concern");
                 viewModel.apiCallRequestLetter(strLetterTo, strLetterID);
                 dialog.dismiss();
             } else {
@@ -196,6 +204,12 @@ public class LetterRequestFragment extends Fragment {
 
                     }
                 }));
+    }
+
+    private void proceedToPayment(String link){
+        Bundle bundle = new Bundle();
+        bundle.putString("paymentLink", link);
+        startActivity(new Intent(getActivity(), PaymentActivity.class).putExtras(bundle));
     }
 
     Observable<InputStream> Observable() {

@@ -25,6 +25,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="Section Code :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -43,6 +44,7 @@
         android:layout_below="@+id/sectionCode"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Course Name :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -62,6 +64,7 @@
         android:layout_below="@+id/courseName"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Credit Hours :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -81,6 +84,7 @@
         android:layout_below="@+id/creditHours"
         android:layout_marginTop="@dimen/text_gap"
         android:text="Remark 1 :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold" />
 
     <TextView
@@ -100,6 +104,7 @@
         android:layout_below="@+id/tv_remark1"
         android:layout_marginTop="@dimen/text_gap"
         android:text="schedule :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
@@ -121,6 +126,7 @@
         android:layout_below="@+id/schedule"
         android:layout_marginTop="@dimen/text_gap"
         android:text="InsName :"
+        android:textColor="@color/gray_black"
         android:fontFamily="@font/poppins_bold"/>
 
     <TextView
