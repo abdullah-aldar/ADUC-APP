@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
@@ -61,22 +62,25 @@ public class SelectedCoursesActivity extends AppCompatActivity {
 
         viewModel.getRegistrationReponseLiveData().observe(this, commonApiResponse -> {
             if (Boolean.parseBoolean(commonApiResponse.getSuccess())) {
-                showDialog();
-                Toast.makeText(this, "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                showDialog(commonApiResponse.getMessage());
             }
         });
 
     }
 
 
-    private void showDialog(){
+    private void showDialog(String message){
         Dialog dialog = new Dialog(Objects.requireNonNull(SelectedCoursesActivity.this));
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.setContentView(R.layout.custom_dialog);
-        Button btnLogout = dialog.findViewById(R.id.btn_logout);
-        Button btnCancel = dialog.findViewById(R.id.btn_cancel);
+        dialog.setContentView(R.layout.course_advice_dialog);
+        TextView tvTitle = dialog.findViewById(R.id.title);
+        TextView tvMessage = dialog.findViewById(R.id.message);
+        Button btnOk = dialog.findViewById(R.id.btn_ok);
 
-        btnCancel.setOnClickListener(v -> dialog.dismiss());
+        tvTitle.setText("Courses Registered Successfully");
+        tvMessage.setText(message);
+
+        btnOk.setOnClickListener(v -> dialog.dismiss());
 
         dialog.show();
     }

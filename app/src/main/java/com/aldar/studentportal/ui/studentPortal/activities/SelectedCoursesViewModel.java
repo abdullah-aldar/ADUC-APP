@@ -12,6 +12,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
+import com.aldar.studentportal.models.selectedCoursesModel.SelectedCourseTiming;
 import com.aldar.studentportal.models.selectedCoursesModel.SelectedCoursesModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
@@ -63,6 +64,16 @@ public class SelectedCoursesViewModel extends AndroidViewModel {
             arrayListData.add(model);
             itemsDataLiveData.setValue(arrayListData);
         }
+
+//        while (cursor.moveToNext()){
+//            String courseCode = cursor.getString(1).trim();
+//            String day = cursor.getString(2).trim();
+//            String startTime = cursor.getString(3).trim();
+//            String entTime = cursor.getString(4).trim();
+//
+//            SelectedCourseTiming timingModel = new SelectedCourseTiming(day,startTime,entTime);
+//            timingArrayList.add(timingModel);
+//        }
 
     }
 

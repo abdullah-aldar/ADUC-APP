@@ -4,12 +4,17 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 
 import com.aldar.studentportal.models.coursesAdviceModels.Time;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -40,18 +45,76 @@ public class ADUCCrud {
         }
     }
 
-    public boolean checkTiming(String courseCode, List<Time> timeList) {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public boolean checkTiming(String courseCode, String sectionId, List<Time> timeList) {
         boolean checkTimeAndDAte = false;
         for (int k = 0; k < timeList.size(); k++) {
             String dayName = timeList.get(k).getDayName();
             String startTime = timeList.get(k).getStartTime();
             String endTime = timeList.get(k).getEndTime();
-            checkTimeAndDAte = checkExistTiming(courseCode,dayName, startTime, endTime);
+            checkTimeAndDAte = checkExistTiming(courseCode,sectionId, dayName, formatTime(startTime), formatTime(endTime));
         }
 
         return checkTimeAndDAte;
     }
 
+    //check date and timing if exist
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private boolean checkExistTiming(String courseCode,String sectionID, String dayName, String startTime, String endTime) {
+
+        String query = "SELECT * FROM TIMING WHERE dayName = '" + dayName + "' AND startTime = '" + startTime + "' AND endTime = '" + endTime + "'";
+        Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            isTimingAddedCart = true;
+
+        } else {
+            if (!checkExistTime(courseCode,sectionID)) {
+                ContentValues values = new ContentValues();
+                values.put("courseCode", courseCode);
+                values.put("sectionID", sectionID);
+                values.put("dayName", dayName);
+                values.put("startTime", startTime);
+                values.put("endTime", endTime);
+                sqLiteDatabase.insert("TIMING", null, values);
+            } else {
+                ContentValues values = new ContentValues();
+                values.put("courseCode", courseCode);
+                values.put("sectionID", sectionID);
+                values.put("dayName", dayName);
+                values.put("startTime", startTime);
+                values.put("endTime", endTime);
+                sqLiteDatabase.insert("TIMING", null, values);
+            }
+            isTimingAddedCart = false;
+
+        }
+
+        return isTimingAddedCart;
+    }
+
+
+    //updaing course
+    private void updateCourse(String sectionId, String sectionCode, String courseCode, String courseName,
+                              String schedule, String insName) {
+        ContentValues values = new ContentValues();
+        values.put("sectionId", sectionId);
+        values.put("sectionCode", sectionCode);
+        values.put("courseCode", courseCode);
+        values.put("courseName", courseName);
+        values.put("schedule", schedule);
+        values.put("insName", insName);
+        sqLiteDatabase.update("CART", values, "courseCode= '" + courseCode + "'", null);
+        showToast("course updated");
+    }
+
+
+    //fetching all courses
+    public Cursor getAllCourses() {
+        String query = "SELECT * FROM CART";
+        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
+        return cursor;
+    }
 
     //deleting course
     public boolean deleteCourse(String courseCode) {
@@ -73,83 +136,66 @@ public class ADUCCrud {
 
     }
 
-    //check date and timing if exist
-    private boolean checkExistTiming(String courseCode, String dayName, String startTime, String endTime) {
-        String query = "SELECT * FROM TIMING WHERE dayName = '" + dayName + "' AND startTime = '" + startTime + "' AND endTime = '" + endTime + "'";
+    private boolean checkExistTime(String courseCode,String sectionID) {
+
+        String query = "SELECT * FROM TIMING WHERE courseCode = '" + courseCode + "' ";
         Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
-
         if (cursor.moveToFirst()) {
-            isTimingAddedCart = true;
-            Toast.makeText(context, "exist", Toast.LENGTH_SHORT).show();
-
-
-        } else {
-            isTimingAddedCart = false;
-            showToast("not exist");
-            addTiming(isTimingAddedCart, courseCode,dayName, startTime, endTime);
+            this.sqLiteDatabase.delete("TIMING", "courseCode = '" + courseCode + "' AND sectionID != '" + sectionID + "'", null);
+            return  true;
+        }
+        else {
+            return  false;
         }
 
-        return isTimingAddedCart;
     }
 
-    private void addTiming(boolean isTimingAddedCart,String courseCode, String dayName, String startTime, String endTime) {
-        if (!isTimingAddedCart) {
-            ContentValues values = new ContentValues();
-            values.put("courseCode", courseCode);
-            values.put("dayName", dayName);
-            values.put("startTime", startTime);
-            values.put("endTime", endTime);
-            sqLiteDatabase.insert("TIMING", null, values);
-            showToast("Checking Time and Date conflict");
-        } else {
-            showToast("need updation");
-        }
-    }
-
-    //updaing course
-    private void updateCourse(String sectionId, String sectionCode, String courseCode, String courseName,
-                              String schedule, String insName) {
+    private void insertTime(String courseCode,String sectionID,String dayName,String startTime,String endTime){
         ContentValues values = new ContentValues();
-        values.put("sectionId", sectionId);
-        values.put("sectionCode", sectionCode);
         values.put("courseCode", courseCode);
-        values.put("courseName", courseName);
-        values.put("schedule", schedule);
-        values.put("insName", insName);
-        sqLiteDatabase.update("CART", values, "courseCode= '" + courseCode + "'", null);
-        showToast("course updated");
-    }
-
-
-    //fetching all data
-    public Cursor getAllCourses() {
-        String query = "SELECT * FROM CART";
-        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
-        return cursor;
+        values.put("sectionID", sectionID);
+        values.put("dayName", dayName);
+        values.put("startTime", startTime);
+        values.put("endTime", endTime);
+        sqLiteDatabase.insert("TIMING", null, values);
     }
 
     private void showToast(String msg) {
         Toast.makeText(context, "" + msg, Toast.LENGTH_SHORT).show();
     }
 
-    private boolean comparingTimings(String time, String endtime) {
+    private boolean comparingTimings(String myStartTime, String myEndTime, String savedStartTime, String savedEndtime) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
         try {
-            Date date1 = sdf.parse(time);
-            Date date2 = sdf.parse(endtime);
+            Date myStartDate = sdf.parse(myStartTime);
+            Date myEndDate = sdf.parse(myEndTime);
 
-            if(date1.equals(date2)) {
-                showToast("true");
+            Date savevdStartDate = sdf.parse(savedStartTime);
+            Date savevdEndDate = sdf.parse(savedEndtime);
+
+            if (myStartDate.after(savevdStartDate) && myStartDate.before(savevdEndDate) ||
+                    myStartDate.equals(savevdStartDate) && myEndDate.before(savevdEndDate)) {
+                Toast.makeText(context, "time matched", Toast.LENGTH_SHORT).show();
                 return true;
             } else {
-                showToast("false");
+                Toast.makeText(context, "time not matched", Toast.LENGTH_SHORT).show();
                 return false;
             }
-        } catch (ParseException e){
+        } catch (ParseException e) {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private String formatTime(String strTiming) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(strTiming, formatter);
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        return dateTime.format(formatter2);
     }
 }
