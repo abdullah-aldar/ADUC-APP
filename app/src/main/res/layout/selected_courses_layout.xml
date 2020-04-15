@@ -3,6 +3,7 @@
 
 
     <data>
+
         <variable
             name="selectModel"
             type="com.aldar.studentportal.models.selectedCoursesModel.SelectedCoursesModel" />
@@ -23,11 +24,11 @@
             android:id="@+id/tv_remove_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Remove"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/standarize_spacing"
             android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/red"/>
+            android:text="Remove"
+            android:textColor="@color/red" />
 
 
         <TextView
@@ -66,7 +67,6 @@
             android:text="@{selectModel.courseName}" />
 
 
-
         <TextView
             android:id="@+id/remark1"
             android:layout_width="120dp"
@@ -84,7 +84,7 @@
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginTop="@dimen/text_gap"
             android:layout_toEndOf="@+id/remark1"
-            android:text="@{selectModel.timing}" />
+            android:text="@{selectModel.courseCode}" />
 
         <TextView
             android:id="@+id/schedule"
@@ -104,7 +104,7 @@
             android:layout_marginTop="@dimen/text_gap"
             android:layout_toEndOf="@+id/schedule"
             android:paddingEnd="@dimen/standarize_spacing"
-            android:text="@{selectModel.schedule}"/>
+            android:text="@{selectModel.schedule}" />
 
 
         <TextView

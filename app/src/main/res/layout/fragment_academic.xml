@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -9,19 +8,17 @@
         android:layout_height="match_parent">
 
 
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/gradient"/>
+            android:src="@drawable/gradient" />
 
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpage_academics"
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/high_margin"
-            android:layout_height="match_parent">
-        </androidx.viewpager.widget.ViewPager>
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/high_margin"></androidx.viewpager.widget.ViewPager>
 
 
         <com.google.android.material.tabs.TabLayout
@@ -33,5 +30,5 @@
             app:tabGravity="center"
             app:tabIndicatorHeight="0dp" />
     </RelativeLayout>
-    
+
 </layout>

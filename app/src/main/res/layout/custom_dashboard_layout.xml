@@ -3,53 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-        <data>
-                <variable name="item"
-                    type="com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel"/>
-                <variable name="callback"
-                    type="com.aldar.studentportal.interfaces.ItemClickCallBack"/>
-        </data>
+    <data>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:background="@drawable/shadow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/medium_margin"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:onClick="@{() ->  callback.onClick(item)}">
+        <variable
+            name="item"
+            type="com.aldar.studentportal.models.dashboardItemModels.DashboardItemModel" />
+
+        <variable
+            name="callback"
+            type="com.aldar.studentportal.interfaces.ItemClickCallBack" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:background="@drawable/shadow"
+        android:onClick="@{() ->  callback.onClick(item)}"
+        android:padding="@dimen/medium_margin">
 
 
         <ImageView
             android:id="@+id/iv_dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small_margin"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/small_margin"
+            android:src="@drawable/course"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/course"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/small_margin"
-            app:layout_constraintTop_toBottomOf="@id/iv_dashboard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:fontFamily="@font/montserrat_regular"
-            android:textColor="@color/gray_black"
-            android:text="@{item.title}"
-            android:gravity="center"
-            android:lineSpacingExtra="0dp"
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:lineSpacingExtra="0dp"
+            android:text="@{item.title}"
+            android:textColor="@color/gray_black"
             android:textStyle="bold"
-            />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_dashboard" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

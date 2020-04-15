@@ -64,35 +64,36 @@
                 android:id="@+id/semester"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:paddingStart="@dimen/medium_margin"
-                android:paddingEnd="@dimen/medium_margin"
+                android:layout_centerHorizontal="true"
                 android:background="@drawable/transparent_button"
-                android:layout_centerHorizontal="true">
+                android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin">
+
                 <TextView
                     android:id="@+id/select"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/gray"
                     android:gravity="center"
-                    android:text="Please Select Semester"/>
+                    android:text="Please Select Semester"
+                    android:textColor="@color/gray" />
 
                 <Spinner
                     android:id="@+id/semster_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:layout_below="@id/select"
                     android:gravity="center"
                     android:pointerIcon="arrow"
-                    android:layout_below="@id/select"
-                    />
+                    android:textColor="@color/white" />
             </RelativeLayout>
+
             <Button
                 android:id="@+id/btn_see_courses"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:text="See Courses"
                 android:layout_below="@+id/semester"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true"
+                android:text="See Courses" />
 
         </RelativeLayout>
 

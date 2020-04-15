@@ -122,6 +122,14 @@ public interface APIService {
                                              @Field("SemId") String semesterID,
                                              @Field("Sections") String sections);
 
+    @FormUrlEncoded
+    @POST("aduc/ServiceRequest")
+    Call<CommonApiResponse> sendMessage(@Field("StudentId") String studendID,
+                                        @Field("SemId") String semID,
+                                        @Field("SectionId") String sectionID,
+                                        @Field("Subject") String subject,
+                                        @Field("Message") String message);
+
 
     @GET("aduc/News")
     Call<NewsResponseModel> getNews();

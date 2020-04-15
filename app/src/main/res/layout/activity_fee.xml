@@ -19,9 +19,9 @@
             android:id="@+id/iv_back"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/back_white"
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginTop="@dimen/medium_margin"
+            android:src="@drawable/back_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,37 +40,37 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:text="Here is the complete fee structure"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/standarize_spacing"
-                android:layout_marginEnd="@dimen/medium_margin"
-                android:paddingTop="@dimen/medium_margin"
-                android:paddingBottom="@dimen/medium_margin"
-                app:layout_constraintBottom_toTopOf="@+id/scrollview"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title"/>
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingBottom="@dimen/medium_margin"
+            android:text="Here is the complete fee structure"
+            android:textColor="@color/gray"
+            app:layout_constraintBottom_toTopOf="@+id/scrollview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
 
         <ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/shadow"
-            android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/medium_margin"
             android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@drawable/shadow"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" >
+            app:layout_constraintTop_toBottomOf="@+id/header">
 
 
             <LinearLayout
@@ -90,51 +90,51 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Fees"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:text="Fees"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
+                        android:text="Amount"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:text="Amount"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
+                        android:text="Notes"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:text="Notes"/>
+                        android:textStyle="bold" />
 
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/small_text"
-                        android:text="Application Fee"/>
+                        android:text="Application Fee"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="400 AED"/>
+                        android:text="400 AED" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="--"/>
+                        android:text="--" />
 
 
                 </RelativeLayout>
@@ -143,32 +143,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
                 <RelativeLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/small_text"
-                        android:text="Admission Fee"/>
+                        android:text="Admission Fee"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="1,500 AED"/>
+                        android:text="1,500 AED" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="One time fee"/>
+                        android:text="One time fee" />
 
 
                 </RelativeLayout>
@@ -177,33 +177,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
 
                 <RelativeLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/small_text"
-                        android:text="Registration Fee"/>
+                        android:text="Registration Fee"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="500 AED"/>
+                        android:text="500 AED" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Per Semester"/>
+                        android:text="Per Semester" />
 
 
                 </RelativeLayout>
@@ -212,32 +212,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
                 <RelativeLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/small_text"
-                        android:text="General Services Fee"/>
+                        android:text="General Services Fee"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="500 AED"/>
+                        android:text="500 AED" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Per Semester"/>
+                        android:text="Per Semester" />
 
 
                 </RelativeLayout>
@@ -246,33 +246,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
 
                 <RelativeLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/small_text"
-                        android:text="Security Deposit"/>
+                        android:text="Security Deposit"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="1,000 AED"/>
+                        android:text="1,000 AED" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Refundable"/>
+                        android:text="Refundable" />
 
 
                 </RelativeLayout>
@@ -281,33 +281,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
 
                 <RelativeLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/small_text"
-                        android:text="Reservation Seat"/>
+                        android:text="Reservation Seat"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="4,000 AED"/>
+                        android:text="4,000 AED" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="--"/>
+                        android:text="--" />
 
 
                 </RelativeLayout>
@@ -316,77 +316,77 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
                 <LinearLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/btn_height"
                     android:layout_marginTop="@dimen/medium_margin"
-                    android:background="@color/colorPrimary">
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:gravity="center"
                         android:layout_gravity="center"
-                        android:text="Subject"/>
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Subject"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/white"
-                        android:gravity="center"
                         android:layout_gravity="center"
                         android:layout_marginStart="@dimen/small_margin"
-                        android:textStyle="bold"
-                        android:text="One Credit Hours"/>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginStart="@dimen/small_margin"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="12-15 Credit Hours"/>
+                        android:text="One Credit Hours"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="12-15 Credit Hours"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.4"
                         android:layout_marginEnd="@dimen/medium_margin"
-                        android:textSize="@dimen/small_text"
-                        android:text="Bachelor of Science in Engineering"/>
+                        android:layout_weight="1.4"
+                        android:text="Bachelor of Science in Engineering"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_centerHorizontal="true"
-                        android:text="1,200 AED"/>
+                        android:layout_weight="1"
+                        android:text="1,200 AED" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
                         android:layout_alignParentEnd="true"
-                        android:text="14,400 -18,000 AED"/>
+                        android:layout_weight="1.3"
+                        android:text="14,400 -18,000 AED" />
 
                 </LinearLayout>
 
@@ -394,38 +394,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
 
                 <LinearLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.4"
-                        android:textSize="@dimen/small_text"
                         android:layout_marginEnd="@dimen/medium_margin"
-                        android:text="Bachelor of IT"/>
+                        android:layout_weight="1.4"
+                        android:text="Bachelor of IT"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_centerHorizontal="true"
-                        android:text="900 AED"/>
+                        android:layout_weight="1"
+                        android:text="900 AED" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
                         android:layout_alignParentEnd="true"
-                        android:text="10,800 -13,500 AED"/>
+                        android:layout_weight="1.3"
+                        android:text="10,800 -13,500 AED" />
 
                 </LinearLayout>
 
@@ -433,38 +433,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
 
                 <LinearLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.4"
-                        android:textSize="@dimen/small_text"
                         android:layout_marginEnd="@dimen/medium_margin"
-                        android:text="Bachelor of Business Administration"/>
+                        android:layout_weight="1.4"
+                        android:text="Bachelor of Business Administration"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_centerHorizontal="true"
-                        android:text="900 AED"/>
+                        android:layout_weight="1"
+                        android:text="900 AED" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
                         android:layout_alignParentEnd="true"
-                        android:text="10,800 -13,500 AED"/>
+                        android:layout_weight="1.3"
+                        android:text="10,800 -13,500 AED" />
 
                 </LinearLayout>
 
@@ -472,37 +472,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
 
                 <LinearLayout
-                    android:padding="@dimen/small_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_margin">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.4"
-                        android:textSize="@dimen/small_text"
                         android:layout_marginEnd="@dimen/medium_margin"
-                        android:text="Bachelor of Arts in Mass Communication in Public Relation"/>
+                        android:layout_weight="1.4"
+                        android:text="Bachelor of Arts in Mass Communication in Public Relation"
+                        android:textSize="@dimen/small_text" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_centerHorizontal="true"
-                        android:text="900 AED"/>
+                        android:layout_weight="1"
+                        android:text="900 AED" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
                         android:layout_alignParentEnd="true"
-                        android:text="10,800 -13,500 AED"/>
+                        android:layout_weight="1.3"
+                        android:text="10,800 -13,500 AED" />
 
                 </LinearLayout>
 
@@ -510,9 +510,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
                     android:layout_marginTop="@dimen/small_margin"
-                    android:background="@color/gray"/>
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:background="@color/gray" />
             </LinearLayout>
 
         </ScrollView>

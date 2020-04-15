@@ -16,17 +16,17 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/standarize_spacing"
         android:fontFamily="@font/poppins_bold"
-        android:textColor="@color/green"
-        android:text="ADD"/>
+        android:text="ADD"
+        android:textColor="@color/green" />
 
 
     <TextView
         android:id="@+id/sectionCode"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
         android:text="Section Code :"
-        android:textColor="@color/gray_black"
-        android:fontFamily="@font/poppins_bold"/>
+        android:textColor="@color/gray_black" />
 
     <TextView
         android:id="@+id/tv_sectionCode"
@@ -43,9 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/sectionCode"
         android:layout_marginTop="@dimen/text_gap"
+        android:fontFamily="@font/poppins_bold"
         android:text="Course Name :"
-        android:textColor="@color/gray_black"
-        android:fontFamily="@font/poppins_bold"/>
+        android:textColor="@color/gray_black" />
 
     <TextView
         android:id="@+id/tv_courseName"
@@ -63,9 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/courseName"
         android:layout_marginTop="@dimen/text_gap"
+        android:fontFamily="@font/poppins_bold"
         android:text="Credit Hours :"
-        android:textColor="@color/gray_black"
-        android:fontFamily="@font/poppins_bold"/>
+        android:textColor="@color/gray_black" />
 
     <TextView
         android:id="@+id/tv_creditHours"
@@ -83,9 +83,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/creditHours"
         android:layout_marginTop="@dimen/text_gap"
+        android:fontFamily="@font/poppins_bold"
         android:text="Remark 1 :"
-        android:textColor="@color/gray_black"
-        android:fontFamily="@font/poppins_bold" />
+        android:textColor="@color/gray_black" />
 
     <TextView
         android:id="@+id/tv_remark1"
@@ -103,9 +103,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_remark1"
         android:layout_marginTop="@dimen/text_gap"
+        android:fontFamily="@font/poppins_bold"
         android:text="schedule :"
-        android:textColor="@color/gray_black"
-        android:fontFamily="@font/poppins_bold"/>
+        android:textColor="@color/gray_black" />
 
     <TextView
         android:id="@+id/tv_schedule"
@@ -113,9 +113,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_remark1"
         android:layout_marginStart="@dimen/small_margin"
-        android:paddingEnd="@dimen/standarize_spacing"
         android:layout_marginTop="@dimen/text_gap"
         android:layout_toEndOf="@+id/schedule"
+        android:paddingEnd="@dimen/standarize_spacing"
         android:text="0" />
 
 
@@ -125,9 +125,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/schedule"
         android:layout_marginTop="@dimen/text_gap"
+        android:fontFamily="@font/poppins_bold"
         android:text="InsName :"
-        android:textColor="@color/gray_black"
-        android:fontFamily="@font/poppins_bold"/>
+        android:textColor="@color/gray_black" />
 
     <TextView
         android:id="@+id/tv_insName"
@@ -135,9 +135,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/schedule"
         android:layout_marginStart="@dimen/small_margin"
-        android:paddingEnd="@dimen/standarize_spacing"
         android:layout_marginTop="@dimen/text_gap"
         android:layout_toEndOf="@+id/insName"
+        android:paddingEnd="@dimen/standarize_spacing"
         android:text="A+" />
 
 </RelativeLayout>

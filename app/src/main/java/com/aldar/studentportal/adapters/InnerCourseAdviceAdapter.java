@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databases.ADUCCrud;
+import com.aldar.studentportal.models.coursesAdviceModels.CoursesDataModel;
 import com.aldar.studentportal.models.coursesAdviceModels.Time;
 import com.aldar.studentportal.models.coursesAdviceModels.Sections;
 
@@ -21,18 +22,22 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
 public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAdviceAdapter.ViewHolder> {
     private Context context;
     private ADUCCrud aducCrud;
+    private List<CoursesDataModel> coursesDataList;
     private List<Sections> sectionsList;
     private List<Time> timingModelList = new ArrayList<>();
     private String courseCode, courseName, strTiming = "";
 
-    public InnerCourseAdviceAdapter(Context context, String courseCode, String courseName, List<Sections> nameList) {
+    public InnerCourseAdviceAdapter(Context context, List<CoursesDataModel> coursesDataList, String courseCode, String courseName, List<Sections> nameList) {
         this.context = context;
+        this.coursesDataList = coursesDataList;
         this.sectionsList = nameList;
         this.courseCode = courseCode;
         this.courseName = courseName;
@@ -56,9 +61,9 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
         holder.tvSchedule.setText(sectionsList.get(position).getSchedule());
         holder.tvInsName.setText(sectionsList.get(position).getInsName());
 
+
         holder.tvAdd.setOnClickListener(v -> {
-            timingModelList.clear();
-            addCoursesToCard(timingModelList, sectionsList, position);
+            checkTimingandData(position, sectionsList, sectionsList.get(position).getTime());
         });
 
 
@@ -70,7 +75,7 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvSemester, tvSectionCode, tvCourseName, tvCreditHours, tvRemark1, tvSchedule, tvInsName, tvAdd;
+        TextView tvSectionCode, tvCourseName, tvCreditHours, tvRemark1, tvSchedule, tvInsName, tvAdd;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -84,18 +89,17 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void checkTimingandData(int position, List<Sections> sectionsList, List<Time> timeList) {
+
+        if (!aducCrud.checkTiming(courseCode,timeList)) {
+            addCoursesToCard(sectionsList, position);
+        }
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void addCoursesToCard(List<Time> timingModelList, List<Sections> sectionsList, int position) {
-        timingModelList.addAll(sectionsList.get(position).getTime());
-        for (int i = 0; i < timingModelList.size(); i++) {
-            if (i == 0) {
-                strTiming += formatTime(timingModelList.get(i).getStartTime());
-            } else {
-                strTiming += "," + formatTime(timingModelList.get(i).getStartTime());
-            }
-        }
-
+    private void addCoursesToCard(List<Sections> sectionsList, int position) {
 
         aducCrud.addCourseToCart(
                 String.valueOf(sectionsList.get(position).getSectionId()),
@@ -103,8 +107,7 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
                 String.valueOf(courseCode),
                 String.valueOf(courseName),
                 String.valueOf(sectionsList.get(position).getSchedule()),
-                String.valueOf(sectionsList.get(position).getInsName()),
-                strTiming
+                String.valueOf(sectionsList.get(position).getInsName())
         );
     }
 
@@ -116,5 +119,4 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
 
         return dateTime.format(formatter2);
     }
-
 }

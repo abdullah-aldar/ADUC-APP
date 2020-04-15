@@ -43,6 +43,7 @@ public class SelectedCoursesViewModel extends AndroidViewModel {
         ArrayList<SelectedCoursesModel> arrayListData = new ArrayList<>();
         Cursor cursor = dictionaryCrud.getAllCourses();
 
+
         while (cursor.moveToNext()) {
             String sectionId = cursor.getString(1).trim();
             String sectionCode = cursor.getString(2).trim();
@@ -50,8 +51,6 @@ public class SelectedCoursesViewModel extends AndroidViewModel {
             String courseName = cursor.getString(4).trim();
             String schedule = cursor.getString(5).trim();
             String insName = cursor.getString(6).trim();
-            String timing = cursor.getString(7).trim();
-
 
             SelectedCoursesModel model = new SelectedCoursesModel(
                     sectionId,
@@ -59,8 +58,7 @@ public class SelectedCoursesViewModel extends AndroidViewModel {
                     courseCode,
                     courseName,
                     schedule,
-                    insName,
-                    timing
+                    insName
             );
             arrayListData.add(model);
             itemsDataLiveData.setValue(arrayListData);

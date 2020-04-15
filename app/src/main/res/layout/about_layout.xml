@@ -5,14 +5,12 @@
     android:layout_height="match_parent">
 
 
-
-
     <RelativeLayout
         android:id="@+id/lasting_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="@dimen/standarize_spacing"
         android:layout_marginBottom="@dimen/high_margin"
         android:background="@drawable/shadow"
@@ -21,8 +19,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
 
             <TextView
@@ -38,9 +35,9 @@
 
 
             <ScrollView
-                android:layout_below="@id/title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_below="@id/title">
 
 
                 <TextView
@@ -60,8 +57,8 @@
         android:id="@+id/iv_student"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="@dimen/medium_margin"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/medium_margin"
         android:scaleType="centerCrop"
         android:src="@drawable/about_us" />
 </RelativeLayout>

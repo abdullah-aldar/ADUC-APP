@@ -56,7 +56,8 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
 
         InnerCourseAdviceAdapter itemInnerRecyclerView = new InnerCourseAdviceAdapter(
                 context,
-                model.getCourseName(),
+                coursesDataList,
+                model.getCourseCode(),
                 model.getCourseName(),
                 coursesDataList.get(position).getSections());
 

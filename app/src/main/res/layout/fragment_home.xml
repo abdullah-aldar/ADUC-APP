@@ -18,10 +18,10 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="@drawable/uae"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/button_layout"
             app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent="0.16" />
+            app:layout_constraintHeight_percent="0.16"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RelativeLayout
             android:id="@+id/button_layout"
@@ -39,10 +39,10 @@
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 android:layout_marginBottom="@dimen/medium_margin"
-                android:padding="@dimen/small_margin"
                 android:background="@color/gray"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin">
 
                 <ImageView
                     android:layout_width="0dp"
@@ -226,18 +226,18 @@
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
             android:background="@drawable/gradient"
-            app:layout_constraintBottom_toTopOf="@id/definit_text"
+            app:layout_constraintBottom_toTopOf="@id/tv_news"
             app:layout_constraintTop_toBottomOf="@id/tv_today">
 
             <TextView
                 android:id="@+id/tv_feedback_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/high_margin"
                 android:layout_marginEnd="@dimen/medium_margin"
                 android:gravity="center"
-                android:layout_centerHorizontal="true"
                 android:text="@string/feedback"
                 android:textColor="@color/white" />
 
@@ -259,140 +259,6 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/definit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Definite Info"
-            android:textColor="@color/gray_black"
-            android:textSize="@dimen/large_text"
-            app:layout_constraintBottom_toTopOf="@id/definit_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feedback_layout" />
-
-        <HorizontalScrollView
-            android:id="@+id/definit_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            android:measureAllChildren="false"
-            android:scrollbars="none"
-            app:layout_constraintBottom_toTopOf="@+id/tv_news"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/definit_text">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/layout_flexible_course"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:background="@drawable/shadow"
-                    android:gravity="center|top"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
-                        android:text="@string/flexible"
-                        android:gravity="center"
-                        android:textColor="@color/gray_black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/flexible_course" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_transportation"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:background="@drawable/shadow"
-                    android:gravity="center|top"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
-                        android:text="@string/transportation"
-                        android:gravity="center"
-                        android:textColor="@color/gray_black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/transport_text" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:background="@drawable/shadow"
-                    android:gravity="center|top"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tution_fee"
-                        android:textColor="@color/gray_black"
-                        android:gravity="center"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/tution_text" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_accomodation"
-                    android:layout_width="150dp"
-                    android:layout_height="180dp"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:layout_weight="1"
-                    android:background="@drawable/shadow"
-                    android:gravity="center|top"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/student_visa"
-                        android:gravity="center"
-                        android:textColor="@color/gray_black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/visa_text" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
 
         <TextView
             android:id="@+id/tv_news"
@@ -401,13 +267,12 @@
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/standarize_spacing"
             android:fontFamily="@font/poppins_bold"
-            android:text="Latest News"
+            android:text="ALDAR News &amp; Events"
             android:textColor="@color/gray_black"
             android:textSize="@dimen/large_text"
-            app:layout_constraintBottom_toTopOf="@id/rv_news"
+            app:layout_constraintBottom_toTopOf="@id/feedback_layout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/definit_layout" />
-
+            app:layout_constraintTop_toBottomOf="@+id/feedback_layout" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -417,7 +282,7 @@
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_news"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_news" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -471,6 +336,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/whatsapp" />
+
+                <ImageView
+                    android:id="@+id/iv_facebook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/facebook" />
 
                 <ImageView
                     android:id="@+id/iv_call"

@@ -2,9 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- 015C94 -->
-
-
     <data>
 
         <variable
@@ -43,8 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="Student Dashboard"
             android:fontFamily="@font/montserrat_semibold"
+            android:text="Student Dashboard"
             android:textColor="@color/gray"
             android:textSize="@dimen/large_text_size"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +68,7 @@
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/high_margin"
             android:layout_marginEnd="@dimen/standarize_spacing"
-            android:background="@drawable/shadow"
+            android:background="@drawable/login_background"
             android:paddingTop="@dimen/medium_margin"
             android:paddingBottom="@dimen/medium_margin"
             app:layout_constraintBottom_toTopOf="@+id/rv_dashboard_item"
@@ -85,19 +82,19 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="@dimen/small_margin"
-                android:src="@drawable/user"/>
+                android:src="@drawable/user" />
 
 
             <TextView
                 android:id="@+id/tv_student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginStart="14dp"
+                android:layout_marginTop="@dimen/medium_margin"
                 android:layout_toRightOf="@+id/iv_profile"
                 android:fontFamily="@font/montserrat_semibold"
-                android:textColor="@color/gray_black"
-                android:text="@{studnetDasboarViewModel.studentName}" />
+                android:text="@{studnetDasboarViewModel.studentName}"
+                android:textColor="@color/gray_black" />
 
 
             <TextView
@@ -105,11 +102,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_student_name"
+                android:layout_marginStart="14dp"
                 android:layout_toRightOf="@+id/iv_profile"
                 android:fontFamily="@font/montserrat_semibold"
-                android:textColor="@color/gray_black"
-                android:layout_marginStart="14dp"
-                android:text="@{studnetDasboarViewModel.studentGivenID}" />
+                android:text="@{studnetDasboarViewModel.studentGivenID}"
+                android:textColor="@color/gray_black" />
 
             <TextView
                 android:id="@+id/adviser"
@@ -118,8 +115,8 @@
                 android:layout_below="@id/iv_profile"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:fontFamily="@font/montserrat_semibold"
-                android:textColor="@color/gray_black"
-                android:text="Advisor " />
+                android:text="Advisor "
+                android:textColor="@color/gray_black" />
 
 
             <TextView
@@ -129,8 +126,8 @@
                 android:layout_below="@id/iv_profile"
                 android:layout_toRightOf="@+id/adviser"
                 android:fontFamily="@font/montserrat_regular"
-                android:textColor="@color/gray_black"
-                android:text="@{studnetDasboarViewModel.advisor}" />
+                android:text="@{studnetDasboarViewModel.advisor}"
+                android:textColor="@color/gray_black" />
 
             <TextView
                 android:id="@+id/course_name"
@@ -139,8 +136,8 @@
                 android:layout_below="@id/tv_student_adviser"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:fontFamily="@font/montserrat_semibold"
-                android:textColor="@color/gray_black"
-                android:text="@string/student_course" />
+                android:text="@string/student_course"
+                android:textColor="@color/gray_black" />
 
 
             <TextView
@@ -150,8 +147,8 @@
                 android:layout_below="@id/tv_student_adviser"
                 android:layout_toRightOf="@id/course_name"
                 android:fontFamily="@font/montserrat_regular"
-                android:textColor="@color/gray_black"
-                android:text="@{studnetDasboarViewModel.course}" />
+                android:text="@{studnetDasboarViewModel.course}"
+                android:textColor="@color/gray_black" />
 
             <TextView
                 android:id="@+id/concentration"
@@ -160,18 +157,18 @@
                 android:layout_below="@id/tv_course_name"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:fontFamily="@font/montserrat_semibold"
-                android:textColor="@color/gray_black"
-                android:text="Major" />
+                android:text="Major"
+                android:textColor="@color/gray_black" />
 
             <TextView
                 android:id="@+id/tv_concentration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_course_name"
-                android:fontFamily="@font/montserrat_regular"
                 android:layout_toRightOf="@+id/concentration"
-                android:textColor="@color/gray_black"
-                android:text="@{studnetDasboarViewModel.major}" />
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@{studnetDasboarViewModel.major}"
+                android:textColor="@color/gray_black" />
 
 
             <RelativeLayout
@@ -188,8 +185,8 @@
                     android:id="@+id/layout_announcement"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="start"
-                    android:layout_toStartOf="@id/view">
+                    android:layout_toStartOf="@id/view"
+                    android:gravity="start">
 
 
                     <ImageView
@@ -218,8 +215,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="12dp"
-                        android:fontFamily="@font/montserrat_semibold"
                         android:layout_toRightOf="@+id/iv_mail"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:text="Announcement"
                         android:textColor="@color/gray_black" />
                 </RelativeLayout>

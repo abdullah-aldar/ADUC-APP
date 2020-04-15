@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.StudentDashboardItemsAdapter;
@@ -31,6 +32,7 @@ import com.bumptech.glide.Glide;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Calendar;
 import java.util.Objects;
 
 
@@ -78,6 +80,7 @@ public class StudentDashboardFragment extends Fragment {
 
     private void showDialog(){
         Dialog dialog = new Dialog(Objects.requireNonNull(getContext()));
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.setContentView(R.layout.custom_dialog);
         Button btnLogout = dialog.findViewById(R.id.btn_logout);
         Button btnCancel = dialog.findViewById(R.id.btn_cancel);
@@ -97,6 +100,22 @@ public class StudentDashboardFragment extends Fragment {
         binding = null;
         adapter = null;
         super.onDestroy();
+    }
+
+
+    private void greetingMessage(){
+        Calendar c = Calendar.getInstance();
+        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+
+        if(timeOfDay >= 0 && timeOfDay < 12){
+            Toast.makeText(getContext(), "Good Morning", Toast.LENGTH_SHORT).show();
+        }else if(timeOfDay >= 12 && timeOfDay < 16){
+            Toast.makeText(getContext(), "Good Afternoon", Toast.LENGTH_SHORT).show();
+        }else if(timeOfDay >= 16 && timeOfDay < 21){
+            Toast.makeText(getContext(), "Good Evening", Toast.LENGTH_SHORT).show();
+        }else if(timeOfDay >= 21 && timeOfDay < 24){
+            Toast.makeText(getContext(), "Good Night", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

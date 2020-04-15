@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/high_margin"
+            android:fontFamily="@font/poppins_light"
             android:text="@string/verify"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:fontFamily="@font/poppins_light"
             android:textSize="@dimen/large_text"
             android:textStyle="bold" />
 
@@ -57,11 +57,11 @@
             android:layout_height="90dp"
             android:layout_weight="1"
             android:background="@drawable/rectangle"
-            android:ems="10"
             android:cursorVisible="true"
+            android:ems="10"
             android:inputType="number"
-            android:maxLines="1"
             android:maxLength="1"
+            android:maxLines="1"
             android:textAlignment="center"
             android:textColor="#b4bfbf" />
 
@@ -73,8 +73,8 @@
             android:background="@drawable/rectangle"
             android:ems="10"
             android:inputType="number"
-            android:maxLines="1"
             android:maxLength="1"
+            android:maxLines="1"
             android:textAlignment="center"
             android:textColor="#b4bfbf" />
 
@@ -86,9 +86,9 @@
             android:background="@drawable/rectangle"
             android:ems="10"
             android:inputType="number"
-            android:textAlignment="center"
-            android:maxLines="1"
             android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
             android:textColor="#b4bfbf" />
 
         <EditText
@@ -99,9 +99,9 @@
             android:background="@drawable/rectangle"
             android:ems="10"
             android:inputType="number"
-            android:textAlignment="center"
-            android:maxLines="1"
             android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
             android:textColor="#b4bfbf" />
 
     </LinearLayout>
@@ -112,15 +112,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_code_blocks"
-        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginEnd="@dimen/standarize_spacing"
-        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="@font/poppins_light"
         android:gravity="center"
         android:text="@string/verify"
-        android:background="@color/colorPrimaryDark"
         android:textAllCaps="false"
-        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 

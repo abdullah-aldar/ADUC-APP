@@ -3,182 +3,184 @@
 
 
     <data>
-        <variable name="financeModel"
-            type="com.aldar.studentportal.models.financeModel.FinanceDataModel"/>
+
+        <variable
+            name="financeModel"
+            type="com.aldar.studentportal.models.financeModel.FinanceDataModel" />
     </data>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/shadow"
-    android:layout_marginTop="@dimen/small_margin"
-    android:layout_marginStart="@dimen/small_margin"
-    android:layout_marginEnd="@dimen/small_margin"
-    android:paddingStart="@dimen/standarize_spacing"
-    android:paddingEnd="@dimen/medium_margin"
-    android:paddingTop="@dimen/medium_margin"
-    android:paddingBottom="@dimen/medium_margin">
-
-    <TextView
-        android:id="@+id/tv_count"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/gray_black"
-        android:text="#1"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/gray_black"
-        android:layout_toEndOf="@id/tv_count"
-        android:paddingStart="@dimen/medium_margin"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:background="@drawable/shadow"
+        android:paddingStart="@dimen/standarize_spacing"
+        android:paddingTop="@dimen/medium_margin"
         android:paddingEnd="@dimen/medium_margin"
-        android:layout_marginStart="@dimen/standarize_spacing"
-        android:text="@{financeModel.symbol}"
-        android:background="@color/maroon"
-        android:textStyle="bold"/>
+        android:paddingBottom="@dimen/medium_margin">
 
-    <TextView
-        android:id="@+id/transaction_date"
-        android:layout_width="150dp"
-        android:layout_below="@id/tv_count"
-        android:layout_height="wrap_content"
-        android:textColor="@color/gray_black"
-        android:layout_marginTop="@dimen/small_margin"
-        android:text="Transaction Date :"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#1"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_transaction_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_count"
-        android:layout_marginTop="@dimen/small_margin"
-        android:text="@{financeModel.tranDate}"
-        android:layout_toEndOf="@+id/transaction_date"
-        android:layout_marginStart="@dimen/small_margin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_toEndOf="@id/tv_count"
+            android:background="@color/maroon"
+            android:paddingStart="@dimen/medium_margin"
+            android:paddingEnd="@dimen/medium_margin"
+            android:text="@{financeModel.symbol}"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/transaction_date"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_count"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Transaction Date :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_transaction_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_count"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_toEndOf="@+id/transaction_date"
+            android:text="@{financeModel.tranDate}" />
 
 
-    <TextView
-        android:id="@+id/transaction"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/transaction_date"
-        android:textColor="@color/gray_black"
-        android:text="Transaction ID :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/transaction"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transaction_date"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Transaction ID :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_transaction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{financeModel.jounalID}"
-        android:layout_below="@+id/transaction_date"
-        android:layout_toEndOf="@+id/transaction"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transaction_date"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/transaction"
+            android:text="@{financeModel.jounalID}" />
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/transaction"
-        android:textColor="@color/gray_black"
-        android:text="Description :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transaction"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Description :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{financeModel.descrption}"
-        android:layout_below="@+id/transaction"
-        android:layout_toEndOf="@+id/description"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transaction"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/description"
+            android:text="@{financeModel.descrption}" />
 
-    <TextView
-        android:id="@+id/check"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_description"
-        android:textColor="@color/gray_black"
-        android:text="Cheque# :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/check"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_description"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Cheque# :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{financeModel.chequeNo}"
-        android:layout_below="@+id/tv_description"
-        android:layout_toEndOf="@+id/check"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_description"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/check"
+            android:text="@{financeModel.chequeNo}" />
 
-    <TextView
-        android:id="@+id/debit"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_check"
-        android:textColor="@color/gray_black"
-        android:text="Debit :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/debit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_check"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Debit :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_debit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{financeModel.amountD}"
-        android:layout_below="@+id/tv_check"
-        android:layout_toEndOf="@+id/debit"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_debit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_check"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/debit"
+            android:text="@{financeModel.amountD}" />
 
-    <TextView
-        android:id="@+id/credit"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_debit"
-        android:textColor="@color/gray_black"
-        android:text="Credit :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/credit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_debit"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Credit :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_credit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{financeModel.amountC}"
-        android:layout_below="@+id/tv_debit"
-        android:layout_toEndOf="@+id/credit"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_debit"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/credit"
+            android:text="@{financeModel.amountC}" />
 
-    <TextView
-        android:id="@+id/balance"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit"
-        android:textColor="@color/gray_black"
-        android:text="Balance :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/balance"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/credit"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Balance :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_balance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/credit"
-        android:background="@color/gray"
-        android:layout_toEndOf="@+id/balance"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/credit"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/balance"
+            android:background="@color/gray" />
 
-</RelativeLayout>
+    </RelativeLayout>
 </layout>

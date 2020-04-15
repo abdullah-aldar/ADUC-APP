@@ -4,212 +4,214 @@
 
 
     <data>
-        <variable name="couseSheduleModel"
-            type="com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel"/>
+
+        <variable
+            name="couseSheduleModel"
+            type="com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel" />
     </data>
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/shadow"
-    android:layout_marginTop="@dimen/small_margin"
-    android:layout_marginStart="@dimen/small_margin"
-    android:layout_marginEnd="@dimen/small_margin"
-    android:padding="@dimen/medium_margin">
-
-    <TextView
-        android:id="@+id/course_code"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/gray_black"
-        android:text="Course Code :"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/tv_course_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{couseSheduleModel.courseCode}"
-        android:layout_toEndOf="@+id/course_code"
-        android:layout_marginStart="@dimen/small_margin"/>
-
-    <TextView
-        android:id="@+id/section"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@id/tv_section"
-        android:textColor="@color/gray_black"
-        android:text="Section"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/tv_section"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/medium_margin"
-        android:layout_marginStart="@dimen/medium_margin" />
-
-    <TextView
-        android:id="@+id/course_name"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/course_code"
-        android:textColor="@color/gray_black"
-        android:text="Course Name :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/tv_course_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{couseSheduleModel.courseName}"
-        android:layout_below="@+id/course_code"
-        android:layout_toEndOf="@+id/course_name"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/day_time"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/course_name"
-        android:textColor="@color/gray_black"
-        android:text="Day/Time :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/tv_day_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{couseSheduleModel.dayTime}"
-        android:layout_below="@+id/course_name"
-        android:layout_toEndOf="@+id/day_time"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/room"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/day_time"
-        android:textColor="@color/gray_black"
-        android:text="Room :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/tv_room"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{couseSheduleModel.room}"
-        android:layout_below="@+id/day_time"
-        android:layout_toEndOf="@+id/room"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/lecture"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/room"
-        android:textColor="@color/gray_black"
-        android:text="Lecturer :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/tv_lecture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{couseSheduleModel.lecturer}"
-        android:layout_below="@+id/room"
-        android:layout_toEndOf="@+id/lecture"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lecture"
-        android:layout_marginTop="@dimen/medium_margin"
-        android:background="@drawable/box_style">
-
-    <LinearLayout
-        android:id="@+id/layout_midterm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/small_margin">
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:background="@drawable/shadow"
+        android:padding="@dimen/medium_margin">
 
         <TextView
-            android:layout_width="0dp"
+            android:id="@+id/course_code"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:text="Course Code :"
             android:textColor="@color/gray_black"
-            android:text="MidTerm Date"
             android:textStyle="bold" />
 
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.01"
-            android:background="@color/gray_black"/>
+        <TextView
+            android:id="@+id/tv_course_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_toEndOf="@+id/course_code"
+            android:text="@{couseSheduleModel.courseCode}" />
 
         <TextView
-            android:id="@+id/tv_midterm_date"
-            android:layout_width="0dp"
+            android:id="@+id/section"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@{couseSheduleModel.midTermExamDate}"
-            android:layout_marginStart="@dimen/small_margin" />
+            android:layout_toStartOf="@id/tv_section"
+            android:text="Section"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin" />
 
-        <View
-            android:id="@+id/mid_line"
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_code"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Course Name :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_course_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_code"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/course_name"
+            android:text="@{couseSheduleModel.courseName}" />
+
+        <TextView
+            android:id="@+id/day_time"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_name"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Day/Time :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_day_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_name"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/day_time"
+            android:text="@{couseSheduleModel.dayTime}" />
+
+        <TextView
+            android:id="@+id/room"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_time"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Room :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_time"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/room"
+            android:text="@{couseSheduleModel.room}" />
+
+        <TextView
+            android:id="@+id/lecture"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Lecturer :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/lecture"
+            android:text="@{couseSheduleModel.lecturer}" />
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0.01dp"
-            android:layout_below="@id/layout_midterm"
-            android:background="@color/gray_black"/>
-
-    <LinearLayout
-        android:id="@+id/layout_finalterm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/small_margin"
-        android:orientation="horizontal"
-        android:layout_below="@id/mid_line">
-
-        <TextView
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/gray_black"
-            android:text="Final Exam Date"
-            android:textStyle="bold" />
+            android:layout_below="@id/lecture"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="@drawable/box_style">
+
+            <LinearLayout
+                android:id="@+id/layout_midterm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MidTerm Date"
+                    android:textColor="@color/gray_black"
+                    android:textStyle="bold" />
 
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.01"
-            android:background="@color/gray_black"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.01"
+                    android:background="@color/gray_black" />
 
-        <TextView
-            android:id="@+id/tv_finalterm_date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@{couseSheduleModel.finalExamDate}"
-            android:layout_marginStart="@dimen/small_margin" />
+                <TextView
+                    android:id="@+id/tv_midterm_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_weight="2"
+                    android:text="@{couseSheduleModel.midTermExamDate}" />
 
-    </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/mid_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.01dp"
+                android:layout_below="@id/layout_midterm"
+                android:background="@color/gray_black" />
+
+            <LinearLayout
+                android:id="@+id/layout_finalterm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mid_line"
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Final Exam Date"
+                    android:textColor="@color/gray_black"
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.01"
+                    android:background="@color/gray_black" />
+
+                <TextView
+                    android:id="@+id/tv_finalterm_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_weight="2"
+                    android:text="@{couseSheduleModel.finalExamDate}" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
     </RelativeLayout>
-
-</RelativeLayout>
 
 </layout>

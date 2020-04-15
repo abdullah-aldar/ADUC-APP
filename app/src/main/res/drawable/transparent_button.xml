@@ -2,13 +2,15 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <gradient android:startColor="@android:color/transparent"
+    <gradient
+        android:angle="@android:color/transparent"
         android:endColor="@android:color/transparent"
-        android:angle="@android:color/transparent" />
+        android:startColor="@android:color/transparent" />
 
     <corners android:radius="5dp" />
 
-    <stroke android:width="4px"
+    <stroke
+        android:width="4px"
         android:color="@color/cyan" />
 
 

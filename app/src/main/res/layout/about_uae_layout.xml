@@ -8,8 +8,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginEnd="@dimen/standarize_spacing"
         android:layout_marginBottom="@dimen/high_margin"
         card_view:cardBackgroundColor="@color/white"
@@ -27,10 +27,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
-                card_view:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/uae"
                 card_view:layout_constraintHeight_default="percent"
                 card_view:layout_constraintHeight_percent="0.3"
-                android:src="@drawable/uae" />
+                card_view:layout_constraintTop_toTopOf="parent" />
 
 
             <TextView
@@ -40,23 +40,23 @@
                 android:layout_marginTop="@dimen/small_margin"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_horizontal"
-                card_view:layout_constraintTop_toBottomOf="@id/iv_student"
                 android:text="About UAE"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/large_text"/>
+                android:textSize="@dimen/large_text"
+                card_view:layout_constraintTop_toBottomOf="@id/iv_student" />
 
 
             <ScrollView
-                card_view:layout_constraintTop_toBottomOf="@+id/title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                card_view:layout_constraintTop_toBottomOf="@+id/title">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/standarize_spacing"
-                        android:text="@string/about_uae"
-                        android:textSize="14sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/standarize_spacing"
+                    android:text="@string/about_uae"
+                    android:textSize="14sp" />
 
             </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>

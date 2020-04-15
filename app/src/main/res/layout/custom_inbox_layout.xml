@@ -3,115 +3,117 @@
 
 
     <data>
-        <variable name="inboxDataModel"
-            type="com.aldar.studentportal.models.inboxModels.StudentInboxDataModel"/>
+
+        <variable
+            name="inboxDataModel"
+            type="com.aldar.studentportal.models.inboxModels.StudentInboxDataModel" />
     </data>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/shadow"
-    android:layout_marginTop="@dimen/small_margin"
-    android:layout_marginStart="@dimen/small_margin"
-    android:layout_marginEnd="@dimen/small_margin"
-    android:padding="@dimen/medium_margin">
-
-    <TextView
-        android:id="@+id/course_code"
-        android:layout_width="120dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/gray_black"
-        android:text="Subject :"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/tv_course_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{inboxDataModel.subject}"
-        android:layout_toEndOf="@+id/course_code"
-        android:layout_marginStart="@dimen/small_margin"/>
-
-    <TextView
-        android:id="@+id/course_name"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/course_code"
-        android:textColor="@color/gray_black"
-        android:text="Sent By :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
-
-    <TextView
-        android:id="@+id/tv_course_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{inboxDataModel.sentBy}"
-        android:layout_below="@+id/course_code"
-        android:layout_toEndOf="@+id/course_name"
         android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:background="@drawable/shadow"
+        android:padding="@dimen/medium_margin">
 
-    <TextView
-        android:id="@+id/day_time"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/course_name"
-        android:textColor="@color/gray_black"
-        android:text="Send To :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/course_code"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Subject :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_day_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{inboxDataModel.sentTo}"
-        android:layout_below="@+id/course_name"
-        android:layout_toEndOf="@+id/day_time"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_course_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_toEndOf="@+id/course_code"
+            android:text="@{inboxDataModel.subject}" />
 
-    <TextView
-        android:id="@+id/room"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/day_time"
-        android:textColor="@color/gray_black"
-        android:text="Date :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_code"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Sent By :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_room"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{inboxDataModel.date}"
-        android:layout_below="@+id/day_time"
-        android:layout_toEndOf="@+id/room"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_course_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_code"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/course_name"
+            android:text="@{inboxDataModel.sentBy}" />
 
-    <TextView
-        android:id="@+id/lecture"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/room"
-        android:textColor="@color/gray_black"
-        android:text="Sent/Recieved :"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/day_time"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_name"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Send To :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_lecture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{inboxDataModel.inOut}"
-        android:layout_below="@+id/room"
-        android:layout_toEndOf="@+id/lecture"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/text_gap"/>
+        <TextView
+            android:id="@+id/tv_day_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_name"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/day_time"
+            android:text="@{inboxDataModel.sentTo}" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/room"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_time"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Date :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_time"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/room"
+            android:text="@{inboxDataModel.date}" />
+
+        <TextView
+            android:id="@+id/lecture"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Sent/Recieved :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/lecture"
+            android:text="@{inboxDataModel.inOut}" />
+
+    </RelativeLayout>
 
 </layout>

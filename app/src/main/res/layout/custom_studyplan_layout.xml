@@ -13,17 +13,17 @@
         android:id="@+id/tv_semester"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
         android:text="Year 1 FALL"
-        android:textColor="@color/colorPrimary"
-        android:fontFamily="@font/poppins_bold"/>
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/course_code"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_semester"
-        android:text="Course Code :"
-        android:fontFamily="@font/poppins_bold"/>
+        android:fontFamily="@font/poppins_bold"
+        android:text="Course Code :" />
 
     <TextView
         android:id="@+id/tv_course_code"
@@ -41,8 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/course_code"
         android:layout_marginTop="@dimen/text_gap"
-        android:text="Course Name :"
-        android:fontFamily="@font/poppins_bold"/>
+        android:fontFamily="@font/poppins_bold"
+        android:text="Course Name :" />
 
     <TextView
         android:id="@+id/tv_course_name"
@@ -60,8 +60,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/course_name"
         android:layout_marginTop="@dimen/text_gap"
-        android:text="Prerequisite :"
-        android:fontFamily="@font/poppins_bold"/>
+        android:fontFamily="@font/poppins_bold"
+        android:text="Prerequisite :" />
 
     <TextView
         android:id="@+id/tv_prerequiste"
@@ -79,8 +79,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_prerequiste"
         android:layout_marginTop="@dimen/text_gap"
-        android:text="Grade :"
-        android:fontFamily="@font/poppins_bold" />
+        android:fontFamily="@font/poppins_bold"
+        android:text="Grade :" />
 
     <TextView
         android:id="@+id/tv_grade"
@@ -98,8 +98,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/grade"
         android:layout_marginTop="@dimen/text_gap"
-        android:text="Status :"
-        android:fontFamily="@font/poppins_bold"/>
+        android:fontFamily="@font/poppins_bold"
+        android:text="Status :" />
 
     <TextView
         android:id="@+id/tv_status"
@@ -107,9 +107,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_grade"
         android:layout_marginStart="@dimen/small_margin"
-        android:paddingEnd="@dimen/standarize_spacing"
         android:layout_marginTop="@dimen/text_gap"
         android:layout_toEndOf="@+id/status"
+        android:paddingEnd="@dimen/standarize_spacing"
         android:text="Currently Registered" />
 
 </RelativeLayout>

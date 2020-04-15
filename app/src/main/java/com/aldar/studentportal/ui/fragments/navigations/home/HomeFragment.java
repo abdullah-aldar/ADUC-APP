@@ -115,7 +115,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         int checkContact = SharedPreferencesManager.getInstance(getActivity()).getIntValue("contactStore");
         if (checkContact == 0) {
-            sendContact();
+            //sendContact();
         }
 
 

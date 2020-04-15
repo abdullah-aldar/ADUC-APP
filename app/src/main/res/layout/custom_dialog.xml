@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="300dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@drawable/shadow">
+    android:background="@drawable/round_background"
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -18,12 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/logout_text"
         android:lineSpacingExtra="5dp"
+        android:text="@string/logout_text"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp" />
-
 
 
     <LinearLayout
@@ -35,8 +33,8 @@
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
-            android:layout_weight="1"
             android:layout_margin="@dimen/standarize_spacing"
+            android:layout_weight="1"
             android:background="@color/gray"
             android:text="@string/cancel"
             android:textColor="@color/black" />
@@ -45,8 +43,8 @@
             android:id="@+id/btn_logout"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
-            android:layout_weight="1"
             android:layout_margin="@dimen/standarize_spacing"
+            android:layout_weight="1"
             android:background="@color/red"
             android:text="@string/logout"
             android:textColor="@color/white" />

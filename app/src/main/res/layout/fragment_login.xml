@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -35,8 +34,8 @@
             android:gravity="center"
             android:text="Welcome"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/title_text_size" />
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_login_using"
@@ -53,10 +52,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_login_using"
-            android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
-            android:background="@drawable/shadow"
+            android:alpha="2"
+            android:background="@drawable/login_background"
             android:padding="@dimen/standarize_spacing">
 
             <TextView
@@ -64,8 +64,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LOGIN HERE"
-                android:textSize="@dimen/medium_text_size"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/medium_text_size" />
 
             <View
                 android:id="@+id/v_line"
@@ -74,7 +74,6 @@
                 android:layout_below="@+id/tv_log_in"
                 android:layout_marginTop="@dimen/small_margin"
                 android:background="@color/colorPrimary" />
-
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -92,8 +91,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:text="@={loginViewModel.username}"
-                    app:error="@{loginViewModel.errorMessageUsername}"
-                    />
+                    app:error="@{loginViewModel.errorMessageUsername}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:text="@={loginViewModel.password}"
-                        app:error="@{loginViewModel.errorMessagePassword}"/>
+                        app:error="@{loginViewModel.errorMessagePassword}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </RelativeLayout>
@@ -132,7 +130,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="Forget Password ?"
-                android:textColor="@color/colorPrimary"/>
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/btn_login"
@@ -142,10 +140,10 @@
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginBottom="@dimen/medium_margin"
                 android:background="@color/colorPrimary"
-                android:text="Log in"
-                android:textStyle="bold"
                 android:onClick="@{(v) -> loginViewModel.onClick(v)}"
-                android:textColor="@color/white"/>
+                android:text="Log in"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_signup"
@@ -154,10 +152,10 @@
                 android:layout_below="@id/btn_login"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
                 android:padding="@dimen/medium_margin"
-                android:text="New Student Register Here"/>
+                android:text="New Student Register Here"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
@@ -167,8 +165,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:visibility="invisible"
             android:indeterminateTint="@color/green"
+            android:visibility="invisible"
             app:visibility="@{loginViewModel.progressBar}" />
 
 

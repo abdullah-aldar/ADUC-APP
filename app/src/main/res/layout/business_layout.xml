@@ -8,8 +8,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginEnd="@dimen/standarize_spacing"
         android:layout_marginBottom="@dimen/high_margin"
         card_view:cardBackgroundColor="@color/white"
@@ -25,17 +25,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
-                card_view:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/business_icon"
                 card_view:layout_constraintHeight_default="percent"
                 card_view:layout_constraintHeight_percent="0.3"
-                android:src="@drawable/business_icon" />
+                card_view:layout_constraintTop_toTopOf="parent" />
 
 
             <LinearLayout
-                card_view:layout_constraintTop_toBottomOf="@id/iv_student"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                card_view:layout_constraintTop_toBottomOf="@id/iv_student">
 
                 <TextView
                     android:id="@+id/title"
@@ -46,7 +46,7 @@
                     android:gravity="center_horizontal"
                     android:text="@string/business_school"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/large_text"/>
+                    android:textSize="@dimen/large_text" />
 
 
                 <ScrollView

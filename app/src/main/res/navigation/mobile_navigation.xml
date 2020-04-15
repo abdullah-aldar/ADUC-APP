@@ -32,8 +32,8 @@
     <fragment
         android:id="@+id/nav_contact"
         android:name="com.aldar.studentportal.ui.fragments.navigations.ContactUsFragment"
-        tools:layout="@layout/contact_us_fragment"
-        android:label="Contact Us"/>
+        android:label="Contact Us"
+        tools:layout="@layout/contact_us_fragment" />
 
     <fragment
         android:id="@+id/nav_about"
@@ -48,15 +48,11 @@
         tools:layout="@layout/feedback_fragment" />
 
 
-
-
     <activity
         android:id="@+id/nav_login"
-        tools:layout="@layout/activity_login"
+        android:name="com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity"
         android:label="@string/menu_login"
-        android:name="com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity"/>
-
-
+        tools:layout="@layout/activity_login" />
 
 
 </navigation>

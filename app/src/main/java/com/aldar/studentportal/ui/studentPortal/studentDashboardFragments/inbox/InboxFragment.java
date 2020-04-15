@@ -45,6 +45,10 @@ public class InboxFragment extends Fragment {
 
         getSudentInboxData(viewModel.getStudentInboxData());
 
+        binding.tvComposeEmail.setOnClickListener(v -> {
+          loadFragment(new ComposeEmailFragment());
+        });
+
         binding.ivBack.setOnClickListener(v -> {
             getActivity().onBackPressed();
         });
@@ -63,6 +67,13 @@ public class InboxFragment extends Fragment {
         });
     }
 
+
+    private void loadFragment(Fragment fragment){
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container,
+                        fragment, null).commit();
+    }
     @Override
     public void onDestroy() {
         binding = null;

@@ -32,7 +32,8 @@ import com.google.firebase.iid.InstanceIdResult;
 
 import java.io.ByteArrayOutputStream;
 
-public class LoginFragment extends Fragment {
+public class
+LoginFragment extends Fragment {
     private LoginViewModel loginViewModel;
     private String strFcmToken;
     FragmentLoginBinding binding;

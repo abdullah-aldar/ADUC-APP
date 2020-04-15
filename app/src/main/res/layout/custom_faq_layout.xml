@@ -4,64 +4,64 @@
 
 
     <data>
-        <variable name="faqModel"
-            type="com.aldar.studentportal.models.faqModels.FAQModel"/>
+
+        <variable
+            name="faqModel"
+            type="com.aldar.studentportal.models.faqModels.FAQModel" />
     </data>
 
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
-
-
-
-    <RelativeLayout
-        android:id="@+id/question_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shadow"
-        android:layout_marginTop="@dimen/medium_margin"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginEnd="@dimen/small_margin"
-        android:padding="@dimen/medium_margin"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_faq_question"
+
+        <RelativeLayout
+            android:id="@+id/question_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/small_margin"
-            android:text="@{faqModel.question}"
-            android:layout_marginTop="@dimen/small_margin"
-            android:layout_toStartOf="@+id/iv_arrow"
-            android:textColor="@color/black"/>
-
-
-        <ImageView
-            android:id="@+id/iv_arrow"
-            android:src="@drawable/down"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_width="25dp"
-            android:layout_height="25dp"/>
-
-        <TextView
-            android:id="@+id/tv_faq_answer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:background="@drawable/shadow"
             android:padding="@dimen/medium_margin"
-            android:text="@{faqModel.answer}"
-            android:layout_marginTop="@dimen/small_margin"
-            android:layout_below="@+id/tv_faq_question"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_faq_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_toStartOf="@+id/iv_arrow"
+                android:text="@{faqModel.question}"
+                android:textColor="@color/black" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/down" />
+
+            <TextView
+                android:id="@+id/tv_faq_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_faq_question"
+                android:layout_marginTop="@dimen/small_margin"
+                android:padding="@dimen/medium_margin"
+                android:text="@{faqModel.answer}"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,16 +1,15 @@
 package com.aldar.studentportal.models.selectedCoursesModel;
 
 public class SelectedCoursesModel {
-    String sectionId,sectionCode , courseCode, courseName,schedule, insName,timing;
+    String sectionId,sectionCode , courseCode, courseName,schedule, insName;
 
-    public SelectedCoursesModel(String sectionId, String sectionCode, String courseCode, String courseName, String schedule, String insName, String timing) {
+    public SelectedCoursesModel(String sectionId, String sectionCode, String courseCode, String courseName, String schedule, String insName) {
         this.sectionId = sectionId;
         this.sectionCode = sectionCode;
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.schedule = schedule;
         this.insName = insName;
-        this.timing = timing;
     }
 
     public String getSectionId() {
@@ -61,11 +60,4 @@ public class SelectedCoursesModel {
         this.insName = insName;
     }
 
-    public String getTiming() {
-        return timing;
-    }
-
-    public void setTiming(String timing) {
-        this.timing = timing;
-    }
 }

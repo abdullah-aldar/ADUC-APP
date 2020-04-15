@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="composeEmailViewModel"
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.inbox.ComposeEmailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:src="@drawable/back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Send"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingBottom="@dimen/medium_margin"
+            app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin">
+
+                <TextView
+                    android:id="@+id/select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Please Select secrion"
+                    android:textColor="@color/gray" />
+
+
+                <Spinner
+                    android:id="@+id/section_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/select"
+                    android:backgroundTint="@color/white"
+                    android:pointerIcon="arrow"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/white"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rv_course_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@drawable/shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+            <RelativeLayout
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/radio_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:text="Instructor Name" />
+
+                <TextView
+                    android:id="@+id/radio_arabic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:text="@={composeEmailViewModel.instructorName}" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_whome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radio_group"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Subject :"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/et_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_whome"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:text="@={composeEmailViewModel.subject}"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_subject"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/small_margin"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Message :"
+                android:textColor="@color/black" />
+
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tv_message"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:background="@color/tranparent"
+                android:gravity="top"
+                android:hint="your message"
+                android:paddingStart="@dimen/medium_margin"
+                android:text="@={composeEmailViewModel.message}"
+                android:textSize="12sp" />
+
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_below="@id/et_message"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:layout_weight="1"
+                android:background="@drawable/gradient"
+                android:text="Send"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
