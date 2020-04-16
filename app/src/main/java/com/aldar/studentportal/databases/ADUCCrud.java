@@ -48,28 +48,37 @@ public class ADUCCrud {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public boolean checkTiming(String courseCode, String sectionId, List<Time> timeList) {
         boolean checkTimeAndDAte = false;
-        for (int k = 0; k < timeList.size(); k++) {
-            String dayName = timeList.get(k).getDayName();
-            String startTime = timeList.get(k).getStartTime();
-            String endTime = timeList.get(k).getEndTime();
-            checkTimeAndDAte = checkExistTiming(courseCode,sectionId, dayName, formatTime(startTime), formatTime(endTime));
-        }
 
+        for (int k = 0; k < timeList.size(); k++) {
+
+            String timeListdayName = String.valueOf(timeList.get(k).getDayId());
+            String timeListstartTime = timeList.get(k).getStartTime();
+            String timeListendTime = timeList.get(k).getEndTime();
+
+            if (!checkExistTiming(courseCode, sectionId, timeListdayName, formatTime(timeListstartTime), formatTime(timeListendTime))) {
+                checkTimeAndDAte = false;
+            } else {
+                checkTimeAndDAte = true;
+                break;
+            }
+        }
         return checkTimeAndDAte;
     }
 
     //check date and timing if exist
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private boolean checkExistTiming(String courseCode,String sectionID, String dayName, String startTime, String endTime) {
+    private boolean checkExistTiming(String courseCode, String sectionID, String dayName, String startTime, String endTime) {
+
+        boolean checkExistance = false;
 
         String query = "SELECT * FROM TIMING WHERE dayName = '" + dayName + "' AND startTime = '" + startTime + "' AND endTime = '" + endTime + "'";
         Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
 
-        if (cursor.moveToFirst()) {
-            isTimingAddedCart = true;
 
+        if (cursor.moveToFirst()) {
+            checkExistance = true;
         } else {
-            if (!checkExistTime(courseCode,sectionID)) {
+            if (!checkExistTime(courseCode, sectionID)) {
                 ContentValues values = new ContentValues();
                 values.put("courseCode", courseCode);
                 values.put("sectionID", sectionID);
@@ -86,11 +95,9 @@ public class ADUCCrud {
                 values.put("endTime", endTime);
                 sqLiteDatabase.insert("TIMING", null, values);
             }
-            isTimingAddedCart = false;
-
+            checkExistance = false;
         }
-
-        return isTimingAddedCart;
+       return  checkExistance;
     }
 
 
@@ -136,29 +143,19 @@ public class ADUCCrud {
 
     }
 
-    private boolean checkExistTime(String courseCode,String sectionID) {
+    private boolean checkExistTime(String courseCode, String sectionID) {
 
         String query = "SELECT * FROM TIMING WHERE courseCode = '" + courseCode + "' ";
         Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             this.sqLiteDatabase.delete("TIMING", "courseCode = '" + courseCode + "' AND sectionID != '" + sectionID + "'", null);
-            return  true;
-        }
-        else {
-            return  false;
+            return true;
+        } else {
+            return false;
         }
 
     }
 
-    private void insertTime(String courseCode,String sectionID,String dayName,String startTime,String endTime){
-        ContentValues values = new ContentValues();
-        values.put("courseCode", courseCode);
-        values.put("sectionID", sectionID);
-        values.put("dayName", dayName);
-        values.put("startTime", startTime);
-        values.put("endTime", endTime);
-        sqLiteDatabase.insert("TIMING", null, values);
-    }
 
     private void showToast(String msg) {
         Toast.makeText(context, "" + msg, Toast.LENGTH_SHORT).show();
@@ -194,8 +191,8 @@ public class ADUCCrud {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
         LocalDateTime dateTime = LocalDateTime.parse(strTiming, formatter);
-        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("HH:mm:ss");
+        DateTimeFormatter changeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-        return dateTime.format(formatter2);
+        return dateTime.format(changeFormat);
     }
 }
