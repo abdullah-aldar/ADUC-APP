@@ -21,9 +21,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="256f8899-a1d6-453c-a7ee-fbc0909573a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_state.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseAdviceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseAdviceAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/databases/ADUCCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/databases/ADUCCrud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/activities/SelectedCoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/activities/SelectedCoursesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/activities/SelectedCoursesViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/activities/SelectedCoursesViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/login/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/login/LoginFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/studentDashboardFragments/myCourseAdvice/MyCourseAdviceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/studentDashboardFragments/myCourseAdvice/MyCourseAdviceFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/shadow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/shadow.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_selected_courses.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_selected_courses.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/course_advice_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/course_advice_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_advice_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_advice_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/selected_courses_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/selected_courses_layout.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +44,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_R" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="26EBB18415153131" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -86,8 +99,8 @@
         <option value="layoutResourceFile_vertical" />
         <option value="Interface" />
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -104,7 +117,7 @@
     <property name="DEBUGGABLE_PROCESS" value="com.aldar.studentportal" />
     <property name="DEBUGGER_ID" value="Java" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="26EBB18415153131" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-15T17:53:51.940Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-16T23:11:06.593Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="algorithm" value="Scalr" />
@@ -646,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586983703328</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="bug fixed">
+      <created>1587048592929</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1587048592930</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -687,7 +707,6 @@
     <MESSAGE value="home screen changed" />
     <MESSAGE value="letter request api integrated" />
     <MESSAGE value="feedback work done" />
-    <MESSAGE value="bug fixed" />
     <MESSAGE value="contact work done" />
     <MESSAGE value="letter request work done" />
     <MESSAGE value="first presentation till work done" />
@@ -697,7 +716,8 @@
     <MESSAGE value="payment with link work done" />
     <MESSAGE value="course advice work done only conflict remaining" />
     <MESSAGE value="bug fixed in time conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixed in time conflict" />
+    <MESSAGE value="bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
   </component>
   <component name="masterDetails">
     <states>

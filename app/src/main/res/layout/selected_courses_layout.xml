@@ -27,6 +27,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/standarize_spacing"
             android:fontFamily="@font/poppins_bold"
+            android:paddingLeft="@dimen/small_margin"
+            android:paddingRight="@dimen/small_margin"
+            android:background="@drawable/button_state"
             android:text="Remove"
             android:textColor="@color/red" />
 

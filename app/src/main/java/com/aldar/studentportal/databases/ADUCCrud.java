@@ -69,35 +69,39 @@ public class ADUCCrud {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private boolean checkExistTiming(String courseCode, String sectionID, String dayName, String startTime, String endTime) {
 
-        boolean checkExistance = false;
-
         String query = "SELECT * FROM TIMING WHERE dayName = '" + dayName + "' AND startTime = '" + startTime + "' AND endTime = '" + endTime + "'";
-        Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
+        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
 
 
-        if (cursor.moveToFirst()) {
-            checkExistance = true;
-        } else {
-            if (!checkExistTime(courseCode, sectionID)) {
-                ContentValues values = new ContentValues();
-                values.put("courseCode", courseCode);
-                values.put("sectionID", sectionID);
-                values.put("dayName", dayName);
-                values.put("startTime", startTime);
-                values.put("endTime", endTime);
-                sqLiteDatabase.insert("TIMING", null, values);
+        try {
+            if (cursor.moveToNext()) {
+                return true;
             } else {
-                ContentValues values = new ContentValues();
-                values.put("courseCode", courseCode);
-                values.put("sectionID", sectionID);
-                values.put("dayName", dayName);
-                values.put("startTime", startTime);
-                values.put("endTime", endTime);
-                sqLiteDatabase.insert("TIMING", null, values);
+                if (!checkExistTime(courseCode, sectionID)) {
+                    ContentValues values = new ContentValues();
+                    values.put("courseCode", courseCode);
+                    values.put("sectionID", sectionID);
+                    values.put("dayName", dayName);
+                    values.put("startTime", startTime);
+                    values.put("endTime", endTime);
+                    sqLiteDatabase.insert("TIMING", null, values);
+                } else {
+                    ContentValues values = new ContentValues();
+                    values.put("courseCode", courseCode);
+                    values.put("sectionID", sectionID);
+                    values.put("dayName", dayName);
+                    values.put("startTime", startTime);
+                    values.put("endTime", endTime);
+                    sqLiteDatabase.insert("TIMING", null, values);
+                }
+                return false;
             }
-            checkExistance = false;
+
+        } finally {
+            cursor.close();
         }
-       return  checkExistance;
+
+
     }
 
 

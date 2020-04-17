@@ -2,14 +2,14 @@ package com.aldar.studentportal.adapters;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,14 +21,8 @@ import com.aldar.studentportal.models.coursesAdviceModels.Time;
 import com.aldar.studentportal.models.coursesAdviceModels.Sections;
 import com.aldar.studentportal.ui.studentPortal.activities.SelectedCoursesActivity;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAdviceAdapter.ViewHolder> {
@@ -97,11 +91,11 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
     private void checkTimingandData(int position, List<Sections> sectionsList, List<Time> timeList) {
 
 
-        if (!aducCrud.checkTiming(courseCode,String.valueOf(sectionsList.get(position).getSectionId()),timeList)) {
+        if (!aducCrud.checkTiming(courseCode, String.valueOf(sectionsList.get(position).getSectionId()), timeList)) {
             addCoursesToCard(sectionsList, position);
-        }
-        else {
-            showDialog("You have Already a Course Registered  in The Same Time Slot");
+            showDialog("Success", "Your course has been added successfull");
+        } else {
+            showDialog("Conflict", "You have already a course registered  in the same time slot");
         }
     }
 
@@ -119,27 +113,24 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
         );
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private String formatTime(String strTiming) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
-        LocalDateTime dateTime = LocalDateTime.parse(strTiming, formatter);
-        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("HH:mm:ss");
-
-        return dateTime.format(formatter2);
-    }
-
-    private void showDialog(String message){
+    private void showDialog(String titlte, String message) {
         Dialog dialog = new Dialog(Objects.requireNonNull(context));
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.setContentView(R.layout.course_advice_dialog);
         TextView tvTitle = dialog.findViewById(R.id.title);
         TextView tvMessage = dialog.findViewById(R.id.message);
         Button btnOk = dialog.findViewById(R.id.btn_ok);
+        Button btnReview = dialog.findViewById(R.id.btn_review);
 
-        tvTitle.setText("Date and Time Conflict");
+        tvTitle.setText(titlte);
         tvMessage.setText(message);
 
         btnOk.setOnClickListener(v -> dialog.dismiss());
+
+        btnReview.setOnClickListener(v -> {
+            dialog.dismiss();
+            context.startActivity(new Intent(context, SelectedCoursesActivity.class));
+        });
 
         dialog.show();
     }

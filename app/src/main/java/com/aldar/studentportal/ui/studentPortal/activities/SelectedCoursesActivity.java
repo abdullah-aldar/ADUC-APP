@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,28 +33,42 @@ import java.util.Objects;
 public class SelectedCoursesActivity extends AppCompatActivity {
     private SelectedCoursesAdapter adapter;
     private ActivitySelectedCoursesBinding binding;
+    private SelectedCoursesViewModel viewModel;
+    private String strSectionId="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_selected_courses);
-
-        SelectedCoursesViewModel viewModel = new ViewModelProvider(this).get(SelectedCoursesViewModel.class);
+        viewModel = new ViewModelProvider(this).get(SelectedCoursesViewModel.class);
         binding.setLifecycleOwner(this);
         binding.setSelectedCoursesViewModel(viewModel);
 
         viewModel.getLiveData().observe(this, selectedCoursesModels -> {
             if (selectedCoursesModels != null) {
+                binding.btnRegisterCourse.setVisibility(View.VISIBLE);
                 binding.rvCourseslist.setLayoutManager(new LinearLayoutManager(this));
                 adapter = new SelectedCoursesAdapter(selectedCoursesModels, this);
                 binding.rvCourseslist.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+
+
+                if (selectedCoursesModels.size() > 0) {
+                    for (int i = 0; i < selectedCoursesModels.size(); i++) {
+                        if (i == 0) {
+                            strSectionId += selectedCoursesModels.get(i).getSectionId();
+                        } else {
+                            strSectionId += "," + selectedCoursesModels.get(i).getSectionId();
+                        }
+                    }
+                }
             }
+
         });
 
 
         binding.btnRegisterCourse.setOnClickListener(v -> {
-            viewModel.apiCallRegisterCourses();
+            showDialog("Confirm", "Are you sure to register these courses!");
         });
 
         binding.ivBack.setOnClickListener(v -> {
@@ -62,25 +77,38 @@ public class SelectedCoursesActivity extends AppCompatActivity {
 
         viewModel.getRegistrationReponseLiveData().observe(this, commonApiResponse -> {
             if (Boolean.parseBoolean(commonApiResponse.getSuccess())) {
-                showDialog(commonApiResponse.getMessage());
+                Toast.makeText(this, "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
 
-    private void showDialog(String message){
+    private void showDialog(String titlte, String message) {
         Dialog dialog = new Dialog(Objects.requireNonNull(SelectedCoursesActivity.this));
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.setContentView(R.layout.course_advice_dialog);
         TextView tvTitle = dialog.findViewById(R.id.title);
         TextView tvMessage = dialog.findViewById(R.id.message);
         Button btnOk = dialog.findViewById(R.id.btn_ok);
+        Button btnReview = dialog.findViewById(R.id.btn_review);
 
-        tvTitle.setText("Courses Registered Successfully");
+        tvTitle.setText(titlte);
         tvMessage.setText(message);
 
-        btnOk.setOnClickListener(v -> dialog.dismiss());
+        btnOk.setText("Review");
+        btnOk.setOnClickListener(v -> {
+            dialog.dismiss();
+
+        });
+
+        btnReview.setText("Register");
+        btnReview.setOnClickListener(v -> {
+            dialog.dismiss();
+            String studentID = String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id"));
+            int semesterId = SharedPreferencesManager.getInstance(getApplicationContext()).getIntValue("semester_id");
+            viewModel.apiCallRegisterCourses(studentID, String.valueOf(semesterId), strSectionId);
+        });
 
         dialog.show();
     }

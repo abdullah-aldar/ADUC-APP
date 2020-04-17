@@ -64,20 +64,9 @@ public class SelectedCoursesViewModel extends AndroidViewModel {
             arrayListData.add(model);
             itemsDataLiveData.setValue(arrayListData);
         }
-
-//        while (cursor.moveToNext()){
-//            String courseCode = cursor.getString(1).trim();
-//            String day = cursor.getString(2).trim();
-//            String startTime = cursor.getString(3).trim();
-//            String entTime = cursor.getString(4).trim();
-//
-//            SelectedCourseTiming timingModel = new SelectedCourseTiming(day,startTime,entTime);
-//            timingArrayList.add(timingModel);
-//        }
-
     }
 
-    public void apiCallRegisterCourses() {
+    public void apiCallRegisterCourses(String studentID, String semesterID, String strSectionId) {
         progressBar.setValue(0);
         APIService services;
         services = RetroClass.getApiClient().create(APIService.class);

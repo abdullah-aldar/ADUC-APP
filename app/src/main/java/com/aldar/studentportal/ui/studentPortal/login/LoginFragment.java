@@ -60,41 +60,30 @@ LoginFragment extends Fragment {
             getFcmToken();
         }
 
-        loginViewModel.getLoginResponseData().observe(getViewLifecycleOwner(), new Observer<LoginResponseModel>() {
-            @Override
-            public void onChanged(LoginResponseModel loginResponseModel) {
+        loginViewModel.getLoginResponseData().observe(getViewLifecycleOwner(), loginResponseModel -> {
 
-                if (loginResponseModel.getStatus().equals("200")) {
-                    SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("student_id", loginResponseModel.getData().getStudentID());
-                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_username", loginResponseModel.getData().getGivenStudentId());
-                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_name", loginResponseModel.getData().getStudentName());
-                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_advisor", loginResponseModel.getData().getAdvisor());
-                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_programe", loginResponseModel.getData().getProgram());
-                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("concentration", loginResponseModel.getData().getConcentration());
-                    SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", loginResponseModel.getData().getIsContactStored());
-                    SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin", true);
+            if (loginResponseModel.getStatus().equals("200")) {
+                SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("student_id", loginResponseModel.getData().getStudentID());
+                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_username", loginResponseModel.getData().getGivenStudentId());
+                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_name", loginResponseModel.getData().getStudentName());
+                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_advisor", loginResponseModel.getData().getAdvisor());
+                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_programe", loginResponseModel.getData().getProgram());
+                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("concentration", loginResponseModel.getData().getConcentration());
+                SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", loginResponseModel.getData().getIsContactStored());
+                SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin", true);
 
-                    GeneralUtilities.connectFragmentWithoutBack(getContext(), new StudentDashboardFragment());
-                }
-                Toast.makeText(getContext(), "" + loginResponseModel.getMessage(), Toast.LENGTH_SHORT).show();
-
+                GeneralUtilities.connectFragmentWithoutBack(getContext(), new StudentDashboardFragment());
             }
+            Toast.makeText(getContext(), "" + loginResponseModel.getMessage(), Toast.LENGTH_SHORT).show();
+
         });
 
 
-        binding.tvSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralUtilities.connectFragmentWithBack(getContext(), new CheckUsernameFragment());
-            }
-        });
+        binding.tvSignup.setOnClickListener(v ->
+                GeneralUtilities.connectFragmentWithBack(getContext(), new CheckUsernameFragment()));
 
-        binding.tvForgetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralUtilities.connectFragmentWithBack(getContext(), new ForgotPasswordFragment());
-            }
-        });
+        binding.tvForgetPassword.setOnClickListener(v ->
+                GeneralUtilities.connectFragmentWithBack(getContext(), new ForgotPasswordFragment()));
     }
 
     private void getFcmToken() {

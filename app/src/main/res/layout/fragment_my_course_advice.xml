@@ -83,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/select"
                     android:gravity="center"
+                    android:backgroundTint="@color/white"
                     android:pointerIcon="arrow"
                     android:textColor="@color/white" />
             </RelativeLayout>
@@ -90,10 +91,15 @@
             <Button
                 android:id="@+id/btn_see_courses"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="42dp"
+                android:paddingStart="@dimen/standarize_spacing"
+                android:paddingEnd="@dimen/standarize_spacing"
                 android:layout_below="@+id/semester"
                 android:layout_centerHorizontal="true"
-                android:text="See Courses" />
+                android:background="@drawable/shadow"
+                android:textAllCaps="false"
+                android:textColor="@color/gray_black"
+                android:text="Your Selected Courses" />
 
         </RelativeLayout>
 

@@ -25,6 +25,8 @@ import com.aldar.studentportal.databinding.FragmentMyCourseAdviceBinding;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.ui.studentPortal.activities.SelectedCoursesActivity;
+import com.aldar.studentportal.utilities.GeneralUtilities;
+import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 
 public class MyCourseAdviceFragment extends Fragment {
@@ -83,8 +85,10 @@ public class MyCourseAdviceFragment extends Fragment {
                 binding.semsterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("semester_id", semesterResponseModel.getData().get(position).getSemID());
                         viewModel.semesterID.setValue(semesterResponseModel.getData().get(position).getSemID());
                         viewModel.apiCallCourseAdvice();
+
                     }
 
                     @Override
