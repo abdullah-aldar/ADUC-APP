@@ -1,5 +1,6 @@
 package com.aldar.studentportal.remote;
 
+import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
@@ -8,6 +9,8 @@ import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordRespons
 import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordResponseModel;
 import com.aldar.studentportal.models.inboxModels.StudentInboxResponseModel;
 import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
+import com.aldar.studentportal.models.libraryModels.DigitalLibraryResponseModel;
+import com.aldar.studentportal.models.libraryModels.LibraryResponseModel;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
 import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
@@ -130,6 +133,17 @@ public interface APIService {
                                         @Field("Subject") String subject,
                                         @Field("Message") String message);
 
+    @FormUrlEncoded
+    @POST("aduc/LibraryBooks")
+    Call<LibraryResponseModel> getLibraryBooks(@Field("SearchBookBy") String username,
+                                               @Field("SearchBookDescription") String password);
+
+    @FormUrlEncoded
+    @POST("aduc/Announcement")
+    Call<AnnouncementReponseModel> getAnnoucement(@Field("StudentID") String studendID);
+
+    @GET("aduc/DigitalLib")
+    Call<DigitalLibraryResponseModel> getDigitalLibrary();
 
     @GET("aduc/News")
     Call<NewsResponseModel> getNews();

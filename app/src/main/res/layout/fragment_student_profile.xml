@@ -203,7 +203,7 @@
                             android:id="@+id/dob"
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/academic_adviser"
+                            android:layout_below="@+id/tv_academic_adviser"
                             android:layout_marginTop="@dimen/text_gap"
                             android:text="Date Of Birth :"
                             android:textColor="@color/gray_black"
@@ -213,7 +213,7 @@
                             android:id="@+id/tv_dob"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/academic_adviser"
+                            android:layout_below="@+id/tv_academic_adviser"
                             android:layout_marginTop="@dimen/text_gap"
                             android:layout_marginEnd="@dimen/small_margin"
                             android:layout_toEndOf="@+id/dob"
@@ -549,7 +549,7 @@
                             android:layout_marginTop="@dimen/text_gap"
                             android:layout_marginEnd="@dimen/small_margin"
                             android:layout_toEndOf="@+id/emirate_id"
-                            android:hint="No"
+                            android:hint="Nill"
                             android:text="@{studenProfileViewModel.profileData.get(0).emirateID}" />
 
                         <TextView
@@ -570,7 +570,7 @@
                             android:layout_marginTop="@dimen/text_gap"
                             android:layout_marginEnd="@dimen/small_margin"
                             android:layout_toEndOf="@+id/visa_expiry"
-                            android:hint="null"
+                            android:hint="Nill"
                             android:text="@{studenProfileViewModel.profileData.get(0).visaExpiryDate}" />
 
                         <TextView
@@ -579,7 +579,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_visa_expiry"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:hint="null"
+                            android:hint="Nill"
                             android:text="Visa Issue Date :"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
@@ -592,7 +592,7 @@
                             android:layout_marginTop="@dimen/text_gap"
                             android:layout_marginEnd="@dimen/small_margin"
                             android:layout_toEndOf="@+id/visa_issue"
-                            android:hint="null"
+                            android:hint="Nill"
                             android:text="@{studenProfileViewModel.profileData.get(0).visaExpiryDate}" />
 
 

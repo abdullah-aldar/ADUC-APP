@@ -93,7 +93,7 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
 
         if (!aducCrud.checkTiming(courseCode, String.valueOf(sectionsList.get(position).getSectionId()), timeList)) {
             addCoursesToCard(sectionsList, position);
-            showDialog("Success", "Your course has been added successfull");
+            //showDialog("Success", "Your course has been added successfull");
         } else {
             showDialog("Conflict", "You have already a course registered  in the same time slot");
         }

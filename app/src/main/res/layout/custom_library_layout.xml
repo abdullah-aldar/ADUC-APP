@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+        <variable
+            name="libraryDataModel"
+            type="com.aldar.studentportal.models.libraryModels.LibraryDataModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:background="@drawable/shadow"
+        android:padding="@dimen/medium_margin">
+
+        <TextView
+            android:id="@+id/course_code"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Book Title :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_course_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_toEndOf="@+id/course_code"
+            android:text="@{libraryDataModel.title}" />
+
+
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_course_code"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Author :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_course_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_course_code"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/course_name"
+            android:text="@{libraryDataModel.author}" />
+
+        <TextView
+            android:id="@+id/day_time"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_course_name"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Call Number :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_day_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_course_name"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/day_time"
+            android:text="@{libraryDataModel.callNumber}" />
+
+        <TextView
+            android:id="@+id/room"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_time"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Publisher :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day_time"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/room"
+            android:text="@{libraryDataModel.publisher}" />
+
+        <TextView
+            android:id="@+id/lecture"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="ISBN :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/lecture"
+            android:text="@{libraryDataModel.isbn}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lecture"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="@drawable/box_style">
+
+            <LinearLayout
+                android:id="@+id/layout_midterm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Status"
+                    android:textColor="@color/gray_black"
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.01"
+                    android:background="@color/gray_black" />
+
+                <TextView
+                    android:id="@+id/tv_midterm_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_weight="2"
+                    android:text="@{libraryDataModel.status}" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/mid_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.01dp"
+                android:layout_below="@id/layout_midterm"
+                android:background="@color/gray_black" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

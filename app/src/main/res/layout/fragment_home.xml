@@ -1,377 +1,390 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <ImageView
-            android:id="@+id/iv_header"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/uae"
-            app:layout_constraintBottom_toTopOf="@+id/button_layout"
-            app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent="0.16"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <RelativeLayout
-            android:id="@+id/button_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/portal_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_header">
-
-            <LinearLayout
-                android:id="@+id/layout_blog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/standarize_spacing"
-                android:layout_marginTop="@dimen/standarize_spacing"
-                android:layout_marginEnd="@dimen/standarize_spacing"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="@color/gray"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/small_margin">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="25dp"
-                    android:layout_margin="@dimen/medium_margin"
-                    android:layout_weight="1"
-                    android:src="@drawable/logo" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:gravity="center"
-                    android:text="Learn more about ALDAR University"
-                    android:textSize="12sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="22dp"
-                    android:layout_margin="@dimen/medium_margin"
-                    android:layout_weight="1"
-                    android:src="@drawable/forward"
-                    android:tint="@color/colorPrimary" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_blog"
-                android:layout_marginStart="@dimen/standarize_spacing"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:layout_marginEnd="@dimen/standarize_spacing"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_calendar"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_weight="1"
-                    android:background="@drawable/gradient"
-                    android:padding="@dimen/small_margin"
-                    android:text="Academic Calendar"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/btn_download_boucher"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:layout_weight="1"
-                    android:background="@drawable/gradient"
-                    android:padding="@dimen/small_margin"
-                    android:text="@string/download_boucher"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <HorizontalScrollView
-            android:id="@+id/portal_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:fillViewport="true"
-            android:measureAllChildren="false"
-            android:scrollbars="none"
-            app:layout_constraintBottom_toTopOf="@id/tv_today"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_layout">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gradient"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/medium_margin">
-
-                <LinearLayout
-                    android:id="@+id/layout_portal"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:layout_weight="1"
-                    android:background="@color/gray_black"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="@dimen/small_margin"
-                        android:src="@drawable/rome"
-                        android:tint="@color/white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/portal"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_fee"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:layout_weight="1"
-                    android:background="@color/gray_black"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="@dimen/small_margin"
-                        android:src="@drawable/dollar"
-                        android:tint="@color/white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/fee"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_faq"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:layout_weight="1"
-                    android:background="@color/gray_black"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="@dimen/small_margin"
-                        android:src="@drawable/questionmark"
-                        android:tint="@color/white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/faq"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-        <TextView
-            android:id="@+id/tv_today"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:fontFamily="@font/poppins_bold"
-            android:text="ALDAR Today"
-            android:textColor="@color/gray_black"
-            android:textSize="@dimen/large_text"
-            app:layout_constraintBottom_toTopOf="@id/feedback_layout"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/portal_layout" />
-
-        <RelativeLayout
-            android:id="@+id/feedback_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            android:background="@drawable/gradient"
-            app:layout_constraintBottom_toTopOf="@id/tv_news"
-            app:layout_constraintTop_toBottomOf="@id/tv_today">
-
-            <TextView
-                android:id="@+id/tv_feedback_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/high_margin"
-                android:layout_marginEnd="@dimen/medium_margin"
-                android:gravity="center"
-                android:text="@string/feedback"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/btn_share_feedback"
-                android:layout_width="200dp"
-                android:layout_height="@dimen/btn_height"
-                android:layout_below="@id/tv_feedback_text"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/high_margin"
-                android:background="@color/gray_black"
-                android:padding="@dimen/small_margin"
-                android:paddingStart="@dimen/standarize_spacing"
-                android:paddingEnd="@dimen/standarize_spacing"
-                android:text="Share your feedback"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-
-        </RelativeLayout>
-
-
-        <TextView
-            android:id="@+id/tv_news"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:fontFamily="@font/poppins_bold"
-            android:text="ALDAR News &amp; Events"
-            android:textColor="@color/gray_black"
-            android:textSize="@dimen/large_text"
-            app:layout_constraintBottom_toTopOf="@id/feedback_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feedback_layout" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_news"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_news" />
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/medium_margin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_news">
-
-            <TextView
-                android:id="@+id/tv_support"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/standarize_spacing"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/support"
-                android:textColor="@color/gray_black"
-                android:textSize="@dimen/large_text"
-                app:layout_constraintBottom_toTopOf="@id/tv_support_text"
-                app:layout_constraintLeft_toLeftOf="parent" />
+            android:layout_height="wrap_content">
 
 
-            <TextView
-                android:id="@+id/tv_support_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginEnd="@dimen/medium_margin"
-                android:text="@string/support_text"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_support" />
+            <ImageView
+                android:id="@+id/iv_header"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/uae"
+                app:layout_constraintBottom_toTopOf="@+id/button_layout"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintTop_toTopOf="parent" />
 
-
-            <LinearLayout
-                android:id="@+id/layout_contact"
+            <RelativeLayout
+                android:id="@+id/button_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/portal_layout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_support_text">
+                app:layout_constraintTop_toBottomOf="@+id/iv_header">
 
-
-                <ImageView
-                    android:id="@+id/iv_whatsapp"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/layout_blog"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/whatsapp" />
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginTop="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:background="@color/gray"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_margin">
 
-                <ImageView
-                    android:id="@+id/iv_facebook"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/facebook" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_margin="@dimen/medium_margin"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/logo" />
 
-                <ImageView
-                    android:id="@+id/iv_call"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/call" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center"
+                        android:text="Learn more about ALDAR University"
+                        android:textSize="12sp" />
 
-                <ImageView
-                    android:id="@+id/iv_email"
-                    android:layout_width="0dp"
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_margin="@dimen/medium_margin"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/forward"
+                        android:tint="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/mail" />
+                    android:layout_below="@+id/layout_blog"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_calendar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/medium_margin"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:padding="@dimen/small_margin"
+                        android:text="Academic Calendar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/btn_download_boucher"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/medium_margin"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:padding="@dimen/small_margin"
+                        android:text="@string/download_boucher"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/portal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:fillViewport="true"
+                android:measureAllChildren="false"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toTopOf="@id/tv_today"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_layout">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/medium_margin">
+
+                    <LinearLayout
+                        android:id="@+id/layout_portal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:layout_weight="1"
+                        android:background="@color/gray_black"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_margin="@dimen/small_margin"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/rome"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/portal"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_fee"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:layout_weight="1"
+                        android:background="@color/gray_black"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_margin="@dimen/small_margin"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/dollar"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fee"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_faq"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:layout_weight="1"
+                        android:background="@color/gray_black"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_margin="@dimen/small_margin"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/questionmark"
+                            android:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faq"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tv_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:fontFamily="@font/poppins_bold"
+                android:text="ALDAR Today"
+                android:textColor="@color/gray_black"
+                android:textSize="@dimen/large_text"
+                app:layout_constraintBottom_toTopOf="@id/feedback_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/portal_layout" />
+
+            <RelativeLayout
+                android:id="@+id/feedback_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:background="@drawable/gradient"
+                app:layout_constraintBottom_toTopOf="@id/tv_news"
+                app:layout_constraintTop_toBottomOf="@id/tv_today">
+
+                <TextView
+                    android:id="@+id/tv_feedback_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/high_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:gravity="center"
+                    android:text="@string/feedback"
+                    android:textColor="@color/white" />
 
                 <Button
-                    android:id="@+id/btn_inquire_us"
-                    android:layout_width="0dp"
+                    android:id="@+id/btn_share_feedback"
+                    android:layout_width="200dp"
                     android:layout_height="@dimen/btn_height"
-                    android:layout_weight="2.5"
-                    android:background="@drawable/transparent_button"
-                    android:text="Inquire Us"
-                    android:textColor="@color/cyan" />
+                    android:layout_below="@id/tv_feedback_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/high_margin"
+                    android:background="@color/gray_black"
+                    android:padding="@dimen/small_margin"
+                    android:paddingStart="@dimen/standarize_spacing"
+                    android:paddingEnd="@dimen/standarize_spacing"
+                    android:text="Share your feedback"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
-            </LinearLayout>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:fontFamily="@font/poppins_bold"
+                android:text="ALDAR News &amp; Events"
+                android:textColor="@color/gray_black"
+                android:textSize="@dimen/large_text"
+                app:layout_constraintBottom_toTopOf="@id/feedback_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feedback_layout" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_news" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/medium_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_news">
+
+                <TextView
+                    android:id="@+id/tv_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/standarize_spacing"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/support"
+                    android:textColor="@color/gray_black"
+                    android:textSize="@dimen/large_text"
+                    app:layout_constraintBottom_toTopOf="@id/tv_support_text"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_support_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:text="@string/support_text"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_support" />
+
+
+                <LinearLayout
+                    android:id="@+id/layout_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_support_text">
+
+
+                    <ImageView
+                        android:id="@+id/iv_whatsapp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/whatsapp" />
+
+                    <ImageView
+                        android:id="@+id/iv_facebook"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/facebook" />
+
+                    <ImageView
+                        android:id="@+id/iv_call"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/call" />
+
+                    <ImageView
+                        android:id="@+id/iv_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/mail" />
+
+                    <Button
+                        android:id="@+id/btn_inquire_us"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_weight="2.5"
+                        android:background="@drawable/transparent_button"
+                        android:text="Inquire Us"
+                        android:textColor="@color/cyan" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+</layout>
 

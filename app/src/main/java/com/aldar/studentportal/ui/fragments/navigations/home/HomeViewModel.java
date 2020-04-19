@@ -32,7 +32,6 @@ public class HomeViewModel extends AndroidViewModel {
         apiCallNews();
     }
 
-
     public void sendContactToServer(String deviceID,String name,String phone) {
         APIService services = RetroClass.getApiClient().create(APIService.class);
         Call<CommonApiResponse> allUsers = services.sendContactsToServer(deviceID, name,phone);
@@ -42,7 +41,7 @@ public class HomeViewModel extends AndroidViewModel {
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
+                        showToast(getApplication(), jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
@@ -67,7 +66,7 @@ public class HomeViewModel extends AndroidViewModel {
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
+                        showToast(getApplication(), jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }

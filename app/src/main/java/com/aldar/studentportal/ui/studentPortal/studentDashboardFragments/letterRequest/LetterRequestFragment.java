@@ -152,8 +152,8 @@ public class LetterRequestFragment extends Fragment {
 
         dialogBinding.btnSave.setOnClickListener(v -> {
             if (checkPreview) {
-                //proceedToPayment("http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment_App.aspx?StudentId="+studentID+"&ServiceId="+strLetterID+"&Lang=EN&LetterTo=To%20Whom%20It%20May%20Concern");
-                viewModel.apiCallRequestLetter(strLetterTo, strLetterID);
+                proceedToPayment("http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment_App.aspx?StudentId="+studentID+"&ServiceId="+strLetterID+"&Lang=EN&LetterTo=To%20Whom%20It%20May%20Concern");
+                //viewModel.apiCallRequestLetter(strLetterTo, strLetterID);
                 dialog.dismiss();
             } else {
                 Toast.makeText(getActivity(), "please preview the letter first", Toast.LENGTH_SHORT).show();
@@ -208,7 +208,8 @@ public class LetterRequestFragment extends Fragment {
 
     private void proceedToPayment(String link){
         Bundle bundle = new Bundle();
-        bundle.putString("paymentLink", link);
+        String myLink = "http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment.aspx";
+        bundle.putString("paymentLink", myLink);
         startActivity(new Intent(getActivity(), PaymentActivity.class).putExtras(bundle));
     }
 

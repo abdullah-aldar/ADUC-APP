@@ -55,6 +55,10 @@ public class ComposeEmailFragment extends Fragment {
             getActivity().onBackPressed();
         });
 
+        binding.btnSend.setOnClickListener(v -> {
+            viewModel.apiCallSendMessage();
+        });
+
     }
 
 

@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
+import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
@@ -24,7 +24,7 @@ import retrofit2.Response;
 public class AnnouncementViewModel extends AndroidViewModel {
 
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
-    private MutableLiveData<CourseScheduleResponseModel> courseScheduleData = new MutableLiveData<>();
+    private MutableLiveData<AnnouncementReponseModel> courseScheduleData = new MutableLiveData<>();
     public MutableLiveData<String> studentID = new MutableLiveData<>();
 
     public AnnouncementViewModel(@NonNull Application application) {
@@ -34,44 +34,40 @@ public class AnnouncementViewModel extends AndroidViewModel {
         apiAnnouncement();
     }
 
-    private void apiAnnouncement(){
+    private void apiAnnouncement() {
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule("BMC1412383","97");
-        allUsers.enqueue(new Callback<CourseScheduleResponseModel>() {
+        Call<AnnouncementReponseModel> allUsers = services.getAnnoucement(studentID.getValue());
+        allUsers.enqueue(new Callback<AnnouncementReponseModel>() {
             @Override
-            public void onResponse(@NotNull Call<CourseScheduleResponseModel> call, @NotNull Response<CourseScheduleResponseModel> response) {
+            public void onResponse(@NotNull Call<AnnouncementReponseModel> call, @NotNull Response<AnnouncementReponseModel> response) {
                 progressBar.setValue(8);
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
+                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
 
-                } else  {
-                    CourseScheduleResponseModel responseModel = new CourseScheduleResponseModel();
-                    responseModel.setMessage(response.body().getMessage());
-                    responseModel.setSuccess(response.body().getSuccess());
-                    responseModel.setData(response.body().getData());
-                    courseScheduleData.setValue(responseModel);
+                } else {
+                    courseScheduleData.setValue(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<CourseScheduleResponseModel> call, Throwable t) {
+            public void onFailure(Call<AnnouncementReponseModel> call, Throwable t) {
                 progressBar.setValue(8);
-                showToast(getApplication().getApplicationContext(),t.getMessage());
+                showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
-    public MutableLiveData<CourseScheduleResponseModel> getAnnouncementData(){
+    public MutableLiveData<AnnouncementReponseModel> getAnnouncementData() {
         return courseScheduleData;
     }
 
-    private void showToast(Context context, String message){
-        Toast.makeText(context, ""+message, Toast.LENGTH_SHORT).show();
+    private void showToast(Context context, String message) {
+        Toast.makeText(context, "" + message, Toast.LENGTH_SHORT).show();
     }
 }

@@ -39,11 +39,6 @@ public class StudentProfileFragment extends Fragment {
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setStudenProfileViewModel(viewModel);
 
-        binding.ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+        binding.ivBack.setOnClickListener(v -> getActivity().onBackPressed());
     }
 }

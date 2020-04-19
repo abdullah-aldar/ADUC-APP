@@ -7,52 +7,53 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel;
+import com.aldar.studentportal.databinding.CustomAnnouncementLayoutBinding;
+import com.aldar.studentportal.databinding.CustomDigitalLayoutBinding;
+import com.aldar.studentportal.models.announcementModel.AnnouncementDataModel;
 
 import java.util.List;
 
 public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapter.MyViewHolder> {
 
-    private Context context;
-    private final LayoutInflater inflater;
-    private List<CourseScheduleDataModel> CourseScheduleDataModelList;
+    private List<AnnouncementDataModel> AnnouncementDataModelList;
 
-    public AnnouncementAdapter(Context context, List<CourseScheduleDataModel> CourseScheduleDataModelList) {
-        inflater = LayoutInflater.from(context);
-        this.context = context;
-        this.CourseScheduleDataModelList = CourseScheduleDataModelList;
+    public AnnouncementAdapter(List<AnnouncementDataModel> AnnouncementDataModelList) {
+        this.AnnouncementDataModelList = AnnouncementDataModelList;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.custom_announcement_layout, parent, false);
-        return new MyViewHolder(view);
+        CustomAnnouncementLayoutBinding binding = DataBindingUtil
+                .inflate(LayoutInflater.from(parent.getContext()), R.layout.custom_announcement_layout,
+                        parent, false);
+        return new MyViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        CourseScheduleDataModel model = CourseScheduleDataModelList.get(position);
-        holder.tvAnnoucement.setText(model.getCourseName());
+        AnnouncementDataModel model = AnnouncementDataModelList.get(position);
+        holder.binding.setAnnoucementDataModel(model);
+
 
 
     }
 
     @Override
     public int getItemCount() {
-        return CourseScheduleDataModelList.size();
+        return AnnouncementDataModelList.size();
     }
 
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView tvAnnoucement;
+    static class MyViewHolder extends RecyclerView.ViewHolder {
+        CustomAnnouncementLayoutBinding binding;
 
-        private MyViewHolder(View itemView) {
-            super(itemView);
-            tvAnnoucement = itemView.findViewById(R.id.tv_announcement);
-
+        private MyViewHolder(CustomAnnouncementLayoutBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }

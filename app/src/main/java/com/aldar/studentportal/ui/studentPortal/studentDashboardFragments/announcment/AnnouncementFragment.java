@@ -14,11 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.AnnouncementAdapter;
 import com.aldar.studentportal.databinding.AnnouncementFragmentBinding;
-import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 
 public class AnnouncementFragment extends Fragment {
    private AnnouncementFragmentBinding binding;
@@ -42,22 +42,16 @@ public class AnnouncementFragment extends Fragment {
         binding.setAnnouncementViewModel(mViewModel);
 
         binding.rvAnnouncement.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mViewModel.getAnnouncementData().observe(getViewLifecycleOwner(), new Observer<CourseScheduleResponseModel>() {
-            @Override
-            public void onChanged(CourseScheduleResponseModel courseScheduleResponseModel) {
-                if(courseScheduleResponseModel != null){
-                    adapter = new AnnouncementAdapter(getActivity(), courseScheduleResponseModel.getData());
-                    binding.rvAnnouncement.setAdapter(adapter);
-                }
+        mViewModel.getAnnouncementData().observe(getViewLifecycleOwner(),announcementReponseModel -> {
+            if(announcementReponseModel.getData() != null){
+                binding.rvAnnouncement.setLayoutManager(new LinearLayoutManager(getActivity()));
+                adapter = new AnnouncementAdapter(announcementReponseModel.getData());
+                binding.rvAnnouncement.setAdapter(adapter);
+
             }
         });
 
-        binding.ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+        binding.ivBack.setOnClickListener(v -> getActivity().onBackPressed());
     }
 
 

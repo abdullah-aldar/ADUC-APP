@@ -55,6 +55,7 @@ public class MyMarksFragment extends Fragment {
     private void marksData(MutableLiveData<MarksResponseModel> mutableLiveData){
         mutableLiveData.observe(getViewLifecycleOwner(),marksResponseModel -> {
             if(marksResponseModel != null){
+
                 adapter = new MarksAdapter(getActivity(), marksResponseModel.getData());
                 binding.rvMarks.setAdapter(adapter);
 

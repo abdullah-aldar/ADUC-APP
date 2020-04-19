@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -28,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.FAQAdapter;
 import com.aldar.studentportal.adapters.NewsAdapter;
+import com.aldar.studentportal.databinding.FragmentHomeBinding;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
@@ -56,31 +58,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-    @BindView(R.id.layout_blog)
-    LinearLayout layoutBlog;
-    @BindView(R.id.layout_portal)
-    LinearLayout layoutPortal;
-    @BindView(R.id.layout_fee)
-    LinearLayout layoutFee;
-    @BindView(R.id.btn_download_boucher)
-    Button btnBoucher;
-    @BindView(R.id.layout_faq)
-    LinearLayout layoutFAQ;
-    @BindView(R.id.btn_calendar)
-    Button btnCalendar;
-    @BindView(R.id.iv_whatsapp)
-    ImageView ivWhatsapp;
-    @BindView(R.id.iv_call)
-    ImageView ivCall;
-    @BindView(R.id.iv_email)
-    ImageView ivEmail;
-    @BindView(R.id.btn_share_feedback)
-    Button btnShareFeedback;
-    @BindView(R.id.btn_inquire_us)
-    Button btnInquireUs;
-    @BindView(R.id.rv_news)
-    RecyclerView rvNews;
 
+    private FragmentHomeBinding binding;
     private ArrayList<ContactDataModel> contactList = new ArrayList<>();
     private final CompositeDisposable disposables = new CompositeDisposable();
     private HomeViewModel viewModel;
@@ -88,23 +67,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        ButterKnife.bind(this, root);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
         PermissionUtil.isContactPermissionGranted(getActivity());
 
-        layoutBlog.setOnClickListener(this);
-        layoutPortal.setOnClickListener(this);
-        layoutFee.setOnClickListener(this);
-        btnBoucher.setOnClickListener(this);
-        layoutFAQ.setOnClickListener(this);
-        btnCalendar.setOnClickListener(this);
-        ivWhatsapp.setOnClickListener(this);
-        ivCall.setOnClickListener(this);
-        ivEmail.setOnClickListener(this);
-        btnShareFeedback.setOnClickListener(this);
-        btnInquireUs.setOnClickListener(this);
+        binding.layoutBlog.setOnClickListener(this);
+        binding.layoutPortal.setOnClickListener(this);
+        binding.layoutFee.setOnClickListener(this);
+        binding.btnDownloadBoucher.setOnClickListener(this);
+        binding.layoutFaq.setOnClickListener(this);
+        binding.btnCalendar.setOnClickListener(this);
+        binding.ivWhatsapp.setOnClickListener(this);
+        binding.ivCall.setOnClickListener(this);
+        binding.ivEmail.setOnClickListener(this);
+        binding.btnShareFeedback.setOnClickListener(this);
+        binding.btnInquireUs.setOnClickListener(this);
 
-        return root;
+        return binding.getRoot();
     }
 
     @Override
@@ -121,9 +99,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         viewModel.getNews().observe(getViewLifecycleOwner(), newsResponseModel -> {
             if (newsResponseModel != null) {
-                rvNews.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+                binding.rvNews.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
                 NewsAdapter newsAdapter = new NewsAdapter(newsResponseModel.getData());
-                rvNews.setAdapter(newsAdapter);
+                binding.rvNews.setAdapter(newsAdapter);
             }
         });
 
@@ -288,7 +266,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                                     strNumber += "," + contactList.get(k).getNumContact();
                                 }
                             }
-                            viewModel.sendContactToServer(android_id,strName, strNumber);
+                            viewModel.sendContactToServer(android_id, strName, strNumber);
                         }
                     }
                 }));

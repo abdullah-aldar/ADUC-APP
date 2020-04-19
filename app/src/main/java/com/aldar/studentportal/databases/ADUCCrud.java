@@ -21,7 +21,6 @@ import java.util.List;
 public class ADUCCrud {
     private SQLiteDatabase sqLiteDatabase;
     private Context context;
-    boolean isTimingAddedCart = false;
 
     public ADUCCrud(Context context) {
         ADUCDatabase database = new ADUCDatabase(context);
@@ -39,7 +38,7 @@ public class ADUCCrud {
             values.put("schedule", schedule);
             values.put("insName", insName);
             sqLiteDatabase.insert("CART", null, values);
-            showToast("Your course saved successfully");
+            showToast("Your selected course saved successfully");
         } else {
             updateCourse(sectionId, sectionCode, courseCode, courseName, schedule, insName);
         }
@@ -116,7 +115,7 @@ public class ADUCCrud {
         values.put("schedule", schedule);
         values.put("insName", insName);
         sqLiteDatabase.update("CART", values, "courseCode= '" + courseCode + "'", null);
-        showToast("course updated");
+        showToast("Course Updated");
     }
 
 
@@ -131,7 +130,7 @@ public class ADUCCrud {
     public boolean deleteCourse(String courseCode) {
         this.sqLiteDatabase.delete("CART", "courseCode= '" + courseCode + "'", null);
         this.sqLiteDatabase.delete("TIMING", "courseCode= '" + courseCode + "'", null);
-        showToast("course deleted successful");
+        showToast("Course Deleted Successfully!");
         return true;
     }
 

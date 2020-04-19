@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="libraryViewModel"
+            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.library.LibraryViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,9 +39,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
+            android:fontFamily="@font/montserrat_semibold"
             android:text="Books Available In Library"
             android:textColor="@color/gray"
-            android:textSize="@dimen/large_text_size"
+            android:textSize="@dimen/large_text"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,29 +68,29 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:padding="@dimen/medium_margin">
+                android:orientation="vertical">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="260dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:gravity="center"
                         android:text="Search Book By!"
                         android:textColor="@color/gray" />
 
                     <Spinner
                         android:id="@+id/spinner_books"
-                        android:layout_width="0dp"
+                        android:layout_width="260dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
                         android:dropDownWidth="match_parent"
-                        android:gravity="end"
+                        android:gravity="center"
                         android:textColor="@color/gray" />
                 </LinearLayout>
 
@@ -93,38 +100,71 @@
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginTop="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
                     android:background="@drawable/shadow"
                     android:hint="Enter title here"
                     android:paddingStart="@dimen/medium_margin"
-                    android:paddingEnd="@dimen/medium_margin" />
+                    android:text="@={libraryViewModel.bookDescription}"
+                    android:textColor="@color/gray_black" />
             </LinearLayout>
 
 
-            <Button
-                android:layout_width="200dp"
-                android:layout_height="@dimen/btn_height"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
                 android:layout_below="@+id/layout_search"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/small_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="@drawable/transparent_button"
-                android:text="Search Book"
-                android:textColor="@color/white" />
+                android:layout_marginTop="@dimen/medium_margin">
+
+                <Button
+                    android:id="@+id/btn_search_books"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:background="@color/gray_black"
+                    android:text="Search Book"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_digital_libray"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:background="@color/gray_black"
+                    android:text="Digital Library"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/rv_course_schedule"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_library"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/medium_margin"
-            android:layout_marginBottom="@dimen/medium_margin"
-            android:background="@drawable/shadow"
-            android:layoutAnimation="@anim/fade_animation"
+            android:layoutAnimation="@anim/fall_down_animation_layout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header" />
+
+
+        <ProgressBar
+            android:id="@+id/progess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/green"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibility="@{libraryViewModel.progressBar}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

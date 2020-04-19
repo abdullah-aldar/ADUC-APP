@@ -40,6 +40,7 @@
             android:layout_marginTop="@dimen/small_margin"
             android:text="My Course Advice"
             android:textColor="@color/gray"
+            android:fontFamily="@font/montserrat_semibold"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

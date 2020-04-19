@@ -96,7 +96,7 @@ public class SelectedCoursesActivity extends AppCompatActivity {
         tvTitle.setText(titlte);
         tvMessage.setText(message);
 
-        btnOk.setText("Review");
+        btnOk.setText("Cancel");
         btnOk.setOnClickListener(v -> {
             dialog.dismiss();
 

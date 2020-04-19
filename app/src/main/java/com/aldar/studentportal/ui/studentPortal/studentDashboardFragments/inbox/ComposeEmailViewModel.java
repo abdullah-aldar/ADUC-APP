@@ -25,6 +25,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ComposeEmailViewModel extends AndroidViewModel {
+    public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
     public MutableLiveData<String> sectionID = new MutableLiveData<>();
     public MutableLiveData<String> instructorName = new MutableLiveData<>();
     public MutableLiveData<String> subject = new MutableLiveData<>();
@@ -38,11 +39,12 @@ public class ComposeEmailViewModel extends AndroidViewModel {
 
     public ComposeEmailViewModel(@NonNull Application application) {
         super(application);
+        progressBar.setValue(8);
         studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
         apiGetSemester();
     }
 
-    private void apiGetSemester(){
+    private void apiGetSemester() {
         APIService services = RetroClass.getApiClient().create(APIService.class);
         Call<SemesterResponseModel> allUsers = services.getSemesterSchedule();
         allUsers.enqueue(new Callback<SemesterResponseModel>() {
@@ -51,87 +53,91 @@ public class ComposeEmailViewModel extends AndroidViewModel {
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
+                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
 
-                } else  {
+                } else {
                     semesterData.setValue(response.body());
                 }
             }
 
             @Override
             public void onFailure(Call<SemesterResponseModel> call, Throwable t) {
-                showToast(getApplication().getApplicationContext(),t.getMessage());
+                showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
-    public void apiCallCousesData(String semID){
+    public void apiCallCousesData(String semID) {
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule(studentID.getValue(),semID);
+        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule(studentID.getValue(), semID);
         allUsers.enqueue(new Callback<CourseScheduleResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<CourseScheduleResponseModel> call, @NotNull Response<CourseScheduleResponseModel> response) {
+                progressBar.setValue(8);
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
+                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
 
-                }
-                else if(Boolean.parseBoolean(response.body().getSuccess())) {
+                } else if (Boolean.parseBoolean(response.body().getSuccess())) {
                     courseScheduleData.setValue(response.body());
-                }
-                else {
-                    showToast(getApplication().getApplicationContext(),response.body().getMessage());
+                } else {
+                    showToast(getApplication().getApplicationContext(), response.body().getMessage());
                 }
             }
 
             @Override
             public void onFailure(Call<CourseScheduleResponseModel> call, Throwable t) {
-                showToast(getApplication().getApplicationContext(),t.getMessage());
+                showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
-    public void apiCallSendMessage(){
+    public void apiCallSendMessage() {
+        progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<CommonApiResponse> allUsers = services.sendMessage("","","","","");
+        Call<CommonApiResponse> allUsers = services.sendMessage("5167",
+                "97", "1674", "subject", "mesage");
         allUsers.enqueue(new Callback<CommonApiResponse>() {
             @Override
             public void onResponse(@NotNull Call<CommonApiResponse> call, @NotNull Response<CommonApiResponse> response) {
+                progressBar.setValue(8);
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(),jObjError.getString("message"));
+                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
-
+                } else {
+                    showToast(getApplication().getApplicationContext(), response.body().getMessage());
                 }
             }
 
             @Override
             public void onFailure(Call<CommonApiResponse> call, Throwable t) {
-                showToast(getApplication().getApplicationContext(),t.getMessage());
+                progressBar.setValue(0);
+                showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
 
-    public MutableLiveData<CourseScheduleResponseModel> getcourseScheduleData(){
+    public MutableLiveData<CourseScheduleResponseModel> getcourseScheduleData() {
         return courseScheduleData;
     }
 
-    public MutableLiveData<SemesterResponseModel> getSemsterScheduleData(){
+    public MutableLiveData<SemesterResponseModel> getSemsterScheduleData() {
         return semesterData;
     }
 
-    private void showToast(Context context, String message){
-        Toast.makeText(context, ""+message, Toast.LENGTH_SHORT).show();
+    private void showToast(Context context, String message) {
+        Toast.makeText(context, "" + message, Toast.LENGTH_SHORT).show();
     }
 }
