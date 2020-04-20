@@ -135,22 +135,23 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/small_margin"
-                        android:layout_weight="1"
+                        android:layout_weight="0.8"
                         android:background="@color/gray_black"
                         android:gravity="center"
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_margin="@dimen/small_margin"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:contentDescription="@string/app_name"
+                            android:visibility="gone"
                             android:src="@drawable/rome"
                             android:tint="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
                             android:text="@string/portal"
                             android:textColor="@color/white"
                             android:textStyle="bold" />
@@ -171,13 +172,15 @@
                             android:layout_height="35dp"
                             android:layout_margin="@dimen/small_margin"
                             android:contentDescription="@string/app_name"
+                            android:visibility="gone"
                             android:src="@drawable/dollar"
                             android:tint="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/fee"
+                            android:layout_height="40dp"
+                            android:text="@string/payment"
+                            android:gravity="center"
                             android:textColor="@color/white"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -187,23 +190,24 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/small_margin"
-                        android:layout_weight="1"
+                        android:layout_weight="0.8"
                         android:background="@color/gray_black"
                         android:gravity="center"
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_margin="@dimen/small_margin"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:contentDescription="@string/app_name"
                             android:src="@drawable/questionmark"
+                            android:visibility="gone"
                             android:tint="@color/white" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:text="@string/faq"
+                            android:gravity="center"
                             android:textColor="@color/white"
                             android:textStyle="bold" />
                     </LinearLayout>

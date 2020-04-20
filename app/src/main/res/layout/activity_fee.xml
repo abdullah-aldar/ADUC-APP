@@ -2,523 +2,383 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <data>
+
+        <variable
+            name="paymentViewModel"
+            type="com.aldar.studentportal.ui.activities.common.fee.PaymentViewModel" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grey">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/gradient"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:src="@drawable/back_white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/small_margin"
-            android:text="Fee"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/large_text_size"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/header"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:fontFamily="@font/poppins_light"
-            android:gravity="center"
-            android:paddingTop="@dimen/medium_margin"
-            android:paddingBottom="@dimen/medium_margin"
-            android:text="Here is the complete fee structure"
-            android:textColor="@color/gray"
-            app:layout_constraintBottom_toTopOf="@+id/scrollview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+            android:background="@color/gray">
 
 
-        <ScrollView
-            android:id="@+id/scrollview"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:layout_marginBottom="@dimen/medium_margin"
-            android:background="@drawable/shadow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header">
-
-
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/small_margin"
-                android:layout_marginEnd="@dimen/small_margin"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:background="@color/grey">
+
 
                 <RelativeLayout
+                    android:id="@+id/header"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/btn_height"
+                    android:layout_height="50dp"
                     android:background="@color/colorPrimary"
+                    android:padding="@dimen/small_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/online_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/logo"
+                        android:fontFamily="@font/poppins_bold"
+                        android:gravity="center"
+                        android:text="Student Online Payment"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toEndOf="@id/logo" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/student_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
                     android:gravity="center"
-                    android:padding="@dimen/small_margin">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fees"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="Amount"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Notes"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-
-
-                </RelativeLayout>
+                    android:text="Student ID *"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/header" />
 
                 <RelativeLayout
+                    android:id="@+id/student_id_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/small_margin">
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/student_id">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/et_student_id"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Application Fee"
-                        android:textSize="@dimen/small_text" />
+                        android:layout_toStartOf="@id/btn_go"
+                        android:hint="Student ID"
+                        android:textSize="14sp"
+                        android:text="@{paymentViewModel.studentID}"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="400 AED" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <Button
+                        android:id="@+id/btn_go"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
                         android:layout_alignParentEnd="true"
-                        android:text="--" />
-
-
+                        android:background="@color/colorPrimary"
+                        android:text="Go"
+                        android:textColor="@color/white" />
                 </RelativeLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                <TextView
+                    android:id="@+id/student_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:gravity="center"
+                    android:text="Student Name"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/student_id_layout" />
+
+
+                <EditText
+                    android:id="@+id/et_student_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:hint="Student Name"
+                    android:textSize="14sp"
+                    android:text="@{paymentViewModel.studentName}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/student_name" />
+
+
+                <TextView
+                    android:id="@+id/programe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:gravity="center"
+                    android:text="Program"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_student_name" />
+
+
+                <EditText
+                    android:id="@+id/et_student_programe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:hint="Program"
+                    android:textSize="14sp"
+                    android:text="@{paymentViewModel.studentProgram}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/programe" />
+
+                <TextView
+                    android:id="@+id/concentration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:gravity="center"
+                    android:text="concentration"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_student_programe" />
+
+
+                <EditText
+                    android:id="@+id/et_student_concentration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:hint="concentration"
+                    android:textSize="14sp"
+                    android:text="@{paymentViewModel.studentConcentration}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/concentration" />
+
+                <TextView
+                    android:id="@+id/current_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Current Balance"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_student_concentration" />
+
+
+                <EditText
+                    android:id="@+id/et_current_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:hint="Current Balance"
+                    android:textSize="14sp"
+                    android:text="@{paymentViewModel.currentBalance}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_balance" />
+
+                <TextView
+                    android:id="@+id/Payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Payment"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_current_balance" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Payment">
+
+                    <RadioButton
+                        android:id="@+id/radio_others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Others" />
+
+                    <RadioButton
+                        android:id="@+id/radio_cheques"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Against Cheque" />
+
+                </RadioGroup>
 
                 <RelativeLayout
+                    android:id="@+id/cheque_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/small_margin">
+                    android:layout_margin="@dimen/medium_margin"
+                    android:background="@color/gray"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radio_group">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Admission Fee"
-                        android:textSize="@dimen/small_text" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="1,500 AED" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="One time fee" />
-
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_cheques"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </RelativeLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="amount"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cheque_layout" />
 
 
-                <RelativeLayout
+                <EditText
+                    android:id="@+id/et_amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/small_margin">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Registration Fee"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="500 AED" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Per Semester" />
-
-
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:hint="amount"
+                    android:textSize="14sp"
+                    android:text="@{paymentViewModel.amount}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/amount" />
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Note"
+                    android:textColor="@color/gray_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_amount" />
+
+
+                <EditText
+                    android:id="@+id/et_note"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/small_margin">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="General Services Fee"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="500 AED" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Per Semester" />
-
-
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:hint="Note"
+                    android:textSize="14sp"
+                    android:text="@{paymentViewModel.note}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/note" />
 
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <CheckBox
+                    android:id="@+id/check_term_condition"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/small_margin">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_note" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Security Deposit"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="1,000 AED" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Refundable" />
-
-
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/tv_term_and_condition"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/small_margin">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Reservation Seat"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="4,000 AED" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="--" />
-
-
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Agree with the terms and conditions"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintStart_toEndOf="@id/check_term_condition"
+                    app:layout_constraintTop_toBottomOf="@id/et_note" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/btn_height"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:background="@color/colorPrimary"
-                    android:padding="@dimen/small_margin">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Subject"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/small_margin"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="One Credit Hours"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/small_margin"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="12-15 Credit Hours"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/small_margin">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_weight="1.4"
-                        android:text="Bachelor of Science in Engineering"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_weight="1"
-                        android:text="1,200 AED" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_weight="1.3"
-                        android:text="14,400 -18,000 AED" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/medium_margin"
                     android:orientation="horizontal"
-                    android:padding="@dimen/small_margin">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/check_term_condition">
 
-                    <TextView
+                    <Button
+                        android:id="@+id/btn_pay"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_weight="1.4"
-                        android:text="Bachelor of IT"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="900 AED" />
+                        android:background="@color/green"
+                        android:text="Pay Now"
+                        android:textColor="@color/white" />
 
-                    <TextView
+                    <Button
+                        android:id="@+id/btn_cancel"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_weight="1.3"
-                        android:text="10,800 -13,500 AED" />
-
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/medium_margin"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:text="Cancel"
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ProgressBar
+                    android:id="@+id/progess"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/small_margin">
+                    android:layout_centerInParent="true"
+                    android:indeterminateTint="@color/green"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:visibility="@{paymentViewModel.progressBar}" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_weight="1.4"
-                        android:text="Bachelor of Business Administration"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_weight="1"
-                        android:text="900 AED" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_weight="1.3"
-                        android:text="10,800 -13,500 AED" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/small_margin">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_weight="1.4"
-                        android:text="Bachelor of Arts in Mass Communication in Public Relation"
-                        android:textSize="@dimen/small_text" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_weight="1"
-                        android:text="900 AED" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_weight="1.3"
-                        android:text="10,800 -13,500 AED" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginEnd="@dimen/small_margin"
-                    android:background="@color/gray" />
-            </LinearLayout>
-
-        </ScrollView>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </RelativeLayout>
+    </ScrollView>
 </layout>
 

@@ -1,6 +1,7 @@
 package com.aldar.studentportal.remote;
 
 import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel;
+import com.aldar.studentportal.models.chequesModels.ChequeResponseModel;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
@@ -17,6 +18,7 @@ import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
+import com.aldar.studentportal.models.studentInfoModels.StudentResponseModel;
 import com.aldar.studentportal.models.studentProfileModel.ProfileResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
 
@@ -141,6 +143,14 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/Announcement")
     Call<AnnouncementReponseModel> getAnnoucement(@Field("StudentID") String studendID);
+
+    @FormUrlEncoded
+    @POST("aduc/StudentData")
+    Call<StudentResponseModel> getStudentInfo(@Field("GivenStudentId") String studendID);
+
+    @FormUrlEncoded
+    @POST("aduc/StudentCheque")
+    Call<ChequeResponseModel> getCheques(@Field("GivenStudentId") String studendID);
 
     @GET("aduc/DigitalLib")
     Call<DigitalLibraryResponseModel> getDigitalLibrary();

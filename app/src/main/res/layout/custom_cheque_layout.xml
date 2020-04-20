@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="chequesDataModel"
+            type="com.aldar.studentportal.models.chequesModels.ChequeDataModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_margin"
+        android:background="@color/gray"
+        android:paddingStart="@dimen/medium_margin">
+
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#1"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_add_amount"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:background="@color/colorPrimary"
+            android:text="Add"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/cheque_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_count"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Transaction Date :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_cheque_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_count"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{chequesDataModel.chequeNo}"
+            android:layout_toEndOf="@+id/cheque_no" />
+
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cheque_no"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Date :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cheque_no"
+            android:text="@{chequesDataModel.chequeDate}"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/date" />
+
+        <TextView
+            android:id="@+id/cheque_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Amount :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_cheque_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:text="@{String.valueOf(chequesDataModel.amount)}"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/cheque_amount" />
+
+        <TextView
+            android:id="@+id/transcation_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cheque_amount"
+            android:layout_marginTop="@dimen/text_gap"
+            android:text="Cheque# :"
+            android:textColor="@color/gray_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_transcation_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cheque_amount"
+            android:text="@{chequesDataModel.transId}"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/text_gap"
+            android:layout_toEndOf="@+id/transcation_id" />
+
+    </RelativeLayout>
+
+</layout>
