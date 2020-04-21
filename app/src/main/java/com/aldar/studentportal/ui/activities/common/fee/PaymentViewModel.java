@@ -42,7 +42,7 @@ public class PaymentViewModel extends AndroidViewModel {
     public void apiCalStudentInfo() {
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<StudentResponseModel> allUsers = services.getStudentInfo("CEE20183174");
+        Call<StudentResponseModel> allUsers = services.getStudentInfo(studentID.getValue());
         allUsers.enqueue(new Callback<StudentResponseModel>() {
             @Override
             public void onResponse(@NotNull Call<StudentResponseModel> call, @NotNull Response<StudentResponseModel> response) {
@@ -56,12 +56,11 @@ public class PaymentViewModel extends AndroidViewModel {
                     }
 
                 } else if (response.body().getSuccess()) {
-                    studentID.setValue("CEE20183174");
                     studentName.setValue(response.body().getData().getStudentName());
                     studentProgram.setValue(response.body().getData().getProgram());
                     studentConcentration.setValue(response.body().getData().getConcentration());
                     currentBalance.setValue(String.valueOf(response.body().getData().getBalance()));
-                    amount.setValue("50");
+
                 } else {
                     showToast(response.body().getMessage());
                 }

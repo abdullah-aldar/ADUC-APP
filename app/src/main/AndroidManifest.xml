@@ -26,7 +26,7 @@
             android:theme="@style/AppTheme.Splash" />
 
         <activity
-            android:name=".ui.activities.common.fee.FeeActivity"
+            android:name=".ui.activities.common.fee.OnlinePaymentActivity"
             android:theme="@style/AppTheme.Splash" />
 
         <activity

@@ -22,7 +22,7 @@
     <string name="portal">Portal</string>
     <string name="faq">FAQ</string>
     <string name="apply">Apply Now</string>
-    <string name="download_boucher">Download Brocher</string>
+    <string name="download_boucher">Download Brochure</string>
     <string name="flexible">Flexible course</string>
     <string name="transportation">FREE transportation</string>
     <string name="student_visa">Student visa</string>
@@ -56,18 +56,18 @@
     <string name="student_course">Programe</string>
     <string name="advisor">Advisor</string>
     <string name="concentration">Concentration</string>
-    <string name="my_course_advise">Your Academic Status\nالحالة الاكاديمية</string>
-    <string name="selected_course_advise">Your Selected Courses\nالحالة الاكاديمية</string>
-    <string name="your_marks">Your marks\n هي درجاتك </string>
+    <string name="my_course_advise">الحالة الاكاديمية</string>
+    <string name="selected_course_advise">الحالة الاكاديمية</string>
+    <string name="your_marks">الدرجات</string>
     <string name="instructor_msg">Messages From Instructors</string>
     <string name="compose_write">Compose/Write Mail</string>
-    <string name="your_course_schedule">Your course schedule\nهو جدولك الدراسي</string>
-    <string name="financial_statement">Your Financial Statement\nالحسابات</string>
-    <string name="profile_statement">Your profile info\nملف الطالب</string>
+    <string name="your_course_schedule">الجدول الدراسي</string>
+    <string name="financial_statement">الحسابات</string>
+    <string name="profile_statement">ملف الطالب</string>
     <string name="letter_request">Add a new request below\nطلب رسالة</string>
     <string name="announcement_text">Latest announcement\nأحدث إعلان</string>
     <string name="faq_text">Frequently Asked Questions\nأسئلة مكررة</string>
-    <string name="feedback">Your feedback helps enhance the ALDAR Mobile Experience\nيرجى مشاركتنا بملاحظاتك</string>
+    <string name="feedback">Your feedback helps enhance the ALDAR Experience\nيرجى مشاركتنا بملاحظاتك</string>
 
 
     <string name="no_data">No Data Exist in this semester</string>

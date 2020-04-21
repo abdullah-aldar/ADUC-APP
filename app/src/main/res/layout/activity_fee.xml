@@ -12,12 +12,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/gray">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/gray">
+            android:layout_height="wrap_content">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,12 +60,12 @@
                     android:id="@+id/student_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
                     android:text="Student ID *"
-                    android:textStyle="bold"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/header" />
 
@@ -73,19 +73,24 @@
                     android:id="@+id/student_id_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/student_id">
 
                     <EditText
                         android:id="@+id/et_student_id"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_marginEnd="@dimen/medium_margin"
                         android:layout_toStartOf="@id/btn_go"
-                        android:hint="Student ID"
+                        android:background="@drawable/edittext_style"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingStart="@dimen/small_margin"
+                        android:paddingEnd="@dimen/small_margin"
+                        android:text="@={paymentViewModel.studentID}"
                         android:textSize="14sp"
-                        android:text="@{paymentViewModel.studentID}"
                         app:layout_constraintEnd_toEndOf="parent" />
 
                     <Button
@@ -102,12 +107,12 @@
                     android:id="@+id/student_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
                     android:text="Student Name"
-                    android:textStyle="bold"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/student_id_layout" />
 
@@ -115,12 +120,16 @@
                 <EditText
                     android:id="@+id/et_student_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:hint="Student Name"
-                    android:textSize="14sp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/edittext_style"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/small_margin"
                     android:text="@{paymentViewModel.studentName}"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/student_name" />
@@ -130,12 +139,12 @@
                     android:id="@+id/programe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
                     android:text="Program"
-                    android:textStyle="bold"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_student_name" />
 
@@ -143,12 +152,16 @@
                 <EditText
                     android:id="@+id/et_student_programe"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:hint="Program"
-                    android:textSize="14sp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/edittext_style"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/small_margin"
                     android:text="@{paymentViewModel.studentProgram}"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/programe" />
@@ -157,12 +170,12 @@
                     android:id="@+id/concentration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
                     android:text="concentration"
-                    android:textStyle="bold"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_student_programe" />
 
@@ -170,12 +183,16 @@
                 <EditText
                     android:id="@+id/et_student_concentration"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:hint="concentration"
-                    android:textSize="14sp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/edittext_style"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/small_margin"
                     android:text="@{paymentViewModel.studentConcentration}"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/concentration" />
@@ -184,12 +201,12 @@
                     android:id="@+id/current_balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
                     android:text="Current Balance"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_student_concentration" />
 
@@ -197,12 +214,16 @@
                 <EditText
                     android:id="@+id/et_current_balance"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:hint="Current Balance"
-                    android:textSize="14sp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/edittext_style"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/small_margin"
                     android:text="@{paymentViewModel.currentBalance}"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/current_balance" />
@@ -211,12 +232,12 @@
                     android:id="@+id/Payment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
                     android:text="Payment"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_current_balance" />
 
@@ -225,6 +246,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Payment">
 
@@ -247,7 +270,7 @@
                     android:id="@+id/cheque_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/medium_margin"
+                    android:layout_margin="@dimen/standarize_spacing"
                     android:background="@color/gray"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="parent"
@@ -266,12 +289,12 @@
                     android:id="@+id/amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="amount"
+                    android:text="amount *"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cheque_layout" />
 
@@ -279,12 +302,15 @@
                 <EditText
                     android:id="@+id/et_amount"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:hint="amount"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/edittext_style"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/small_margin"
+                    android:text="@={paymentViewModel.amount}"
                     android:textSize="14sp"
-                    android:text="@{paymentViewModel.amount}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/amount" />
@@ -293,12 +319,12 @@
                     android:id="@+id/note"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="Note"
+                    android:text="Note *"
                     android:textColor="@color/gray_black"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_amount" />
 
@@ -306,12 +332,15 @@
                 <EditText
                     android:id="@+id/et_note"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/medium_margin"
-                    android:hint="Note"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/edittext_style"
+                    android:imeOptions="actionDone"
+                    android:inputType="text|textMultiLine"
+                    android:paddingStart="@dimen/small_margin"
+                    android:text="@={paymentViewModel.note}"
                     android:textSize="14sp"
-                    android:text="@{paymentViewModel.note}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/note" />
@@ -320,6 +349,8 @@
                     android:id="@+id/check_term_condition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/et_note" />
 
@@ -337,9 +368,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/btn_height"
-                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginTop="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/check_term_condition">

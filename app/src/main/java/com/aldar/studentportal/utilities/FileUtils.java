@@ -17,7 +17,7 @@ import java.net.URL;
 public class FileUtils {
     private static final String TAG = "Download Task";
     private Context context;
-    private String downloadUrl, downloadFileName = "boucher";
+    private String downloadUrl, downloadFileName = "boucher.pdf";
     private ProgressDialog progressDialog;
 
     public FileUtils(Context context, String downloadUrl) {
@@ -46,7 +46,7 @@ public class FileUtils {
             progressDialog.dismiss();
             try {
                 if (outputFile != null) {
-                    Toast.makeText(context, "Downloaded Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Downloaded Successfully! Please check ADUC Folder in your device storage", Toast.LENGTH_SHORT).show();
                 } else {
                     new Handler().postDelayed(new Runnable() {
 
@@ -92,7 +92,7 @@ public class FileUtils {
 
                 apkStorage = new File(
                         Environment.getExternalStorageDirectory() + "/"
-                                + "ADUC Folder");
+                                + "ADUC");
 
                 if (!apkStorage.exists()) {
                     apkStorage.mkdir();

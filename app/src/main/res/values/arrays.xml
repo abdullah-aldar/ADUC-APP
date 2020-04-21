@@ -2,7 +2,7 @@
 <resources>
 
     <array name="dashboard_items">
-        <item>My Course Schedule\nجدول دراستي</item>
+        <item>My Course Schedule\nالجدول الدراسي</item>
         <item>My Marks\nالدرجات</item>
         <item>My Study Plan\nالخطة الدراسية</item>
         <item>MY Course Advice\nالارشاد الاكاديمي</item>

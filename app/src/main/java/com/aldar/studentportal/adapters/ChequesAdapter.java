@@ -45,7 +45,7 @@ public class ChequesAdapter extends RecyclerView.Adapter<ChequesAdapter.MyViewHo
         holder.binding.setChequesDataModel(model);
 
         holder.binding.btnAddAmount.setOnClickListener(v -> {
-          callBackAmount.onGetCreditHour(model.getAmount(),model.getTransId());
+          callBackAmount.onGetCreditHour(model.getAmount(),model.getTransId(),model.getChequeNo(),model.getChequeDate());
         });
         
     }

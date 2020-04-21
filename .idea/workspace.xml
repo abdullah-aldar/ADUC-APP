@@ -21,23 +21,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="256f8899-a1d6-453c-a7ee-fbc0909573a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/ChequesAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/interfaces/CallBackAmount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/chequesModels/ChequeDataModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/chequesModels/ChequeResponseModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/studentInfoModels/StudentResponseModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/studentInfoModels/StudentsDataModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/PaymentViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_cheque_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edittext_style.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/remote/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/remote/APIService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/FeeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/FeeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/ChequesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/ChequesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/interfaces/CallBackAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/interfaces/CallBackAmount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/FeeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/OnlinePaymentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/PaymentViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/PaymentViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/fragments/navigations/home/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/utilities/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/utilities/FileUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +44,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_R" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="26EBB18415153131" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -119,7 +117,7 @@
     <property name="DEBUGGABLE_PROCESS" value="com.aldar.studentportal" />
     <property name="DEBUGGER_ID" value="Java" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="26EBB18415153131" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-19T13:22:21.750Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-21T12:08:28.701Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="algorithm" value="Scalr" />
@@ -129,7 +127,7 @@
     <property name="format" value="PNG" />
     <property name="lastFolderRoot" value="$USER_HOME$/Downloads/call.png" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="method" value="Automatic" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -143,6 +141,9 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.aldar.studentportal.ui.activities" />
     </key>
@@ -160,11 +161,6 @@
       <recent name="com.aldar.studentportal.ui.fragments.navigations" />
       <recent name="com.aldar.studentportal.ui.studentPortal" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.aldar.studentportal.adapters" />
       <recent name="com.aldar.studentportal.ui.studentPortal.activities" />
@@ -173,14 +169,16 @@
       <recent name="com.aldar.studentportal.ui.activities.faq" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-ldpi" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout-sw600dp" />
     </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -682,7 +680,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587334758186</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="payment work completed">
+      <created>1587415169825</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1587415169826</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView">
@@ -708,7 +713,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="issue of back presses solved" />
     <MESSAGE value="design updated" />
     <MESSAGE value="more screen added in student dashboard" />
     <MESSAGE value="more screen added with content" />
@@ -733,7 +737,8 @@
     <MESSAGE value="bug fixed" />
     <MESSAGE value="course advice and registration work done" />
     <MESSAGE value="libray work completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="libray work completed" />
+    <MESSAGE value="payment work completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="payment work completed" />
   </component>
   <component name="masterDetails">
     <states>

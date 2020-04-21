@@ -28,7 +28,7 @@ import com.aldar.studentportal.databinding.FragmentHomeBinding;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.ui.activities.common.faq.FaqActivity;
-import com.aldar.studentportal.ui.activities.common.fee.FeeActivity;
+import com.aldar.studentportal.ui.activities.common.fee.OnlinePaymentActivity;
 import com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity;
 import com.aldar.studentportal.ui.activities.common.WebActivity;
 import com.aldar.studentportal.utilities.FileUtils;
@@ -118,7 +118,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), LoginSignUpActivity.class));
                 break;
             case R.id.layout_fee:
-                startActivity(new Intent(getActivity(), FeeActivity.class));
+                startActivity(new Intent(getActivity(), OnlinePaymentActivity.class));
                 break;
             case R.id.btn_download_boucher:
                 PermissionUtils.checkPermision(getActivity());

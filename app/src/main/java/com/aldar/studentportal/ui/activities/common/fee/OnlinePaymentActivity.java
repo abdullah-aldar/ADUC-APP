@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.ChequesAdapter;
@@ -18,10 +19,11 @@ import com.aldar.studentportal.databinding.ActivityFeeBinding;
 import com.aldar.studentportal.interfaces.CallBackAmount;
 import com.aldar.studentportal.ui.activities.PaymentActivity;
 
-public class FeeActivity extends AppCompatActivity {
+public class OnlinePaymentActivity extends AppCompatActivity {
     private ActivityFeeBinding binding;
     private PaymentViewModel viewModel;
     private String strTranscatonID;
+    private boolean valid = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,9 @@ public class FeeActivity extends AppCompatActivity {
         binding.setPaymentViewModel(viewModel);
 
         binding.btnGo.setOnClickListener(v -> {
-            viewModel.apiCalStudentInfo();
+            if (validateUserID()) {
+                viewModel.apiCalStudentInfo();
+            }
         });
 
         binding.radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
@@ -48,7 +52,9 @@ public class FeeActivity extends AppCompatActivity {
         });
 
         binding.btnPay.setOnClickListener(v -> {
-            loadPaymentPage();
+            if (validate()) {
+                loadPaymentPage();
+            }
         });
     }
 
@@ -57,12 +63,17 @@ public class FeeActivity extends AppCompatActivity {
             case R.id.radio_cheques:
                 viewModel.apiCalGetCheques();
                 binding.chequeLayout.setVisibility(View.VISIBLE);
+                viewModel.note.setValue("");
+                viewModel.amount.setValue("");
+                binding.etAmount.setFocusable(false);
 
                 break;
             case R.id.radio_others:
                 strTranscatonID = "";
                 viewModel.amount.setValue("");
                 binding.chequeLayout.setVisibility(View.GONE);
+                binding.etAmount.setFocusable(true);
+                binding.etNote.setFocusable(true);
                 break;
         }
     }
@@ -79,8 +90,47 @@ public class FeeActivity extends AppCompatActivity {
         startActivity(new Intent(this, PaymentActivity.class).putExtras(bundle));
     }
 
-    private CallBackAmount callBackAmount = (amount, transcatonID) -> {
+    private boolean validate() {
+        valid = true;
+
+        if (viewModel.studentID.getValue() == null || viewModel.studentID.getValue().isEmpty()) {
+            valid = false;
+            binding.etStudentId.setError("Enter your ID");
+        }
+
+        if (viewModel.amount.getValue() == null || viewModel.amount.getValue().isEmpty()) {
+            valid = false;
+            binding.etAmount.setError("Enter your amount");
+        }
+
+        if (viewModel.note.getValue() == null || viewModel.note.getValue().isEmpty()) {
+            valid = false;
+            binding.etNote.setError("Note Should not be empty");
+        }
+
+        if (!binding.checkTermCondition.isChecked()) {
+            valid = false;
+            Toast.makeText(this, "Please agree with term & conditions", Toast.LENGTH_SHORT).show();
+        }
+
+        return valid;
+    }
+
+    private boolean validateUserID() {
+        boolean validId = true;
+        if (viewModel.studentID.getValue() == null || viewModel.studentID.getValue().isEmpty()) {
+            validId = false;
+            binding.etStudentId.setError("Enter your ID");
+        }
+        return validId;
+    }
+
+    private CallBackAmount callBackAmount = (amount, transcatonID, chequeNUmber, chequeDate) -> {
+        String note = "Transcation ID = " + transcatonID + " Cheque No =" + chequeNUmber + "\n"
+                + "Amount = " + amount + "Date = " + chequeDate;
+
         viewModel.amount.setValue(String.valueOf(amount));
+        viewModel.note.setValue(note);
         strTranscatonID = transcatonID;
     };
 }
