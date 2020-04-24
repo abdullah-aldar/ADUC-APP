@@ -1,5 +1,7 @@
 package com.aldar.studentportal.ui.studentPortal.login;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
@@ -15,11 +17,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.FragmentLoginBinding;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
+import com.aldar.studentportal.ui.studentPortal.activities.SelectedCoursesActivity;
 import com.aldar.studentportal.ui.studentPortal.forgotPassword.ForgotPasswordFragment;
 import com.aldar.studentportal.ui.studentPortal.signUp.CheckUsernameFragment;
 import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.mainDashboardScreen.StudentDashboardFragment;
@@ -31,6 +36,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Objects;
 
 public class
 LoginFragment extends Fragment {
@@ -63,16 +69,20 @@ LoginFragment extends Fragment {
         loginViewModel.getLoginResponseData().observe(getViewLifecycleOwner(), loginResponseModel -> {
 
             if (loginResponseModel.getStatus().equals("200")) {
-                SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("student_id", loginResponseModel.getData().getStudentID());
-                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_username", loginResponseModel.getData().getGivenStudentId());
-                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_name", loginResponseModel.getData().getStudentName());
-                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_advisor", loginResponseModel.getData().getAdvisor());
-                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_programe", loginResponseModel.getData().getProgram());
-                SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("concentration", loginResponseModel.getData().getConcentration());
-                SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", loginResponseModel.getData().getIsContactStored());
-                SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin", true);
-
-                GeneralUtilities.connectFragmentWithoutBack(getContext(), new StudentDashboardFragment());
+                if (loginResponseModel.getData().getIsLoginBlock().equals("1")) {
+                    checkUserStatus(loginResponseModel.getData().getIsLoginBlockReason());
+                } else {
+                    SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("student_id", loginResponseModel.getData().getStudentID());
+                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_username", loginResponseModel.getData().getGivenStudentId());
+                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_name", loginResponseModel.getData().getStudentName());
+                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_advisor", loginResponseModel.getData().getAdvisor());
+                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("student_programe", loginResponseModel.getData().getProgram());
+                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("concentration", loginResponseModel.getData().getConcentration());
+                    SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", loginResponseModel.getData().getIsContactStored());
+                    SharedPreferencesManager.getInstance(getContext()).setStringValueInEditor("balance", String.valueOf(loginResponseModel.getData().getBalance()));
+                    SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin", true);
+                    GeneralUtilities.connectFragmentWithoutBack(getContext(), new StudentDashboardFragment());
+                }
             }
             Toast.makeText(getContext(), "" + loginResponseModel.getMessage(), Toast.LENGTH_SHORT).show();
 
@@ -88,23 +98,41 @@ LoginFragment extends Fragment {
 
     private void getFcmToken() {
         FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w("Error", "getInstanceId failed", task.getException());
-                            return;
-                        }
-                        // Get new Instance ID token
-                        String token = task.getResult().getToken();
-                        SharedPreferencesManager.getInstance(getActivity()).setStringValueInEditor("fcm_token", token);
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("Error", "getInstanceId failed", task.getException());
+                        return;
                     }
+                    // Get new Instance ID token
+                    String token = task.getResult().getToken();
+                    SharedPreferencesManager.getInstance(getActivity()).setStringValueInEditor("fcm_token", token);
                 });
     }
+
 
     @Override
     public void onDestroy() {
         binding = null;
         super.onDestroy();
+    }
+
+    private void checkUserStatus(String reason) {
+        Dialog dialog = new Dialog(Objects.requireNonNull(getActivity()));
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setContentView(R.layout.course_advice_dialog);
+        TextView tvTitle = dialog.findViewById(R.id.title);
+        TextView tvMessage = dialog.findViewById(R.id.message);
+        Button btnOk = dialog.findViewById(R.id.btn_ok);
+        Button btnReview = dialog.findViewById(R.id.btn_review);
+
+        btnOk.setVisibility(View.GONE);
+        btnReview.setText("Close");
+        tvTitle.setText("Message");
+        tvMessage.setText(reason);
+
+        btnReview.setOnClickListener(v -> {
+            getActivity().finish();
+        });
+        dialog.show();
     }
 }

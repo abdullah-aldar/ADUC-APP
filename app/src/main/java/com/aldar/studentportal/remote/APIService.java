@@ -21,6 +21,7 @@ import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseMode
 import com.aldar.studentportal.models.studentInfoModels.StudentResponseModel;
 import com.aldar.studentportal.models.studentProfileModel.ProfileResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
+import com.aldar.studentportal.models.updateProfileModel.UpdateProfileModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,13 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/StudentProfile")
     Call<ProfileResponseModel> getStudentProfile(@Field("StudentID") String studendID);
+
+    @FormUrlEncoded
+    @POST("aduc/UpdateStudent")
+    Call<UpdateProfileModel> updateProfile(@Field("StudentId") int studendID,
+                                           @Field("Type") String type,
+                                           @Field("TypeText") String typerText,
+                                           @Field("IsOTPVerified") boolean otp);
 
     @FormUrlEncoded
     @POST("aduc/StudentMarks")

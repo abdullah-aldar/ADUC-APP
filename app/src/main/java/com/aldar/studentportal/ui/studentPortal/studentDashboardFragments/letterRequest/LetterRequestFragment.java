@@ -40,6 +40,7 @@ import com.github.barteksc.pdfviewer.PDFView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
@@ -50,9 +51,10 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class LetterRequestFragment extends Fragment {
     private FragmentLetterRequestBinding binding;
-    private String amount, strPDfLink, strLetterID, strLetterTo;
+    private String strPDfLink, strLetterID, strLetterTo;
     private boolean checkEnglisArabic = false;
     private boolean checkPreview = false;
+    private double amount, amountWithVAT;
 
     private LetterRequestViewModel viewModel;
     private final CompositeDisposable disposables = new CompositeDisposable();
@@ -123,7 +125,10 @@ public class LetterRequestFragment extends Fragment {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         strLetterID = String.valueOf(letterRequestResponseModel.getData().get(position).getServiceId());
-                        amount = String.valueOf(letterRequestResponseModel.getData().get(position).getRetailPrice());
+                        amount = letterRequestResponseModel.getData().get(position).getRetailPrice();
+                        amountWithVAT = amount + (double) (amount * (5.0f / 100.0f));
+
+
                         if (checkEnglisArabic) {
                             strPDfLink = letterRequestResponseModel.getData().get(position).getPathEN();
                         } else {
@@ -147,13 +152,24 @@ public class LetterRequestFragment extends Fragment {
         CustomConfirmLetterrDialogBinding dialogBinding = DataBindingUtil.inflate(LayoutInflater.from(getContext()), R.layout.custom_confirm_letterr_dialog, null, false);
         dialog.setContentView(dialogBinding.getRoot());
 
-        dialogBinding.tvLetterRate.setText(amount + " DHS Will be Deducted From Your Account For This Service(Inclusive of VAT)" +
-                "\n سوف يتم خصم مبلغ" + amount + "درهم من حسابك نظير هذه الخدمة ");
+        dialogBinding.tvLetterRate.setText(new DecimalFormat("##.##").format(amountWithVAT) + " DHS Will be Charged From Your Account For This Service(Inclusive of VAT)" +
+                "\n سوف يتم خصم مبلغ" + new DecimalFormat("##.##").format(amountWithVAT) + "درهم من حسابك نظير هذه الخدمة ");
 
-        dialogBinding.btnSave.setOnClickListener(v -> {
+
+        if (!checkBalance(amountWithVAT)) {
+            dialogBinding.btnConfirm.setVisibility(View.GONE);
+        } else {
+            dialogBinding.btnConfirm.setVisibility(View.VISIBLE);
+        }
+
+        dialogBinding.btnConfirm.setOnClickListener(v -> {
+            viewModel.apiCallRequestLetter(strLetterTo, strLetterID);
+        });
+
+        dialogBinding.btnPayOnline.setOnClickListener(v -> {
             if (checkPreview) {
-                proceedToPayment("http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment_App.aspx?StudentId="+studentID+"&ServiceId="+strLetterID+"&Lang=EN&LetterTo=To%20Whom%20It%20May%20Concern");
-                //viewModel.apiCallRequestLetter(strLetterTo, strLetterID);
+                String paymentLink = "http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment_App.aspx?StudentId=" + studentID + "&ServiceId=" + strLetterID + "&Lang=EN&LetterTo=To%20Whom%20It%20May%20Concern";
+                proceedToPayment(paymentLink);
                 dialog.dismiss();
             } else {
                 Toast.makeText(getActivity(), "please preview the letter first", Toast.LENGTH_SHORT).show();
@@ -206,10 +222,9 @@ public class LetterRequestFragment extends Fragment {
                 }));
     }
 
-    private void proceedToPayment(String link){
+    private void proceedToPayment(String link) {
         Bundle bundle = new Bundle();
-        String myLink = "http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment.aspx";
-        bundle.putString("paymentLink", myLink);
+        bundle.putString("paymentLink", link);
         startActivity(new Intent(getActivity(), PaymentActivity.class).putExtras(bundle));
     }
 
@@ -225,6 +240,18 @@ public class LetterRequestFragment extends Fragment {
             }
             return Observable.just(input);
         });
+    }
+
+    private boolean checkBalance(double amount) {
+        boolean amountCheck = false;
+        double currentBalance = Double.parseDouble(SharedPreferencesManager.getInstance(getActivity()).getStringValue("balance"));
+
+        if (55 >= amount) {
+            amountCheck = true;
+        } else {
+            amountCheck = false;
+        }
+        return amountCheck;
     }
 
 }

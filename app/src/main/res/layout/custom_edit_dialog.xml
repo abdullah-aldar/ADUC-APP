@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/round_background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginEnd="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/standarize_spacing"
+        android:text="Enter your new contact number" />
+
+    <EditText
+        android:id="@+id/et_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/standarize_spacing"
+        android:hint="Enter your number"
+        android:paddingStart="@dimen/medium_margin"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_margin="@dimen/standarize_spacing"
+            android:layout_weight="1"
+            android:background="@color/red"
+            android:text="Cancel"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_margin="@dimen/standarize_spacing"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="Verify"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</LinearLayout>
