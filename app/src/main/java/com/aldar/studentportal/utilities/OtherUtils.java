@@ -18,6 +18,7 @@ public class OtherUtils {
             } else {
                 Intent goToMarket = new Intent(Intent.ACTION_VIEW)
                         .setData(Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.apps.classroom"));
+                context.startActivity(goToMarket);
             }
 
         } catch (ActivityNotFoundException e) {
