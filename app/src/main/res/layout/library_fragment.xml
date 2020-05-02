@@ -40,7 +40,7 @@
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
             android:fontFamily="@font/montserrat_semibold"
-            android:text="Books Available In Library"
+            android:text="@string/books_available"
             android:textColor="@color/gray"
             android:textSize="@dimen/large_text"
             android:textStyle="bold"
@@ -70,29 +70,32 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <RelativeLayout
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/transparent_button"
+                    android:paddingStart="@dimen/medium_margin"
+                    android:paddingEnd="@dimen/medium_margin">
 
                     <TextView
+                        android:id="@+id/search"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Search Book By!"
+                        android:text="@string/search_books"
                         android:textColor="@color/gray" />
 
                     <Spinner
                         android:id="@+id/spinner_books"
-                        android:layout_width="260dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
-                        android:dropDownWidth="match_parent"
+                        android:layout_below="@id/search"
                         android:gravity="center"
-                        android:textColor="@color/gray" />
-                </LinearLayout>
+                        android:pointerIcon="arrow"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
 
 
                 <EditText
@@ -101,7 +104,7 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@drawable/shadow"
-                    android:hint="Enter title here"
+                    android:hint="Search here"
                     android:paddingStart="@dimen/medium_margin"
                     android:text="@={libraryViewModel.bookDescription}"
                     android:textColor="@color/gray_black" />
@@ -124,7 +127,7 @@
                     android:layout_weight="1"
                     android:layout_marginEnd="@dimen/medium_margin"
                     android:background="@color/gray_black"
-                    android:text="Search Book"
+                    android:text="@string/search"
                     android:textColor="@color/white" />
 
                 <Button
@@ -134,7 +137,7 @@
                     android:layout_weight="1"
                     android:layout_marginStart="@dimen/small_margin"
                     android:background="@color/gray_black"
-                    android:text="Digital Library"
+                    android:text="@string/digital_lib"
                     android:textColor="@color/white" />
 
             </LinearLayout>

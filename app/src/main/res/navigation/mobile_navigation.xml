@@ -11,11 +11,6 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/nav_admission"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.AdmissionFragment"
-        android:label="@string/menu_admission"
-        tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_academic"

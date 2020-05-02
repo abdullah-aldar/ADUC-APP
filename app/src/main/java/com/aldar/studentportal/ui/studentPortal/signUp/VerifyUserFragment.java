@@ -3,6 +3,7 @@ package com.aldar.studentportal.ui.studentPortal.signUp;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
@@ -15,38 +16,26 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.databinding.FragmentVerifyUserBinding;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-
 public class VerifyUserFragment extends Fragment implements View.OnClickListener {
-    @BindView(R.id.et_code1)
-    EditText etCode1;
-    @BindView(R.id.et_code2)
-    EditText etCode2;
-    @BindView(R.id.et_code3)
-    EditText etCode3;
-    @BindView(R.id.et_code4)
-    EditText etCode4;
-    @BindView(R.id.btn_verify_user)
-    Button btnVerifyUser;
+    private FragmentVerifyUserBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_verify_user, container, false);
-        ButterKnife.bind(this, view);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_verify_user, container, false);
 
-        btnVerifyUser.setOnClickListener(this);
-        etCode1.addTextChangedListener(genraltextWatcher);
-        etCode2.addTextChangedListener(genraltextWatcher);
-        etCode3.addTextChangedListener(genraltextWatcher);
-        etCode4.addTextChangedListener(genraltextWatcher);
 
-        return view;
+        binding.btnVerifyCode.setOnClickListener(this);
+        binding.etCode1.addTextChangedListener(genraltextWatcher);
+        binding.etCode2.addTextChangedListener(genraltextWatcher);
+        binding.etCode3.addTextChangedListener(genraltextWatcher);
+        binding.etCode4.addTextChangedListener(genraltextWatcher);
+
+        return binding.getRoot();
 
     }
 
@@ -63,14 +52,14 @@ public class VerifyUserFragment extends Fragment implements View.OnClickListener
         @Override
         public void afterTextChanged(Editable editable) {
 
-            if (etCode1.length() == 1) {
-                etCode2.requestFocus();
+            if (binding.etCode1.length() == 1) {
+                binding.etCode2.requestFocus();
             }
-            if (etCode2.length() == 1) {
-                etCode3.requestFocus();
+            if (binding.etCode2.length() == 1) {
+                binding.etCode3.requestFocus();
             }
-            if (etCode3.length() == 1) {
-                etCode4.requestFocus();
+            if (binding.etCode3.length() == 1) {
+                binding.etCode4.requestFocus();
             }
         }
 
@@ -80,10 +69,10 @@ public class VerifyUserFragment extends Fragment implements View.OnClickListener
         boolean valid = true;
 
 
-        String strOTP1 = etCode1.getText().toString().trim();
-        String strOTP2 = etCode2.getText().toString().trim();
-        String strOTP3 = etCode3.getText().toString().trim();
-        String strOTP4 = etCode4.getText().toString().trim();
+        String strOTP1 = binding.etCode1.getText().toString().trim();
+        String strOTP2 = binding.etCode2.getText().toString().trim();
+        String strOTP3 = binding.etCode3.getText().toString().trim();
+        String strOTP4 = binding.etCode4.getText().toString().trim();
 
         Bundle bundle = this.getArguments();
         String strOTP = "";
@@ -119,8 +108,8 @@ public class VerifyUserFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_verify_user:
-                btnVerifyUser.setOnClickListener(new View.OnClickListener() {
+            case R.id.btn_verify_code:
+                binding.btnVerifyCode.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (checkCode()) {

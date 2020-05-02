@@ -2,6 +2,7 @@ package com.aldar.studentportal.ui.fragments.navigations.home;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ import com.aldar.studentportal.utilities.FileUtils;
 import com.aldar.studentportal.utilities.PermissionUtil;
 import com.aldar.studentportal.utilities.PermissionUtils;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
+import com.crashlytics.android.Crashlytics;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -68,6 +70,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         binding.btnCalendar.setOnClickListener(this);
         binding.ivWhatsapp.setOnClickListener(this);
         binding.ivCall.setOnClickListener(this);
+        binding.ivFacebook.setOnClickListener(this);
         binding.ivEmail.setOnClickListener(this);
         binding.btnShareFeedback.setOnClickListener(this);
         binding.btnInquireUs.setOnClickListener(this);
@@ -95,13 +98,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        viewModel.getContact().observe(getViewLifecycleOwner(), new Observer<CommonApiResponse>() {
-            @Override
-            public void onChanged(CommonApiResponse commonApiResponse) {
-                if (commonApiResponse != null) {
-                    Toast.makeText(getActivity(), "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                    SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", 1);
-                }
+        viewModel.getContact().observe(getViewLifecycleOwner(), commonApiResponse -> {
+            if (commonApiResponse != null) {
+                Toast.makeText(getActivity(), "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", 1);
             }
         });
 
@@ -141,6 +141,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.iv_call:
                 showDialer();
+                break;
+            case R.id.iv_facebook:
+                Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
+                String facebookUrl = getFacebookPageURL();
+                facebookIntent.setData(Uri.parse(facebookUrl));
+                startActivity(facebookIntent);
                 break;
             case R.id.iv_email:
                 loadEmail();
@@ -226,6 +232,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             startActivity(emailIntent);
         } catch (Exception e) {
             Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public String getFacebookPageURL() {
+        String FACEBOOK_URL = "https://www.facebook.com/ALDARUniversityCollegedubai";
+        String FACEBOOK_PAGE_ID = "ALDARUniversityCollegedubai";
+        PackageManager packageManager = getActivity().getPackageManager();
+        try {
+            int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
+            if (versionCode >= 3002850) { //newer versions of fb app
+                return "fb://facewebmodal/f?href=" + FACEBOOK_URL;
+            } else { //older versions of fb app
+                return "fb://page/" + FACEBOOK_PAGE_ID;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            return FACEBOOK_URL; //normal web url
         }
     }
 

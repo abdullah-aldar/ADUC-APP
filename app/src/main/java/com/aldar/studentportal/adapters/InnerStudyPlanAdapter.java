@@ -16,9 +16,12 @@ import java.util.List;
 
 public class InnerStudyPlanAdapter extends RecyclerView.Adapter<InnerStudyPlanAdapter.ViewHolder> {
     private List<StudyPlanDataModel> studyPlanDataList;
+    private String totalCreditHours,completedCreditHours;
 
-    InnerStudyPlanAdapter(List<StudyPlanDataModel> nameList) {
+    InnerStudyPlanAdapter(List<StudyPlanDataModel> nameList, String totalCH, String completedCH) {
         this.studyPlanDataList = nameList;
+        this.totalCreditHours = totalCH;
+        this.completedCreditHours = completedCH;
     }
 
     @Override
@@ -41,6 +44,9 @@ public class InnerStudyPlanAdapter extends RecyclerView.Adapter<InnerStudyPlanAd
         holder.tvPreRequeste.setText(studyPlanDataList.get(position).getPreReq());
         holder.tvStatus.setText(studyPlanDataList.get(position).getStatus());
         holder.tvGrade.setText(studyPlanDataList.get(position).getMarks());
+
+        holder.tvTotalCreditHour.setText("Total Credit Hours = "+totalCreditHours);
+        holder.tvCompeledtCreditHours.setText("Passed Credit Hours = "+completedCreditHours);
     }
 
     @Override
@@ -50,6 +56,7 @@ public class InnerStudyPlanAdapter extends RecyclerView.Adapter<InnerStudyPlanAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvSemester, tvCourseCode, tvCourseName, tvPreRequeste, tvGrade, tvStatus;
+        TextView tvTotalCreditHour,tvCompeledtCreditHours;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -59,6 +66,8 @@ public class InnerStudyPlanAdapter extends RecyclerView.Adapter<InnerStudyPlanAd
             tvPreRequeste = itemView.findViewById(R.id.tv_prerequiste);
             tvGrade = itemView.findViewById(R.id.tv_grade);
             tvStatus = itemView.findViewById(R.id.tv_status);
+            tvCompeledtCreditHours = itemView.findViewById(R.id.tv_total_credit_hour);
+            tvTotalCreditHour = itemView.findViewById(R.id.tv_completed_credit_hour);
         }
     }
 

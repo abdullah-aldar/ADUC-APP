@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/screen_color"
-    tools:context=".ui.studentPortal.forgotPassword.VerifyCodeFragment">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/screen_color">
+
 
     <RelativeLayout
         android:id="@+id/rl_parent"
@@ -124,5 +127,5 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

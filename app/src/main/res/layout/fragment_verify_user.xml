@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/screen_color"
-    tools:context=".ui.studentPortal.signUp.VerifyUserFragment">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/screen_color">
 
     <RelativeLayout
         android:id="@+id/rl_parent"
@@ -108,7 +110,7 @@
 
 
     <Button
-        android:id="@+id/btn_verify_user"
+        android:id="@+id/btn_verify_code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_code_blocks"
@@ -126,3 +128,5 @@
 
 
 </RelativeLayout>
+
+</layout>

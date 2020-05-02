@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="studnetDasboarViewModel"
             type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.mainDashboardScreen.StudentDashboradItemsViewmodel" />
@@ -126,8 +125,7 @@
                 android:layout_below="@id/iv_profile"
                 android:layout_toRightOf="@+id/adviser"
                 android:fontFamily="@font/montserrat_regular"
-                android:text="@{studnetDasboarViewModel.advisor}"
-                android:textColor="@color/gray_black" />
+                android:text="@{studnetDasboarViewModel.advisor}" />
 
             <TextView
                 android:id="@+id/course_name"
@@ -147,8 +145,7 @@
                 android:layout_below="@id/tv_student_adviser"
                 android:layout_toRightOf="@id/course_name"
                 android:fontFamily="@font/montserrat_regular"
-                android:text="@{studnetDasboarViewModel.course}"
-                android:textColor="@color/gray_black" />
+                android:text="@{studnetDasboarViewModel.course}" />
 
             <TextView
                 android:id="@+id/concentration"
@@ -167,8 +164,7 @@
                 android:layout_below="@id/tv_course_name"
                 android:layout_toRightOf="@+id/concentration"
                 android:fontFamily="@font/montserrat_regular"
-                android:text="@{studnetDasboarViewModel.major}"
-                android:textColor="@color/gray_black" />
+                android:text="@{studnetDasboarViewModel.major}" />
 
 
             <RelativeLayout

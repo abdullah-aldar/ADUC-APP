@@ -2,25 +2,22 @@ package com.aldar.studentportal.ui.activities.common.fee;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.ChequesAdapter;
-import com.aldar.studentportal.adapters.DigitalLibraryAdapter;
-import com.aldar.studentportal.databinding.ActivityFeeBinding;
+import com.aldar.studentportal.databinding.ActivityOnlinePaymentBinding;
 import com.aldar.studentportal.interfaces.CallBackAmount;
 import com.aldar.studentportal.ui.activities.PaymentActivity;
 
 public class OnlinePaymentActivity extends AppCompatActivity {
-    private ActivityFeeBinding binding;
+    private ActivityOnlinePaymentBinding binding;
     private PaymentViewModel viewModel;
     private String strTranscatonID;
     private boolean valid = false;
@@ -28,7 +25,7 @@ public class OnlinePaymentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_fee);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_online_payment);
         viewModel = new ViewModelProvider(this).get(PaymentViewModel.class);
         binding.setLifecycleOwner(this);
         binding.setPaymentViewModel(viewModel);
@@ -55,6 +52,14 @@ public class OnlinePaymentActivity extends AppCompatActivity {
             if (validate()) {
                 loadPaymentPage();
             }
+        });
+
+        binding.btnCancel.setOnClickListener(v -> {
+            onBackPressed();
+        });
+
+        binding.ivBack.setOnClickListener(v -> {
+            onBackPressed();
         });
     }
 

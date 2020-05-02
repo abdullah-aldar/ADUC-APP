@@ -4,23 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.viewpager.widget.ViewPager;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.CampusLifeViewPagerAdapter;
 import com.aldar.studentportal.databinding.FragmentCampusBinding;
 import com.aldar.studentportal.utilities.ZoomOutPageTransformer;
-import com.google.android.material.tabs.TabLayout;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class CampusFragment extends Fragment{
     private FragmentCampusBinding binding;

@@ -73,7 +73,6 @@ public class MyStudyPlanFragment extends Fragment {
     }
 
     private final StudyPlanInterface studyPlanInterface = (total, passed) -> {
-        binding.tvTotalCreditHour.setText(total);
-        binding.tvPassCreditsHours.setText(passed);
+
     };
 }

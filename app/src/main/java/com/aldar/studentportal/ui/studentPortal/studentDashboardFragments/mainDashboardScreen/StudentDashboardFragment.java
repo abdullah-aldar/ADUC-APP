@@ -69,7 +69,7 @@ public class StudentDashboardFragment extends Fragment {
 
         binding.ivBack.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(),NavigationActivity.class));
-            Objects.requireNonNull(getActivity()).finish();
+            getActivity().finish();
 
         });
 
@@ -79,14 +79,14 @@ public class StudentDashboardFragment extends Fragment {
     }
 
     private void showDialog(){
-        Dialog dialog = new Dialog(Objects.requireNonNull(getContext()));
+        Dialog dialog = new Dialog(getContext());
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.setContentView(R.layout.custom_dialog);
         Button btnLogout = dialog.findViewById(R.id.btn_logout);
         Button btnCancel = dialog.findViewById(R.id.btn_cancel);
 
         btnLogout.setOnClickListener(v -> {
-            Objects.requireNonNull(getActivity()).finish();
+            getActivity().finish();
             startActivity(new Intent(getActivity(), NavigationActivity.class));
             SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin",false);
         });

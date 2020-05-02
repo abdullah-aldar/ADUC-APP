@@ -35,24 +35,26 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/logo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/logo" />
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="@dimen/medium_margin"
+                        android:layout_marginTop="@dimen/medium_margin"
+                        android:src="@drawable/back_white"/>
 
                     <TextView
                         android:id="@+id/online_payment"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/logo"
-                        android:fontFamily="@font/poppins_bold"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:gravity="center"
+                        android:layout_centerHorizontal="true"
                         android:text="Student Online Payment"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toEndOf="@id/logo" />
+                        android:textSize="18sp" />
+
                 </RelativeLayout>
 
 
@@ -245,9 +247,9 @@
                     android:id="@+id/radio_group"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Payment">
 

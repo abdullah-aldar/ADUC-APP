@@ -105,19 +105,14 @@ LoginFragment extends Fragment {
                     }
                     // Get new Instance ID token
                     String token = task.getResult().getToken();
+                    Log.d("token",token);
                     SharedPreferencesManager.getInstance(getActivity()).setStringValueInEditor("fcm_token", token);
                 });
     }
 
 
-    @Override
-    public void onDestroy() {
-        binding = null;
-        super.onDestroy();
-    }
-
     private void checkUserStatus(String reason) {
-        Dialog dialog = new Dialog(Objects.requireNonNull(getActivity()));
+        Dialog dialog = new Dialog(getActivity());
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.setContentView(R.layout.course_advice_dialog);
         TextView tvTitle = dialog.findViewById(R.id.title);
@@ -134,5 +129,11 @@ LoginFragment extends Fragment {
             getActivity().finish();
         });
         dialog.show();
+    }
+
+    @Override
+    public void onDestroy() {
+        binding = null;
+        super.onDestroy();
     }
 }

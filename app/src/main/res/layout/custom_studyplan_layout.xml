@@ -112,4 +112,26 @@
         android:paddingEnd="@dimen/standarize_spacing"
         android:text="Currently Registered" />
 
+    <TextView
+        android:id="@+id/tv_total_credit_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_status"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Total Credit Hours"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_completed_credit_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_total_credit_hour"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Completed Credit Hours"
+        android:textColor="@color/colorPrimary" />
+
 </RelativeLayout>

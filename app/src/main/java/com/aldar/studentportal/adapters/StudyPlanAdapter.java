@@ -13,10 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.interfaces.StudyPlanInterface;
-import com.aldar.studentportal.models.mymarksmodels.MarksSemesterModel;
-import com.aldar.studentportal.models.studyplan.StudyPlanDataModel;
-import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
-import com.aldar.studentportal.models.studyplan.StudyPlanYearly;
 import com.aldar.studentportal.models.studyplan.StudyPlanYearly;
 
 import java.util.ArrayList;
@@ -64,7 +60,10 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
         holder.tvTotalCreditHour.setText("Total Credit Hours = "+String.valueOf(model.getTotalCH()));
         holder.tvCompletedCreditHours.setText("Passed Credit Hours = "+String.valueOf(model.getCompTotalCH()));
 
-        InnerStudyPlanAdapter itemInnerRecyclerView = new InnerStudyPlanAdapter(studyPlanYearlyList.get(position).getCourses());
+        InnerStudyPlanAdapter itemInnerRecyclerView =
+                new InnerStudyPlanAdapter(studyPlanYearlyList.get(position).getCourses(),
+                        String.valueOf(model.getTotalCH()),
+                        String.valueOf(model.getCompTotalCH()));
         holder.cardRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         holder.cardView.setOnClickListener(view -> {

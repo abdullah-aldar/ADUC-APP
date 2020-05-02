@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="Course Plan"
+            android:text="My Study Plan"
             android:textColor="@color/gray"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
@@ -64,46 +64,13 @@
 
             <TextView
                 android:id="@+id/credit_hour"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Total Credit Hours\t\t\t\t= "
-                android:textColor="@color/gray" />
-
-            <TextView
-                android:id="@+id/tv_total_credit_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/small_margin"
-                android:layout_toEndOf="@+id/credit_hour"
                 android:fontFamily="@font/poppins_bold"
-                android:text=""
+                android:text="الخطة الدراسية"
                 android:textColor="@color/gray" />
 
-
-            <TextView
-                android:id="@+id/pass_credit"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/credit_hour"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Passed Credit Hours\t\= "
-                android:textColor="@color/gray" />
-
-            <TextView
-                android:id="@+id/tv_pass_credits_hours"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/credit_hour"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/small_margin"
-                android:layout_toEndOf="@id/pass_credit"
-                android:fontFamily="@font/poppins_bold"
-                android:text=""
-                android:textColor="@color/gray" />
 
         </RelativeLayout>
 
@@ -114,6 +81,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
             android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header" />
