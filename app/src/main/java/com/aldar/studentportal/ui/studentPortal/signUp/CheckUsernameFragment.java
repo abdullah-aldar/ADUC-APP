@@ -39,18 +39,19 @@ public class CheckUsernameFragment extends Fragment {
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setSignupViewModel(signupViewModel);
 
-        signupViewModel.getSignUpData().observe(getViewLifecycleOwner(), new Observer<RegisterResponseModel>() {
-            @Override
-            public void onChanged(RegisterResponseModel registerResponseModel) {
-                if(registerResponseModel != null){
-                    if(Boolean.parseBoolean(registerResponseModel.getSuccess())){
-                        GeneralUtilities.connectFragmentWithBack(getActivity(),
-                                new VerifyUserFragment()).setArguments(passBundleData(registerResponseModel.getOtp()));
-                        signupViewModel.getCheck().setValue(true);
+        signupViewModel.getSignUpData().observe(getViewLifecycleOwner(), registerResponseModel -> {
+            if(registerResponseModel != null){
+                if(Boolean.parseBoolean(registerResponseModel.getSuccess())){
+                    GeneralUtilities.connectFragmentWithBack(getActivity(),
+                            new VerifyUserFragment()).setArguments(passBundleData(registerResponseModel.getOtp()));
+                    signupViewModel.getCheck().setValue(true);
 
-                    }
                 }
             }
+        });
+
+        binding.tvLogin.setOnClickListener(v -> {
+            getActivity().onBackPressed();
         });
 
     }

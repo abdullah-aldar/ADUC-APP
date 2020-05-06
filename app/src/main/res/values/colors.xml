@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4383a3</color>
-    <color name="colorPrimaryDark">#3d76a9</color>
+    <color name="colorPrimary">#4483bb</color>
+    <color name="colorPrimaryDark">#366996</color>
     <color name="colorAccent">#D6AA30</color>
 
     <color name="loginBkColor">#f0f0f0</color>

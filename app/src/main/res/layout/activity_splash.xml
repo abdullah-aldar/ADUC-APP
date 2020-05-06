@@ -24,7 +24,6 @@
         android:layout_below="@id/aldar"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:fontFamily="@font/montserrat_regular"
         android:text="University"
         android:textColor="@color/white"
         android:textSize="20sp" />
