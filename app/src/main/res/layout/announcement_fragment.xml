@@ -37,10 +37,9 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
             android:text="Announcement"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,24 +62,13 @@
 
 
             <TextView
-                android:id="@+id/tv_student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Hi\nAbdullah Khan"
-                android:textColor="@color/gray" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_name"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="@string/announcement_text"
-                android:textColor="@color/gray"
+                android:textColor="@color/white"
                 android:textSize="12sp" />
 
         </RelativeLayout>

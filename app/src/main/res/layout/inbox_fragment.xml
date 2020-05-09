@@ -78,7 +78,7 @@
                 android:layout_height="@dimen/high_margin"
                 android:layout_below="@id/tv_student_name"
                 android:layout_centerHorizontal="true"
-                android:background="@color/tranparent"
+                android:background="@color/gray_black"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:paddingStart="@dimen/medium_margin"

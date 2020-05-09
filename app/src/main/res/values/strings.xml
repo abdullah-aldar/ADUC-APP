@@ -75,6 +75,7 @@
 
 
     <string name="no_data">No Data Exist in this semester</string>
+    <string name="not_exist">No data exist!</string>
     <string name="computer_school">School Of Engineering &amp; Technology</string>
     <string name="computer_text">We are proud to offer a wide range of accredited programs in Engineering and Technology that will equip students with the knowledge needed to pursue the career</string>
     <string name="business_school">School Of Business Administration</string>

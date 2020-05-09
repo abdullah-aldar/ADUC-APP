@@ -68,6 +68,10 @@ public class MyCourseAdviceFragment extends Fragment {
                 adapter = new CourseAdviceAdapter(getActivity(), adviceResponseModel.getData());
                 binding.rvCourseAdvice.setAdapter(adapter);
             }
+            else {
+                binding.rvCourseAdvice.setAdapter(null);
+                binding.tvNoData.setVisibility(View.VISIBLE);
+            }
         });
     }
 

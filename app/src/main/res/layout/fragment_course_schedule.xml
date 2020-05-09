@@ -37,10 +37,9 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/small_margin"
             android:text="Course Schedule"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,20 +63,22 @@
 
 
             <RelativeLayout
-                android:layout_width="250dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/transparent_button"
                 android:paddingStart="@dimen/medium_margin"
-                android:paddingEnd="@dimen/medium_margin">
+                android:paddingEnd="@dimen/medium_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin">
 
                 <TextView
                     android:id="@+id/select"
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Please Select Semester"
-                    android:textColor="@color/gray" />
+                    android:textColor="@color/white" />
 
                 <Spinner
                     android:id="@+id/schedule_spinner"

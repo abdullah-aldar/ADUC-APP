@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:text="My Marks"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,26 +61,43 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="@string/your_marks"
-                android:textColor="@color/gray"
+                android:textColor="@color/white"
                 android:textSize="12sp" />
 
         </RelativeLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_marks"
+        <RelativeLayout
+            android:id="@+id/data_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation"
+            android:layout_marginBottom="@dimen/medium_margin"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_marks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutAnimation="@anim/fade_animation" />
+
+            <TextView
+                android:id="@+id/tv_noData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/not_exist"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+        </RelativeLayout>
 
 
         <ProgressBar

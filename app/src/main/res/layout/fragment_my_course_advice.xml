@@ -63,7 +63,7 @@
 
             <RelativeLayout
                 android:id="@+id/semester"
-                android:layout_width="300dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/transparent_button"
@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Please Select Semester"
-                    android:textColor="@color/gray" />
+                    android:textColor="@color/white" />
 
                 <Spinner
                     android:id="@+id/semster_spinner"
@@ -104,15 +104,33 @@
 
         </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_course_advice"
+        <RelativeLayout
+            android:id="@+id/data_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation"
+            android:layout_marginBottom="@dimen/medium_margin"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_course_advice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutAnimation="@anim/fade_animation" />
+
+            <TextView
+                android:id="@+id/tv_noData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/not_exist"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+        </RelativeLayout>
 
 
         <ProgressBar

@@ -10,6 +10,7 @@
     <dimen name="high_spacing">18dp</dimen>
     <dimen name="medium_margin">8dp</dimen>
     <dimen name="high_margin">35dp</dimen>
+    <dimen name="btn">40dp</dimen>
     <dimen name="small_margin">4dp</dimen>
     <dimen name="btn_height">45dp</dimen>
     <dimen name="tab_btn_height">55dp</dimen>

@@ -10,8 +10,6 @@ import com.aldar.studentportal.R;
 
 
 public class GeneralUtilities {
-    private static SharedPreferences sharedPreferences;
-    private static SharedPreferences.Editor editor;
 
     public static Fragment connectFragmentWithoutBack(Context context, Fragment fragment){
         ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
