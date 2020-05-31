@@ -36,6 +36,7 @@ public class AnnouncementViewModel extends AndroidViewModel {
 
     private void apiAnnouncement() {
         progressBar.setValue(0);
+
         APIService services = RetroClass.getApiClient().create(APIService.class);
         Call<AnnouncementReponseModel> allUsers = services.getAnnoucement(studentID.getValue());
         allUsers.enqueue(new Callback<AnnouncementReponseModel>() {

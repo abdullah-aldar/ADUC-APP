@@ -10,9 +10,44 @@
             type="com.aldar.studentportal.ui.activities.common.fee.PaymentViewModel" />
     </data>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/small_margin">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:src="@drawable/back_white"/>
+
+            <TextView
+                android:id="@+id/online_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="Student Online Payment"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
     <ScrollView
+        android:layout_below="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:background="@color/gray">
 
         <RelativeLayout
@@ -26,50 +61,20 @@
                 android:background="@color/grey">
 
 
-                <RelativeLayout
-                    android:id="@+id/header"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/colorPrimary"
-                    android:padding="@dimen/small_margin"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/iv_back"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="@dimen/medium_margin"
-                        android:layout_marginTop="@dimen/medium_margin"
-                        android:src="@drawable/back_white"/>
-
-                    <TextView
-                        android:id="@+id/online_payment"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_semibold"
-                        android:gravity="center"
-                        android:layout_centerHorizontal="true"
-                        android:text="Student Online Payment"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                </RelativeLayout>
-
 
                 <TextView
                     android:id="@+id/student_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
                     android:text="Student ID *"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/header" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <RelativeLayout
                     android:id="@+id/student_id_layout"
@@ -370,31 +375,33 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/btn_height"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginTop="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:layout_margin="@dimen/standarize_spacing"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/check_term_condition">
+
+                    <Button
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/medium_margin"
+                        android:background="@color/red"
+                        android:text="Cancel"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_pay"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:layout_marginBottom="@dimen/medium_margin"
+                        android:layout_marginStart="@dimen/medium_margin"
                         android:background="@color/green"
                         android:text="Pay Now"
                         android:textColor="@color/white" />
 
-                    <Button
-                        android:id="@+id/btn_cancel"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/medium_margin"
-                        android:layout_weight="1"
-                        android:background="@color/red"
-                        android:text="Cancel"
-                        android:textColor="@color/white" />
+
                 </LinearLayout>
 
                 <ProgressBar
@@ -413,5 +420,6 @@
 
         </RelativeLayout>
     </ScrollView>
+    </RelativeLayout>
 </layout>
 

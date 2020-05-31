@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -66,8 +67,11 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
         holder.cardView.setOnClickListener(view -> {
             if (counter.get(position) % 2 == 0) {
                 holder.cardRecyclerView.setVisibility(View.VISIBLE);
+                holder.ivExpand.setImageResource(R.drawable.expand_less);
+
             } else {
                 holder.cardRecyclerView.setVisibility(View.GONE);
+                holder.ivExpand.setImageResource(R.drawable.expand_more);
             }
 
             counter.set(position, counter.get(position) + 1);
@@ -88,9 +92,11 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
         TextView tvSemester;
         RecyclerView cardRecyclerView;
         CardView cardView;
+        ImageView ivExpand;
 
         private MyViewHolder(View itemView) {
             super(itemView);
+            ivExpand = itemView.findViewById(R.id.iv_expand);
             tvSemester = itemView.findViewById(R.id.categoryTitle);
             cardRecyclerView = itemView.findViewById(R.id.rv_innermarks);
             cardView = itemView.findViewById(R.id.cardView);

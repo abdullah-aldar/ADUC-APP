@@ -2,7 +2,6 @@ package com.aldar.studentportal.remote;
 
 import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel;
 import com.aldar.studentportal.models.chequesModels.ChequeResponseModel;
-import com.aldar.studentportal.models.contactsModel.ContactDataModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
 import com.aldar.studentportal.models.financeModel.FinanceResponseModel;

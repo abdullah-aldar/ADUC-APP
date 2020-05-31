@@ -105,7 +105,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-
     }
 
     @Override
@@ -235,7 +234,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public String getFacebookPageURL() {
+    private String getFacebookPageURL() {
         String FACEBOOK_URL = "https://www.facebook.com/ALDARUniversityCollegedubai";
         String FACEBOOK_PAGE_ID = "ALDARUniversityCollegedubai";
         PackageManager packageManager = getActivity().getPackageManager();
@@ -310,7 +309,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         cursor.close();
         return contactList;
     }
-
 
     @Override
     public void onDestroy() {

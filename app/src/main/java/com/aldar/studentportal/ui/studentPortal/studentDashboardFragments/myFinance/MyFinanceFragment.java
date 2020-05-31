@@ -19,11 +19,6 @@ import com.aldar.studentportal.adapters.StudentFinanceAdapter;
 import com.aldar.studentportal.databinding.FragmentMyFinanceBinding;
 import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-
 public class  MyFinanceFragment extends Fragment {
     private FragmentMyFinanceBinding binding;
     private StudentFinanceAdapter adapter;

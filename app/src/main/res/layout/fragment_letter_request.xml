@@ -173,7 +173,6 @@
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 android:background="@color/tranparent"
                 android:gravity="top"
-                android:visibility="gone"
                 android:hint="your note"
                 android:paddingStart="@dimen/medium_margin"
                 android:text="@={letterViewModel.note}"
@@ -188,6 +187,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@color/tranparent"
                 android:padding="@dimen/small_margin"
+                android:visibility="gone"
                 android:text="Preview Letter" />
 
             <LinearLayout

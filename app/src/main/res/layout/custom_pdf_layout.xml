@@ -4,11 +4,11 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center">
 
-    <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdf"
-        android:layout_width="450dp"
-        android:layout_height="500dp"
-        android:layout_below="@+id/buttons"
-        android:layout_centerInParent="true" />
+<!--    <com.github.barteksc.pdfviewer.PDFView-->
+<!--        android:id="@+id/pdf"-->
+<!--        android:layout_width="450dp"-->
+<!--        android:layout_height="500dp"-->
+<!--        android:layout_below="@+id/buttons"-->
+<!--        android:layout_centerInParent="true" />-->
 
 </RelativeLayout>

@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
-import com.github.barteksc.pdfviewer.PDFView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -32,7 +31,6 @@ import io.reactivex.rxjava3.observers.DisposableObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class PdfFragment extends Fragment {
-    private PDFView pdfView;
     private final CompositeDisposable disposables = new CompositeDisposable();
 
     @Override
@@ -40,7 +38,6 @@ public class PdfFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root =  inflater.inflate(R.layout.fragment_pdf, container, false);
-        pdfView = root.findViewById(R.id.pdf);
 
         showPDF();
         return root;
@@ -61,16 +58,7 @@ public class PdfFragment extends Fragment {
 
                     @Override
                     public void onNext(InputStream contactList) {
-                        pdfView.fromStream(contactList)
-                                .pages(0, 2, 1, 3, 3, 3)
-                                .enableSwipe(true)
-                                .swipeHorizontal(false)
-                                .enableDoubletap(true)
-                                .defaultPage(0)
-                                .enableAnnotationRendering(false)
-                                .scrollHandle(null)
-                                .spacing(0)
-                                .load();
+
 
                     }
                 }));

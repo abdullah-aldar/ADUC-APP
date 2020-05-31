@@ -1,14 +1,7 @@
 package com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.letterRequest;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.pdf.PdfDocument;
-import android.graphics.pdf.PdfRenderer;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -35,19 +28,16 @@ import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.ui.activities.PaymentActivity;
 import com.aldar.studentportal.ui.activities.common.WebActivity;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
-import com.github.barteksc.pdfviewer.PDFView;
+
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.text.DecimalFormat;
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.functions.Supplier;
-import io.reactivex.rxjava3.observers.DisposableObserver;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class LetterRequestFragment extends Fragment {
     private FragmentLetterRequestBinding binding;
@@ -107,7 +97,6 @@ public class LetterRequestFragment extends Fragment {
 
         binding.tvPreviewLetter.setOnClickListener(v -> {
             checkPreview = true;
-            showPdfDialog();
         });
     }
 
@@ -167,13 +156,9 @@ public class LetterRequestFragment extends Fragment {
         });
 
         dialogBinding.btnPayOnline.setOnClickListener(v -> {
-            if (checkPreview) {
-                String paymentLink = "http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment_App.aspx?StudentId=" + studentID + "&ServiceId=" + strLetterID + "&Lang=EN&LetterTo=To%20Whom%20It%20May%20Concern";
-                proceedToPayment(paymentLink);
-                dialog.dismiss();
-            } else {
-                Toast.makeText(getActivity(), "please preview the letter first", Toast.LENGTH_SHORT).show();
-            }
+            String paymentLink = "http://5.101.139.187:8080/StudentPortal/Views/PaymentPage/Payment_App.aspx?StudentId=" + studentID + "&ServiceId=" + strLetterID + "&Lang=EN&LetterTo=To%20Whom%20It%20May%20Concern";
+            proceedToPayment(paymentLink);
+            dialog.dismiss();
         });
 
         dialogBinding.ivClose.setOnClickListener(v -> {
@@ -183,63 +168,10 @@ public class LetterRequestFragment extends Fragment {
         dialog.show();
     }
 
-    private void showPdfDialog() {
-        Dialog dialog = new Dialog(getActivity());
-        dialog.setContentView(R.layout.custom_pdf_layout);
-        PDFView pdfView = dialog.findViewById(R.id.pdf);
-        showPDF(pdfView);
-        dialog.show();
-    }
-
-    private void showPDF(PDFView pdfView) {
-        disposables.add(Observable()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(new DisposableObserver<InputStream>() {
-                    @Override
-                    public void onComplete() {
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onNext(InputStream contactList) {
-                        pdfView.fromStream(contactList)
-                                .pages(0, 2, 1, 3, 3, 3)
-                                .enableSwipe(true)
-                                .swipeHorizontal(false)
-                                .enableDoubletap(true)
-                                .defaultPage(0)
-                                .enableAnnotationRendering(false)
-                                .scrollHandle(null)
-                                .spacing(0)
-                                .load();
-
-                    }
-                }));
-    }
-
     private void proceedToPayment(String link) {
         Bundle bundle = new Bundle();
         bundle.putString("paymentLink", link);
         startActivity(new Intent(getActivity(), PaymentActivity.class).putExtras(bundle));
-    }
-
-    Observable<InputStream> Observable() {
-        return Observable.defer((Supplier<Observable<InputStream>>) () -> {
-            // Do some long running operation
-            InputStream input = null;
-            try {
-                input = new URL(strPDfLink).openStream();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return Observable.just(input);
-        });
     }
 
     private boolean checkBalance(double amount) {

@@ -17,7 +17,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:src="@drawable/gradient"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/high_margin"
+            android:layout_marginTop="@dimen/top"
             android:layout_marginEnd="@dimen/standarize_spacing"
             android:background="@drawable/login_background"
             android:paddingTop="@dimen/medium_margin"
@@ -92,9 +92,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_toRightOf="@+id/iv_profile"
                 android:fontFamily="@font/montserrat_semibold"
-                android:text="@{studnetDasboarViewModel.studentName}"
-                android:textColor="@color/gray_black" />
-
+                android:text="@{studnetDasboarViewModel.studentName}" />
 
             <TextView
                 android:id="@+id/tv_student_code"
@@ -104,8 +102,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_toRightOf="@+id/iv_profile"
                 android:fontFamily="@font/montserrat_semibold"
-                android:text="@{studnetDasboarViewModel.studentGivenID}"
-                android:textColor="@color/gray_black" />
+                android:text="@{studnetDasboarViewModel.studentGivenID}" />
 
             <TextView
                 android:id="@+id/adviser"
@@ -117,21 +114,39 @@
                 android:text="Advisor "
                 android:textColor="@color/gray_black" />
 
-
             <TextView
                 android:id="@+id/tv_student_adviser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_profile"
-                android:layout_toRightOf="@+id/adviser"
+                android:layout_toEndOf="@+id/adviser"
                 android:fontFamily="@font/montserrat_regular"
                 android:text="@{studnetDasboarViewModel.advisor}" />
+
+            <TextView
+                android:id="@+id/concentration"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_student_adviser"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Major"
+                android:textColor="@color/gray_black" />
+
+            <TextView
+                android:id="@+id/tv_concentration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_student_adviser"
+                android:layout_toRightOf="@+id/concentration"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@{studnetDasboarViewModel.major}" />
 
             <TextView
                 android:id="@+id/course_name"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_adviser"
+                android:layout_below="@id/tv_concentration"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:fontFamily="@font/montserrat_semibold"
                 android:text="@string/student_course"
@@ -142,36 +157,17 @@
                 android:id="@+id/tv_course_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_adviser"
-                android:layout_toRightOf="@id/course_name"
+                android:layout_below="@id/tv_concentration"
+                android:layout_toEndOf="@id/course_name"
                 android:fontFamily="@font/montserrat_regular"
                 android:text="@{studnetDasboarViewModel.course}" />
-
-            <TextView
-                android:id="@+id/concentration"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_course_name"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="Major"
-                android:textColor="@color/gray_black" />
-
-            <TextView
-                android:id="@+id/tv_concentration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_course_name"
-                android:layout_toRightOf="@+id/concentration"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="@{studnetDasboarViewModel.major}" />
 
 
             <RelativeLayout
                 android:id="@+id/rl_message"
                 android:layout_width="match_parent"
                 android:layout_height="60sp"
-                android:layout_below="@id/concentration"
+                android:layout_below="@id/tv_course_name"
                 android:layout_marginLeft="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
                 android:layout_marginRight="@dimen/medium_margin">
@@ -280,7 +276,6 @@
             android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

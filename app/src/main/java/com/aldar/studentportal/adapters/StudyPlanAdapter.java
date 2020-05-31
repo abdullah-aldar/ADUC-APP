@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -70,8 +71,10 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
 
             if (counter.get(position) % 2 == 0) {
                 holder.cardRecyclerView.setVisibility(View.VISIBLE);
+                holder.ivExpand.setImageResource(R.drawable.expand_less);
             } else {
                 holder.cardRecyclerView.setVisibility(View.GONE);
+                holder.ivExpand.setImageResource(R.drawable.expand_more);
             }
 
             counter.set(position, counter.get(position) + 1);
@@ -93,9 +96,11 @@ public class StudyPlanAdapter extends RecyclerView.Adapter<StudyPlanAdapter.MyVi
         TextView tvSemester,tvTotalCreditHour,tvCompletedCreditHours;
         RecyclerView cardRecyclerView;
         CardView cardView;
+        ImageView ivExpand;
 
         private MyViewHolder(View itemView) {
             super(itemView);
+            ivExpand = itemView.findViewById(R.id.iv_expand);
             tvSemester = itemView.findViewById(R.id.categoryTitle);
             tvTotalCreditHour = itemView.findViewById(R.id.tv_total_creditshours);
             tvCompletedCreditHours = itemView.findViewById(R.id.tv_completed_credithour);

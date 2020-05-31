@@ -15,6 +15,7 @@ public class StudentPortalMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_portal_main);
 
+
         if(savedInstanceState == null){
             GeneralUtilities.connectFragmentWithoutBack(this,new StudentDashboardFragment());
         }
