@@ -13,7 +13,7 @@
         android:color="@color/gray" />
 
     <solid
-        android:color="@color/white" />
+        android:color="@color/screen_color" />
 
 
 </shape>

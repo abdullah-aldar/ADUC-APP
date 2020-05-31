@@ -12,13 +12,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/screen_color">
+        android:background="@color/colorPrimaryDark">
 
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:src="@drawable/gradient"
+            android:tint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -78,8 +79,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_profile"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
                 android:layout_marginStart="@dimen/small_margin"
                 android:src="@drawable/user" />
 
@@ -92,6 +93,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_toRightOf="@+id/iv_profile"
                 android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/gray_black"
                 android:text="@{studnetDasboarViewModel.studentName}" />
 
             <TextView
@@ -102,6 +104,7 @@
                 android:layout_marginStart="14dp"
                 android:layout_toRightOf="@+id/iv_profile"
                 android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/gray_black"
                 android:text="@{studnetDasboarViewModel.studentGivenID}" />
 
             <TextView
@@ -168,9 +171,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="60sp"
                 android:layout_below="@id/tv_course_name"
-                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/small_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:layout_marginRight="@dimen/medium_margin">
+                android:layout_marginEnd="@dimen/small_margin">
 
 
                 <RelativeLayout
@@ -183,13 +186,13 @@
 
                     <ImageView
                         android:id="@+id/iv_mail"
-                        android:layout_width="35dp"
+                        android:layout_width="30dp"
                         android:layout_height="28dp"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="8dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/announcement"
-                        android:tint="@color/colorPrimary" />
+                        android:tint="@color/dark" />
 
                     <TextView
                         android:id="@+id/tv_count_messages"
@@ -200,13 +203,14 @@
                         android:background="@drawable/circle_red"
                         android:gravity="center"
                         android:text="5"
+                        android:visibility="gone"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/medium_margin"
+                        android:layout_marginStart="@dimen/small_margin"
                         android:layout_toRightOf="@+id/iv_mail"
                         android:fontFamily="@font/montserrat_semibold"
                         android:text="Announcement"
@@ -219,7 +223,7 @@
                     android:layout_width="1dp"
                     android:layout_height="20dp"
                     android:layout_centerInParent="true"
-                    android:background="@color/colorPrimary" />
+                    android:background="@color/colorPrimaryDark" />
 
 
                 <RelativeLayout
@@ -238,7 +242,7 @@
                         android:layout_marginStart="8dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/bell"
-                        android:tint="@color/colorPrimary" />
+                        android:tint="@color/dark" />
 
                     <TextView
                         android:id="@+id/tv_count_notification"
@@ -246,6 +250,7 @@
                         android:layout_height="20dp"
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="@dimen/medium_margin"
+                        android:visibility="gone"
                         android:background="@drawable/circle_red"
                         android:gravity="center"
                         android:text="1"
@@ -255,8 +260,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginStart="10dp"
-                        android:layout_toRightOf="@+id/iv_alaram"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:layout_toEndOf="@+id/iv_alaram"
                         android:fontFamily="@font/montserrat_semibold"
                         android:text="Notification"
                         android:textColor="@color/gray_black" />
@@ -270,12 +275,14 @@
             android:id="@+id/rv_dashboard_item"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginStart="@dimen/margin_arrow"
+            android:layout_marginEnd="@dimen/standarize_spacing"
             android:layout_marginBottom="@dimen/medium_margin"
             android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
