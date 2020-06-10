@@ -105,7 +105,7 @@ LoginFragment extends Fragment {
                     }
                     // Get new Instance ID token
                     String token = task.getResult().getToken();
-                    Log.d("token",token);
+                    Log.d("token", token);
                     SharedPreferencesManager.getInstance(getActivity()).setStringValueInEditor("fcm_token", token);
                 });
     }

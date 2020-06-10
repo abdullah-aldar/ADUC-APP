@@ -21,7 +21,16 @@
         <item>Does Al Dar accept visiting students?</item>
         <item>Can I visit the college before admission?</item>
         <item>Does Al Dar provide residence visa to the students?</item>
+        <item>Accordion ContentDoes Al Dar provide transport to the students?</item>
+        <item>Am I eligible for admission even if I do not have IELTS or TOEFL?</item>
+        <item>What if I want to change my registration?</item>
+        <item>What is a pre-requisite course?</item>
+        <item>How many courses do I need to register?</item>
+        <item>What are the possibilities of career opportunities available on completion of studies at Al Dar?</item>
+        <item>Can I pay my fees in installments?</item>
+        <item>Is there any platform where student(s) can raise their concerns/complaints?</item>
     </array>
+
 
     <array name="faq_answer">
         <item>All students who fulfill the minimum admission criteria of Al Dar are eligible for the
@@ -47,6 +56,25 @@
         <item>Yes, Al Dar provides residence visa to all the admitted students based on the approval
             of visa request by the UAE Immigration Authority.
         </item>
+        <item>Accordion ContentDoes Al Dar provide transport to the students?\nYes, Al Dar provides transportation
+            to the students (morning and evening)for Ajman, Sharjah and Dubai.</item>
+        <item>Yes, you are eligible for the admission but in that case you will be given provisional/conditional
+            admission and will be limited to 15 credit hours of General Education courses along with Intensive English Program in order to enhance level of your English.</item>
+
+        <item>You can change your registration during the drop/add period as per scheduled in the academic calendar.</item>
+
+        <item>A pre-requisite course means a course, which a student must pass before enrolling in the advanced course.</item>
+
+        <item>The study/course load is the total number of credit hours that student allowed to register during one
+            semester. The maximum registration is 18 credit hours, and the minimum registration is 12 credit hours.</item>
+
+        <item>At Al Dar there is a career office which works very closely with the alumni and the corporate sector
+            in order to explore suitable employment opportunities for the students as per their specialization.</item>
+
+        <item>Al Dar offers flexible mode of payment in order to facilitate the students in their payment of the fees.</item>
+
+        <item>Yes, Al Dar has the policy to Hear from Students. In case, if student(s) have any concerns/complaints
+            they can drop an email at complaints@aldar.ac.ae</item>
     </array>
 
     <array name="books">

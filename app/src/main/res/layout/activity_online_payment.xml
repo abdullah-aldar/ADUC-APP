@@ -35,7 +35,8 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/montserrat_semibold"
                 android:gravity="center"
-                android:layout_centerHorizontal="true"
+                android:layout_toEndOf="@id/iv_back"
+                android:layout_marginStart="@dimen/standarize_spacing"
                 android:text="Student Online Payment"
                 android:textColor="@color/white"
                 android:textSize="18sp" />

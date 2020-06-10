@@ -12,14 +12,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorPrimary">
 
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:src="@drawable/gradient"
-            android:tint="@color/colorPrimaryDark"
+            android:tint="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -277,9 +277,9 @@
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginStart="@dimen/margin_arrow"
-            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/margin_arrow"
             android:layout_marginBottom="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation"
+            android:layoutAnimation="@anim/fall_down_animation_layout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header" />
 

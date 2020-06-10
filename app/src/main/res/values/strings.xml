@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ADUC</string>
     <string name="uni_name">ALDAR University</string>
+    <string name="name"><b>ALDAR</b>\nUniversity</string>
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="map_apikey">AIzaSyAepQhzH42X9rObxzFGXMLp6iXsbt2xZlI</string>

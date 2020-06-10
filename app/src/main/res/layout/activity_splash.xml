@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     tools:context=".ui.activities.common.SplashActivity">
 
     <TextView
@@ -13,10 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:fontFamily="@font/montserrat_semibold"
+        android:fontFamily="@font/montserrat_regular"
         android:text="ALDAR"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="30sp" />
+        android:textSize="28sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,6 +25,7 @@
         android:layout_below="@id/aldar"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:fontFamily="@font/montserrat_regular"
         android:text="University"
         android:textColor="@color/white"
         android:textSize="20sp" />

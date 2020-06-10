@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey">
+        android:background="@color/gray">
 
         <ImageView
             android:layout_width="match_parent"
@@ -41,6 +41,7 @@
             android:text="@string/books_available"
             android:textColor="@color/gray"
             android:textSize="@dimen/large_text_size"
+            android:fontFamily="@font/poppins_regular"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,18 +70,17 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:background="@drawable/transparent_button"
-                    android:paddingStart="@dimen/medium_margin"
-                    android:paddingEnd="@dimen/medium_margin">
+                    android:padding="@dimen/medium_margin">
 
                     <TextView
                         android:id="@+id/search"
-                        android:layout_width="260dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_centerVertical="true"
                         android:text="@string/search_books"
                         android:textColor="@color/gray" />
 
@@ -89,8 +89,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
-                        android:layout_below="@id/search"
-                        android:gravity="center"
+                        android:layout_toEndOf="@id/search"
+                        android:gravity="end"
                         android:pointerIcon="arrow"
                         android:textColor="@color/white" />
                 </RelativeLayout>
@@ -101,11 +101,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginTop="@dimen/medium_margin"
-                    android:background="@drawable/shadow"
+                    android:background="@drawable/transparent_button"
                     android:hint="Search here"
+                    android:textColorHint="@color/gray"
                     android:paddingStart="@dimen/medium_margin"
                     android:text="@={libraryViewModel.bookDescription}"
-                    android:textColor="@color/gray_black" />
+                    android:textColor="@color/gray" />
             </LinearLayout>
 
 
@@ -113,8 +114,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginEnd="@dimen/medium_margin"
                 android:layout_below="@+id/layout_search"
                 android:layout_marginTop="@dimen/medium_margin">
 

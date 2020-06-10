@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0190d6</color>
-    <color name="colorPrimaryDark">#027bc4</color>
+    <color name="colorPrimary">#116fd4</color>
+    <color name="colorPrimaryDark">#0f63bd</color>
     <color name="colorAccent">#D6AA30</color>
 
     <color name="dark">#04499c</color>
@@ -18,9 +18,9 @@
     <color name="cyen">#5775CF</color>
     <color name="cyan">#4587A9</color>
     <color name="tranparent">#80DEDEDE</color>
-    <color name="gray">#DEDEDE</color>
+    <color name="gray">#F3F3F3</color>
     <color name="light_gray">#F9F9F9</color>
-    <color name="grey">#F0F0F0</color>
+    <color name="grey">#C3C3C3</color>
     <color name="gray_black">#4E4D55</color>
     <color name="button_black">#272823</color>
 

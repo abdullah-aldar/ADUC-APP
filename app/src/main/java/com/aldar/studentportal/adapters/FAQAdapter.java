@@ -49,12 +49,12 @@ public class FAQAdapter extends RecyclerView.Adapter<FAQAdapter.MyViewHolder> {
             @Override
             public void onClick(View v) {
                 if (alIndexPosition.contains(String.valueOf(position))) {
-                    holder.binding.ivArrow.setImageResource(R.drawable.down);
+                    holder.binding.ivArrow.setImageResource(R.drawable.expand_more);
                     holder.binding.tvFaqAnswer.setVisibility(View.GONE);
                     alIndexPosition.remove(String.valueOf(position));
                 } else {
                     alIndexPosition.add(String.valueOf(position));
-                    holder.binding.ivArrow.setImageResource(R.drawable.up);
+                    holder.binding.ivArrow.setImageResource(R.drawable.expand_less);
                     holder.binding.tvFaqAnswer.setVisibility(View.VISIBLE);
 
                 }

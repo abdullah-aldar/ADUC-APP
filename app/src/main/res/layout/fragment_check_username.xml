@@ -15,92 +15,57 @@
         android:id="@+id/main_header"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorPrimary">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_logo"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/high_margin"
             android:src="@mipmap/logo" />
 
-        <TextView
-            android:id="@+id/tv_welcome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_logo"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:gravity="center"
-            android:text="Welcome"
-            android:textColor="@color/white"
-            android:textSize="@dimen/title_text_size"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_welcome"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/small_margin"
-            android:gravity="center"
-            android:text="To"
-            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tv_login_using"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_to"
+            android:layout_below="@id/iv_logo"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/small_margin"
             android:gravity="center"
-            android:text="Student Academic Portal"
-            android:textColor="@color/white" />
+            android:textSize="@dimen/title_text_size"
+            android:text="Student Academic\n Portal"
+            android:textColor="@color/grey" />
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_login_using"
-            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
-            android:background="@drawable/login_background"
             android:padding="@dimen/standarize_spacing">
-
-            <TextView
-                android:id="@+id/tv_log_in"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New User"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/medium_text_size" />
-
-            <View
-                android:id="@+id/v_line"
-                android:layout_width="75dp"
-                android:layout_height="5dp"
-                android:layout_below="@+id/tv_log_in"
-                android:layout_marginTop="5sp"
-                android:background="@color/colorPrimary" />
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_email_textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/v_line"
                 android:layout_marginTop="@dimen/standarize_spacing"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:textColorHint="@color/grey"
                 android:hint="Enter your username"
-                android:theme="@style/AppTheme">
+                android:theme="@style/TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_login_email"
+                    android:id="@+id/et_login_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
+                    android:drawableStart="@drawable/person_outline"
+                    android:drawablePadding="@dimen/medium_margin"
                     android:text="@={signupViewModel.username}"
                     app:error="@{signupViewModel.errorMessage}" />
 
@@ -114,26 +79,26 @@
                 android:layout_below="@id/et_email_textInputLayout"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginBottom="@dimen/medium_margin"
-                android:background="@color/colorPrimary"
+                android:background="@color/dark"
                 android:onClick="@{(v) -> signupViewModel.onClick(v)}"
                 android:text="Submit"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btn_login"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:padding="@dimen/medium_margin"
-                android:text="Already Registered ? Login"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/grey"
                 android:textStyle="bold" />
 
 
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:padding="@dimen/small_margin"
+            android:text="Already Registered ? Login"
+            android:textColor="@color/grey"
+            android:textStyle="bold" />
 
         <ProgressBar
             android:id="@+id/progess"

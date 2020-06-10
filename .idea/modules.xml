@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Al Dar Student Portal.iml" filepath="$PROJECT_DIR$/Al Dar Student Portal.iml" group="Al Dar Student Portal" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Al_Dar_Student_Portal.iml" filepath="$PROJECT_DIR$/.idea/modules/Al_Dar_Student_Portal.iml" group="Al_Dar_Student_Portal" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Al Dar Student Portal/app" />
     </modules>
   </component>
