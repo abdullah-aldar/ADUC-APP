@@ -33,11 +33,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/montserrat_semibold"
                 android:gravity="center"
                 android:layout_toEndOf="@id/iv_back"
                 android:layout_marginStart="@dimen/standarize_spacing"
-                android:text="Student Online Payment"
+                android:text="@string/payment"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -59,7 +58,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/grey">
+                android:background="@color/gray">
 
 
 
@@ -71,7 +70,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="Student ID *"
+                    android:text="@string/studt_id"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintTop_toTopOf="parent"
@@ -107,7 +106,7 @@
                         android:layout_height="40dp"
                         android:layout_alignParentEnd="true"
                         android:background="@color/colorPrimary"
-                        android:text="Go"
+                        android:text="@string/go"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -118,7 +117,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="Student Name"
+                    android:text="@string/studnet_name"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +149,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="Program"
+                    android:text="@string/program"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +180,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="concentration"
+                    android:text="@string/concentration"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -212,7 +211,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="Current Balance"
+                    android:text="@string/balance"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -243,7 +242,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="Payment"
+                    android:text="@string/payment_against"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -264,13 +263,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="Others" />
+                        android:text="@string/other" />
 
                     <RadioButton
                         android:id="@+id/radio_cheques"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Against Cheque" />
+                        android:text="@string/cheques" />
 
                 </RadioGroup>
 
@@ -300,7 +299,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="amount *"
+                    android:text="@string/amount"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -330,7 +329,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
                     android:gravity="center"
-                    android:text="Note *"
+                    android:text="@string/note"
                     android:textColor="@color/gray_black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -368,7 +367,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="1dp"
                     android:layout_marginTop="5dp"
-                    android:text="Agree with the terms and conditions"
+                    android:text="@string/agree"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintStart_toEndOf="@id/check_term_condition"
                     app:layout_constraintTop_toBottomOf="@id/et_note" />
@@ -388,7 +387,7 @@
                         android:layout_weight="1"
                         android:layout_marginBottom="@dimen/medium_margin"
                         android:background="@color/red"
-                        android:text="Cancel"
+                        android:text="@string/cancel"
                         android:textColor="@color/white" />
 
                     <Button
@@ -399,7 +398,7 @@
                         android:layout_marginBottom="@dimen/medium_margin"
                         android:layout_marginStart="@dimen/medium_margin"
                         android:background="@color/green"
-                        android:text="Pay Now"
+                        android:text="@string/pay_now"
                         android:textColor="@color/white" />
 
 

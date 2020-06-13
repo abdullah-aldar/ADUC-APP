@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
+import androidx.core.view.ViewCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
@@ -45,8 +46,6 @@ public class StudentDashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_student_dashboard,container,false);
-
-        adapter = new StudentDashboardItemsAdapter(mItemClickCallback);
         initViews();
 
         return binding.getRoot();
@@ -60,8 +59,8 @@ public class StudentDashboardFragment extends Fragment {
 
 
         viewmodel.getItemData().observe(getViewLifecycleOwner(), dashboardItemModels -> {
-
             binding.rvDashboardItem.setLayoutManager(new GridLayoutManager(getContext(), 2));
+            adapter = new StudentDashboardItemsAdapter(mItemClickCallback);
             adapter.setProductList(dashboardItemModels);
             binding.rvDashboardItem.setAdapter(adapter);
         });
@@ -72,9 +71,7 @@ public class StudentDashboardFragment extends Fragment {
             getActivity().finish();
 
         });
-
         binding.ivLogout.setOnClickListener(v -> showDialog());
-
         binding.layoutAnnouncement.setOnClickListener(v -> GeneralUtilities.connectFragmentWithBack(getActivity(),new AnnouncementFragment()));
     }
 

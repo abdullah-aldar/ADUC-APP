@@ -9,6 +9,7 @@
     <string name="welcome">Apply for Admission</string>
     <string name="welcome_text">Welcome to ALDAR University College, We don’t just give students an education and experiences that set them up
         for success in a career.\n\nYour career path begins Here, Take the first step and Apply Now</string>
+    <string name="dashboard">Student Dashboard</string>
     <string name="affordable_price">Affordable tuition fees In addition to financial support through scholarship and financial aids</string>
     <string name="flexible_course">ALDAR designs flexible courses offerings that allow students to attend classes during weekdays and weekends</string>
     <string name="accomodation">In ALDAR University College Dubai the Accomodation is availble</string>
@@ -17,8 +18,20 @@
     <string name="visa_text">ALDAR University College provides Student Visa.</string>
     <string name="support">Expert Support</string>
     <string name="support_text">You can call, chat, or email us!</string>
+    <string name="major">Major</string>
 
+    <string name="go">Go</string>
+    <string name="pay_now">Pay Now</string>
     <string name="payment">Online Payment</string>
+    <string name="studt_id">Student ID *</string>
+    <string name="program">Program</string>
+    <string name="balance">Current Balance</string>
+    <string name="payment_against">Payment</string>
+    <string name="other">Others</string>
+    <string name="cheques">Against Cheque</string>
+    <string name="amount">amount *</string>
+    <string name="note">Note *</string>
+    <string name="agree">Agree with the terms and conditions</string>
     <string name="fee">FEE</string>
     <string name="portal">Portal</string>
     <string name="faq">FAQ</string>
@@ -73,6 +86,29 @@
     <string name="search_books">Search Book By!</string>
     <string name="digital_lib">Digital Library</string>
     <string name="search">Search</string>
+    <string name="mobile">Mobile No :</string>
+    <string name="edit">Edit</string>
+    <string name="telephone">Telephone No :</string>
+    <string name="email">Email :</string>
+    <string name="contact_info">CONTACT INFORMATION</string>
+    <string name="school_name">High School Name :</string>
+    <string name="school_adress">High School Address :</string>
+    <string name="awarded_score">Awarded Score :</string>
+    <string name="graduation_year">Graduation Year :</string>
+    <string name="high_school">HIGH SCHOOL</string>
+    <string name="visa_no">Visa Number :</string>
+    <string name="emirate_id">Emirate ID :</string>
+    <string name="visa_expiry">Visa Expiry Date :</string>
+    <string name="visa_issue_date">Visa Issue Date :</string>
+    <string name="visa_info">VISA INFORMATION</string>
+    <string name="nationality">Nationality :</string>
+    <string name="marital_status">Marital Status :</string>
+    <string name="gender">Gender :</string>
+    <string name="dob">Date Of Birth :</string>
+    <string name="advisor_academic">Academic Advisor :</string>
+    <string name="arabic_name">Arabic Student Name :</string>
+    <string name="std_name">Student Name :</string>
+    <string name="std_id">Student ID :</string>
 
 
     <string name="no_data">No Data Exist in this semester</string>
@@ -96,7 +132,6 @@
         Classrooms and computer laboratories are equipped with smart interactive boards and state-of-the-art workstations.
         Students have access to a spacious lounge to conduct their various extra-curricular activities in a convenient and friendly spot.\n\n
         The College also provides ample parking space with three basement floors.\n</string>
-
 
     <string name="ieee_text">
         IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefits of humanity.
@@ -155,8 +190,5 @@
         To be a leading and an internationally recognized higher education institution, contributing to the knowledge society and sustainable development
         of the United Arab Emirates and the Region.
     </string>
-
-
-
 
 </resources>

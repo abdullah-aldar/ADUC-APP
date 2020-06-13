@@ -41,7 +41,7 @@
             android:text="FAQs"
             android:fontFamily="@font/poppins_regular"
             android:textStyle="bold"
-            android:textColor="@color/gray"
+            android:textColor="@color/light_gray"
             android:textSize="@dimen/large_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +70,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:text="@string/faq_text"
-                android:textColor="@color/gray"
+                android:textColor="@color/light_gray"
                 android:textSize="12sp" />
 
         </RelativeLayout>

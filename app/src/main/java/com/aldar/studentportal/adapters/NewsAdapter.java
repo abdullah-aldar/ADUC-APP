@@ -2,6 +2,8 @@ package com.aldar.studentportal.adapters;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +14,14 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.CustomNewsLayoutBinding;
-import com.aldar.studentportal.generated.callback.OnClickListener;
+
 import com.aldar.studentportal.models.newDataModels.NewsDataModel;
+import com.aldar.studentportal.ui.activities.common.NewsActivity;
 import com.bumptech.glide.Glide;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -49,7 +53,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         holder.binding.setNewDataModel(model);
 
         holder.binding.layout.setOnClickListener(v -> {
-            showDialog(model.getImg(),model.getHeader(),model.getBody());
+            context.startActivity(new Intent(context, NewsActivity.class));
+          //  showDialog(model.getImg(),model.getHeader(),model.getBody());
         });
 
 
@@ -86,8 +91,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         ivCancel.setOnClickListener(v -> {
             dialog.dismiss();
         });
-
         dialog.show();
-
     }
 }

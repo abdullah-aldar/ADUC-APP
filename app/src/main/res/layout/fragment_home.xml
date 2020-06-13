@@ -22,7 +22,7 @@
                 android:src="@drawable/dubai"
                 app:layout_constraintBottom_toTopOf="@+id/button_layout"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintHeight_percent=".22"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RelativeLayout

@@ -75,12 +75,9 @@ public class CourseScheduleFragment extends Fragment {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         viewModel.semesterID.setValue(String.valueOf(semesterResponseModel.getData().get(position).getSemID()));
                         viewModel.apiCallCouseSchedule();
-
                     }
-
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
-
                     }
                 });
             }
@@ -91,12 +88,13 @@ public class CourseScheduleFragment extends Fragment {
     private void getCourseData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData) {
         mutableLiveData.observe(getViewLifecycleOwner(), courseScheduleResponseModel -> {
             if (courseScheduleResponseModel.getData() != null) {
+                binding.tvNoData.setVisibility(View.GONE);
                 adapter = new CourseScheduleAdapter(courseScheduleResponseModel.getData());
                 binding.rvCourseSchedule.setAdapter(adapter);
-                binding.tvNoData.setVisibility(View.GONE);
             } else {
-                binding.rvCourseSchedule.setAdapter(null);
                 binding.tvNoData.setVisibility(View.VISIBLE);
+                binding.rvCourseSchedule.setAdapter(null);
+
             }
         });
     }
