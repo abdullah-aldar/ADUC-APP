@@ -85,8 +85,8 @@ public class MyCourseAdviceFragment extends Fragment {
                     namesArr[i] = String.valueOf(semesterResponseModel.getData().get(i).getSemName());
                 }
 
-                binding.semsterSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, namesArr, "Select"));
-                binding.semsterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                binding.semesterSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, namesArr, "Select"));
+                binding.semesterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("semester_id", semesterResponseModel.getData().get(position).getSemID());

@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#116fd4</color>
-    <color name="colorPrimaryDark">#0f63bd</color>
+    <color name="colorPrimary">#0073d0</color>
+    <color name="colorPrimaryDark">#0d60a4</color>
     <color name="colorAccent">#D6AA30</color>
 
     <color name="dark">#04499c</color>
-    <color name="loginBkColor">#f0f0f0</color>
-    <color name="screen_color">#F5F5F5</color>
+    <color name="screen_color">#f4f5f9</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="green">#008000</color>
     <color name="red">#aa3939</color>
-    <color name="blue">#0000ff</color>
     <color name="maroon">#aaa639</color>
-    <color name="light_green">#8fce6a</color>
-    <color name="dark_transparent">#363B4E</color>
-    <color name="cyen">#5775CF</color>
-    <color name="cyan">#4587A9</color>
     <color name="tranparent">#80DEDEDE</color>
     <color name="gray">#CCCCCC</color>
     <color name="light_gray">#F9F9F9</color>
     <color name="grey">#C3C3C3</color>
-    <color name="gray_black">#4E4D55</color>
-    <color name="button_black">#272823</color>
+    <color name="gray_black">#292e42</color>
+    <color name="light_dark">#353a50</color>
 
 </resources>

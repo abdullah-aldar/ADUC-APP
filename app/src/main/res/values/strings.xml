@@ -1,21 +1,11 @@
 <resources>
     <string name="app_name">ADUC</string>
     <string name="uni_name">ALDAR University</string>
-    <string name="name"><b>ALDAR</b>\nUniversity</string>
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="map_apikey">AIzaSyAepQhzH42X9rObxzFGXMLp6iXsbt2xZlI</string>
 
-    <string name="welcome">Apply for Admission</string>
-    <string name="welcome_text">Welcome to ALDAR University College, We don’t just give students an education and experiences that set them up
-        for success in a career.\n\nYour career path begins Here, Take the first step and Apply Now</string>
     <string name="dashboard">Student Dashboard</string>
-    <string name="affordable_price">Affordable tuition fees In addition to financial support through scholarship and financial aids</string>
-    <string name="flexible_course">ALDAR designs flexible courses offerings that allow students to attend classes during weekdays and weekends</string>
-    <string name="accomodation">In ALDAR University College Dubai the Accomodation is availble</string>
-    <string name="transport_text">FREE transportation for the student is provided from DUBAI, Sharjah, and, Ajman .</string>
-    <string name="tution_text">Affordable tuition fees In addition to financial support through scholarship and financial aids</string>
-    <string name="visa_text">ALDAR University College provides Student Visa.</string>
     <string name="support">Expert Support</string>
     <string name="support_text">You can call, chat, or email us!</string>
     <string name="major">Major</string>
@@ -32,53 +22,33 @@
     <string name="amount">amount *</string>
     <string name="note">Note *</string>
     <string name="agree">Agree with the terms and conditions</string>
-    <string name="fee">FEE</string>
     <string name="portal">Portal</string>
     <string name="faq">FAQ</string>
-    <string name="apply">Apply Now</string>
     <string name="download_boucher">Download Brochure</string>
-    <string name="flexible">Flexible course</string>
-    <string name="transportation">FREE transportation</string>
-    <string name="student_visa">Student visa</string>
-    <string name="tution_fee">Affordable tuition fees</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="faq_question">Frequently Asked Questions (FAQs)</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_admission">Admission</string>
     <string name="menu_academic">Academics</string>
     <string name="menu_campus">Campus Life</string>
-    <string name="menu_research">Research</string>
     <string name="menu_login">Login</string>
     <string name="logout">Logout</string>
     <string name="cancel">Cancel</string>
     <string name="logout_text">Are you sure to logout ?</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
     <string name="verify">Verify</string>
     <string name="forgot_text">We will send an email and Message, ensure its your personal and correct Username ID</string>
     <string name="verify_text">We have sent you the code on the Phone Number and email you provided, please verify yourself.</string>
     <string name="change_password_text">Please change your password here make sure the password is easy to remember</string>
-    <string name="student_id">Student ID</string>
     <string name="studnet_name">Student Name</string>
     <string name="student_course">Programe</string>
-    <string name="advisor">Advisor</string>
     <string name="concentration">Concentration</string>
-    <string name="my_course_advise">الحالة الاكاديمية</string>
     <string name="selected_course_advise">الحالة الاكاديمية</string>
     <string name="your_marks">الدرجات</string>
     <string name="instructor_msg">Messages From Instructors</string>
     <string name="compose_write">Compose/Write Mail</string>
-    <string name="your_course_schedule">الجدول الدراسي</string>
     <string name="financial_statement">الحسابات</string>
     <string name="profile_statement">ملف الطالب</string>
-    <string name="letter_request">Add a new request below\nطلب رسالة</string>
     <string name="announcement_text">Latest announcement\nأحدث إعلان</string>
     <string name="faq_text">Frequently Asked Questions\nأسئلة مكررة</string>
     <string name="feedback">Your feedback helps enhance the ALDAR Experience\nيرجى مشاركتنا بملاحظاتك</string>

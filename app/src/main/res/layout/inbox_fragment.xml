@@ -13,12 +13,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray">
+        android:background="@color/screen_color">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/gradient"
+            android:src="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:text="My Inbox"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:textSize="@dimen/large_text_size"
             android:fontFamily="@font/poppins_regular"
             android:textStyle="bold"
@@ -70,7 +70,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="center"
                 android:text="@string/instructor_msg"
-                android:textColor="@color/gray" />
+                android:textColor="@color/white" />
 
 
             <TextView
@@ -79,13 +79,14 @@
                 android:layout_height="@dimen/high_margin"
                 android:layout_below="@id/tv_student_name"
                 android:layout_centerHorizontal="true"
-                android:background="@color/gray_black"
+                android:background="@drawable/round_black"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:paddingStart="@dimen/medium_margin"
                 android:paddingEnd="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/compose_write"
-                android:textColor="@color/gray"
+                android:textColor="@color/white"
                 android:textSize="12sp" />
 
         </RelativeLayout>

@@ -5,9 +5,9 @@
     <corners android:radius="@dimen/standarize_spacing" />
     <stroke
         android:width="3px"
-        android:color="@color/white" />
+        android:color="@color/light_dark" />
 
-    <solid android:color="@color/white" />
+    <solid android:color="@color/light_dark" />
 
 
 </shape>

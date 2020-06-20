@@ -22,7 +22,7 @@
                 android:src="@drawable/dubai"
                 app:layout_constraintBottom_toTopOf="@+id/button_layout"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent=".22"
+                app:layout_constraintHeight_percent=".20"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RelativeLayout
@@ -40,8 +40,7 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginTop="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:layout_marginBottom="@dimen/medium_margin"
-                    android:background="@color/gray"
+                    android:background="@drawable/round_background"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="@dimen/small_margin">
@@ -49,7 +48,7 @@
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="25dp"
-                        android:layout_margin="@dimen/medium_margin"
+                        android:layout_margin="@dimen/small_margin"
                         android:layout_weight="1"
                         android:contentDescription="@string/app_name"
                         android:src="@drawable/logo" />
@@ -59,140 +58,154 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:gravity="center"
+                        android:textColor="@color/gray_black"
                         android:text="Learn more about ALDAR University"
                         android:textSize="12sp" />
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="22dp"
+                        android:layout_height="wrap_content"
                         android:layout_margin="@dimen/medium_margin"
                         android:layout_weight="1"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/forward"
-                        android:tint="@color/colorPrimary" />
+                        android:src="@drawable/arrow_forward"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layout_blog"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    <RadioGroup
+                        android:checkedButton="@+id/radio_academic"
+                        android:id="@+id/toggle"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/layout_blog"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginTop="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:background="@drawable/round_background"
+                        android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btn_calendar"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/medium_margin"
-                        android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:text="Academic Calendar"
-                        android:textAllCaps="false"
-                        android:textColor="@color/screen_color" />
+                        <RadioButton
+                            android:id="@+id/radio_academic"
+                            android:background="@drawable/toggle_widget_background"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="Academic Calendar"
+                            android:textColor="@color/white" />
 
-                    <Button
-                        android:id="@+id/btn_download_boucher"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/medium_margin"
-                        android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_weight="1"
-                        android:background="@drawable/gradient"
-                        android:text="@string/download_boucher"
-                        android:textAllCaps="false"
-                        android:textColor="@color/screen_color" />
-                </LinearLayout>
+                        <RadioButton
+                            android:id="@+id/radio_download"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/toggle_widget_background"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="@string/download_boucher"
+                            android:textColor="@color/gray_black" />
+                    </RadioGroup>
 
             </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/portal_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
-                android:background="@drawable/gradient"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:background="@drawable/round_black"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/medium_margin"
+                android:paddingTop="@dimen/standarize_spacing"
+                android:paddingBottom="@dimen/standarize_spacing"
+                android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
                 app:layout_constraintBottom_toTopOf="@id/tv_today"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_layout">
 
-                <LinearLayout
-                    android:id="@+id/layout_portal"
-                    android:layout_width="0dp"
+
+                <RelativeLayout
+                    android:id="@+id/layout_combine"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:layout_weight="0.8"
-                    android:background="@color/gray_black"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:paddingTop="@dimen/small_margin"
+                    android:paddingBottom="@dimen/small_margin"
+                    android:background="@drawable/round_light_dark">
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/rome"
-                        android:tint="@color/screen_color"
-                        android:visibility="gone" />
-
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/layout_portal"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/medium_margin"
+                        android:layout_marginEnd="@dimen/medium_margin"
                         android:gravity="center"
-                        android:text="@string/portal"
-                        android:textColor="@color/screen_color"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/layout_fee"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/small_margin"
-                    android:layout_weight="1"
-                    android:background="@color/gray_black"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/portal"/>
 
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_margin="@dimen/small_margin"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/dollar"
-                        android:tint="@color/screen_color"
-                        android:visibility="gone" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="@string/portal"
+                            android:textColor="@color/screen_color"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/layout_fee"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/medium_margin"
+                        android:layout_marginStart="@dimen/medium_margin"
                         android:gravity="center"
-                        android:text="@string/payment"
-                        android:textColor="@color/screen_color"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="@dimen/small_margin"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/dollar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="@string/payment"
+                            android:textColor="@color/screen_color"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </RelativeLayout>
 
                 <LinearLayout
                     android:id="@+id/layout_faq"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_combine"
                     android:layout_marginStart="@dimen/small_margin"
-                    android:layout_weight="0.8"
-                    android:background="@color/gray_black"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:background="@drawable/round_light_dark"
                     android:gravity="center"
+                    android:paddingTop="@dimen/small_margin"
+                    android:paddingBottom="@dimen/small_margin"
+                    android:paddingStart="@dimen/medium_margin"
+                    android:paddingEnd="@dimen/high_margin"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/questionmark"
-                        android:tint="@color/screen_color"
-                        android:visibility="gone" />
+                        android:src="@drawable/question"/>
 
                     <TextView
                         android:layout_width="40dp"
@@ -203,7 +216,7 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_today"
@@ -249,13 +262,12 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:layout_marginBottom="@dimen/high_margin"
-                    android:background="@color/gray_black"
+                    android:background="@drawable/round_background"
                     android:padding="@dimen/small_margin"
                     android:paddingStart="@dimen/standarize_spacing"
                     android:paddingEnd="@dimen/standarize_spacing"
                     android:text="Share your feedback"
-                    android:textAllCaps="false"
-                    android:textColor="@color/screen_color" />
+                    android:textAllCaps="false"/>
 
             </RelativeLayout>
 
@@ -277,7 +289,7 @@
                 android:id="@+id/rv_news"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginStart="@dimen/margin_arrow"
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_news" />
@@ -311,6 +323,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginEnd="@dimen/medium_margin"
+                    android:textColor="@color/gray_black"
                     android:text="@string/support_text"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
