@@ -10,12 +10,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
@@ -25,7 +23,6 @@ import com.aldar.studentportal.databinding.FragmentCourseScheduleBinding;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 
-import javax.inject.Inject;
 
 public class CourseScheduleFragment extends Fragment {
     private FragmentCourseScheduleBinding binding;
@@ -64,12 +61,12 @@ public class CourseScheduleFragment extends Fragment {
 
             if (semesterResponseModel.getData().size() > 0) {
                 //converting arraylist to string array
-                String[] namesArr = new String[semesterResponseModel.getData().size()];
+                String[] semesterArray = new String[semesterResponseModel.getData().size()];
                 for (int i = 0; i < semesterResponseModel.getData().size(); i++) {
-                    namesArr[i] = String.valueOf(semesterResponseModel.getData().get(i).getSemName());
+                    semesterArray[i] = String.valueOf(semesterResponseModel.getData().get(i).getSemName());
                 }
 
-                binding.scheduleSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, namesArr, "Select"));
+                binding.scheduleSpinner.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, semesterArray, "Select"));
                 binding.scheduleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -86,15 +83,11 @@ public class CourseScheduleFragment extends Fragment {
 
 
     private void getCourseData(MutableLiveData<CourseScheduleResponseModel> mutableLiveData) {
-        mutableLiveData.observe(getViewLifecycleOwner(), courseScheduleResponseModel -> {
-            if (courseScheduleResponseModel.getData() != null) {
+        mutableLiveData.observe(getViewLifecycleOwner(), coursesData -> {
+            if (coursesData.getData() != null) {
                 binding.tvNoData.setVisibility(View.GONE);
-                adapter = new CourseScheduleAdapter(courseScheduleResponseModel.getData());
+                adapter = new CourseScheduleAdapter(coursesData.getData());
                 binding.rvCourseSchedule.setAdapter(adapter);
-            } else {
-                binding.tvNoData.setVisibility(View.VISIBLE);
-                binding.rvCourseSchedule.setAdapter(null);
-
             }
         });
     }

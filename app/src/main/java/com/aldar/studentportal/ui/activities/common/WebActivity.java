@@ -2,12 +2,15 @@ package com.aldar.studentportal.ui.activities.common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
@@ -34,11 +37,16 @@ public class WebActivity extends AppCompatActivity {
 
     private Disposable disposable;
     private ProgressBar progressBar;
+    private TextView tvNoAccess;
+    boolean loadingFinished = true;
+    boolean redirect = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
+        tvNoAccess = findViewById(R.id.no_acess);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -102,8 +110,40 @@ public class WebActivity extends AppCompatActivity {
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
-        webView.setWebViewClient(new WebClient(getApplicationContext(), progressBar));
+        webView.setWebViewClient(new HelloWebViewClient());
         webView.loadUrl(link);
+    }
+
+    private class HelloWebViewClient extends WebViewClient {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            loadingFinished = false;
+            progressBar.setVisibility(View.VISIBLE);
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String newUrl) {
+            if (!loadingFinished) {
+                redirect = true;
+            }
+
+            loadingFinished = false;
+            webView.loadUrl(newUrl);
+            return true;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            if (!redirect) {
+                loadingFinished = true;
+                progressBar.setVisibility(View.GONE);
+                progressBar = null;
+            } else {
+                webView.setVisibility(View.GONE);
+                redirect = false;
+            }
+        }
     }
 
 
