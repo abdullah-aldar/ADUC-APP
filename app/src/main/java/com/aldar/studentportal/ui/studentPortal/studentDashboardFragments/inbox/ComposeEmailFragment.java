@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
@@ -43,8 +44,8 @@ public class ComposeEmailFragment extends Fragment {
 
 
         viewModel.getSemsterScheduleData().observe(getViewLifecycleOwner(), semesterResponseModel -> {
-            if (semesterResponseModel != null) {
-                viewModel.apiCallCousesData(String.valueOf(semesterResponseModel.getData().get(1).getSemID()));
+            if (semesterResponseModel.getData() != null) {
+                viewModel.apiCallCousesData(String.valueOf(semesterResponseModel.getData().get(0).getSemID()));
             }
         });
 
@@ -87,5 +88,9 @@ public class ComposeEmailFragment extends Fragment {
                 });
             }
         });
+    }
+
+    private void showToast(String message){
+        Toast.makeText(getContext(), ""+message, Toast.LENGTH_SHORT).show();
     }
 }

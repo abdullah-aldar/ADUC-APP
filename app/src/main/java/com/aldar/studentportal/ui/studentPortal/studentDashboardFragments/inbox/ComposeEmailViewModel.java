@@ -34,8 +34,7 @@ public class ComposeEmailViewModel extends AndroidViewModel {
 
     private MutableLiveData<SemesterResponseModel> semesterData = new MutableLiveData<>();
     private MutableLiveData<CourseScheduleResponseModel> courseScheduleData = new MutableLiveData<>();
-    private MutableLiveData<CommonApiResponse> requestResponseData = new MutableLiveData<>();
-    private MutableLiveData<LetterRequestResponseModel> allLetterData = new MutableLiveData<>();
+
 
     public ComposeEmailViewModel(@NonNull Application application) {
         super(application);
@@ -53,19 +52,22 @@ public class ComposeEmailViewModel extends AndroidViewModel {
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
+                        showToast(jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
 
-                } else {
+                } else if(response.body().getSuccess()) {
                     semesterData.setValue(response.body());
+                }
+                else {
+                    showToast(response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<SemesterResponseModel> call, Throwable t) {
-                showToast(getApplication().getApplicationContext(), t.getMessage());
+                showToast(""+t.getMessage());
             }
         });
     }
@@ -80,7 +82,7 @@ public class ComposeEmailViewModel extends AndroidViewModel {
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
+                        showToast(jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
@@ -88,13 +90,13 @@ public class ComposeEmailViewModel extends AndroidViewModel {
                 } else if (Boolean.parseBoolean(response.body().getSuccess())) {
                     courseScheduleData.setValue(response.body());
                 } else {
-                    showToast(getApplication().getApplicationContext(), response.body().getMessage());
+                    showToast(response.body().getMessage());
                 }
             }
 
             @Override
             public void onFailure(Call<CourseScheduleResponseModel> call, Throwable t) {
-                showToast(getApplication().getApplicationContext(), t.getMessage());
+                showToast(""+t.getMessage());
             }
         });
     }
@@ -111,19 +113,19 @@ public class ComposeEmailViewModel extends AndroidViewModel {
                 if (response.body() == null) {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
+                        showToast(jObjError.getString("message"));
                     } catch (Exception e) {
                         Log.d("", e.getMessage());
                     }
                 } else {
-                    showToast(getApplication().getApplicationContext(), response.body().getMessage());
+                    showToast(response.body().getMessage());
                 }
             }
 
             @Override
             public void onFailure(Call<CommonApiResponse> call, Throwable t) {
                 progressBar.setValue(0);
-                showToast(getApplication().getApplicationContext(), t.getMessage());
+                showToast(""+t.getMessage());
             }
         });
     }
@@ -137,7 +139,7 @@ public class ComposeEmailViewModel extends AndroidViewModel {
         return semesterData;
     }
 
-    private void showToast(Context context, String message) {
-        Toast.makeText(context, "" + message, Toast.LENGTH_SHORT).show();
+    private void showToast( String message) {
+        Toast.makeText(getApplication().getApplicationContext(), "" + message, Toast.LENGTH_SHORT).show();
     }
 }

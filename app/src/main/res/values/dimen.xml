@@ -15,4 +15,5 @@
     <dimen name="btn_height">45dp</dimen>
     <dimen name="extreme_margin">50dp</dimen>
     <dimen name="text_gap">2dp</dimen>
+    <dimen name="small_medium">8dp</dimen>
 </resources>

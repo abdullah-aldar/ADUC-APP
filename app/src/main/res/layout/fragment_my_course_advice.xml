@@ -13,12 +13,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray">
+        android:background="@color/screen_color">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@color/colorPrimary"
+            android:contentDescription="@string/image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +31,7 @@
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/medium_margin"
             android:src="@drawable/back_white"
+            android:contentDescription="@string/image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,7 +87,7 @@
                 <Button
                     android:id="@+id/btn_see_courses"
                     android:layout_width="220dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/btn_height"
                     android:layout_below="@+id/semester_spinner"
                     android:layout_centerHorizontal="true"
                     android:background="@drawable/gradient"

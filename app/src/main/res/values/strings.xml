@@ -10,6 +10,7 @@
     <string name="support_text">You can call, chat, or email us!</string>
     <string name="major">Major</string>
 
+    <string name="image">Image</string>
     <string name="go">Go</string>
     <string name="pay_now">Pay Now</string>
     <string name="payment">Online Payment</string>
@@ -24,7 +25,7 @@
     <string name="agree">Agree with the terms and conditions</string>
     <string name="portal">Portal</string>
     <string name="faq">FAQ</string>
-    <string name="download_boucher">Download Brochure</string>
+    <string name="download_boucher">Download brochure</string>
 
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -33,6 +34,7 @@
     <string name="menu_academic">Academics</string>
     <string name="menu_campus">Campus Life</string>
     <string name="menu_login">Login</string>
+    <string name="academic">Academic calendar</string>
     <string name="logout">Logout</string>
     <string name="cancel">Cancel</string>
     <string name="logout_text">Are you sure to logout ?</string>
@@ -42,6 +44,7 @@
     <string name="change_password_text">Please change your password here make sure the password is easy to remember</string>
     <string name="studnet_name">Student Name</string>
     <string name="student_course">Programe</string>
+    <string name="first_name">Name</string>
     <string name="concentration">Concentration</string>
     <string name="selected_course_advise">الحالة الاكاديمية</string>
     <string name="your_marks">الدرجات</string>
@@ -49,16 +52,31 @@
     <string name="compose_write">Compose/Write Mail</string>
     <string name="financial_statement">الحسابات</string>
     <string name="profile_statement">ملف الطالب</string>
+    <string name="announcement">Announcement</string>
     <string name="announcement_text">Latest announcement\nأحدث إعلان</string>
     <string name="faq_text">Frequently Asked Questions\nأسئلة مكررة</string>
     <string name="feedback">Your feedback helps enhance the ALDAR Experience\nيرجى مشاركتنا بملاحظاتك</string>
     <string name="books_available">Books Available In Library</string>
-    <string name="search_books">Search Book By!</string>
+    <string name="search_books">Search book by!</string>
     <string name="digital_lib">Digital Library</string>
     <string name="search">Search</string>
+    <string name="search_here">Search here</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="hi">Hi</string>
+    <string name="your_feedback">Your feeback will be highly appreciated</string>
+    <string name="your_message">Your message</string>
+    <string name="your_courses">Your courses</string>
+    <string name="click_to_register">Click to Register Courses</string>
+    <string name="my_inbox">My Inbox</string>
+    <string name="comments">Comments</string>
+    <string name="ratting">Ratting</string>
+    <string name="submit">Submit</string>
+    <string name="share_feedback">Send Feedback</string>
+    <string name="request_call">Request a call back</string>
     <string name="mobile">Mobile No :</string>
     <string name="edit">Edit</string>
     <string name="telephone">Telephone No :</string>
+    <string name="phone">Phone</string>
     <string name="email">Email :</string>
     <string name="contact_info">CONTACT INFORMATION</string>
     <string name="school_name">High School Name :</string>
@@ -79,6 +97,11 @@
     <string name="arabic_name">Arabic Student Name :</string>
     <string name="std_name">Student Name :</string>
     <string name="std_id">Student ID :</string>
+    <string name="sections">Please Select section</string>
+    <string name="instructor">Instructor Name</string>
+    <string name="subject">Subject :</string>
+    <string name="message">Message :</string>
+    <string name="send">Send</string>
 
 
     <string name="no_data">No Data Exist in this semester</string>

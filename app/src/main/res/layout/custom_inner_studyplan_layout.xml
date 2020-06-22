@@ -39,6 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/expand_more"
                     android:layout_marginEnd="@dimen/small_margin"/>
 
@@ -49,9 +50,9 @@
                 android:id="@+id/innerRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayoutHolder"
                 android:background="#f6f6f6"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:layout_below="@+id/layout_title"/>
 
             <TextView
                 android:id="@+id/tv_total_creditshours"

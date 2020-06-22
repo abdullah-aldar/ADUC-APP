@@ -13,12 +13,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey">
+        android:background="@color/screen_color">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/gradient"
+            android:src="@color/colorPrimary"
+            android:contentDescription="@string/image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +31,7 @@
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginTop="@dimen/medium_margin"
             android:src="@drawable/back_white"
+            android:contentDescription="@string/image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,8 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="Send"
-            android:textColor="@color/gray"
+            android:text="@string/send"
+            android:textColor="@color/white"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +75,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Please Select secrion"
-                    android:textColor="@color/gray" />
+                    android:text="@string/sections"
+                    android:textColor="@color/white" />
 
 
                 <Spinner
@@ -116,13 +118,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:text="Instructor Name" />
+                    android:text="@string/instructor" />
 
                 <TextView
                     android:id="@+id/radio_arabic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_toEndOf="@id/radio_english"
                     android:layout_marginEnd="@dimen/medium_margin"
                     android:text="@={composeEmailViewModel.instructorName}" />
 
@@ -136,7 +141,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/small_margin"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Subject :"
+                android:text="@string/subject"
                 android:textColor="@color/black" />
 
             <EditText
@@ -144,6 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_whome"
+                android:inputType="text"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 android:text="@={composeEmailViewModel.subject}"
@@ -157,7 +163,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/small_margin"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Message :"
+                android:text="@string/message"
                 android:textColor="@color/black" />
 
 
@@ -169,10 +175,12 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginEnd="@dimen/standarize_spacing"
+                android:inputType="textEmailAddress"
                 android:background="@color/tranparent"
                 android:gravity="top"
-                android:hint="your message"
+                android:hint="@string/your_message"
                 android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
                 android:text="@={composeEmailViewModel.message}"
                 android:textSize="12sp" />
 
@@ -187,7 +195,7 @@
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 android:layout_weight="1"
                 android:background="@drawable/gradient"
-                android:text="Send"
+                android:text="@string/send"
                 android:textColor="@color/white" />
         </RelativeLayout>
 
@@ -196,7 +204,6 @@
             android:id="@+id/progess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:indeterminateTint="@color/colorPrimary"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"

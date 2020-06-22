@@ -15,7 +15,7 @@
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/small_margin"
-        android:background="@drawable/shadow"
+        android:background="@drawable/round_background"
         android:orientation="vertical"
         android:padding="@dimen/medium_margin">
 

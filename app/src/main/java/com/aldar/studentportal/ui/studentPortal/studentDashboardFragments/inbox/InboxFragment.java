@@ -71,6 +71,7 @@ public class InboxFragment extends Fragment {
     private void loadFragment(Fragment fragment){
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
+                .addToBackStack("")
                 .replace(R.id.fragment_container,
                         fragment, null).commit();
     }

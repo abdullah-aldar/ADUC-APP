@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@color/colorPrimary"
+            android:contentDescription="@string/image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +30,7 @@
             android:layout_height="25dp"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/medium_margin"
+            android:contentDescription="@string/image"
             android:src="@drawable/back_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="My Inbox"
+            android:text="@string/my_inbox"
             android:textColor="@color/white"
             android:textSize="@dimen/large_text_size"
             android:fontFamily="@font/poppins_regular"
@@ -56,7 +58,6 @@
             android:layout_marginEnd="@dimen/medium_margin"
             android:paddingTop="@dimen/medium_margin"
             android:paddingBottom="@dimen/medium_margin"
-            app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
@@ -79,14 +80,14 @@
                 android:layout_height="@dimen/high_margin"
                 android:layout_below="@id/tv_student_name"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/round_black"
+                android:background="@drawable/round_background"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:paddingStart="@dimen/medium_margin"
                 android:paddingEnd="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/compose_write"
-                android:textColor="@color/white"
+                android:textColor="@color/gray_black"
                 android:textSize="12sp" />
 
         </RelativeLayout>
