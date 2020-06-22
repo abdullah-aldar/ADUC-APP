@@ -24,7 +24,7 @@
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginTop="@dimen/medium_margin"
             android:layout_marginEnd="@dimen/small_margin"
-            android:background="@drawable/shadow"
+            android:background="@drawable/round_background"
             android:padding="@dimen/standarize_spacing"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +46,7 @@
                 android:id="@+id/iv_arrow"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:contentDescription="@string/image"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/expand_more" />
 

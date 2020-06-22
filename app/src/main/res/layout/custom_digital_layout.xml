@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <data>
@@ -18,7 +17,7 @@
         android:layout_marginStart="@dimen/medium_margin"
         android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginEnd="@dimen/medium_margin"
-        android:background="@drawable/shadow"
+        android:background="@drawable/round_background"
         android:padding="@dimen/medium_margin">
 
 
@@ -27,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:contentDescription="@string/image"
             android:src="@drawable/course" />
 
         <TextView
@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:contentDescription="@string/image"
             android:src="@drawable/gray_next_icon" />
     </RelativeLayout>
 

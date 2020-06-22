@@ -15,28 +15,24 @@
         android:networkSecurityConfig="@xml/network"
         android:roundIcon="@mipmap/round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/MaterialTheme"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".ui.activities.common.NewsActivity"></activity>
         <activity
             android:name=".ui.activities.PaymentActivity"
             android:theme="@style/AppTheme.Splash" />
-
-        <activity android:name=".ui.studentPortal.activities.ForgotPasswordActivity"
+        <activity
+            android:name=".ui.studentPortal.activities.ForgotPasswordActivity"
             android:theme="@style/AppTheme.Splash" />
-
         <activity
             android:name=".ui.activities.common.fee.OnlinePaymentActivity"
             android:theme="@style/AppTheme.Splash" />
-
         <activity
             android:name=".ui.activities.common.faq.FaqActivity"
             android:theme="@style/AppTheme.Splash" />
-
-        <activity android:name=".ui.studentPortal.activities.SelectedCoursesActivity"
+        <activity
+            android:name=".ui.studentPortal.activities.SelectedCoursesActivity"
             android:theme="@style/AppTheme.Splash" />
-
-
         <activity
             android:name=".ui.activities.common.SplashActivity"
             android:theme="@style/AppTheme.Splash">
@@ -46,16 +42,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.studentPortal.activities.LoginSignUpActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity android:name=".ui.activities.common.WebActivity" />
-
         <activity
             android:name=".ui.activities.common.NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ui.studentPortal.activities.StudentPortalMainActivity"
             android:screenOrientation="fullSensor"

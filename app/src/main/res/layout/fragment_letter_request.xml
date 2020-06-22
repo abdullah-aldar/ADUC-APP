@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/gradient"
+            android:src="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
             android:id="@+id/iv_back"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/medium_margin"
             android:src="@drawable/back_white"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,33 +64,30 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/transparent_button"
-                android:layout_marginStart="@dimen/small_margin"
-                android:layout_marginEnd="@dimen/small_margin"
-                android:paddingStart="@dimen/medium_margin"
-                android:paddingEnd="@dimen/medium_margin">
+                android:background="@drawable/round_background"
+                android:padding="@dimen/standarize_spacing">
 
                 <TextView
                     android:id="@+id/select"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Please Select here"
-                    android:textColor="@color/white" />
-
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:text="Please select service"
+                    android:textColor="@color/gray_black" />
 
                 <Spinner
                     android:id="@+id/letter_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/select"
-                    android:backgroundTint="@color/white"
-                    android:pointerIcon="arrow"
-                    android:spinnerMode="dropdown"
-                    android:textColor="@color/white"
-                    android:theme="@style/ThemeOverlay.AppCompat.Light" />
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/gray_black"
+                    android:gravity="center"
+                    android:textColor="@color/gray_black" />
             </RelativeLayout>
 
         </RelativeLayout>

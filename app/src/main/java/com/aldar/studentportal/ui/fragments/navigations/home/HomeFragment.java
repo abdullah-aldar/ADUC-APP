@@ -11,6 +11,7 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -65,15 +66,28 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         binding.layoutBlog.setOnClickListener(this);
         binding.layoutPortal.setOnClickListener(this);
         binding.layoutFee.setOnClickListener(this);
-        binding.btnDownloadBoucher.setOnClickListener(this);
         binding.layoutFaq.setOnClickListener(this);
-        binding.btnCalendar.setOnClickListener(this);
         binding.ivWhatsapp.setOnClickListener(this);
         binding.ivCall.setOnClickListener(this);
         binding.ivFacebook.setOnClickListener(this);
         binding.ivEmail.setOnClickListener(this);
         binding.btnShareFeedback.setOnClickListener(this);
         binding.btnInquireUs.setOnClickListener(this);
+
+        binding.toggle.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId){
+                case R.id.radio_academic:
+                    binding.radioAcademic.setTextColor(getResources().getColor(R.color.white));
+                    binding.radioDownload.setTextColor(getResources().getColor(R.color.gray_black));
+                    loadAcademicCalendar();
+                break;
+                case R.id.radio_download:
+                    binding.radioDownload.setTextColor(getResources().getColor(R.color.white));
+                    binding.radioAcademic.setTextColor(getResources().getColor(R.color.gray_black));
+                    downloadBroucher();
+                    break;
+            }
+        });
 
         return binding.getRoot();
     }
@@ -119,21 +133,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_fee:
                 startActivity(new Intent(getActivity(), OnlinePaymentActivity.class));
                 break;
-            case R.id.btn_download_boucher:
-                PermissionUtils.checkPermision(getActivity());
-                try {
-                    new FileUtils(getActivity(), "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                break;
+//            case R.id.btn_download_boucher:
+//               downloadBroucher();
+//                break;
+//            case R.id.btn_calendar:
+//                loadAcademicCalendar();
+//                break;
             case R.id.layout_faq:
                 new LeakyClass(getActivity()).redirectToFAQ();
-                break;
-            case R.id.btn_calendar:
-                String myPdfUrl = "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf";
-                String url = "https://docs.google.com/gview?embedded=true&url=" + myPdfUrl;
-                new LeakyClass(getActivity()).redirectToWebview(url);
                 break;
             case R.id.iv_whatsapp:
                 showWhatsApp();
@@ -308,6 +315,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
         cursor.close();
         return contactList;
+    }
+
+    private void downloadBroucher(){
+        PermissionUtils.checkPermision(getActivity());
+        try {
+            new FileUtils(getActivity(), "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadAcademicCalendar(){
+        String myPdfUrl = "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf";
+        String url = "https://docs.google.com/gview?embedded=true&url=" + myPdfUrl;
+        new LeakyClass(getActivity()).redirectToWebview(url);
     }
 
     @Override

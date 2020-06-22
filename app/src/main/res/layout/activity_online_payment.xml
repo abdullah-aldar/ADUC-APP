@@ -12,7 +12,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/screen_color">
+
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
@@ -24,403 +26,380 @@
                 android:id="@+id/iv_back"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:contentDescription="@string/image"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:src="@drawable/back_white"/>
+                android:src="@drawable/back_white" />
 
             <TextView
                 android:id="@+id/online_payment"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/montserrat_semibold"
-                android:gravity="center"
-                android:layout_toEndOf="@id/iv_back"
                 android:layout_marginStart="@dimen/standarize_spacing"
-                android:text="Student Online Payment"
+                android:layout_toEndOf="@id/iv_back"
+                android:gravity="center"
+                android:text="@string/payment"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
         </RelativeLayout>
 
 
-    <ScrollView
-        android:layout_below="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:background="@color/gray">
-
-        <RelativeLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header"
+            android:background="@color/gray"
+            android:fillViewport="true">
 
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/grey">
+                android:layout_height="wrap_content">
 
 
-
-                <TextView
-                    android:id="@+id/student_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="Student ID *"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <RelativeLayout
-                    android:id="@+id/student_id_layout"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/student_id">
+                    android:layout_height="match_parent"
+                    android:background="@color/screen_color">
+
+
+                    <TextView
+                        android:id="@+id/student_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginTop="@dimen/medium_margin"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:gravity="center"
+                        android:text="@string/studt_id"
+                        android:textColor="@color/gray_black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/student_id_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="@dimen/small_margin"
+                        app:layout_constraintTop_toBottomOf="@id/student_id">
+
+                        <EditText
+                            android:id="@+id/et_student_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/btn_height"
+                            android:layout_marginEnd="@dimen/medium_margin"
+                            android:layout_toStartOf="@id/btn_go"
+                            android:background="@drawable/round_background"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:paddingStart="@dimen/small_margin"
+                            android:paddingEnd="@dimen/small_margin"
+                            android:text="@={paymentViewModel.studentID}"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <Button
+                            android:id="@+id/btn_go"
+                            android:layout_width="60dp"
+                            android:layout_height="@dimen/btn_height"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/gradient"
+                            android:text="@string/go"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/student_info_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginTop="@dimen/start_margin"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:background="@drawable/round_background"
+                        android:paddingTop="@dimen/medium_margin"
+                        android:paddingBottom="@dimen/medium_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/student_id_layout">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/medium_margin"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/studnet_name"
+                            android:textColor="@color/gray_black" />
+
+                        <TextView
+                            android:id="@+id/tv_student_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="2"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:layout_toEndOf="@+id/name"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@{paymentViewModel.studentName}" />
+
+                        <TextView
+                            android:id="@+id/program"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_student_name"
+                            android:layout_marginStart="@dimen/medium_margin"
+                            android:layout_marginTop="@dimen/small_medium"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/program"
+                            android:textColor="@color/gray_black" />
+
+                        <TextView
+                            android:id="@+id/tv_student_program"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="2"
+                            android:layout_below="@id/tv_student_name"
+                            android:layout_marginTop="@dimen/small_medium"
+                            android:layout_toEndOf="@+id/program"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@{paymentViewModel.studentProgram}" />
+
+                        <TextView
+                            android:id="@+id/concentration"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_student_program"
+                            android:layout_marginTop="@dimen/small_medium"
+                            android:layout_marginStart="@dimen/medium_margin"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/major"
+                            android:textColor="@color/gray_black" />
+
+                        <TextView
+                            android:id="@+id/tv_concentration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="2"
+                            android:layout_marginTop="@dimen/small_medium"
+                            android:layout_below="@id/tv_student_program"
+                            android:layout_toEndOf="@+id/concentration"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@{paymentViewModel.studentConcentration}" />
+
+                        <TextView
+                            android:id="@+id/course_name"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_medium"
+                            android:layout_below="@id/tv_concentration"
+                            android:layout_marginStart="@dimen/medium_margin"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/current_balance"
+                            android:textColor="@color/gray_black" />
+
+                        <TextView
+                            android:id="@+id/tv_course_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/small_medium"
+                            android:layout_below="@id/tv_concentration"
+                            android:layout_toEndOf="@id/course_name"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@{paymentViewModel.currentBalance}" />
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/Payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:layout_marginTop="@dimen/medium_margin"
+                        android:gravity="center"
+                        android:text="@string/payment_against"
+                        android:textColor="@color/gray_black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/student_info_layout" />
+
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Payment">
+
+                        <RadioButton
+                            android:id="@+id/radio_others"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/other" />
+
+                        <RadioButton
+                            android:id="@+id/radio_cheques"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cheques" />
+
+                    </RadioGroup>
+
+                    <RelativeLayout
+                        android:id="@+id/cheque_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/standarize_spacing"
+                        android:background="@color/gray"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/radio_group">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_cheques"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:gravity="center"
+                        android:text="@string/amount"
+                        android:textColor="@color/gray_black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cheque_layout" />
+
 
                     <EditText
-                        android:id="@+id/et_student_id"
+                        android:id="@+id/et_amount"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/btn_height"
-                        android:layout_marginEnd="@dimen/medium_margin"
-                        android:layout_toStartOf="@id/btn_go"
-                        android:background="@drawable/edittext_style"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:background="@drawable/round_background"
                         android:imeOptions="actionNext"
                         android:inputType="text"
                         android:paddingStart="@dimen/small_margin"
-                        android:paddingEnd="@dimen/small_margin"
-                        android:text="@={paymentViewModel.studentID}"
+                        android:text="@={paymentViewModel.amount}"
                         android:textSize="14sp"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/amount" />
 
-                    <Button
-                        android:id="@+id/btn_go"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/colorPrimary"
-                        android:text="Go"
-                        android:textColor="@color/white" />
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/student_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="Student Name"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/student_id_layout" />
-
-
-                <EditText
-                    android:id="@+id/et_student_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/btn_height"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/edittext_style"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/small_margin"
-                    android:text="@{paymentViewModel.studentName}"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/student_name" />
-
-
-                <TextView
-                    android:id="@+id/programe"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="Program"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/et_student_name" />
-
-
-                <EditText
-                    android:id="@+id/et_student_programe"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/btn_height"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/edittext_style"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/small_margin"
-                    android:text="@{paymentViewModel.studentProgram}"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/programe" />
-
-                <TextView
-                    android:id="@+id/concentration"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="concentration"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/et_student_programe" />
-
-
-                <EditText
-                    android:id="@+id/et_student_concentration"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/btn_height"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/edittext_style"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/small_margin"
-                    android:text="@{paymentViewModel.studentConcentration}"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/concentration" />
-
-                <TextView
-                    android:id="@+id/current_balance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="Current Balance"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/et_student_concentration" />
-
-
-                <EditText
-                    android:id="@+id/et_current_balance"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/btn_height"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/edittext_style"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/small_margin"
-                    android:text="@{paymentViewModel.currentBalance}"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/current_balance" />
-
-                <TextView
-                    android:id="@+id/Payment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="Payment"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/et_current_balance" />
-
-                <RadioGroup
-                    android:id="@+id/radio_group"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:orientation="horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/Payment">
-
-                    <RadioButton
-                        android:id="@+id/radio_others"
+                    <TextView
+                        android:id="@+id/note"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="Others" />
-
-                    <RadioButton
-                        android:id="@+id/radio_cheques"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Against Cheque" />
-
-                </RadioGroup>
-
-                <RelativeLayout
-                    android:id="@+id/cheque_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/standarize_spacing"
-                    android:background="@color/gray"
-                    android:visibility="gone"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/radio_group">
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:gravity="center"
+                        android:text="@string/note"
+                        android:textColor="@color/gray_black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/et_amount" />
 
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_cheques"
+                    <EditText
+                        android:id="@+id/et_note"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="70dp"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        android:background="@drawable/round_background"
+                        android:imeOptions="actionDone"
+                        android:inputType="text|textMultiLine"
+                        android:paddingStart="@dimen/small_margin"
+                        android:text="@={paymentViewModel.note}"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/note" />
 
-                </RelativeLayout>
+                    <CheckBox
+                        android:id="@+id/check_term_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/standarize_spacing"
+                        android:layout_marginEnd="@dimen/standarize_spacing"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/et_note" />
 
+                    <TextView
+                        android:id="@+id/tv_term_and_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/agree"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintStart_toEndOf="@id/check_term_condition"
+                        app:layout_constraintTop_toBottomOf="@id/et_note" />
 
-                <TextView
-                    android:id="@+id/amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="amount *"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cheque_layout" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/standarize_spacing"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/check_term_condition">
 
+                        <Button
+                            android:id="@+id/btn_cancel"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:text="@string/cancel"
+                            android:textColor="@color/white" />
 
-                <EditText
-                    android:id="@+id/et_amount"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/btn_height"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/edittext_style"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/small_margin"
-                    android:text="@={paymentViewModel.amount}"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/amount" />
-
-                <TextView
-                    android:id="@+id/note"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:gravity="center"
-                    android:text="Note *"
-                    android:textColor="@color/gray_black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/et_amount" />
-
-
-                <EditText
-                    android:id="@+id/et_note"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/edittext_style"
-                    android:imeOptions="actionDone"
-                    android:inputType="text|textMultiLine"
-                    android:paddingStart="@dimen/small_margin"
-                    android:text="@={paymentViewModel.note}"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/note" />
-
-                <CheckBox
-                    android:id="@+id/check_term_condition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/et_note" />
-
-                <TextView
-                    android:id="@+id/tv_term_and_condition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Agree with the terms and conditions"
-                    android:textColor="@color/colorPrimary"
-                    app:layout_constraintStart_toEndOf="@id/check_term_condition"
-                    app:layout_constraintTop_toBottomOf="@id/et_note" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/btn_height"
-                    android:layout_margin="@dimen/standarize_spacing"
-                    android:orientation="horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/check_term_condition">
-
-                    <Button
-                        android:id="@+id/btn_cancel"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginBottom="@dimen/medium_margin"
-                        android:background="@color/red"
-                        android:text="Cancel"
-                        android:textColor="@color/white" />
-
-                    <Button
-                        android:id="@+id/btn_pay"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_marginBottom="@dimen/medium_margin"
-                        android:layout_marginStart="@dimen/medium_margin"
-                        android:background="@color/green"
-                        android:text="Pay Now"
-                        android:textColor="@color/white" />
+                        <Button
+                            android:id="@+id/btn_pay"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/medium_margin"
+                            android:layout_weight="1"
+                            android:background="@color/green"
+                            android:text="@string/pay_now"
+                            android:textColor="@color/white" />
 
 
-                </LinearLayout>
+                    </LinearLayout>
 
-                <ProgressBar
-                    android:id="@+id/progess"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:indeterminateTint="@color/green"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:visibility="@{paymentViewModel.progressBar}" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ProgressBar
+                        android:id="@+id/progess"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:indeterminateTint="@color/green"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:visibility="@{paymentViewModel.progressBar}" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </RelativeLayout>
-    </ScrollView>
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
 </layout>
 

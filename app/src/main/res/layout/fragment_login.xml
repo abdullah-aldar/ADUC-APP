@@ -30,10 +30,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_logo"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/small_margin"
             android:gravity="center"
             android:text="Student Academic\n Portal"
-            android:textColor="@color/grey"
+            android:textColor="@color/white"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
             android:background="@color/dark"
             android:onClick="@{(v) -> loginViewModel.onClick(v)}"
             android:text="Log in"
-            android:textColor="@color/grey"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -112,7 +112,7 @@
             android:layout_below="@id/btn_login"
             android:layout_centerHorizontal="true"
             android:text="Forget Password ?"
-            android:textColor="@color/grey" />
+            android:textColor="@color/light_gray" />
 
     </RelativeLayout>
 
@@ -126,7 +126,7 @@
             android:layout_marginBottom="@dimen/medium_margin"
             android:padding="@dimen/small_margin"
             android:text="New Student Register Here"
-            android:textColor="@color/grey"
+            android:textColor="@color/light_gray"
             android:textStyle="bold" />
 
 

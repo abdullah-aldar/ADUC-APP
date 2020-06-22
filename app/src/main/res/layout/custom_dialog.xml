@@ -6,6 +6,7 @@
     android:background="@drawable/round_background"
     android:orientation="vertical">
 
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,25 +28,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standarize_spacing"
+        android:layout_marginBottom="@dimen/standarize_spacing"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
-            android:layout_margin="@dimen/standarize_spacing"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/medium_margin"
             android:layout_weight="1"
-            android:background="@color/gray"
+            android:background="@drawable/round_black"
             android:text="@string/cancel"
-            android:textColor="@color/black" />
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="0dp"
             android:layout_height="@dimen/btn_height"
-            android:layout_margin="@dimen/standarize_spacing"
-            android:layout_weight="1"
-            android:background="@color/red"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:layout_weight="1.7"
+            android:textAllCaps="false"
+            android:background="@drawable/gradient"
             android:text="@string/logout"
             android:textColor="@color/white" />
 

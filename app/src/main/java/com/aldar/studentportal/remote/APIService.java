@@ -129,6 +129,13 @@ public interface APIService {
                                      @Field("Points") String points);
 
     @FormUrlEncoded
+    @POST("aduc/UserEnquiry")
+    Call<CommonApiResponse> userEnquiry(@Field("name") String name,
+                                        @Field("email") String email,
+                                        @Field("Mobile") String mobile,
+                                        @Field("message") String message);
+
+    @FormUrlEncoded
     @POST("aduc/SaveStudentCourseAdvise")
     Call<CommonApiResponse> saveCourseAdvice(@Field("StudentId") String studentID,
                                              @Field("SemId") String semesterID,

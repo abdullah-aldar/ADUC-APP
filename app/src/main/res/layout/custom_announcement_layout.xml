@@ -16,13 +16,14 @@
         android:layout_marginStart="@dimen/medium_margin"
         android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginEnd="@dimen/medium_margin"
-        android:background="@drawable/shadow"
+        android:background="@drawable/round_background"
         android:padding="@dimen/medium_margin">
 
         <ImageView
             android:id="@+id/iv_bell"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:contentDescription="@string/image"
             android:layout_marginTop="@dimen/medium_margin"
             android:src="@drawable/bell"
             android:tint="@color/colorAccent" />

@@ -13,13 +13,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray">
+        android:background="@color/screen_color">
 
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/gradient"
+            android:src="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +28,7 @@
             android:id="@+id/iv_back"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/medium_margin"
             android:src="@drawable/back_white"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +72,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:text="@string/profile_statement"
-                android:textColor="@color/gray"
-                android:textSize="12sp" />
+                android:textColor="@color/gray" />
 
         </RelativeLayout>
 
@@ -107,7 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/medium_margin"
-                        android:background="@color/grey"
+                        android:background="@color/light_gray"
                         android:padding="@dimen/medium_margin">
 
                         <TextView
@@ -115,7 +114,7 @@
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/high_spacing"
-                            android:text="Student ID :"
+                            android:text="@string/std_id"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -135,7 +134,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_student_id"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Student Name :"
+                            android:text="@string/std_name"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -155,7 +154,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_student_name"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Arabic Student Name :"
+                            android:text="@string/arabic_name"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -173,9 +172,9 @@
                             android:id="@+id/academic_adviser"
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/arabic_name"
+                            android:layout_below="@+id/tv_arabic_name"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Academic Advisor :"
+                            android:text="@string/advisor_academic"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -183,7 +182,7 @@
                             android:id="@+id/tv_academic_adviser"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/arabic_name"
+                            android:layout_below="@+id/tv_arabic_name"
                             android:layout_marginTop="@dimen/text_gap"
                             android:layout_marginEnd="@dimen/small_margin"
                             android:layout_toEndOf="@+id/academic_adviser"
@@ -195,7 +194,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_academic_adviser"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Date Of Birth :"
+                            android:text="@string/dob"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -215,7 +214,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_dob"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Gender :"
+                            android:text="@string/gender"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -235,7 +234,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_gender"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Marital Status :"
+                            android:text="@string/marital_status"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -255,7 +254,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/marital_status"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Nationality :"
+                            android:text="@string/nationality"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -275,7 +274,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/transparent_button"
                         android:padding="@dimen/small_margin"
                         android:text="PERSONAL INFORMATION"
                         android:textColor="@color/colorPrimary"
@@ -284,7 +282,6 @@
                 <!-- end personal layout -->
 
                 <!-- contact layout -->
-
                 <RelativeLayout
                     android:id="@+id/contact_layout"
                     android:layout_width="match_parent"
@@ -298,7 +295,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/high_spacing"
-                        android:background="@color/grey"
+                        android:background="@color/light_gray"
                         android:padding="@dimen/small_margin">
 
                         <TextView
@@ -306,7 +303,7 @@
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/high_spacing"
-                            android:text="Mobile No :"
+                            android:text="@string/mobile"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -325,9 +322,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_marginEnd="@dimen/medium_margin"
+                            android:text="@string/edit"
                             android:textColor="@color/colorPrimary"
-                            android:textStyle="bold"
-                            android:text="Edit" />
+                            android:textStyle="bold" />
 
 
                         <TextView
@@ -336,7 +333,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/mobile_no"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Telephone No :"
+                            android:text="@string/telephone"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -357,7 +354,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/telephone_no"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Email :"
+                            android:text="@string/email"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -379,7 +376,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/transparent_button"
                         android:padding="@dimen/small_margin"
-                        android:text="CONTACT INFORMATION"
+                        android:text="@string/contact_info"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -400,7 +397,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/high_spacing"
-                        android:background="@color/grey"
+                        android:background="@color/light_gray"
                         android:padding="@dimen/small_margin">
 
                         <TextView
@@ -408,7 +405,7 @@
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/high_spacing"
-                            android:text="High School Name :"
+                            android:text="@string/school_name"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -428,7 +425,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/high_school_name"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="High School Address :"
+                            android:text="@string/school_adress"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -448,7 +445,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_high_school_address"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Awarded Score :"
+                            android:text="@string/awarded_score"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -468,7 +465,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/awarded_score"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Graduation Year :"
+                            android:text="@string/graduation_year"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -490,7 +487,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/transparent_button"
                         android:padding="@dimen/small_margin"
-                        android:text="HIGH SCHOOL"
+                        android:text="@string/high_school"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -509,7 +506,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/high_spacing"
-                        android:background="@color/grey"
+                        android:background="@color/light_gray"
                         android:padding="@dimen/small_margin">
 
                         <TextView
@@ -517,7 +514,7 @@
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/high_spacing"
-                            android:text="Visa Number :"
+                            android:text="@string/visa_no"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -537,7 +534,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_visa_no"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Emirate ID :"
+                            android:text="@string/emirate_id"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -558,7 +555,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/tv_emirate_id"
                             android:layout_marginTop="@dimen/text_gap"
-                            android:text="Visa Expiry Date :"
+                            android:text="@string/visa_expiry"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -580,7 +577,7 @@
                             android:layout_below="@+id/tv_visa_expiry"
                             android:layout_marginTop="@dimen/text_gap"
                             android:hint="Nill"
-                            android:text="Visa Issue Date :"
+                            android:text="@string/visa_issue_date"
                             android:textColor="@color/gray_black"
                             android:textStyle="bold" />
 
@@ -603,7 +600,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/transparent_button"
                         android:padding="@dimen/small_margin"
-                        android:text="VISA INFORMATION"
+                        android:text="@string/visa_info"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
                 </RelativeLayout>

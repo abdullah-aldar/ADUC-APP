@@ -13,12 +13,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey">
+        android:background="@color/screen_color">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/gradient"
+            android:src="@color/colorPrimary"
+            android:contentDescription="@string/image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +31,7 @@
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginTop="@dimen/medium_margin"
             android:src="@drawable/back_white"
+            android:contentDescription="@string/image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="Your Courses"
+            android:text="@string/your_courses"
             android:textColor="@color/gray"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
@@ -55,7 +57,6 @@
             android:layout_marginEnd="@dimen/medium_margin"
             android:paddingTop="@dimen/medium_margin"
             android:paddingBottom="@dimen/medium_margin"
-            app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
@@ -82,7 +83,7 @@
                 android:paddingStart="@dimen/standarize_spacing"
                 android:paddingEnd="@dimen/standarize_spacing"
                 android:visibility="invisible"
-                android:text="Click to Register Courses"
+                android:text="@string/click_to_register"
                 android:textAllCaps="false" />
 
         </RelativeLayout>

@@ -13,12 +13,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray">
+        android:background="@color/screen_color">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/gradient"
+            android:src="@color/colorPrimary"
+            android:contentDescription="@string/image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,9 +28,10 @@
             android:id="@+id/iv_back"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/medium_margin"
             android:src="@drawable/back_white"
+            android:contentDescription="@string/image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:text="My Course Advice"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:fontFamily="@font/poppins_regular"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
@@ -47,62 +49,55 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:paddingTop="@dimen/medium_margin"
-            android:paddingBottom="@dimen/medium_margin"
-            app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
             <RelativeLayout
-                android:id="@+id/semester"
-                android:layout_width="200dp"
+                android:id="@+id/header"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/transparent_button"
-                android:paddingStart="@dimen/medium_margin"
-                android:paddingEnd="@dimen/medium_margin">
+                android:background="@drawable/round_background"
+                android:padding="@dimen/medium_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/medium_margin"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
                 <TextView
                     android:id="@+id/select"
-                    android:layout_width="match_parent"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
                     android:text="Please Select Semester"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/gray_black" />
 
                 <Spinner
-                    android:id="@+id/semster_spinner"
+                    android:id="@+id/semester_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/select"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/gray_black"
                     android:gravity="center"
-                    android:backgroundTint="@color/white"
-                    android:pointerIcon="arrow"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/gray_black" />
+
+                <Button
+                    android:id="@+id/btn_see_courses"
+                    android:layout_width="220dp"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_below="@+id/semester_spinner"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/gradient"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:text="Your selected courses" />
             </RelativeLayout>
 
-            <Button
-                android:id="@+id/btn_see_courses"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:paddingStart="@dimen/standarize_spacing"
-                android:paddingEnd="@dimen/standarize_spacing"
-                android:layout_below="@+id/semester"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/shadow"
-                android:textAllCaps="false"
-                android:textColor="@color/gray_black"
-                android:text="Your Selected Courses" />
 
-        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/data_layout"
