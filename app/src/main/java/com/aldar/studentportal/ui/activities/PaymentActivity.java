@@ -2,12 +2,16 @@ package com.aldar.studentportal.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aldar.studentportal.R;
@@ -26,15 +30,16 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class PaymentActivity extends AppCompatActivity {
     private String strLink;
     private WebView webView;
-
-    private Disposable disposable;
     private ProgressBar progressBar;
+    private TextView tvNoAccess;
+    private Disposable disposable;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        tvNoAccess = findViewById(R.id.no_acess);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -94,9 +99,43 @@ public class PaymentActivity extends AppCompatActivity {
         webView.getSettings().setBuiltInZoomControls(false);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setPluginState(WebSettings.PluginState.ON);
-        webView.setWebViewClient(new WebClient(getApplicationContext(), progressBar));
+        webView.setWebViewClient(new HelloWebViewClient());
         webView.loadUrl(link);
+
+        if (!com.aldar.studentportal.utilities.NetworkUtils.isNetworkConnected(this)) {
+            webView.setVisibility(View.GONE);
+            tvNoAccess.setVisibility(View.VISIBLE);
+        }
+
+        webView.setWebChromeClient(new WebChromeClient() {
+            public void onProgressChanged(WebView view, int progress) {
+
+            }
+        });
+    }
+
+    private class HelloWebViewClient extends WebViewClient {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            progressBar.setVisibility(View.VISIBLE);
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String newUrl) {
+            if (!com.aldar.studentportal.utilities.NetworkUtils.isNetworkConnected(PaymentActivity.this)) {
+                webView.setVisibility(View.GONE);
+                tvNoAccess.setVisibility(View.VISIBLE);
+            }
+
+            webView.loadUrl(newUrl);
+            return true;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
 

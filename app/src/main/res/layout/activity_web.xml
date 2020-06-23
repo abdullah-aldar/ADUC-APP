@@ -31,7 +31,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/standarize_spacing"
+        android:layout_marginEnd="@dimen/standarize_spacing"
         android:gravity="center"
-        android:text="Soemthing went wrong please try again later"/>
+        android:visibility="gone"
+        android:text="@string/no_internet"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

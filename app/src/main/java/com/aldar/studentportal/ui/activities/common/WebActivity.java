@@ -32,8 +32,6 @@ public class WebActivity extends AppCompatActivity {
     private Disposable disposable;
     private ProgressBar progressBar;
     private TextView tvNoAccess;
-    boolean loadingFinished = true;
-    boolean redirect = false;
 
 
     @Override
@@ -85,13 +83,9 @@ public class WebActivity extends AppCompatActivity {
     }
 
     private Maybe<String> getStringObservable() {
-        return Maybe.create(new MaybeOnSubscribe<String>() {
-            @Override
-            public void subscribe(MaybeEmitter<String> emitter) throws Exception {
-                if (!emitter.isDisposed()) {
-                    emitter.onSuccess(strLink);
-
-                }
+        return Maybe.create(emitter -> {
+            if (!emitter.isDisposed()) {
+                emitter.onSuccess(strLink);
             }
         });
     }

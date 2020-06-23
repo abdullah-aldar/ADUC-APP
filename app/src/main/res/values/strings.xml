@@ -78,6 +78,7 @@
     <string name="telephone">Telephone No :</string>
     <string name="phone">Phone</string>
     <string name="email">Email :</string>
+    <string name="inquire_us">Inquire Us</string>
     <string name="contact_info">CONTACT INFORMATION</string>
     <string name="school_name">High School Name :</string>
     <string name="school_adress">High School Address :</string>
@@ -103,7 +104,9 @@
     <string name="message">Message :</string>
     <string name="send">Send</string>
 
-
+    <string name="aldar_today">ALDAR Today</string>
+    <string name="learn_more">Learn more about ALDAR University</string>
+    <string name="news_event">ALDAR News &amp; Events</string>
     <string name="no_data">No Data Exist in this semester</string>
     <string name="not_exist">No data exist!</string>
     <string name="computer_school">School Of Engineering &amp; Technology</string>
@@ -112,7 +115,7 @@
     <string name="business_text">The School of Business Administration (SBA) at ADUC caters to the need of multicultural workforce in the field of Business and Management.</string>
     <string name="art_school">School Of Arts And Social Sciences</string>
     <string name="art_text">The School of Arts and Social Sciences (SBA) at ADUC caters to the need of multicultural workforce in the field of Business and Management.</string>
-
+    <string name="no_internet">Something went wrong please try again later or check your internet</string>
 
     <string name="campus_life">Campus life at ALDAR University College, enjoys the benefits of an urban campus
         as it is located in the heart of the historic business district of Dubai. Movie theaters, shopping centers,

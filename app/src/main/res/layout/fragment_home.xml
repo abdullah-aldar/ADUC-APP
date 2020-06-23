@@ -58,8 +58,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:gravity="center"
+                        android:text="@string/learn_more"
                         android:textColor="@color/gray_black"
-                        android:text="Learn more about ALDAR University"
                         android:textSize="12sp" />
 
                     <ImageView
@@ -68,43 +68,43 @@
                         android:layout_margin="@dimen/medium_margin"
                         android:layout_weight="1"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/arrow_forward"/>
+                        android:src="@drawable/arrow_forward" />
                 </LinearLayout>
 
-                    <RadioGroup
-                        android:checkedButton="@+id/radio_academic"
-                        android:id="@+id/toggle"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_below="@+id/layout_blog"
-                        android:layout_marginStart="@dimen/standarize_spacing"
-                        android:layout_marginTop="@dimen/standarize_spacing"
-                        android:layout_marginEnd="@dimen/standarize_spacing"
-                        android:background="@drawable/round_background"
-                        android:orientation="horizontal">
+                <RadioGroup
+                    android:id="@+id/toggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/layout_blog"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginTop="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/round_background"
+                    android:checkedButton="@+id/radio_academic"
+                    android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/radio_academic"
-                            android:background="@drawable/toggle_widget_background"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:button="@null"
-                            android:gravity="center"
-                            android:text="Academic Calendar"
-                            android:textColor="@color/white" />
+                    <RadioButton
+                        android:id="@+id/radio_academic"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/toggle_widget_background"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/academic"
+                        android:textColor="@color/white" />
 
-                        <RadioButton
-                            android:id="@+id/radio_download"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/toggle_widget_background"
-                            android:button="@null"
-                            android:gravity="center"
-                            android:text="@string/download_boucher"
-                            android:textColor="@color/gray_black" />
-                    </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/radio_download"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/toggle_widget_background"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/download_boucher"
+                        android:textColor="@color/gray_black" />
+                </RadioGroup>
 
             </RelativeLayout>
 
@@ -117,10 +117,10 @@
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 android:background="@drawable/round_black"
                 android:gravity="center"
-                android:paddingTop="@dimen/standarize_spacing"
-                android:paddingBottom="@dimen/standarize_spacing"
                 android:paddingStart="@dimen/medium_margin"
+                android:paddingTop="@dimen/standarize_spacing"
                 android:paddingEnd="@dimen/medium_margin"
+                android:paddingBottom="@dimen/standarize_spacing"
                 app:layout_constraintBottom_toTopOf="@id/tv_today"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_layout">
@@ -130,9 +130,9 @@
                     android:id="@+id/layout_combine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/round_light_dark"
                     android:paddingTop="@dimen/small_margin"
-                    android:paddingBottom="@dimen/small_margin"
-                    android:background="@drawable/round_light_dark">
+                    android:paddingBottom="@dimen/small_margin">
 
                     <LinearLayout
                         android:id="@+id/layout_portal"
@@ -147,7 +147,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:contentDescription="@string/app_name"
-                            android:src="@drawable/portal"/>
+                            android:src="@drawable/portal" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -163,8 +163,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="@dimen/medium_margin"
                         android:layout_marginStart="@dimen/medium_margin"
+                        android:layout_marginEnd="@dimen/medium_margin"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -195,17 +195,17 @@
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@drawable/round_light_dark"
                     android:gravity="center"
-                    android:paddingTop="@dimen/small_margin"
-                    android:paddingBottom="@dimen/small_margin"
+                    android:orientation="horizontal"
                     android:paddingStart="@dimen/medium_margin"
+                    android:paddingTop="@dimen/small_margin"
                     android:paddingEnd="@dimen/high_margin"
-                    android:orientation="horizontal">
+                    android:paddingBottom="@dimen/small_margin">
 
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/question"/>
+                        android:src="@drawable/question" />
 
                     <TextView
                         android:layout_width="40dp"
@@ -225,7 +225,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:fontFamily="@font/poppins_bold"
-                android:text="ALDAR Today"
+                android:text=""
                 android:textColor="@color/gray_black"
                 android:textSize="@dimen/large_text"
                 app:layout_constraintBottom_toTopOf="@id/feedback_layout"
@@ -266,8 +266,8 @@
                     android:padding="@dimen/small_margin"
                     android:paddingStart="@dimen/standarize_spacing"
                     android:paddingEnd="@dimen/standarize_spacing"
-                    android:text="Share your feedback"
-                    android:textAllCaps="false"/>
+                    android:text="@string/share_feedback"
+                    android:textAllCaps="false" />
 
             </RelativeLayout>
 
@@ -278,7 +278,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:fontFamily="@font/poppins_bold"
-                android:text="ALDAR News &amp; Events"
+                android:text="@string/news_event"
                 android:textColor="@color/gray_black"
                 android:textSize="@dimen/large_text"
                 app:layout_constraintBottom_toTopOf="@id/feedback_layout"
@@ -323,8 +323,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginEnd="@dimen/medium_margin"
-                    android:textColor="@color/gray_black"
                     android:text="@string/support_text"
+                    android:textColor="@color/gray_black"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_support" />
@@ -346,6 +346,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:contentDescription="@string/image"
                         android:src="@drawable/whatsapp" />
 
                     <ImageView
@@ -378,7 +379,7 @@
                         android:layout_height="@dimen/btn"
                         android:layout_weight="2.5"
                         android:background="@drawable/gradient"
-                        android:text="Inquire Us"
+                        android:text="@string/inquire_us"
                         android:textAllCaps="false"
                         android:textColor="@color/screen_color" />
 
