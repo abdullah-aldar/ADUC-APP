@@ -64,6 +64,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         PermissionUtil.isContactPermissionGranted(getActivity());
 
         binding.layoutBlog.setOnClickListener(this);
+        binding.btnAcademic.setOnClickListener(this);
+        binding.btnDownload.setOnClickListener(this);
         binding.layoutPortal.setOnClickListener(this);
         binding.layoutFee.setOnClickListener(this);
         binding.layoutFaq.setOnClickListener(this);
@@ -73,22 +75,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         binding.ivEmail.setOnClickListener(this);
         binding.btnShareFeedback.setOnClickListener(this);
         binding.btnInquireUs.setOnClickListener(this);
-
-        binding.toggle.setOnCheckedChangeListener((group, checkedId) -> {
-            switch (checkedId){
-                case R.id.radio_academic:
-                    binding.radioAcademic.setTextColor(getResources().getColor(R.color.white));
-                    binding.radioDownload.setTextColor(getResources().getColor(R.color.gray_black));
-                    loadAcademicCalendar();
-                break;
-                case R.id.radio_download:
-                    binding.radioDownload.setTextColor(getResources().getColor(R.color.white));
-                    binding.radioAcademic.setTextColor(getResources().getColor(R.color.gray_black));
-                    downloadBroucher();
-                    break;
-            }
-        });
-
 
         return binding.getRoot();
     }
@@ -134,12 +120,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_fee:
                 startActivity(new Intent(getActivity(), OnlinePaymentActivity.class));
                 break;
-//            case R.id.btn_download_boucher:
-//               downloadBroucher();
-//                break;
-//            case R.id.btn_calendar:
-//                loadAcademicCalendar();
-//                break;
+            case R.id.btn_download:
+               downloadBroucher();
+                break;
+            case R.id.btn_academic:
+                loadAcademicCalendar();
+                break;
             case R.id.layout_faq:
                 new LeakyClass(getActivity()).redirectToFAQ();
                 break;

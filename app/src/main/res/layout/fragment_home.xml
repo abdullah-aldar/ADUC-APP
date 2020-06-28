@@ -47,11 +47,11 @@
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="25dp"
+                        android:layout_height="28dp"
                         android:layout_margin="@dimen/small_margin"
                         android:layout_weight="1"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/logo" />
+                        android:src="@mipmap/round" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -60,7 +60,7 @@
                         android:gravity="center"
                         android:text="@string/learn_more"
                         android:textColor="@color/gray_black"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/medium_text" />
 
                     <ImageView
                         android:layout_width="0dp"
@@ -71,40 +71,43 @@
                         android:src="@drawable/arrow_forward" />
                 </LinearLayout>
 
-                <RadioGroup
+                <LinearLayout
                     android:id="@+id/toggle"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="50dp"
                     android:layout_below="@+id/layout_blog"
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginTop="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/round_background"
-                    android:checkedButton="@+id/radio_academic"
+                    android:layoutAnimation="@anim/fade_animation"
+                    android:background="@color/screen_color"
                     android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/radio_academic"
+                    <Button
+                        android:id="@+id/btn_academic"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/toggle_widget_background"
-                        android:button="@null"
+                        android:background="@drawable/gradient"
                         android:gravity="center"
                         android:text="@string/academic"
+                        android:textSize="@dimen/medium_text"
+                        android:textAllCaps="false"
                         android:textColor="@color/white" />
 
-                    <RadioButton
-                        android:id="@+id/radio_download"
+                    <Button
+                        android:id="@+id/btn_download"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/toggle_widget_background"
-                        android:button="@null"
+                        android:layout_marginStart="@dimen/medium_margin"
+                        android:background="@drawable/gradient"
                         android:gravity="center"
+                        android:textSize="@dimen/medium_text"
                         android:text="@string/download_boucher"
-                        android:textColor="@color/gray_black" />
-                </RadioGroup>
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </LinearLayout>
 
             </RelativeLayout>
 
@@ -115,7 +118,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginEnd="@dimen/standarize_spacing"
-                android:background="@drawable/round_black"
+                android:background="@drawable/gradient"
                 android:gravity="center"
                 android:paddingStart="@dimen/medium_margin"
                 android:paddingTop="@dimen/standarize_spacing"
@@ -131,6 +134,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_light_dark"
+                    android:layoutAnimation="@anim/fall_down_animation_layout"
                     android:paddingTop="@dimen/small_margin"
                     android:paddingBottom="@dimen/small_margin">
 
@@ -147,6 +151,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:contentDescription="@string/app_name"
+                            android:tint="@color/white"
                             android:src="@drawable/portal" />
 
                         <TextView
@@ -172,6 +177,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_margin="@dimen/small_margin"
+                            android:tint="@color/white"
                             android:contentDescription="@string/app_name"
                             android:src="@drawable/dollar" />
 
@@ -193,6 +199,7 @@
                     android:layout_below="@+id/layout_combine"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/medium_margin"
+                    android:layoutAnimation="@anim/fall_down_animation_layout"
                     android:background="@drawable/round_light_dark"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -204,6 +211,7 @@
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
+                        android:tint="@color/white"
                         android:contentDescription="@string/app_name"
                         android:src="@drawable/question" />
 
@@ -225,7 +233,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:fontFamily="@font/poppins_bold"
-                android:text=""
+                android:text="@string/aldar_today"
                 android:textColor="@color/gray_black"
                 android:textSize="@dimen/large_text"
                 app:layout_constraintBottom_toTopOf="@id/feedback_layout"
