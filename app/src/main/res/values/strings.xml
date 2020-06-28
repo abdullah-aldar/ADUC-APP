@@ -53,6 +53,7 @@
     <string name="financial_statement">الحسابات</string>
     <string name="profile_statement">ملف الطالب</string>
     <string name="announcement">Announcement</string>
+    <string name="notificaion">Notification</string>
     <string name="announcement_text">Latest announcement\nأحدث إعلان</string>
     <string name="faq_text">Frequently Asked Questions\nأسئلة مكررة</string>
     <string name="feedback">Your feedback helps enhance the ALDAR Experience\nيرجى مشاركتنا بملاحظاتك</string>
@@ -186,5 +187,6 @@
         To be a leading and an internationally recognized higher education institution, contributing to the knowledge society and sustainable development
         of the United Arab Emirates and the Region.
     </string>
+
 
 </resources>

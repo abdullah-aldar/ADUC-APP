@@ -89,6 +89,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
 
+
         return binding.getRoot();
     }
 
@@ -331,6 +332,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         String url = "https://docs.google.com/gview?embedded=true&url=" + myPdfUrl;
         new LeakyClass(getActivity()).redirectToWebview(url);
     }
+
+
 
     @Override
     public void onDestroy() {

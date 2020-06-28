@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.common.NewsActivity"></activity>
+        <activity android:name=".ui.activities.common.NewsActivity" />
         <activity
             android:name=".ui.activities.PaymentActivity"
             android:theme="@style/AppTheme.Splash" />

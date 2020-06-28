@@ -27,6 +27,7 @@ import com.aldar.studentportal.interfaces.ItemClickCallBack;
 import com.aldar.studentportal.ui.activities.common.NavigationActivity;
 import com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity;
 import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.announcment.AnnouncementFragment;
+import com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications.NotificationFragment;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import com.bumptech.glide.Glide;
@@ -73,6 +74,7 @@ public class StudentDashboardFragment extends Fragment {
         });
         binding.ivLogout.setOnClickListener(v -> showDialog());
         binding.layoutAnnouncement.setOnClickListener(v -> GeneralUtilities.connectFragmentWithBack(getActivity(),new AnnouncementFragment()));
+        binding.layoutNotification.setOnClickListener(v -> GeneralUtilities.connectFragmentWithBack(getActivity(),new NotificationFragment()));
     }
 
     private void showDialog(){

@@ -27,10 +27,10 @@ public class DigitalLibraryViewModel extends AndroidViewModel {
     public DigitalLibraryViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        apiCalDigitalLibrary();
+        apiCallDigitalLibrary();
     }
 
-    public void apiCalDigitalLibrary() {
+    public void apiCallDigitalLibrary() {
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
         Call<DigitalLibraryResponseModel> allUsers = services.getDigitalLibrary();
