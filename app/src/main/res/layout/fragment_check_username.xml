@@ -44,10 +44,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_login_using"
-            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/high_margin"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
-            android:padding="@dimen/standarize_spacing">
+            android:paddingTop="@dimen/standarize_spacing">
 
 
             <com.google.android.material.textfield.TextInputLayout

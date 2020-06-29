@@ -104,6 +104,7 @@ public class MyCourseAdviceFragment extends Fragment {
         });
     }
 
+
     @Override
     public void onDestroy() {
         binding = null;

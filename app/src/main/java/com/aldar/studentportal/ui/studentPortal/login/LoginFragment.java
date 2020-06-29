@@ -90,10 +90,10 @@ LoginFragment extends Fragment {
 
 
         binding.tvSignup.setOnClickListener(v ->
-                GeneralUtilities.connectFragmentWithBack(getContext(), new CheckUsernameFragment()));
+                GeneralUtilities.connectFragmentWithBackWithAnimation(getContext(), new CheckUsernameFragment()));
 
         binding.tvForgetPassword.setOnClickListener(v ->
-                GeneralUtilities.connectFragmentWithBack(getContext(), new ForgotPasswordFragment()));
+                GeneralUtilities.connectFragmentWithBackWithAnimation(getContext(), new ForgotPasswordFragment()));
     }
 
     private void getFcmToken() {

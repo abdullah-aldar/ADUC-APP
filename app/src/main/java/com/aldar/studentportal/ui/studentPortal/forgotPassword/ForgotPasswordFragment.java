@@ -44,7 +44,7 @@ public class ForgotPasswordFragment extends Fragment {
                if(Boolean.parseBoolean(forgotPasswordResponseModel.getSuccess())){
 
                    SharedPreferencesManager.getInstance(getActivity()).setStringValueInEditor("otp",forgotPasswordResponseModel.getOtp());
-                   GeneralUtilities.connectFragmentWithBack(getContext(),new VerifyCodeFragment());
+                   GeneralUtilities.connectFragmentWithBackWithAnimation(getContext(),new VerifyCodeFragment());
 
                }
            }

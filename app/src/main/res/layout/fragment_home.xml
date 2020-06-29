@@ -79,7 +79,6 @@
                     android:layout_marginStart="@dimen/standarize_spacing"
                     android:layout_marginTop="@dimen/standarize_spacing"
                     android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:layoutAnimation="@anim/fade_animation"
                     android:background="@color/screen_color"
                     android:orientation="horizontal">
 

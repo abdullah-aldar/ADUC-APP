@@ -73,8 +73,8 @@ public class StudentDashboardFragment extends Fragment {
 
         });
         binding.ivLogout.setOnClickListener(v -> showDialog());
-        binding.layoutAnnouncement.setOnClickListener(v -> GeneralUtilities.connectFragmentWithBack(getActivity(),new AnnouncementFragment()));
-        binding.layoutNotification.setOnClickListener(v -> GeneralUtilities.connectFragmentWithBack(getActivity(),new NotificationFragment()));
+        binding.layoutAnnouncement.setOnClickListener(v -> loadFragment(new AnnouncementFragment()));
+        binding.layoutNotification.setOnClickListener(v -> loadFragment(new NotificationFragment()));
     }
 
     private void showDialog(){
@@ -115,6 +115,15 @@ public class StudentDashboardFragment extends Fragment {
         }else if(timeOfDay >= 21 && timeOfDay < 24){
             Toast.makeText(getContext(), "Good Night", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void loadFragment(Fragment fragment){
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack("BACK")
+                .setCustomAnimations(android.R.anim.fade_in,android.R.anim.fade_out )
+                .replace(R.id.fragment_container,
+                        fragment, null).commit();
     }
 
 

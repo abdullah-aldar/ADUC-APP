@@ -75,7 +75,8 @@ public class LoginSignUpActivity extends AppCompatActivity {
     private void loadFragment(Fragment fragment){
         getSupportFragmentManager()
                 .beginTransaction()
-                .addToBackStack("product")
+                .addToBackStack("BACK")
+                .setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right )
                 .replace(R.id.fragment_container,
                         fragment, null).commit();
     }

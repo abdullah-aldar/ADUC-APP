@@ -72,8 +72,9 @@ public class InboxFragment extends Fragment {
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("")
-                .replace(R.id.fragment_container,
-                        fragment, null).commit();
+                .setCustomAnimations(android.R.anim.fade_in,android.R.anim.fade_out )
+                .replace(R.id.fragment_container, fragment, null)
+                .commit();
     }
     @Override
     public void onDestroy() {
