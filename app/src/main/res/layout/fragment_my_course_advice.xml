@@ -7,7 +7,7 @@
 
         <variable
             name="adviceViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myCourseAdvice.CourseAdviceViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.myCourseAdvice.CourseAdviceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,7 +71,7 @@
                     android:gravity="center"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"
-                    android:text="Please Select Semester"
+                    android:text="@string/select_semester"
                     android:textColor="@color/gray_black" />
 
                 <Spinner

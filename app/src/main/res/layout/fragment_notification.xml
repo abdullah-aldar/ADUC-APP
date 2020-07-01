@@ -7,7 +7,7 @@
 
         <variable
             name="notificationViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications.NotificationViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.notifications.NotificationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

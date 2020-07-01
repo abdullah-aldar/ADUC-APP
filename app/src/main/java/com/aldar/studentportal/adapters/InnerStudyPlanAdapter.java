@@ -37,8 +37,6 @@ public class InnerStudyPlanAdapter extends RecyclerView.Adapter<InnerStudyPlanAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-
-        holder.tvSemester.setText(studyPlanDataList.get(position).getTypeDesc());
         holder.tvCourseCode.setText(studyPlanDataList.get(position).getCourseCode());
         holder.tvCourseName.setText(studyPlanDataList.get(position).getCourseName());
         holder.tvPreRequeste.setText(studyPlanDataList.get(position).getPreReq());
@@ -55,12 +53,11 @@ public class InnerStudyPlanAdapter extends RecyclerView.Adapter<InnerStudyPlanAd
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvSemester, tvCourseCode, tvCourseName, tvPreRequeste, tvGrade, tvStatus;
+        TextView tvCourseCode, tvCourseName, tvPreRequeste, tvGrade, tvStatus;
         TextView tvTotalCreditHour,tvCompeledtCreditHours;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvSemester = itemView.findViewById(R.id.tv_semester);
             tvCourseCode = itemView.findViewById(R.id.tv_course_code);
             tvCourseName = itemView.findViewById(R.id.tv_course_name);
             tvPreRequeste = itemView.findViewById(R.id.tv_prerequiste);

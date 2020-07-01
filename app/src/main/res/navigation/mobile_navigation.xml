@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.home.HomeFragment"
+        android:name="com.aldar.studentportal.ui.commonScreens.navigations.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
@@ -20,32 +20,32 @@
 
     <fragment
         android:id="@+id/nav_campus"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.CampusFragment"
+        android:name="com.aldar.studentportal.ui.commonScreens.navigations.CampusFragment"
         android:label="@string/menu_campus"
         tools:layout="@layout/fragment_campus" />
 
     <fragment
         android:id="@+id/nav_contact"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.userEnquiry.ContactUsFragment"
+        android:name="com.aldar.studentportal.ui.commonScreens.navigations.userEnquiry.ContactUsFragment"
         android:label="Contact Us"
         tools:layout="@layout/contact_us_fragment" />
 
     <fragment
         android:id="@+id/nav_about"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.AboutUsFragment"
+        android:name="com.aldar.studentportal.ui.commonScreens.navigations.AboutUsFragment"
         android:label="About Us"
         tools:layout="@layout/fragment_about_us" />
 
     <fragment
         android:id="@+id/nav_feedback"
-        android:name="com.aldar.studentportal.ui.fragments.navigations.feedback.FeedbackFragment"
+        android:name="com.aldar.studentportal.ui.commonScreens.navigations.feedback.FeedbackFragment"
         android:label="Feedback"
         tools:layout="@layout/feedback_fragment" />
 
 
     <activity
         android:id="@+id/nav_login"
-        android:name="com.aldar.studentportal.ui.studentPortal.activities.LoginSignUpActivity"
+        android:name="com.aldar.studentportal.ui.activities.LoginSignUpActivity"
         android:label="@string/menu_login"
         tools:layout="@layout/activity_login" />
 

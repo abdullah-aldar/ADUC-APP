@@ -7,7 +7,7 @@
 
         <variable
             name="inboxViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.inbox.StudentInboxViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.inbox.StudentInboxViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

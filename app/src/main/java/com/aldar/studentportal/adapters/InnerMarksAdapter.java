@@ -34,7 +34,6 @@ public class InnerMarksAdapter extends RecyclerView.Adapter<InnerMarksAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.tvSemester.setText(marksDataList.get(position).getSemester());
         holder.tvCourseCode.setText(marksDataList.get(position).getCourseCode());
         holder.tvCourseName.setText(marksDataList.get(position).getCourseName());
         holder.tvCourseWork.setText(marksDataList.get(position).getCourseWork());
@@ -50,11 +49,10 @@ public class InnerMarksAdapter extends RecyclerView.Adapter<InnerMarksAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvSemester, tvCourseCode, tvCourseName,tvFinal, tvCourseWork, tvGrade, tvTotal;
+        TextView  tvCourseCode, tvCourseName,tvFinal, tvCourseWork, tvGrade, tvTotal;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvSemester = itemView.findViewById(R.id.tv_semester);
             tvCourseCode = itemView.findViewById(R.id.tv_course_code);
             tvCourseName = itemView.findViewById(R.id.tv_course_name);
             tvCourseWork = itemView.findViewById(R.id.tv_course_work);

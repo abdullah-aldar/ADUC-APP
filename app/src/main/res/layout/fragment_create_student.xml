@@ -7,7 +7,7 @@
 
         <variable
             name="createStudentViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.signUp.CreateStudentViewModel" />
+            type="com.aldar.studentportal.ui.signUp.CreateStudentViewModel" />
     </data>
 
 

@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -19,7 +18,7 @@ import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.models.coursesAdviceModels.CoursesDataModel;
 import com.aldar.studentportal.models.coursesAdviceModels.Time;
 import com.aldar.studentportal.models.coursesAdviceModels.Sections;
-import com.aldar.studentportal.ui.studentPortal.activities.SelectedCoursesActivity;
+import com.aldar.studentportal.ui.activities.SelectedCoursesActivity;
 
 import java.util.ArrayList;
 import java.util.List;

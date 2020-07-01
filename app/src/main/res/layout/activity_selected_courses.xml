@@ -7,7 +7,7 @@
 
         <variable
             name="selectedCoursesViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.activities.SelectedCoursesViewModel" />
+            type="com.aldar.studentportal.ui.activities.SelectedCoursesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

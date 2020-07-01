@@ -7,7 +7,7 @@
 
         <variable
             name="letterViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.letterRequest.LetterRequestViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.letterRequest.LetterRequestViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

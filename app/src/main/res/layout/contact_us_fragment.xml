@@ -8,7 +8,7 @@
 
         <variable
             name="viewmodel"
-            type="com.aldar.studentportal.ui.fragments.navigations.userEnquiry.ContactUsViewModel" />
+            type="com.aldar.studentportal.ui.commonScreens.navigations.userEnquiry.ContactUsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

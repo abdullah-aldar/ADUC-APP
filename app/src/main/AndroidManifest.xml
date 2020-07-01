@@ -22,7 +22,7 @@
             android:name=".ui.activities.PaymentActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
-            android:name=".ui.studentPortal.activities.ForgotPasswordActivity"
+            android:name=".ui.activities.ForgotPasswordActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
             android:name=".ui.activities.common.fee.OnlinePaymentActivity"
@@ -31,7 +31,7 @@
             android:name=".ui.activities.common.faq.FaqActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
-            android:name=".ui.studentPortal.activities.SelectedCoursesActivity"
+            android:name=".ui.activities.SelectedCoursesActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
             android:name=".ui.activities.common.SplashActivity"
@@ -43,14 +43,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.studentPortal.activities.LoginSignUpActivity"
+            android:name=".ui.activities.LoginSignUpActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity android:name=".ui.activities.common.WebActivity" />
         <activity
             android:name=".ui.activities.common.NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.studentPortal.activities.StudentPortalMainActivity"
+            android:name=".ui.activities.StudentPortalMainActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Splash" /> <!-- firebase notification here -->
         <service

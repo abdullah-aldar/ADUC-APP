@@ -7,7 +7,7 @@
 
         <variable
             name="marksViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myMarks.MyMarksViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.myMarks.MyMarksViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

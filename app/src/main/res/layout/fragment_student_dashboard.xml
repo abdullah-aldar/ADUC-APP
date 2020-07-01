@@ -6,8 +6,9 @@
 
         <variable
             name="studnetDasboarViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.mainDashboardScreen.StudentDashboradItemsViewmodel" />
+            type="com.aldar.studentportal.ui.studentPortal.mainDashboardScreen.StudentDashboradViewmodel" />
     </data>
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,12 +54,12 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_arrow"
             android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/start_margin"
             android:layout_marginEnd="@dimen/standarize_spacing"
             android:background="@drawable/login_background"
-            android:paddingTop="@dimen/medium_margin"
-            android:paddingBottom="@dimen/medium_margin"
+            android:paddingTop="@dimen/small_margin"
+            android:paddingBottom="@dimen/small_margin"
             app:layout_constraintBottom_toTopOf="@+id/rv_dashboard_item"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -156,17 +157,18 @@
             <RelativeLayout
                 android:id="@+id/rl_message"
                 android:layout_width="match_parent"
-                android:layout_height="60sp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tv_course_name"
                 android:layout_marginStart="@dimen/small_margin"
-                android:layout_marginTop="@dimen/text_gap"
+                android:layout_marginTop="@dimen/margin_arrow"
+                android:layout_marginBottom="@dimen/small_margin"
                 android:layout_marginEnd="@dimen/text_gap">
 
 
                 <RelativeLayout
                     android:id="@+id/layout_announcement"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_toStartOf="@id/view"
                     android:gravity="start">
 
@@ -214,7 +216,7 @@
                 <RelativeLayout
                     android:id="@+id/layout_notification"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/medium_margin"
                     android:layout_toEndOf="@+id/view">
 

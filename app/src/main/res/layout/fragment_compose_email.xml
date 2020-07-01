@@ -7,7 +7,7 @@
     <data>
         <variable
             name="composeEmailViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.inbox.ComposeEmailViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.inbox.ComposeEmailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -7,7 +7,7 @@
 
         <variable
             name="signupViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.signUp.CheckUsernameViewModel" />
+            type="com.aldar.studentportal.ui.signUp.CheckUsernameViewModel" />
     </data>
 
 

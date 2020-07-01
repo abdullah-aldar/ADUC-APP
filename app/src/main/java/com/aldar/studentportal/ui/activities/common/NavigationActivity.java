@@ -1,22 +1,10 @@
 package com.aldar.studentportal.ui.activities.common;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.ui.fragments.navigations.AdmissionFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import android.os.Handler;
-import android.view.MenuItem;
-import android.view.View;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.navigation.ActivityNavigator;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -29,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-import android.widget.Toast;
 
 public class NavigationActivity extends AppCompatActivity {
 

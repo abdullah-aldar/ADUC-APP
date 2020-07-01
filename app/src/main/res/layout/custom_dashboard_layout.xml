@@ -30,7 +30,8 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/small_margin"
-            android:src="@drawable/course"
+            android:src="@drawable/grade"
+            android:tint="@color/icon_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

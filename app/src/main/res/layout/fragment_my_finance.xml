@@ -7,7 +7,7 @@
 
         <variable
             name="financeViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myFinance.MyFinanceViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.myFinance.MyFinanceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

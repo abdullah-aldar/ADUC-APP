@@ -7,7 +7,7 @@
 
         <variable
             name="feedbackViewModel"
-            type="com.aldar.studentportal.ui.fragments.navigations.feedback.FeedbackViewModel" />
+            type="com.aldar.studentportal.ui.commonScreens.navigations.feedback.FeedbackViewModel" />
     </data>
 
     <ScrollView

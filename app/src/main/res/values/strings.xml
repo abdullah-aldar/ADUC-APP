@@ -42,10 +42,13 @@
     <string name="forgot_text">We will send an email and Message, ensure its your personal and correct Username ID</string>
     <string name="verify_text">We have sent you the code on the Phone Number and email you provided, please verify yourself.</string>
     <string name="change_password_text">Please change your password here make sure the password is easy to remember</string>
+    <string name="request">I request to convert the actual grade of the following course(s) to a Pass/Fail grade.</string>
     <string name="studnet_name">Student Name</string>
+    <string name="student_info">STUDENT INFORMATION</string>
     <string name="student_course">Programe</string>
     <string name="first_name">Name</string>
     <string name="concentration">Concentration</string>
+    <string name="select_semester">Please Select Semester</string>
     <string name="selected_course_advise">الحالة الاكاديمية</string>
     <string name="your_marks">الدرجات</string>
     <string name="instructor_msg">Messages From Instructors</string>

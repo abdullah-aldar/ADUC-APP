@@ -7,7 +7,7 @@
 
         <variable
             name="digitalLibraryViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.library.DigitalLibraryViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.library.DigitalLibraryViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

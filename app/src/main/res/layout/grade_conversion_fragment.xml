@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="gradeViewModel"
+            type="com.aldar.studentportal.ui.studentPortal.gradeConversion.GradeConversionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_color">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:contentDescription="@string/image"
+            android:src="@drawable/back_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Grade Conversion"
+            android:textColor="@color/gray_black"
+            android:textSize="@dimen/large_text_size"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/header"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_arrow">
+
+            <TextView
+                android:id="@+id/student_information"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/high_margin"
+                android:background="@drawable/gradient"
+                android:gravity="center|left"
+                android:paddingStart="@dimen/medium_margin"
+                android:text="@string/student_info"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_toEndOf="@+id/iv_profile"
+                android:layout_below="@+id/student_information"
+                android:text="ID"
+                android:textStyle="bold"
+                android:textColor="@color/gray_black" />
+
+            <TextView
+                android:id="@+id/tv_student_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/id"
+                android:layout_below="@+id/student_information"
+                android:maxLines="1"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="BMC1412383"
+                android:textColor="@color/gray_black" />
+
+
+            <TextView
+                android:id="@+id/student_name"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_student_id"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_toEndOf="@+id/iv_profile"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textColor="@color/gray_black" />
+
+            <TextView
+                android:id="@+id/tv_student_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/student_name"
+                android:layout_below="@id/tv_student_id"
+                android:maxLines="1"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="Abdullah khan "
+                android:textColor="@color/gray_black" />
+
+            <TextView
+                android:id="@+id/programe"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_student_name"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_toEndOf="@+id/iv_profile"
+                android:text="Programe"
+                android:textStyle="bold"
+                android:textColor="@color/gray_black" />
+
+            <TextView
+                android:id="@+id/tv_programe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/programe"
+                android:layout_below="@id/tv_student_name"
+                android:maxLines="1"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="BBA"
+                android:textColor="@color/gray_black" />
+
+            <TextView
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_below="@+id/tv_programe"
+                android:layout_centerVertical="true"
+                android:text="Select Semester"
+                android:textStyle="bold"
+                android:textColor="@color/gray_black" />
+
+            <Spinner
+                android:id="@+id/spinner_books"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/search"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_below="@+id/tv_programe"
+                android:backgroundTint="@color/gray_black"
+                android:gravity="center"
+                android:textColor="@color/gray_black" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_constraintBottom_toTopOf="@+id/bottom">
+
+            <TextView
+                android:id="@+id/course_information"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/high_margin"
+                android:background="@drawable/gradient"
+                android:gravity="center|left"
+                android:paddingStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="COURSE INFORMATION"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/course_information"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/request"
+                android:textColor="@color/gray_black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_courses"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/text"
+                android:layoutAnimation="@anim/fall_down_animation_layout"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/gradient"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/small_margin"
+                android:background="@drawable/gradient"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
