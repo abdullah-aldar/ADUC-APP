@@ -6,7 +6,7 @@
 
         <variable
             name="notificationDataModel"
-            type="com.aldar.studentportal.models.announcementModel.AnnouncementDataModel" />
+            type="com.aldar.studentportal.models.notificationModels.NotificationDataModel" />
     </data>
 
     <RelativeLayout
@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small_margin"
-        android:background="@drawable/round_background"
         android:padding="@dimen/small_margin">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -37,7 +36,7 @@
         android:layout_toEndOf="@id/iv_notification"
         android:layout_marginTop="2dp"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="New Course Started"
+        android:text="@{notificationDataModel.messageTitle}"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -50,7 +49,7 @@
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginEnd="@dimen/small_margin"
         android:layout_toEndOf="@id/iv_notification"
-        android:text="@{notificationDataModel.alert}"/>
+        android:text="@{notificationDataModel.messageBody}"/>
 
     <TextView
         android:id="@+id/tv_date"
@@ -59,9 +58,15 @@
         android:layout_toEndOf="@id/iv_notification"
         android:layout_below="@id/tv_notification_body"
         android:layout_marginTop="@dimen/small_margin"
-        android:text="30 minutes ago"
+        android:text="@{notificationDataModel.createdTime}"
         android:textColor="@color/gray_black"
         android:textSize="@dimen/small_text" />
 
+        <View
+            android:layout_below="@+id/tv_date"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
 </RelativeLayout>
 </layout>

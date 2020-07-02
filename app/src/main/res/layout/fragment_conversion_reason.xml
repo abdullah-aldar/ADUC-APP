@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="gradeViewModel"
+            type="com.aldar.studentportal.ui.studentPortal.gradeConversion.GradeConversionViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/screen_color">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:contentDescription="@string/image"
+            android:src="@drawable/back_black" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Reason"
+            android:textColor="@color/gray_black"
+            android:textSize="@dimen/large_text_size"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+
+        <RelativeLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/standarize_spacing"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:layout_below="@+id/tv_title">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:text="Please specify reason for conversion :"
+            android:textColor="@color/gray_black"
+            android:textSize="@dimen/large_text"/>
+
+
+            <EditText
+                android:id="@+id/et_conversion_reason"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/text"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/edittext_style"
+                android:layout_marginTop="@dimen/medium_margin"/>
+
+            <LinearLayout
+                android:layout_below="@+id/et_conversion_reason"
+                android:layout_marginBottom="@dimen/small_margin"
+                android:layout_marginTop="@dimen/standarize_spacing"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/medium_margin"
+                    android:background="@drawable/gradient"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:background="@drawable/gradient"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

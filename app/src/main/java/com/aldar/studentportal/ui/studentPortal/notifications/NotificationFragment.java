@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.NotificationAdapter;
 import com.aldar.studentportal.databinding.FragmentNotificationBinding;
+import com.aldar.studentportal.models.notificationModels.NotificationReponseModel;
 
 public class NotificationFragment extends Fragment {
     private FragmentNotificationBinding binding;
@@ -34,15 +36,15 @@ public class NotificationFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         NotificationViewModel mViewModel = new ViewModelProvider(this).get(NotificationViewModel.class);
-        binding.setLifecycleOwner(getViewLifecycleOwner());
+        binding.setLifecycleOwner(this);
         binding.setNotificationViewModel(mViewModel);
 
         binding.rvNotification.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mViewModel.getNotificationData().observe(getViewLifecycleOwner(), announcementReponseModel -> {
 
-            if(announcementReponseModel.getData() != null){
+        mViewModel.getNotificationData().observe(getViewLifecycleOwner(), notificationReponseModel -> {
+            if(notificationReponseModel.getData() != null){
                 binding.rvNotification.setLayoutManager(new LinearLayoutManager(getActivity()));
-                NotificationAdapter adapter = new NotificationAdapter(announcementReponseModel.getData());
+                NotificationAdapter adapter = new NotificationAdapter(notificationReponseModel.getData());
                 binding.rvNotification.setAdapter(adapter);
 
             }

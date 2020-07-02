@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel;
+import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
@@ -22,20 +23,22 @@ import retrofit2.Response;
 public class GradeConversionViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
     public MutableLiveData<String> studentID = new MutableLiveData<>();
-    private MutableLiveData<CommonApiResponse> responseData = new MutableLiveData<>();
+    private MutableLiveData<CourseScheduleResponseModel> courseScheduleData = new MutableLiveData<>();
 
     public GradeConversionViewModel(@NonNull Application application) {
         super(application);
+        progressBar.setValue(8);
+        studentID.setValue(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getStringValue("student_username"));
+        apiCallCouseSchedule();
     }
 
-    private void apiCallNotification() {
+    public void apiCallCouseSchedule() {
         progressBar.setValue(0);
-        studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<AnnouncementReponseModel> allUsers = services.getAnnoucement(studentID.getValue());
-        allUsers.enqueue(new Callback<AnnouncementReponseModel>() {
+        Call<CourseScheduleResponseModel> allUsers = services.getCourseSchedule(studentID.getValue(), "98");
+        allUsers.enqueue(new Callback<CourseScheduleResponseModel>() {
             @Override
-            public void onResponse(@NotNull Call<AnnouncementReponseModel> call, @NotNull Response<AnnouncementReponseModel> response) {
+            public void onResponse(@NotNull Call<CourseScheduleResponseModel> call, @NotNull Response<CourseScheduleResponseModel> response) {
                 progressBar.setValue(8);
                 if (response.body() == null) {
                     try {
@@ -45,21 +48,23 @@ public class GradeConversionViewModel extends AndroidViewModel {
                         Log.d("", e.getMessage());
                     }
 
+                } else if (Boolean.parseBoolean(response.body().getSuccess())) {
+                    courseScheduleData.setValue(response.body());
                 } else {
-
+                    courseScheduleData.setValue(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<AnnouncementReponseModel> call, Throwable t) {
+            public void onFailure(Call<CourseScheduleResponseModel> call, Throwable t) {
                 progressBar.setValue(8);
                 showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
-    public MutableLiveData<CommonApiResponse> getResponseData() {
-        return responseData;
+    public MutableLiveData<CourseScheduleResponseModel> getResponseData() {
+        return courseScheduleData;
     }
 
     private void showToast(Context context, String message) {

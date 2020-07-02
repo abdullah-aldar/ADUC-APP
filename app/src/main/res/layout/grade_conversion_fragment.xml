@@ -45,6 +45,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
+            android:padding="@dimen/medium_margin"
+            android:background="@drawable/round_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_arrow">
@@ -53,11 +55,11 @@
                 android:id="@+id/student_information"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/high_margin"
-                android:background="@drawable/gradient"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textSize="@dimen/medium_text_size"
                 android:gravity="center|left"
-                android:paddingStart="@dimen/medium_margin"
                 android:text="@string/student_info"
-                android:textColor="@color/white" />
+                android:textColor="@color/gray_black" />
 
             <TextView
                 android:id="@+id/id"
@@ -161,7 +163,6 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/small_margin"
             android:layout_marginBottom="@dimen/small_margin"
             app:layout_constraintTop_toBottomOf="@+id/header"
             app:layout_constraintBottom_toTopOf="@+id/bottom">
@@ -170,18 +171,23 @@
                 android:id="@+id/course_information"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/high_margin"
-                android:background="@drawable/gradient"
+                android:textStyle="bold"
+                android:textSize="@dimen/medium_text_size"
                 android:gravity="center|left"
                 android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
+                android:fontFamily="@font/montserrat_semibold"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="COURSE INFORMATION"
-                android:textColor="@color/white" />
+                android:textColor="@color/gray_black" />
 
             <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/course_information"
+                android:paddingStart="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/request"
                 android:textColor="@color/gray_black" />
@@ -189,7 +195,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_courses"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/text"
                 android:layoutAnimation="@anim/fall_down_animation_layout"
                 />
@@ -220,7 +226,7 @@
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btn_save"
+                android:id="@+id/btn_next"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

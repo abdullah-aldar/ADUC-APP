@@ -3,6 +3,8 @@ package com.aldar.studentportal.worker;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.os.Build;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.work.WorkerParameters;
 import com.aldar.studentportal.R;
 
 public class MyWorker extends Worker {
+
     public MyWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
     }
@@ -20,18 +23,22 @@ public class MyWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        return Result.retry();
+        String title = getInputData().getString("title");
+        String message = getInputData().getString("message");
+        displayNotification(""+title,""+message);
+
+        return Result.success();
     }
 
     private void displayNotification(String title, String task) {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("simplifiedcoding", "simplifiedcoding", NotificationManager.IMPORTANCE_DEFAULT);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("Default", "Default channel", NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(channel);
         }
 
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "simplifiedcoding")
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), ""+getApplicationContext().getResources().getString(R.string.app_name))
                 .setContentTitle(title)
                 .setContentText(task)
                 .setSmallIcon(R.mipmap.ic_launcher);

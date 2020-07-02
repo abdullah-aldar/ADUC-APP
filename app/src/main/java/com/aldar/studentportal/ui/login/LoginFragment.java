@@ -25,8 +25,7 @@ import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import com.google.firebase.iid.FirebaseInstanceId;
 
-public class
-LoginFragment extends Fragment {
+public class LoginFragment extends Fragment {
     private LoginViewModel loginViewModel;
     private String strFcmToken;
     FragmentLoginBinding binding;

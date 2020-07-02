@@ -37,6 +37,7 @@ import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
@@ -315,7 +316,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         new LeakyClass(getActivity()).redirectToWebview(url);
     }
 
+    private void greetingMessage() {
+        Calendar c = Calendar.getInstance();
+        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
 
+        if (timeOfDay >= 0 && timeOfDay < 12) {
+            Toast.makeText(getContext(), "Good Morning", Toast.LENGTH_SHORT).show();
+        } else if (timeOfDay >= 12 && timeOfDay < 16) {
+            Toast.makeText(getContext(), "Good Afternoon", Toast.LENGTH_SHORT).show();
+        } else if (timeOfDay >= 16 && timeOfDay < 21) {
+            Toast.makeText(getContext(), "Good Evening", Toast.LENGTH_SHORT).show();
+        } else if (timeOfDay >= 21 && timeOfDay < 24) {
+            Toast.makeText(getContext(), "Good Night", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     public void onDestroy() {

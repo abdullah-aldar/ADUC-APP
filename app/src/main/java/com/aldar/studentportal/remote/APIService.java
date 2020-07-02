@@ -14,6 +14,7 @@ import com.aldar.studentportal.models.libraryModels.LibraryResponseModel;
 import com.aldar.studentportal.models.loginModels.LoginResponseModel;
 import com.aldar.studentportal.models.mymarksmodels.MarksResponseModel;
 import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
+import com.aldar.studentportal.models.notificationModels.NotificationReponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
@@ -157,6 +158,10 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/Announcement")
     Call<AnnouncementReponseModel> getAnnoucement(@Field("StudentID") String studendID);
+
+    @FormUrlEncoded
+    @POST("aduc/GetStudentNotification")
+    Call<NotificationReponseModel> getNotification(@Field("StudentID") String studendID);
 
     @FormUrlEncoded
     @POST("aduc/StudentData")

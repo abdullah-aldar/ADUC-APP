@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel;
+import com.aldar.studentportal.models.notificationModels.NotificationReponseModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
@@ -24,7 +24,7 @@ import retrofit2.Response;
 public class NotificationViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
     public MutableLiveData<String> studentID = new MutableLiveData<>();
-    private MutableLiveData<AnnouncementReponseModel> notificationData = new MutableLiveData<>();
+    private MutableLiveData<NotificationReponseModel> notificationData = new MutableLiveData<>();
 
     public NotificationViewModel(@NonNull Application application) {
         super(application);
@@ -36,10 +36,10 @@ public class NotificationViewModel extends AndroidViewModel {
         progressBar.setValue(0);
         studentID.setValue(String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id")));
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<AnnouncementReponseModel> allUsers = services.getAnnoucement(studentID.getValue());
-        allUsers.enqueue(new Callback<AnnouncementReponseModel>() {
+        Call<NotificationReponseModel> allUsers = services.getNotification(studentID.getValue());
+        allUsers.enqueue(new Callback<NotificationReponseModel>() {
             @Override
-            public void onResponse(@NotNull Call<AnnouncementReponseModel> call, @NotNull Response<AnnouncementReponseModel> response) {
+            public void onResponse(@NotNull Call<NotificationReponseModel> call, @NotNull Response<NotificationReponseModel> response) {
                 progressBar.setValue(8);
                 if (response.body() == null) {
                     try {
@@ -55,14 +55,14 @@ public class NotificationViewModel extends AndroidViewModel {
             }
 
             @Override
-            public void onFailure(Call<AnnouncementReponseModel> call, Throwable t) {
+            public void onFailure(Call<NotificationReponseModel> call, Throwable t) {
                 progressBar.setValue(8);
                 showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
-    public MutableLiveData<AnnouncementReponseModel> getNotificationData() {
+    public MutableLiveData<NotificationReponseModel> getNotificationData() {
         return notificationData;
     }
 

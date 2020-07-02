@@ -7,17 +7,16 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.databinding.CustomAnnouncementLayoutBinding;
 import com.aldar.studentportal.databinding.CustomNotificationLayoutBinding;
-import com.aldar.studentportal.models.announcementModel.AnnouncementDataModel;
+import com.aldar.studentportal.models.notificationModels.NotificationDataModel;
 
 import java.util.List;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.MyViewHolder> {
 
-    private List<AnnouncementDataModel> NotificationList;
+    private List<NotificationDataModel> NotificationList;
 
-    public NotificationAdapter(List<AnnouncementDataModel> NotificationList) {
+    public NotificationAdapter(List<NotificationDataModel> NotificationList) {
         this.NotificationList = NotificationList;
     }
 
@@ -31,7 +30,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        AnnouncementDataModel model = NotificationList.get(position);
+        NotificationDataModel model = NotificationList.get(position);
         holder.binding.setNotificationDataModel(model);
 
     }
