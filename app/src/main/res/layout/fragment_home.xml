@@ -158,8 +158,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/portal"
-                            android:textColor="@color/screen_color"
-                            android:textStyle="bold" />
+                            android:textColor="@color/screen_color" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -185,8 +184,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/payment"
-                            android:textColor="@color/screen_color"
-                            android:textStyle="bold" />
+                            android:textColor="@color/screen_color" />
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -219,8 +217,7 @@
                         android:layout_height="40dp"
                         android:gravity="center"
                         android:text="@string/faq"
-                        android:textColor="@color/screen_color"
-                        android:textStyle="bold" />
+                        android:textColor="@color/screen_color" />
                 </LinearLayout>
 
             </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.aldar.studentportal.ui.studentPortal.myProfile;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,9 @@ import android.widget.EditText;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.FragmentStudentProfileBinding;
+import com.aldar.studentportal.ui.activities.common.NavigationActivity;
 import com.aldar.studentportal.utilities.GeneralUtilities;
+import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 public class StudentProfileFragment extends Fragment {
     private FragmentStudentProfileBinding binding;
@@ -39,6 +42,7 @@ public class StudentProfileFragment extends Fragment {
         binding.setStudenProfileViewModel(viewModel);
 
         binding.ivBack.setOnClickListener(v -> getActivity().onBackPressed());
+        binding.tvLogout.setOnClickListener(v->showDialog());
 
         binding.tvEditMobileNo.setOnClickListener(v -> {
             enterUserInfo();
@@ -68,6 +72,23 @@ public class StudentProfileFragment extends Fragment {
         btnClose.setOnClickListener(v -> {
             dialog.dismiss();
         });
+        dialog.show();
+    }
+
+    private void showDialog() {
+        Dialog dialog = new Dialog(getContext());
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setContentView(R.layout.custom_dialog);
+        Button btnLogout = dialog.findViewById(R.id.btn_logout);
+        Button btnCancel = dialog.findViewById(R.id.btn_cancel);
+
+        btnLogout.setOnClickListener(v -> {
+            getActivity().finish();
+            startActivity(new Intent(getActivity(), NavigationActivity.class));
+            SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin", false);
+        });
+        btnCancel.setOnClickListener(v -> dialog.dismiss());
+
         dialog.show();
     }
 

@@ -60,7 +60,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_below="@+id/text"
+                android:gravity="top|left"
+                android:padding="@dimen/small_margin"
                 android:inputType="textEmailAddress"
+                android:text="@={gradeViewModel.reason}"
                 android:background="@drawable/edittext_style"
                 android:layout_marginTop="@dimen/medium_margin"/>
 

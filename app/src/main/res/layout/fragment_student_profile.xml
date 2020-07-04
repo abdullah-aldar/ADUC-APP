@@ -48,6 +48,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/logout"
+            android:textColor="@color/gray" />
+
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"

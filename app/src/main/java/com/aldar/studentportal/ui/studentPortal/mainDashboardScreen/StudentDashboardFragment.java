@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.StudentDashboardItemsAdapter;
 import com.aldar.studentportal.databinding.FragmentStudentDashboardBinding;
@@ -20,10 +19,11 @@ import com.aldar.studentportal.interfaces.ItemClickCallBack;
 import com.aldar.studentportal.ui.activities.common.NavigationActivity;
 import com.aldar.studentportal.ui.activities.LoginSignUpActivity;
 import com.aldar.studentportal.ui.studentPortal.announcment.AnnouncementFragment;
+import com.aldar.studentportal.ui.studentPortal.myProfile.StudentProfileFragment;
 import com.aldar.studentportal.ui.studentPortal.notifications.NotificationFragment;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import org.jetbrains.annotations.NotNull;
-import java.util.Calendar;
+
 
 
 public class StudentDashboardFragment extends Fragment {
@@ -64,37 +64,18 @@ public class StudentDashboardFragment extends Fragment {
             binding.rvDashboardItem.setAdapter(adapter);
         });
 
+        binding.ivProfile.setOnClickListener(v -> loadFragment(new StudentProfileFragment()));
+        binding.layoutAnnouncement.setOnClickListener(v -> loadFragment(new AnnouncementFragment()));
+        binding.layoutNotification.setOnClickListener(v -> {
+                    loadFragment(new NotificationFragment());
+                    SharedPreferencesManager.getInstance(getActivity()).setIntValueInEditor("notification_count", 0);
+                });
 
         binding.ivBack.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), NavigationActivity.class));
             getActivity().finish();
 
         });
-        binding.ivLogout.setOnClickListener(v -> showDialog());
-        binding.layoutAnnouncement.setOnClickListener(v -> loadFragment(new AnnouncementFragment()));
-        binding.layoutNotification.setOnClickListener(v -> {
-                    loadFragment(new NotificationFragment());
-                    SharedPreferencesManager.getInstance(getActivity()).setIntValueInEditor("notification_count", 0);
-                }
-
-        );
-    }
-
-    private void showDialog() {
-        Dialog dialog = new Dialog(getContext());
-        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.setContentView(R.layout.custom_dialog);
-        Button btnLogout = dialog.findViewById(R.id.btn_logout);
-        Button btnCancel = dialog.findViewById(R.id.btn_cancel);
-
-        btnLogout.setOnClickListener(v -> {
-            getActivity().finish();
-            startActivity(new Intent(getActivity(), NavigationActivity.class));
-            SharedPreferencesManager.getInstance(getContext()).setBooleaninEditor("isLogin", false);
-        });
-        btnCancel.setOnClickListener(v -> dialog.dismiss());
-
-        dialog.show();
     }
 
     @Override

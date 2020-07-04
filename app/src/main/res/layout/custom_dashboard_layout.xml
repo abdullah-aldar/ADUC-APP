@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginStart="@dimen/text_gap"
         android:background="@drawable/shadow"
         android:onClick="@{() ->  callback.onClick(item)}"
         android:padding="@dimen/medium_margin">

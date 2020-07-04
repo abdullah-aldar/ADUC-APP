@@ -2,26 +2,27 @@ package com.aldar.studentportal.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
-
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.CustomConversionLayoutBinding;
-import com.aldar.studentportal.databinding.CustomCoursesheduleLayoutBinding;
-import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel;
+import com.aldar.studentportal.interfaces.SectionIDInterface;
+import com.aldar.studentportal.models.gradeConversionModel.GradeConversionData;
 
 import org.jetbrains.annotations.NotNull;
-
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class GradeConversionAdapter extends RecyclerView.Adapter<GradeConversionAdapter.MyViewHolder> {
 
-    private List<? extends CourseScheduleDataModel> mDataList;
+    private List<? extends GradeConversionData> mDataList;
+    private SectionIDInterface sectionIDListener;
+    ArrayList<String> listSectionIDs = new ArrayList<>();
 
-    public GradeConversionAdapter(List<? extends CourseScheduleDataModel> courseScheduleDataModelList) {
-        mDataList = courseScheduleDataModelList;
+    public GradeConversionAdapter(List<? extends GradeConversionData> GradeConversionDataList, SectionIDInterface sectionIDListener) {
+        mDataList = GradeConversionDataList;
+        this.sectionIDListener = sectionIDListener;
     }
 
     @NotNull
@@ -35,13 +36,21 @@ public class GradeConversionAdapter extends RecyclerView.Adapter<GradeConversion
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        CourseScheduleDataModel model = mDataList.get(position);
+        GradeConversionData model = mDataList.get(position);
         holder.binding.setConversionModel(model);
 
-        String[] strings = model.getSectionCode().split("-");
-        //holder.binding.tvSection.setText(strings[1]);
-
-        holder.binding.checkSection.setOnCheckedChangeListener((compoundButton, b) -> {
+        holder.binding.checkSection.setTag(position);
+        holder.binding.checkSection.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(holder.binding.checkSection.isChecked()){
+                listSectionIDs.add(model.getCourseCode());
+                String sectionIDs = setListSectionIDs(listSectionIDs);
+                sectionIDListener.setSectionID(sectionIDs);
+            }
+            else {
+                listSectionIDs.remove(model.getCourseCode());
+                String sectionIDs = setListSectionIDs(listSectionIDs);
+                sectionIDListener.setSectionID(sectionIDs);
+            }
 
         });
 
@@ -52,7 +61,6 @@ public class GradeConversionAdapter extends RecyclerView.Adapter<GradeConversion
         return mDataList.size();
     }
 
-
     static class MyViewHolder extends RecyclerView.ViewHolder {
         CustomConversionLayoutBinding binding;
 
@@ -60,6 +68,17 @@ public class GradeConversionAdapter extends RecyclerView.Adapter<GradeConversion
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
 
+    private String setListSectionIDs(ArrayList<String> listSectionIDs) {
+        String strSectionIDs = "";
+        for (int i = 0; i < listSectionIDs.size(); i++) {
+            if (i == 0) {
+                strSectionIDs += listSectionIDs.get(i);
+            } else {
+                strSectionIDs += "," + listSectionIDs.get(i);
+            }
+        }
+        return strSectionIDs;
     }
 }

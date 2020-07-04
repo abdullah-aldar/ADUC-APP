@@ -5,14 +5,14 @@
 
         <variable
             name="conversionModel"
-            type="com.aldar.studentportal.models.courseScheduleModels.CourseScheduleDataModel" />
+            type="com.aldar.studentportal.models.gradeConversionModel.GradeConversionData" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small_margin"
-        android:background="@drawable/shadow"
+        android:background="@drawable/round_background"
         android:orientation="vertical"
         android:padding="@dimen/medium_margin">
 
@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/small_margin"
+            android:checked="false"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/green" />
 
@@ -85,7 +86,7 @@
             android:layout_marginTop="@dimen/text_gap"
             android:layout_marginEnd="@dimen/standarize_spacing"
             android:layout_toEndOf="@+id/instructor"
-            android:text="@={conversionModel.lecturer}" />
+            android:text="@={conversionModel.instructerName}" />
 
 
         <TextView
@@ -107,7 +108,7 @@
             android:layout_marginTop="@dimen/text_gap"
             android:layout_toEndOf="@+id/cw"
             android:paddingEnd="@dimen/medium_margin"
-            android:text="@={conversionModel.room}" />
+            android:text="@{String.valueOf(conversionModel.cw)}" />
 
 
         <TextView
@@ -129,7 +130,7 @@
             android:layout_marginTop="@dimen/text_gap"
             android:layout_toEndOf="@+id/fm"
             android:paddingEnd="@dimen/standarize_spacing"
-            android:text="@={conversionModel.room}" />
+            android:text="@{String.valueOf(conversionModel.fm)}" />
 
 
         <TextView
@@ -150,7 +151,7 @@
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginTop="@dimen/text_gap"
             android:layout_toEndOf="@+id/symbol"
-            android:text="@={conversionModel.room}" />
+            android:text="@={conversionModel.symbol}" />
 
         <TextView
             android:id="@+id/status"
@@ -170,7 +171,7 @@
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginTop="@dimen/text_gap"
             android:layout_toEndOf="@+id/symbol"
-            android:text="@={conversionModel.room}" />
+            android:text="@={conversionModel.status}" />
 
     </RelativeLayout>
 </layout>

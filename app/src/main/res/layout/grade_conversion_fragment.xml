@@ -136,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_below="@+id/tv_programe"
                 android:layout_centerVertical="true"
                 android:text="Select Semester"
@@ -144,9 +144,9 @@
                 android:textColor="@color/gray_black" />
 
             <Spinner
-                android:id="@+id/spinner_books"
+                android:id="@+id/spinner_semester"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/btn"
                 android:layout_toEndOf="@id/search"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_below="@+id/tv_programe"
@@ -163,9 +163,9 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
-            android:layout_marginBottom="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
             app:layout_constraintTop_toBottomOf="@+id/header"
-            app:layout_constraintBottom_toTopOf="@+id/bottom">
+            app:layout_constraintBottom_toTopOf="@+id/btn_next">
 
             <TextView
                 android:id="@+id/course_information"
@@ -188,7 +188,6 @@
                 android:layout_below="@+id/course_information"
                 android:paddingStart="@dimen/medium_margin"
                 android:paddingEnd="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/request"
                 android:textColor="@color/gray_black" />
 
@@ -202,40 +201,19 @@
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/bottom"
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="200dp"
+            android:layout_height="@dimen/btn_height"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/standarize_spacing"
             android:layout_marginBottom="@dimen/small_margin"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-
-            <Button
-                android:id="@+id/btn_cancel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="@dimen/medium_margin"
-                android:background="@drawable/gradient"
-                android:text="@string/cancel"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/btn_next"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="@dimen/small_margin"
-                android:background="@drawable/gradient"
-                android:text="Continue"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
-        </LinearLayout>
+            android:layout_weight="1"
+            android:background="@drawable/gradient"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

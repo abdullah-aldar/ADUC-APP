@@ -3,6 +3,8 @@ package com.aldar.studentportal.models.courseScheduleModels;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class CourseScheduleDataModel {
     @SerializedName("course_Code")
     @Expose
@@ -40,6 +42,11 @@ public class CourseScheduleDataModel {
     @SerializedName("sem_Name")
     @Expose
     private String semName;
+
+    private boolean isCheck = false;
+    private int position = -1;
+
+
 
     public String getCourseCode() {
         return courseCode;
@@ -137,4 +144,19 @@ public class CourseScheduleDataModel {
         this.semName = semName;
     }
 
+    public boolean isCheck() {
+        return isCheck;
+    }
+
+    public void setCheck(boolean check) {
+        isCheck = check;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
 }

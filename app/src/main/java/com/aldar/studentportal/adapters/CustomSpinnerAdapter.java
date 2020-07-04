@@ -38,7 +38,6 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         notifyDataSetChanged();
         return getCustomView(position, convertView, parent);
     }
@@ -48,17 +47,12 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
         //list[0] = defaultText;
     }
 
-    ;
-
     public View getCustomView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
-
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(R.layout.spinner_layout, parent, false);
         TextView label = (TextView) view.findViewById(R.id.spinner_text);
         label.setText(list[position]);
-
-
         return view;
     }
 
