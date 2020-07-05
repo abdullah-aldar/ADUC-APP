@@ -7,6 +7,7 @@
     <dimen name="medium_text">12sp</dimen>
     <dimen name="large_text">18sp</dimen>
     <dimen name="margin_arrow">12dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
     <dimen name="standarize_spacing">14dp</dimen>
     <dimen name="start_margin">14dp</dimen>
     <dimen name="high_spacing">18dp</dimen>

@@ -42,12 +42,12 @@ public class GradeConversionAdapter extends RecyclerView.Adapter<GradeConversion
         holder.binding.checkSection.setTag(position);
         holder.binding.checkSection.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if(holder.binding.checkSection.isChecked()){
-                listSectionIDs.add(model.getCourseCode());
+                listSectionIDs.add(String.valueOf(model.getSectionID()));
                 String sectionIDs = setListSectionIDs(listSectionIDs);
                 sectionIDListener.setSectionID(sectionIDs);
             }
             else {
-                listSectionIDs.remove(model.getCourseCode());
+                listSectionIDs.remove(String.valueOf(model.getSectionID()));
                 String sectionIDs = setListSectionIDs(listSectionIDs);
                 sectionIDListener.setSectionID(sectionIDs);
             }

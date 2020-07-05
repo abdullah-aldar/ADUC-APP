@@ -87,7 +87,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/gradient"
+                        android:background="@drawable/round_black"
                         android:gravity="center"
                         android:text="@string/academic"
                         android:textSize="@dimen/medium_text"
@@ -100,7 +100,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/medium_margin"
-                        android:background="@drawable/gradient"
+                        android:background="@drawable/round_black"
                         android:gravity="center"
                         android:textSize="@dimen/medium_text"
                         android:text="@string/download_boucher"
@@ -117,7 +117,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginEnd="@dimen/standarize_spacing"
-                android:background="@drawable/gradient"
+                android:background="@drawable/round_black"
                 android:gravity="center"
                 android:paddingStart="@dimen/medium_margin"
                 android:paddingTop="@dimen/standarize_spacing"
@@ -133,7 +133,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_light_dark"
-                    android:layoutAnimation="@anim/fall_down_animation_layout"
                     android:paddingTop="@dimen/small_margin"
                     android:paddingBottom="@dimen/small_margin">
 
@@ -158,7 +157,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/portal"
-                            android:textColor="@color/screen_color" />
+                            android:textColor="@color/white" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -184,7 +183,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:text="@string/payment"
-                            android:textColor="@color/screen_color" />
+                            android:textColor="@color/white" />
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -217,7 +216,7 @@
                         android:layout_height="40dp"
                         android:gravity="center"
                         android:text="@string/faq"
-                        android:textColor="@color/screen_color" />
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </RelativeLayout>

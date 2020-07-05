@@ -103,6 +103,7 @@ public class GradeConversionFragment extends Fragment implements SectionIDInterf
     private void laodFragment(ConversionReasonFragment fragment) {
         Bundle bundle = new Bundle();
         bundle.putString("sectionID", strSectionIDs);
+        bundle.putString("semesterID", viewModel.semesterID.getValue());
         fragment.setArguments(bundle);
 
         getActivity().getSupportFragmentManager().

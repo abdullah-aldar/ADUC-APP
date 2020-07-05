@@ -17,10 +17,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_gap"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:background="@drawable/shadow"
         android:onClick="@{() ->  callback.onClick(item)}"
-        android:padding="@dimen/medium_margin">
+        android:padding="@dimen/margin_arrow">
 
 
         <ImageView

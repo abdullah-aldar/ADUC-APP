@@ -20,7 +20,7 @@ import com.aldar.studentportal.databinding.GradeConversionFragmentBinding;
 public class ConversionReasonFragment extends Fragment {
     private GradeConversionViewModel viewModel;
     private FragmentConversionReasonBinding binding;
-    private String strSectionID;
+    private String strSectionID,strSemesterID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,6 +29,7 @@ public class ConversionReasonFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_conversion_reason,container,false);
 
         strSectionID = getArguments().getString("sectionID");
+        strSemesterID = getArguments().getString("semesterID");
 
         return binding.getRoot();
     }
@@ -41,10 +42,17 @@ public class ConversionReasonFragment extends Fragment {
         binding.setGradeViewModel(viewModel);
 
         viewModel.sectionID.setValue(strSectionID);
+        viewModel.semesterID.setValue(strSemesterID);
+
+        viewModel.getStudentRequestData().observe(getViewLifecycleOwner(),sendRequestResponse -> {
+            if(sendRequestResponse.getData() != null){
+                Toast.makeText(getActivity(), ""+sendRequestResponse.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         binding.btnSave.setOnClickListener(v -> {
-
+         viewModel.apiCallRequest();
         });
 
         binding.ivBack.setOnClickListener(v -> getActivity().onBackPressed());

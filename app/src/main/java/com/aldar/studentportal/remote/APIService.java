@@ -8,6 +8,7 @@ import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordResponseModel;
 import com.aldar.studentportal.models.gradeConversionModel.GradeConversionResponse;
+import com.aldar.studentportal.models.gradeConversionModel.SendRequestResponse;
 import com.aldar.studentportal.models.inboxModels.StudentInboxResponseModel;
 import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
 import com.aldar.studentportal.models.libraryModels.DigitalLibraryResponseModel;
@@ -175,14 +176,14 @@ public interface APIService {
     @FormUrlEncoded
     @POST("aduc/GradeConversion")
     Call<GradeConversionResponse> gradeConversionCourses(@Field("StudentId") int studendID,
-                                                            @Field("SemId") String semesterID);
+                                                         @Field("SemId") String semesterID);
 
     @FormUrlEncoded
-    @POST("aduc/StudentRegisteredData")
-    Call<GradeConversionResponse> sendRequest(@Field("GivenstudentId") int studendID,
-                                                  @Field("semId") String semesterID,
-                                                  @Field("SectionID") String sectionID,
-                                                  @Field("Reason") String reason);
+    @POST("aduc/GradeConversionPost")
+    Call<SendRequestResponse> sendRequest(@Field("StudentId") int studendID,
+                                          @Field("SemId") String semesterID,
+                                          @Field("Reason") String reason,
+                                          @Field("Sections") String sectionID);
 
     @GET("aduc/Semester")
     Call<SemesterResponseModel> getSemester();
