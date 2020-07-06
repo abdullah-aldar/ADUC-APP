@@ -2,10 +2,7 @@ package com.aldar.studentportal.adapters;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,12 +13,10 @@ import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.CustomNewsLayoutBinding;
 
 import com.aldar.studentportal.models.newDataModels.NewsDataModel;
-import com.aldar.studentportal.ui.activities.common.NewsActivity;
 import com.bumptech.glide.Glide;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -50,7 +45,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         Collections.reverse(mDataList);
         NewsDataModel model = mDataList.get(position);
 
-        Glide.with(context).load(model.getImg()).into(holder.binding.ivNews);
+        Glide.with(context).load(R.drawable.dubai).into(holder.binding.ivNews);
         holder.binding.setNewDataModel(model);
 
         holder.binding.layout.setOnClickListener(v -> {

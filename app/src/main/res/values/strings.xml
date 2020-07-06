@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ADUC</string>
     <string name="uni_name">ALDAR University</string>
 
@@ -120,6 +120,7 @@
     <string name="art_school">School Of Arts And Social Sciences</string>
     <string name="art_text">The School of Arts and Social Sciences (SBA) at ADUC caters to the need of multicultural workforce in the field of Business and Management.</string>
     <string name="no_internet">Something went wrong please try again later or check your internet</string>
+    <string name="zoom_welcome" tools:ignore="TypographyDashes">You are welcome to communicate with our admission team live on Zoom ID: 971-971-7777\nany Time  from 10:00AM till 4:00PM, Saturday to Thursday</string>
 
     <string name="campus_life">Campus life at ALDAR University College, enjoys the benefits of an urban campus
         as it is located in the heart of the historic business district of Dubai. Movie theaters, shopping centers,

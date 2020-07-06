@@ -18,7 +18,8 @@
         android:theme="@style/MaterialTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".ui.activities.common.NewsActivity" />
+        <activity android:name=".ui.activities.common.LearnMoreActivity"
+            android:theme="@style/Actionbar" />
         <activity
             android:name=".ui.activities.PaymentActivity"
             android:theme="@style/AppTheme.Splash" />
@@ -46,7 +47,8 @@
         <activity
             android:name=".ui.activities.LoginSignUpActivity"
             android:theme="@style/AppTheme.Splash" />
-        <activity android:name=".ui.activities.common.WebActivity" />
+        <activity android:name=".ui.activities.common.WebActivity"
+            android:theme="@style/Actionbar"/>
         <activity
             android:name=".ui.activities.common.NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />

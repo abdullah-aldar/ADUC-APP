@@ -24,9 +24,9 @@ import com.aldar.studentportal.interfaces.SectionIDInterface;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.gradeConversionModel.GradeConversionResponse;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
+import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 public class GradeConversionFragment extends Fragment implements SectionIDInterface {
-
 
     private GradeConversionFragmentBinding binding;
     private GradeConversionViewModel viewModel;
@@ -47,6 +47,10 @@ public class GradeConversionFragment extends Fragment implements SectionIDInterf
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setGradeViewModel(viewModel);
 
+        binding.tvStudentId.setText(SharedPreferencesManager.getInstance(getActivity()).getStringValue("student_username"));
+        binding.tvStudentName.setText(SharedPreferencesManager.getInstance(getActivity()).getStringValue("student_name"));
+        binding.tvPrograme.setText(SharedPreferencesManager.getInstance(getActivity()).getStringValue("student_programe"));
+
         getSemesterData(viewModel.getSemsterData());
         getCourseData(viewModel.getResponseData());
 
@@ -64,22 +68,15 @@ public class GradeConversionFragment extends Fragment implements SectionIDInterf
                     semesterArray[i] = String.valueOf(semesterResponseModel.getData().get(i).getSemName());
                 }
 
-
                 binding.spinnerSemester.setAdapter(new CustomSpinnerAdapter(getActivity(), R.layout.spinner_layout, semesterArray, "Select"));
                 binding.spinnerSemester.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         viewModel.semesterID.setValue(String.valueOf(semesterResponseModel.getData().get(position).getSemID()));
                         viewModel.apiCallCourseData();
-
-                        if(++check > 1) {
-
-                        }
-
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
-
                     }
                 });
             }

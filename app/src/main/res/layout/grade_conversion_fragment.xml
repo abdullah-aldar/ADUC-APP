@@ -81,7 +81,7 @@
                 android:maxLines="1"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:text="BMC1412383"
+                android:text=""
                 android:textColor="@color/gray_black" />
 
 
@@ -105,7 +105,7 @@
                 android:maxLines="1"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:text="Abdullah khan "
+                android:text=""
                 android:textColor="@color/gray_black" />
 
             <TextView
@@ -128,7 +128,7 @@
                 android:maxLines="1"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:text="BBA"
+                android:text=""
                 android:textColor="@color/gray_black" />
 
             <TextView
@@ -136,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginTop="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/high_spacing"
                 android:layout_below="@+id/tv_programe"
                 android:layout_centerVertical="true"
                 android:text="Select Semester"

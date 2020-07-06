@@ -46,8 +46,9 @@
                     android:padding="@dimen/small_margin">
 
                     <ImageView
+                        android:id="@+id/iv_aldar"
                         android:layout_width="0dp"
-                        android:layout_height="28dp"
+                        android:layout_height="30dp"
                         android:layout_margin="@dimen/small_margin"
                         android:layout_weight="1"
                         android:contentDescription="@string/app_name"
@@ -71,83 +72,40 @@
                         android:src="@drawable/arrow_forward" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/toggle"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_below="@+id/layout_blog"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginTop="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@color/screen_color"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btn_academic"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/round_black"
-                        android:gravity="center"
-                        android:text="@string/academic"
-                        android:textSize="@dimen/medium_text"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white" />
-
-                    <Button
-                        android:id="@+id/btn_download"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="@dimen/medium_margin"
-                        android:background="@drawable/round_black"
-                        android:gravity="center"
-                        android:textSize="@dimen/medium_text"
-                        android:text="@string/download_boucher"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/portal_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginEnd="@dimen/standarize_spacing"
-                android:background="@drawable/round_black"
                 android:gravity="center"
-                android:paddingStart="@dimen/medium_margin"
-                android:paddingTop="@dimen/standarize_spacing"
-                android:paddingEnd="@dimen/medium_margin"
-                android:paddingBottom="@dimen/standarize_spacing"
-                app:layout_constraintBottom_toTopOf="@id/tv_today"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_layout">
 
 
-                <RelativeLayout
+                <LinearLayout
                     android:id="@+id/layout_combine"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/round_light_dark"
-                    android:paddingTop="@dimen/small_margin"
-                    android:paddingBottom="@dimen/small_margin">
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/layout_portal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/medium_margin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
                         android:layout_marginEnd="@dimen/medium_margin"
                         android:gravity="center"
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
+                            android:id="@+id/iv_portal"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:contentDescription="@string/app_name"
                             android:tint="@color/white"
                             android:src="@drawable/portal" />
@@ -162,17 +120,18 @@
 
                     <LinearLayout
                         android:id="@+id/layout_fee"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="@dimen/medium_margin"
-                        android:layout_marginEnd="@dimen/medium_margin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/gradient"
+                        android:layout_marginStart="@dimen/small_margin"
                         android:gravity="center"
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
+                            android:id="@+id/iv_dollar"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_margin="@dimen/small_margin"
                             android:tint="@color/white"
                             android:contentDescription="@string/app_name"
@@ -186,7 +145,7 @@
                             android:textColor="@color/white" />
                     </LinearLayout>
 
-                </RelativeLayout>
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layout_faq"
@@ -195,9 +154,9 @@
                     android:layout_below="@+id/layout_combine"
                     android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginTop="@dimen/medium_margin"
-                    android:layoutAnimation="@anim/fall_down_animation_layout"
                     android:background="@drawable/round_light_dark"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="horizontal"
                     android:paddingStart="@dimen/medium_margin"
                     android:paddingTop="@dimen/small_margin"
@@ -221,37 +180,36 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_today"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/standarize_spacing"
-                android:layout_marginTop="@dimen/standarize_spacing"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/aldar_today"
-                android:textColor="@color/gray_black"
-                android:textSize="@dimen/large_text"
-                app:layout_constraintBottom_toTopOf="@id/feedback_layout"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/portal_layout" />
-
             <RelativeLayout
                 android:id="@+id/feedback_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginEnd="@dimen/standarize_spacing"
+                android:layout_marginTop="@dimen/standarize_spacing"
                 android:background="@drawable/gradient"
                 app:layout_constraintBottom_toTopOf="@id/tv_news"
-                app:layout_constraintTop_toBottomOf="@id/tv_today">
+                app:layout_constraintTop_toBottomOf="@id/portal_layout">
+
+                <TextView
+                    android:id="@+id/tv_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/aldar_today"
+                    android:textColor="@color/screen_color"
+                    android:textSize="@dimen/large_text" />
 
                 <TextView
                     android:id="@+id/tv_feedback_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tv_today"
                     android:layout_marginStart="@dimen/medium_margin"
-                    android:layout_marginTop="@dimen/high_margin"
+                    android:layout_marginTop="@dimen/medium_margin"
                     android:layout_marginEnd="@dimen/medium_margin"
                     android:gravity="center"
                     android:text="@string/feedback"
@@ -260,12 +218,13 @@
                 <Button
                     android:id="@+id/btn_share_feedback"
                     android:layout_width="200dp"
-                    android:layout_height="@dimen/btn_height"
+                    android:layout_height="@dimen/btn"
                     android:layout_below="@id/tv_feedback_text"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/high_margin"
-                    android:background="@drawable/round_background"
+                    android:layout_marginBottom="@dimen/large_margin"
+                    android:background="@drawable/round_light_dark"
+                    android:textColor="@color/white"
                     android:padding="@dimen/small_margin"
                     android:paddingStart="@dimen/standarize_spacing"
                     android:paddingEnd="@dimen/standarize_spacing"
@@ -382,7 +341,7 @@
                         android:layout_height="@dimen/btn"
                         android:layout_weight="2.5"
                         android:background="@drawable/gradient"
-                        android:text="@string/inquire_us"
+                        android:text="Contact Us"
                         android:textAllCaps="false"
                         android:textColor="@color/screen_color" />
 

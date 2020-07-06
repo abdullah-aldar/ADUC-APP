@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -11,6 +12,11 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +32,7 @@ import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.NewsAdapter;
 import com.aldar.studentportal.databinding.FragmentHomeBinding;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
+import com.aldar.studentportal.ui.activities.common.LearnMoreActivity;
 import com.aldar.studentportal.ui.activities.common.faq.FaqActivity;
 import com.aldar.studentportal.ui.activities.common.fee.OnlinePaymentActivity;
 import com.aldar.studentportal.ui.activities.LoginSignUpActivity;
@@ -61,8 +68,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         PermissionUtil.isContactPermissionGranted(getActivity());
 
         binding.layoutBlog.setOnClickListener(this);
-        binding.btnAcademic.setOnClickListener(this);
-        binding.btnDownload.setOnClickListener(this);
         binding.layoutPortal.setOnClickListener(this);
         binding.layoutFee.setOnClickListener(this);
         binding.layoutFaq.setOnClickListener(this);
@@ -102,26 +107,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", 1);
             }
         });
-
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.layout_blog:
-                new LeakyClass(getActivity()).redirectToWebview("https://www.aldar.ac.ae/category/english-content-blog/");
+                startActivity(new Intent(getActivity(), LearnMoreActivity.class));
+                //new LeakyClass(getActivity()).redirectToWebview("https://www.aldar.ac.ae/category/english-content-blog/");
                 break;
             case R.id.layout_portal:
                 startActivity(new Intent(getActivity(), LoginSignUpActivity.class));
                 break;
             case R.id.layout_fee:
                 startActivity(new Intent(getActivity(), OnlinePaymentActivity.class));
-                break;
-            case R.id.btn_download:
-               downloadBroucher();
-                break;
-            case R.id.btn_academic:
-                loadAcademicCalendar();
                 break;
             case R.id.layout_faq:
                 new LeakyClass(getActivity()).redirectToFAQ();
@@ -299,15 +298,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
         cursor.close();
         return contactList;
-    }
-
-    private void downloadBroucher(){
-        PermissionUtils.checkPermision(getActivity());
-        try {
-            new FileUtils(getActivity(), "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     private void loadAcademicCalendar(){
