@@ -7,7 +7,7 @@
 
         <variable
             name="adviceViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.myCourseAdvice.CourseAdviceViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.courseAdvice.CourseAdviceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -94,7 +94,7 @@
                     android:layout_marginTop="@dimen/medium_margin"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:text="Your selected courses" />
+                    android:text="Adviced courses" />
             </RelativeLayout>
 
 

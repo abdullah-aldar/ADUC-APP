@@ -49,11 +49,7 @@ public class MyMarksViewModel extends AndroidViewModel {
                     }
 
                 } else  {
-                    MarksResponseModel responseModel = new MarksResponseModel();
-                    responseModel.setMessage(response.body().getMessage());
-                    responseModel.setSuccess(response.body().getSuccess());
-                    responseModel.setData(response.body().getData());
-                    marksData.setValue(responseModel);
+                    marksData.setValue(response.body());
                 }
             }
 

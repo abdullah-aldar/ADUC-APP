@@ -1,5 +1,6 @@
 package com.aldar.studentportal.remote;
 
+import com.aldar.studentportal.models.addAndDropModel.StudentRegisteredCoursesResponse;
 import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel;
 import com.aldar.studentportal.models.chequesModels.ChequeResponseModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
@@ -179,11 +180,21 @@ public interface APIService {
                                                          @Field("SemId") String semesterID);
 
     @FormUrlEncoded
+    @POST("aduc/GradeConversion")
+    Call<CommonApiResponse> getAdvisedCourses(@Field("StudentId") String studendID,
+                                                    @Field("SemId") String semesterID);
+
+    @FormUrlEncoded
     @POST("aduc/GradeConversionPost")
     Call<SendRequestResponse> sendRequest(@Field("StudentId") int studendID,
                                           @Field("SemId") String semesterID,
                                           @Field("Reason") String reason,
                                           @Field("Sections") String sectionID);
+
+    @FormUrlEncoded
+    @POST("aduc/GetStudentRegisteredSemesterData")
+    Call<StudentRegisteredCoursesResponse> studentCoursesData(@Field("StudentId") int studendID,
+                                                              @Field("SemId") String semesterID);
 
     @GET("aduc/Semester")
     Call<SemesterResponseModel> getSemester();

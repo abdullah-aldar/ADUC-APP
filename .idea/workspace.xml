@@ -23,9 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="256f8899-a1d6-453c-a7ee-fbc0909573a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_pierfrancescosoffritti_androidyoutubeplayer_core_10_0_5_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/circle_animation_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/cirulate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/AvailableCourseAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerAvailableCourseAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseRegisterAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/RegisterCoursesAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/addAndDropModel/Sections.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/addAndDropModel/StudentRegisteredCoursesData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/addAndDropModel/StudentRegisteredCoursesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/selectedCoursesModel/AdvisedCourseDataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/selectedCoursesModel/AdvisedCourseResponseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_registered_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -36,41 +43,53 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_arcadefire_nice_spinner_1_4_4_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/NewsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/NewsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/NewsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/LearnMoreActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/SplashActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/commonScreens/navigations/ResearchFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/AddDropAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/AddDropAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/CourseAdviceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/CourseAdviceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseAdviceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseAdviceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/MarksAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/MarksAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/firebase/MyFirebaseMessagingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/firebase/MyFirebaseMessagingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/selectedCoursesModel/SelectedCourseTiming.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/remote/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/remote/APIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/ForgotPasswordActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/LoginSignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/activtiesForFragments/LoginSignUpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/PaymentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/payment/PaymentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/SelectedCoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/SelectedCoursesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/SelectedCoursesViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/SelectedCoursesViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/StudentPortalMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/activtiesForFragments/StudentPortalMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/OnlinePaymentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/fee/OnlinePaymentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/commonScreens/navigations/AdmissionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/commonScreens/navigations/AdmissionFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/commonScreens/navigations/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/commonScreens/navigations/home/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/gradeConversion/GradeConversionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/gradeConversion/GradeConversionFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/round_light_dark.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_light_dark.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_news.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_learn_more.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/letterRequest/LetterRequestFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/letterRequest/LetterRequestFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/mainDashboardScreen/StudentDashboardFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/mainDashboardScreen/StudentDashboardFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/myCourseAdvice/CourseAdviceViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/CourseAdviceViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/myCourseAdvice/MyCourseAdviceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/CourseAdviceFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/myMarks/MyMarksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/myMarks/MyMarksFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/myMarks/MyMarksViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/myMarks/MyMarksViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_selected_courses.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_selected_courses.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_student_portal_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_student_portal_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_advice_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_advice_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_drop_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_drop_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_marks_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_marks_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_drop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_drop.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/grade_conversion_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grade_conversion_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="26EBB18415153131" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Latest" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -125,8 +144,8 @@
         <option value="layoutResourceFile_vertical" />
         <option value="Interface" />
         <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -162,7 +181,7 @@
     <property name="format" value="PNG" />
     <property name="lastFolderRoot" value="$USER_HOME$/Downloads/call.png" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/anim" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="method" value="Automatic" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
@@ -176,6 +195,9 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.-856708019">
+      <recent name="com.aldar.studentportal.ui.studentPortal.addDrop" />
+    </key>
     <key name="android.template.-1774075351">
       <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications" />
     </key>
@@ -189,19 +211,11 @@
       <recent name="com.aldar.studentportal.ui.fragments.login" />
       <recent name="com.aldar.studentportal.ui.activities.forgotPassword" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
-    </key>
     <key name="android.template.-1460322189">
       <recent name="com.aldar.studentportal.ui.activities.common" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
-    </key>
-    <key name="android.template.-1729699476">
-      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.aldar.studentportal.ui.fragments.navigations" />
@@ -215,17 +229,22 @@
       <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myFinance" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/anim" />
       <recent name="$PROJECT_DIR$/app/libs" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
     </key>
-    <key name="android.template.-856708019">
-      <recent name="com.aldar.studentportal.ui.studentPortal.addDrop" />
+    <key name="android.template.-1729699476">
+      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications" />
     </key>
     <key name="android.template.parentActivityClass">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -441,13 +460,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580041110932</updated>
-    </task>
-    <task id="LOCAL-00011" summary="updated">
-      <created>1581946347277</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1581946347277</updated>
     </task>
     <task id="LOCAL-00012" summary="login sign up work done">
       <created>1582032886271</created>
@@ -785,7 +797,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593954623416</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="updated some modules">
+      <created>1594042560935</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1594042560936</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -804,7 +823,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="course advice save api integrated" />
     <MESSAGE value="payment with link work done" />
     <MESSAGE value="course advice work done only conflict remaining" />
     <MESSAGE value="bug fixed in time conflict" />
@@ -829,7 +847,8 @@
     <MESSAGE value="push notification work completed" />
     <MESSAGE value="grade conversion api integrated" />
     <MESSAGE value="Grade conversion completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grade conversion completed" />
+    <MESSAGE value="updated some modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated some modules" />
   </component>
   <component name="WindowStateProjectService">
     <state x="460" y="124" key="#Images" timestamp="1593585385022">
@@ -852,16 +871,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="356" y="462" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593863744141" />
-    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593946267667">
+    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594125914159">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593946267667" />
+    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594125914159" />
     <state x="635" y="237" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.974@0.23.1920.974" timestamp="1593340103097" />
     <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1592634814197" />
-    <state x="695" y="370" key="#xdebugger.evaluate" timestamp="1593605973607">
+    <state x="695" y="370" key="#xdebugger.evaluate" timestamp="1594128298849">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="695" y="370" key="#xdebugger.evaluate/0.0.1920.1080@0.0.1920.1080" timestamp="1593605973607" />
+    <state x="695" y="370" key="#xdebugger.evaluate/0.0.1920.1080@0.0.1920.1080" timestamp="1594128298849" />
     <state x="548" y="297" key="AndroidCreateResourceFileDialog" timestamp="1594042004709">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -871,39 +890,39 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="814" y="300" key="AndroidProcessChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593849045362" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1594042558566">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1594130092151">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1591783247010" />
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594042558566" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594130092151" />
     <state x="211" y="66" key="CommitChangelistDialog2/0.23.1920.969@0.0.1920.992" timestamp="1593604934951" />
     <state x="797" y="445" key="Github.Dialog.Accounts.Choose" timestamp="1593433562596">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="797" y="445" key="Github.Dialog.Accounts.Choose/0.0.1920.1080@0.0.1920.1080" timestamp="1593433562596" />
-    <state width="1868" height="291" key="GridCell.Tab.0.bottom" timestamp="1594024419819">
+    <state width="1868" height="474" key="GridCell.Tab.0.bottom" timestamp="1594128703546">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1591875805978" />
-    <state width="1868" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594024419819" />
+    <state width="1868" height="474" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594128703546" />
     <state width="1868" height="291" key="GridCell.Tab.0.bottom/0.23.1920.971@0.23.1920.971" timestamp="1592643409071" />
-    <state width="1868" height="291" key="GridCell.Tab.0.center" timestamp="1594024419818">
+    <state width="1868" height="474" key="GridCell.Tab.0.center" timestamp="1594128703546">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1591875805970" />
-    <state width="1868" height="291" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594024419818" />
+    <state width="1868" height="474" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594128703546" />
     <state width="1868" height="291" key="GridCell.Tab.0.center/0.23.1920.971@0.23.1920.971" timestamp="1592643409070" />
-    <state width="1868" height="291" key="GridCell.Tab.0.left" timestamp="1594024419817">
+    <state width="1868" height="474" key="GridCell.Tab.0.left" timestamp="1594128703545">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1591875805969" />
-    <state width="1868" height="291" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594024419817" />
+    <state width="1868" height="474" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594128703545" />
     <state width="1868" height="291" key="GridCell.Tab.0.left/0.23.1920.971@0.23.1920.971" timestamp="1592643409069" />
-    <state width="1868" height="291" key="GridCell.Tab.0.right" timestamp="1594024419818">
+    <state width="1868" height="474" key="GridCell.Tab.0.right" timestamp="1594128703546">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1591875805976" />
-    <state width="1868" height="291" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594024419818" />
+    <state width="1868" height="474" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594128703546" />
     <state width="1868" height="291" key="GridCell.Tab.0.right/0.23.1920.971@0.23.1920.971" timestamp="1592643409070" />
     <state x="50" y="0" key="SettingsEditor" timestamp="1592892281312">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -911,11 +930,11 @@
     <state x="33" y="0" key="SettingsEditor/0.0.1280.749@0.0.1280.749" timestamp="1591090016669" />
     <state x="33" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1591515841045" />
     <state x="50" y="0" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1592892281312" />
-    <state x="210" y="104" key="Vcs.Push.Dialog.v2" timestamp="1593954626344">
+    <state x="210" y="104" key="Vcs.Push.Dialog.v2" timestamp="1594042575131">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="140" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1591783250312" />
-    <state x="210" y="104" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593954626344" />
+    <state x="210" y="104" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594042575131" />
     <state x="603" y="234" key="chooseDestDirectoryDialog" timestamp="1593946273067">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -928,24 +947,35 @@
     <state x="100" y="100" width="1080" height="600" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1280.800@0.0.1280.800" timestamp="1591089034191" />
     <state x="150" y="124" width="1620" height="899" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592892150752" />
     <state x="150" y="135" width="1620" height="810" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1920.974@0.23.1920.974" timestamp="1592113931104" />
-    <state x="381" y="250" key="com.intellij.ide.util.TipDialog" timestamp="1594012796282">
+    <state x="381" y="250" key="com.intellij.ide.util.TipDialog" timestamp="1594101077169">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="254" y="172" key="com.intellij.ide.util.TipDialog/0.0.1280.744@0.0.1280.744" timestamp="1591875627786" />
     <state x="254" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.747@0.0.1280.747" timestamp="1591081481966" />
     <state x="254" y="185" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1591876594790" />
-    <state x="381" y="250" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594012796282" />
+    <state x="381" y="250" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594101077169" />
     <state x="381" y="247" key="com.intellij.ide.util.TipDialog/0.23.1920.971@0.23.1920.971" timestamp="1592631501766" />
     <state x="381" y="248" key="com.intellij.ide.util.TipDialog/0.23.1920.974@0.23.1920.974" timestamp="1592480209375" />
     <state x="381" y="248" key="com.intellij.ide.util.TipDialog/0.23.1920.977@0.23.1920.977" timestamp="1593085904975" />
-    <state x="332" y="0" width="1257" height="1080" key="search.everywhere.popup" timestamp="1594042417943">
+    <state x="332" y="0" width="1257" height="1080" key="search.everywhere.popup" timestamp="1594129616582">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="221" y="0" width="838" height="800" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1592856941442" />
-    <state x="332" y="0" width="1257" height="1080" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594042417943" />
+    <state x="332" y="0" width="1257" height="1080" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594129616582" />
     <state x="332" y="23" width="1257" height="971" key="search.everywhere.popup/0.23.1920.971@0.23.1920.971" timestamp="1592631580631" />
     <state x="332" y="23" width="1257" height="974" key="search.everywhere.popup/0.23.1920.974@0.23.1920.974" timestamp="1593341138704" />
     <state x="332" y="23" width="1257" height="977" key="search.everywhere.popup/0.23.1920.977@0.23.1920.977" timestamp="1593341289490" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseRegisterAdapter.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

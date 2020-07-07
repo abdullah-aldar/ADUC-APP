@@ -5,28 +5,20 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.work.Data;
 import androidx.work.OneTimeWorkRequest;
-import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
 import com.aldar.studentportal.R;
 
-import com.aldar.studentportal.ui.activities.LoginSignUpActivity;
-import com.aldar.studentportal.ui.activities.StudentPortalMainActivity;
-import com.aldar.studentportal.ui.activities.common.SplashActivity;
-import com.aldar.studentportal.utilities.GeneralUtilities;
+import com.aldar.studentportal.ui.activities.activtiesForFragments.LoginSignUpActivity;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import com.aldar.studentportal.worker.MyWorker;
-import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-
-import java.util.concurrent.TimeUnit;
 
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {

@@ -18,7 +18,7 @@ import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.models.coursesAdviceModels.CoursesDataModel;
 import com.aldar.studentportal.models.coursesAdviceModels.Time;
 import com.aldar.studentportal.models.coursesAdviceModels.Sections;
-import com.aldar.studentportal.ui.activities.SelectedCoursesActivity;
+import com.aldar.studentportal.ui.studentPortal.courseAdvice.SelectedCoursesActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
     public void onBindViewHolder(ViewHolder holder, int position) {
         aducCrud = new ADUCCrud(context);
 
-        holder.tvSectionCode.setText(String.valueOf(sectionsList.get(position).getSectionId()));
+        holder.tvSectionCode.setText(String.valueOf(sectionsList.get(position).getSectionCode()));
         holder.tvCourseName.setText(courseName);
         holder.tvSchedule.setText(sectionsList.get(position).getSchedule());
         holder.tvInsName.setText(sectionsList.get(position).getInsName());
@@ -71,7 +71,7 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
         return sectionsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvSectionCode, tvCourseName, tvCreditHours, tvRemark1, tvSchedule, tvInsName, tvAdd;
 
         public ViewHolder(View itemView) {
@@ -92,9 +92,8 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
 
         if (!aducCrud.checkTiming(courseCode, String.valueOf(sectionsList.get(position).getSectionId()), timeList)) {
             addCoursesToCard(sectionsList, position);
-            //showDialog("Success", "Your course has been added successfull");
         } else {
-            showDialog("Conflict", "You have already a course registered  in the same time slot");
+            showDialog("Conflict", "You have already selected a course for advising  in the same day and time slot");
         }
     }
 

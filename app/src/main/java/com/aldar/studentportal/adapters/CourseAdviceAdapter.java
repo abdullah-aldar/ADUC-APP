@@ -25,7 +25,7 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
     private Context context;
     private final LayoutInflater inflater;
     private List<CoursesDataModel> coursesDataList;
-    ArrayList<Integer> counter = new ArrayList<Integer>();
+    ArrayList<Integer> counterList = new ArrayList<Integer>();
 
     public CourseAdviceAdapter(FragmentActivity activity, List<CoursesDataModel> data) {
         this.context = activity;
@@ -33,7 +33,7 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
         this.coursesDataList = data;
 
         for (int i = 0; i < data.size(); i++) {
-            counter.add(0);
+            counterList.add(i);
         }
     }
 
@@ -65,7 +65,7 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
         holder.cardRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         holder.cardView.setOnClickListener(view -> {
-            if (counter.get(position) % 2 == 0) {
+            if (counterList.get(position) % 2 == 0) {
                 holder.cardRecyclerView.setVisibility(View.VISIBLE);
                 holder.ivExpand.setImageResource(R.drawable.expand_less);
 
@@ -74,7 +74,7 @@ public class CourseAdviceAdapter extends RecyclerView.Adapter<CourseAdviceAdapte
                 holder.ivExpand.setImageResource(R.drawable.expand_more);
             }
 
-            counter.set(position, counter.get(position) + 1);
+            counterList.set(position, counterList.get(position) + 1);
 
 
         });

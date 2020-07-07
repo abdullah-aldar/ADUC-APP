@@ -10,6 +10,8 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.aldar.studentportal.models.addAndDropModel.StudentRegisteredCoursesResponse;
+import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
 import com.aldar.studentportal.models.gradeConversionModel.GradeConversionResponse;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.remote.APIService;
@@ -17,7 +19,10 @@ import com.aldar.studentportal.remote.RetroClass;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,7 +36,8 @@ public class AddDropViewModel extends AndroidViewModel {
     public MutableLiveData<String> reason = new MutableLiveData<>();
 
     private MutableLiveData<SemesterResponseModel> semesterData = new MutableLiveData<>();
-    private MutableLiveData<GradeConversionResponse> courseScheduleData = new MutableLiveData<>();
+    private MutableLiveData<StudentRegisteredCoursesResponse> registerCoursesData = new MutableLiveData<>();
+    private MutableLiveData<CourseAdviceResponseModel> availableCoursesData = new MutableLiveData<>();
 
     public AddDropViewModel(@NonNull Application application) {
         super(application);
@@ -68,13 +74,13 @@ public class AddDropViewModel extends AndroidViewModel {
         });
     }
 
-    public void apiCallCourseData() {
+    public void apiCallRegisteredCourseData() {
         progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
-        Call<GradeConversionResponse> allUsers = services.gradeConversionCourses(studentID.getValue(), semesterID.getValue());
-        allUsers.enqueue(new Callback<GradeConversionResponse>() {
+        Call<StudentRegisteredCoursesResponse> allUsers = services.studentCoursesData(studentID.getValue(), semesterID.getValue());
+        allUsers.enqueue(new Callback<StudentRegisteredCoursesResponse>() {
             @Override
-            public void onResponse(@NotNull Call<GradeConversionResponse> call, @NotNull Response<GradeConversionResponse> response) {
+            public void onResponse(@NotNull Call<StudentRegisteredCoursesResponse> call, @NotNull Response<StudentRegisteredCoursesResponse> response) {
                 progressBar.setValue(8);
                 if (response.body() == null) {
                     try {
@@ -85,22 +91,55 @@ public class AddDropViewModel extends AndroidViewModel {
                     }
 
                 } else if (response.body().getSuccess()) {
-                    courseScheduleData.setValue(response.body());
+                    registerCoursesData.setValue(response.body());
                 } else {
-                    courseScheduleData.setValue(response.body());
+                    registerCoursesData.setValue(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<GradeConversionResponse> call, Throwable t) {
+            public void onFailure(Call<StudentRegisteredCoursesResponse> call, Throwable t) {
                 progressBar.setValue(8);
                 showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
-    public MutableLiveData<GradeConversionResponse> getResponseData() {
-        return courseScheduleData;
+    public void apiCallAvailableCourses() {
+        progressBar.setValue(0);
+        APIService services = RetroClass.getApiClient().create(APIService.class);
+        Call<CourseAdviceResponseModel> allUsers = services.getCourseAdvice(studentID.getValue(), 100);
+        allUsers.enqueue(new Callback<CourseAdviceResponseModel>() {
+            @Override
+            public void onResponse(@NotNull Call<CourseAdviceResponseModel> call, @NotNull Response<CourseAdviceResponseModel> response) {
+                progressBar.setValue(8);
+                if (response.body() == null) {
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        showToast(getApplication().getApplicationContext(), jObjError.getString("message"));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                } else {
+                    availableCoursesData.setValue(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<CourseAdviceResponseModel> call, @NotNull Throwable t) {
+                progressBar.setValue(8);
+                showToast(getApplication().getApplicationContext(), t.getMessage());
+            }
+        });
+    }
+
+    public MutableLiveData<StudentRegisteredCoursesResponse> getResponseData() {
+        return registerCoursesData;
+    }
+
+    public MutableLiveData<CourseAdviceResponseModel> getAvailableCourseData() {
+        return availableCoursesData;
     }
 
     public MutableLiveData<SemesterResponseModel> getSemsterData() {

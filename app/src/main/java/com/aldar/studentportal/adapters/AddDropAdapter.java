@@ -41,7 +41,7 @@ public class AddDropAdapter extends RecyclerView.Adapter<AddDropAdapter.MyViewHo
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         GradeConversionData model = mDataList.get(position);
-        holder.binding.setConversionModel(model);
+
 
     }
 

@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.ui.activities.PaymentActivity;
+import com.aldar.studentportal.ui.activities.payment.PaymentActivity;
 
 public class AdmissionFragment extends Fragment {
 

@@ -4,7 +4,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,60 +20,61 @@
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
                 android:src="@drawable/dubai"
-                app:layout_constraintBottom_toTopOf="@+id/button_layout"
+                app:layout_constraintBottom_toTopOf="@+id/layout_blog"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent=".20"
+                app:layout_constraintHeight_percent=".23"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <RelativeLayout
-                android:id="@+id/button_layout"
+
+            <!-- Blog start region -->
+            <LinearLayout
+                android:id="@+id/layout_blog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/round_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/small_margin"
                 app:layout_constraintBottom_toTopOf="@id/portal_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.69"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_header">
 
-                <LinearLayout
-                    android:id="@+id/layout_blog"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/iv_aldar"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="@dimen/small_margin"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:src="@mipmap/round" />
+
+                <TextView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/standarize_spacing"
-                    android:layout_marginTop="@dimen/standarize_spacing"
-                    android:layout_marginEnd="@dimen/standarize_spacing"
-                    android:background="@drawable/round_background"
+                    android:layout_weight="4"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/small_margin">
+                    android:text="@string/learn_more"
+                    android:textColor="@color/gray_black"
+                    android:textSize="@dimen/medium_text" />
 
-                    <ImageView
-                        android:id="@+id/iv_aldar"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_margin="@dimen/small_margin"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/app_name"
-                        android:src="@mipmap/round" />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium_margin"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/arrow_forward" />
+            </LinearLayout>
+            <!-- Blog en region -->
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:gravity="center"
-                        android:text="@string/learn_more"
-                        android:textColor="@color/gray_black"
-                        android:textSize="@dimen/medium_text" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/medium_margin"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/arrow_forward" />
-                </LinearLayout>
-
-            </RelativeLayout>
-
+            <!-- portal & payment start region -->
             <RelativeLayout
                 android:id="@+id/portal_layout"
                 android:layout_width="match_parent"
@@ -83,7 +84,7 @@
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_layout">
+                app:layout_constraintTop_toBottomOf="@+id/layout_blog">
 
 
                 <LinearLayout
@@ -96,9 +97,9 @@
                         android:id="@+id/layout_portal"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/medium_margin"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
-                        android:layout_marginEnd="@dimen/medium_margin"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -107,8 +108,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:contentDescription="@string/app_name"
-                            android:tint="@color/white"
-                            android:src="@drawable/portal" />
+                            android:src="@drawable/portal"
+                            android:tint="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -122,9 +123,9 @@
                         android:id="@+id/layout_fee"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/small_margin"
                         android:layout_weight="1"
                         android:background="@drawable/gradient"
-                        android:layout_marginStart="@dimen/small_margin"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -133,9 +134,9 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_margin="@dimen/small_margin"
-                            android:tint="@color/white"
                             android:contentDescription="@string/app_name"
-                            android:src="@drawable/dollar" />
+                            android:src="@drawable/dollar"
+                            android:tint="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -179,7 +180,9 @@
                 </LinearLayout>
 
             </RelativeLayout>
+            <!-- portal & payment end region -->
 
+            <!-- feedback start region -->
             <RelativeLayout
                 android:id="@+id/feedback_layout"
                 android:layout_width="match_parent"
@@ -232,6 +235,7 @@
                     android:textAllCaps="false" />
 
             </RelativeLayout>
+            <!-- feedback end region -->
 
             <TextView
                 android:id="@+id/tv_news"
@@ -239,13 +243,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
+                android:paddingStart="@dimen/small_margin"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/news_event"
                 android:textColor="@color/gray_black"
                 android:textSize="@dimen/large_text"
-                app:layout_constraintBottom_toTopOf="@id/feedback_layout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/feedback_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/feedback_layout"
+                app:layout_constraintBottom_toTopOf="@id/rv_news"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_news"
@@ -254,12 +259,18 @@
                 android:layout_marginStart="@dimen/margin_arrow"
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_news" />
+                app:layout_constraintTop_toBottomOf="@id/tv_news"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_layout"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottom_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -269,8 +280,8 @@
                     android:id="@+id/tv_support"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
                     android:layout_marginTop="@dimen/standarize_spacing"
+                    android:layout_marginStart="@dimen/small_margin"
                     android:fontFamily="@font/poppins_bold"
                     android:text="@string/support"
                     android:textColor="@color/gray_black"
@@ -283,7 +294,7 @@
                     android:id="@+id/tv_support_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginStart="@dimen/small_margin"
                     android:layout_marginEnd="@dimen/medium_margin"
                     android:text="@string/support_text"
                     android:textColor="@color/gray_black"

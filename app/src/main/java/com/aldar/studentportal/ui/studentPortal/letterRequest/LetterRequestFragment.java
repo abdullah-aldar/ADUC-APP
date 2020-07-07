@@ -23,7 +23,7 @@ import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
 import com.aldar.studentportal.databinding.CustomConfirmLetterrDialogBinding;
 import com.aldar.studentportal.databinding.FragmentLetterRequestBinding;
 import com.aldar.studentportal.models.letterModels.LetterRequestResponseModel;
-import com.aldar.studentportal.ui.activities.PaymentActivity;
+import com.aldar.studentportal.ui.activities.payment.PaymentActivity;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 
@@ -107,7 +107,7 @@ public class LetterRequestFragment extends Fragment {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         strLetterID = String.valueOf(letterRequestResponseModel.getData().get(position).getServiceId());
                         amount = letterRequestResponseModel.getData().get(position).getRetailPrice();
-                        amountWithVAT = amount + (double) (amount * (5.0f / 100.0f));
+                        amountWithVAT = amount + (amount * (5.0f / 100.0f));
 
 
                         if (checkEnglisArabic) {
@@ -170,11 +170,7 @@ public class LetterRequestFragment extends Fragment {
         boolean amountCheck = false;
         double currentBalance = Double.parseDouble(SharedPreferencesManager.getInstance(getActivity()).getStringValue("balance"));
 
-        if (55 >= amount) {
-            amountCheck = true;
-        } else {
-            amountCheck = false;
-        }
+        amountCheck = 55 >= amount;
         return amountCheck;
     }
 

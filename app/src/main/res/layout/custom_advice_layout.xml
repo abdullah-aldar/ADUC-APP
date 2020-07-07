@@ -70,6 +70,7 @@
         android:layout_marginTop="@dimen/text_gap"
         android:fontFamily="@font/poppins_bold"
         android:text="Credit Hours :"
+        android:visibility="gone"
         android:textColor="@color/gray_black" />
 
     <TextView
@@ -79,6 +80,7 @@
         android:layout_below="@+id/courseName"
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/text_gap"
+        android:visibility="gone"
         android:layout_toEndOf="@+id/creditHours"
         android:text="57" />
 
@@ -90,6 +92,7 @@
         android:layout_marginTop="@dimen/text_gap"
         android:fontFamily="@font/poppins_bold"
         android:text="Remark 1 :"
+        android:visibility="gone"
         android:textColor="@color/gray_black" />
 
     <TextView
@@ -99,6 +102,7 @@
         android:layout_below="@+id/creditHours"
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/text_gap"
+        android:visibility="gone"
         android:layout_toEndOf="@+id/remark1"
         android:text="0" />
 

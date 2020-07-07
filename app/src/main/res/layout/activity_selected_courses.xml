@@ -7,7 +7,7 @@
 
         <variable
             name="selectedCoursesViewModel"
-            type="com.aldar.studentportal.ui.activities.SelectedCoursesViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.courseAdvice.SelectedCoursesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,7 +83,7 @@
                 android:paddingStart="@dimen/standarize_spacing"
                 android:paddingEnd="@dimen/standarize_spacing"
                 android:visibility="invisible"
-                android:text="@string/click_to_register"
+                android:text="Save"
                 android:textAllCaps="false" />
 
         </RelativeLayout>

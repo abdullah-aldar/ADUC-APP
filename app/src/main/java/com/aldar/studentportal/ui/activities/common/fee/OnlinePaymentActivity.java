@@ -14,7 +14,7 @@ import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.ChequesAdapter;
 import com.aldar.studentportal.databinding.ActivityOnlinePaymentBinding;
 import com.aldar.studentportal.interfaces.CallBackAmount;
-import com.aldar.studentportal.ui.activities.PaymentActivity;
+import com.aldar.studentportal.ui.activities.payment.PaymentActivity;
 
 public class OnlinePaymentActivity extends AppCompatActivity {
     private ActivityOnlinePaymentBinding binding;

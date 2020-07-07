@@ -1,6 +1,5 @@
 package com.aldar.studentportal.ui.studentPortal.mainDashboardScreen;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
@@ -11,13 +10,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.StudentDashboardItemsAdapter;
 import com.aldar.studentportal.databinding.FragmentStudentDashboardBinding;
 import com.aldar.studentportal.interfaces.ItemClickCallBack;
 import com.aldar.studentportal.ui.activities.common.NavigationActivity;
-import com.aldar.studentportal.ui.activities.LoginSignUpActivity;
+import com.aldar.studentportal.ui.activities.activtiesForFragments.LoginSignUpActivity;
 import com.aldar.studentportal.ui.studentPortal.announcment.AnnouncementFragment;
 import com.aldar.studentportal.ui.studentPortal.myProfile.StudentProfileFragment;
 import com.aldar.studentportal.ui.studentPortal.notifications.NotificationFragment;

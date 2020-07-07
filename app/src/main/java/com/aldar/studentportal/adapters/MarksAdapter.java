@@ -25,9 +25,7 @@ public class MarksAdapter extends RecyclerView.Adapter<MarksAdapter.MyViewHolder
 
     private Context context;
     private final LayoutInflater inflater;
-
     private List<MarksSemesterModel> marksSemesterModelList;
-
     ArrayList<Integer> counter = new ArrayList<Integer>();
 
     public MarksAdapter(FragmentActivity activity, List<MarksSemesterModel> data) {
@@ -37,7 +35,7 @@ public class MarksAdapter extends RecyclerView.Adapter<MarksAdapter.MyViewHolder
 
 
         for (int i = 0; i < data.size(); i++) {
-            counter.add(0);
+            counter.add(i);
         }
     }
 

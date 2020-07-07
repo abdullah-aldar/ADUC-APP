@@ -176,36 +176,47 @@
                 android:layout_weight="1"
                 android:background="@drawable/gradient"
                 android:gravity="center"
-                android:text="AVAILABLE COURSES"
+                android:text="REGISTERD COURSES"
                 android:textSize="@dimen/medium_text"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btn_drop_course"
+                android:id="@+id/btn_available_course"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:background="@drawable/gradient"
+                android:background="@drawable/round_background"
                 android:gravity="center"
                 android:textSize="@dimen/medium_text"
-                android:text="REGISTERD COURSES"
+                android:text="AVAILABLE COURSES"
                 android:textAllCaps="false"
-                android:textColor="@color/white" />
+                android:textColor="@color/gray_black" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/standarize_spacing"
             app:layout_constraintTop_toBottomOf="@+id/check"
             android:layoutAnimation="@anim/fall_down_animation_layout"
             />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:indeterminateTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibility="@{addDropViewModel.progressBar}" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
