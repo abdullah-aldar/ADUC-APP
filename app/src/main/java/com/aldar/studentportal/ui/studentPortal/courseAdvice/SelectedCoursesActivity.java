@@ -2,123 +2,74 @@ package com.aldar.studentportal.ui.studentPortal.courseAdvice;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
 import android.app.Dialog;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.SelectedCoursesAdapter;
 import com.aldar.studentportal.databinding.ActivitySelectedCoursesBinding;
+import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseDataModel;
+import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseResponseModel;
 import com.aldar.studentportal.models.selectedCoursesModel.SelectedCoursesModel;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
+
 import java.util.List;
-import java.util.Objects;
 
 public class SelectedCoursesActivity extends AppCompatActivity {
     private SelectedCoursesAdapter adapter;
     private ActivitySelectedCoursesBinding binding;
     private SelectedCoursesViewModel viewModel;
-    private String strSectionId = "";
+    private String strSectionId = "", studentId;
+    private int semesterId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_selected_courses);
 
+        studentId = String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id"));
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            semesterId = bundle.getInt("semesterID");
+        }
+
+
         viewModel = new ViewModelProvider(this).get(SelectedCoursesViewModel.class);
         binding.setLifecycleOwner(this);
         binding.setSelectedCoursesViewModel(viewModel);
+        viewModel.apiCallGetAdvisedCourses(studentId, String.valueOf(semesterId));
 
-        viewModel.getAdvisedCourses().observe(this, selectedCoursesModels -> {
-            if (selectedCoursesModels.size() > 0) {
-               loadFromLocal(selectedCoursesModels);
-            }
-            else {
-                loadFromServer();
-            }
+        viewModel.getAdvisedServerData().observe(this, advisedCourseResponseModel -> {
 
+            if (advisedCourseResponseModel.getData().get(0).getCourses().size() > 0) {
+                loadFromServer(advisedCourseResponseModel.getData().get(0).getCourses());
+            }
         });
 
-        binding.btnRegisterCourse.setOnClickListener(v -> {
-            showDialog("Confirm", "Are you sure to register these courses!");
+        viewModel.getSaveAdviseResponse().observe(this, commonApiResponse -> {
+            Toast.makeText(this, "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
         });
+
 
         binding.ivBack.setOnClickListener(v -> {
             onBackPressed();
         });
 
-        viewModel.getAdvisedCourseResponse().observe(this, commonApiResponse -> {
-            if (Boolean.parseBoolean(commonApiResponse.getSuccess())) {
-                Toast.makeText(this, "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
-    private void loadFromLocal(List<SelectedCoursesModel> selectedCoursesModels) {
-        binding.btnRegisterCourse.setVisibility(View.VISIBLE);
+    private void loadFromServer(List<AdvisedCourseDataModel> selectedCoursesModels) {
         binding.rvCourseslist.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new SelectedCoursesAdapter(selectedCoursesModels, this);
+        adapter = new SelectedCoursesAdapter(selectedCoursesModels, this,"Server");
         binding.rvCourseslist.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
-        for (int i = 0; i < selectedCoursesModels.size(); i++) {
-            if (i == 0) {
-                strSectionId += selectedCoursesModels.get(i).getSectionId();
-            } else {
-                strSectionId += "," + selectedCoursesModels.get(i).getSectionId();
-            }
-        }
     }
 
-    private void loadFromServer() {
-    }
-
-
-    private void showDialog(String titlte, String message) {
-        Dialog dialog = new Dialog(Objects.requireNonNull(SelectedCoursesActivity.this));
-        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.setContentView(R.layout.course_advice_dialog);
-        TextView tvTitle = dialog.findViewById(R.id.title);
-        TextView tvMessage = dialog.findViewById(R.id.message);
-        Button btnOk = dialog.findViewById(R.id.btn_ok);
-        Button btnReview = dialog.findViewById(R.id.btn_review);
-
-        tvTitle.setText(titlte);
-        tvMessage.setText(message);
-
-        btnOk.setText("Cancel");
-        btnOk.setOnClickListener(v -> {
-            dialog.dismiss();
-
-        });
-
-        btnReview.setText("Register");
-        btnReview.setOnClickListener(v -> {
-            dialog.dismiss();
-            String studentID = String.valueOf(SharedPreferencesManager.getInstance(getApplication().getApplicationContext()).getIntValue("student_id"));
-            int semesterId = SharedPreferencesManager.getInstance(getApplicationContext()).getIntValue("semester_id");
-            if (validate()) {
-                viewModel.apiCallSaveAdvisedCourses(studentID, String.valueOf(semesterId), strSectionId);
-            }
-        });
-
-        dialog.show();
-    }
-
-    private boolean validate() {
-        boolean valid = false;
-
-        if (strSectionId.isEmpty()) {
-            valid = false;
-            Toast.makeText(this, "you have no course selected", Toast.LENGTH_SHORT).show();
-        } else {
-            valid = true;
-        }
-        return valid;
-    }
 }

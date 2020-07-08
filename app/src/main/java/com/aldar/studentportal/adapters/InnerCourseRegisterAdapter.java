@@ -1,5 +1,6 @@
 package com.aldar.studentportal.adapters;
 
+import android.content.Context;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +11,18 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.models.addAndDropModel.StudentRegisteredCoursesData;
 
 import java.util.List;
 
 public class InnerCourseRegisterAdapter extends RecyclerView.Adapter<InnerCourseRegisterAdapter.ViewHolder> {
-
+    private ADUCCrud aducCrud;
     private List<StudentRegisteredCoursesData> coursesDataList;
+    private Context context;
 
-    public InnerCourseRegisterAdapter(List<StudentRegisteredCoursesData> coursesDataList) {
+    public InnerCourseRegisterAdapter(Context context,List<StudentRegisteredCoursesData> coursesDataList) {
+        this.context = context;
         this.coursesDataList = coursesDataList;
     }
 
@@ -33,13 +37,19 @@ public class InnerCourseRegisterAdapter extends RecyclerView.Adapter<InnerCourse
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        aducCrud = new ADUCCrud(context);
 
-        holder.tvCourseCode.setText(coursesDataList.get(position).getCourseCode());
-        holder.tvCourseName.setText(coursesDataList.get(position).getCourseName());
-        holder.tvSection.setText(coursesDataList.get(position).getSectionCode());
+        String courseCode = coursesDataList.get(position).getCourseCode();
+        String courseName = coursesDataList.get(position).getCourseName();
+        String sections = coursesDataList.get(position).getSectionCode();
+
+        holder.tvCourseCode.setText(courseCode);
+        holder.tvCourseName.setText(courseName);
+        holder.tvSection.setText(sections);
 
         holder.tvAdd.setOnClickListener(v -> {
-           // checkTimingandData(position, sectionsList, sectionsList.get(position).getTime());
+            String sectionCode = coursesDataList.get(position).getSectionCode();
+            aducCrud.saveAddDrop(courseCode,courseName,sections,sectionCode,sectionCode);
         });
 
 

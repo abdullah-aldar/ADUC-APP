@@ -4,7 +4,6 @@
 
 
     <data>
-
         <variable
             name="selectedCoursesViewModel"
             type="com.aldar.studentportal.ui.studentPortal.courseAdvice.SelectedCoursesViewModel" />
@@ -40,8 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="@string/your_courses"
-            android:textColor="@color/gray"
+            android:text="Saved courses"
+            android:textColor="@color/screen_color"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,23 +67,9 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:text="@string/selected_course_advise"
-                android:textColor="@color/gray"
+                android:text="your selected courses saved\n in our system"
+                android:textColor="@color/screen_color"
                 android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_register_course"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_below="@+id/title_text"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/shadow"
-                android:textColor="@color/gray_black"
-                android:paddingStart="@dimen/standarize_spacing"
-                android:paddingEnd="@dimen/standarize_spacing"
-                android:visibility="invisible"
-                android:text="Save"
-                android:textAllCaps="false" />
 
         </RelativeLayout>
 

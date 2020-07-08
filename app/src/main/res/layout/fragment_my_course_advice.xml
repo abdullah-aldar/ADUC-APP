@@ -49,6 +49,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Next"
+            android:textColor="@color/screen_color"
+            android:textSize="@dimen/large_text_size"
+            android:padding="@dimen/text_gap"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
             <RelativeLayout
                 android:id="@+id/header"
@@ -84,17 +97,6 @@
                     android:gravity="center"
                     android:textColor="@color/gray_black" />
 
-                <Button
-                    android:id="@+id/btn_see_courses"
-                    android:layout_width="220dp"
-                    android:layout_height="@dimen/btn_height"
-                    android:layout_below="@+id/semester_spinner"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/gradient"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:text="Adviced courses" />
             </RelativeLayout>
 
 

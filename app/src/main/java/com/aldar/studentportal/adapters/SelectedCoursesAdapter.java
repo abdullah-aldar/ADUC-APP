@@ -2,6 +2,7 @@ package com.aldar.studentportal.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -11,19 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.databinding.SelectedCoursesLayoutBinding;
+import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseDataModel;
 import com.aldar.studentportal.models.selectedCoursesModel.SelectedCoursesModel;
 
 import java.util.List;
 
 public class SelectedCoursesAdapter extends RecyclerView.Adapter<SelectedCoursesAdapter.MyViewHolder> {
     private Context context;
-    private List<? extends SelectedCoursesModel> SelectedCoursesModelList;
-    private ADUCCrud dictionaryCrud;
+    private List<? extends AdvisedCourseDataModel> SelectedCoursesModelList;
+    private ADUCCrud aducCrud;
+    private String checkServerLocal;
 
-    public SelectedCoursesAdapter(List<? extends SelectedCoursesModel> SelectedCoursesModelList, Context context) {
+    public SelectedCoursesAdapter(List<AdvisedCourseDataModel> SelectedCoursesModelList, Context context,String checkServer) {
         this.context = context;
         this.SelectedCoursesModelList = SelectedCoursesModelList;
-
+        this.checkServerLocal = checkServer;
     }
 
     @NonNull
@@ -37,15 +40,21 @@ public class SelectedCoursesAdapter extends RecyclerView.Adapter<SelectedCourses
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        dictionaryCrud = new ADUCCrud(context);
-        SelectedCoursesModel model = SelectedCoursesModelList.get(position);
+        aducCrud = new ADUCCrud(context);
+        AdvisedCourseDataModel model = SelectedCoursesModelList.get(position);
         holder.binding.setSelectModel(model);
 
-        holder.binding.tvRemoveCourse.setOnClickListener(v -> {
-            dictionaryCrud.deleteCourse(model.getCourseCode());
-            SelectedCoursesModelList.remove(position);
-            notifyDataSetChanged();
-        });
+        if(checkServerLocal.equals("Server")){
+            holder.binding.tvRemoveCourse.setVisibility(View.GONE);
+        }
+        else {
+            holder.binding.tvRemoveCourse.setOnClickListener(v -> {
+                aducCrud.deleteCourse(model.getCourseCode());
+                SelectedCoursesModelList.remove(position);
+                notifyDataSetChanged();
+            });
+        }
+
     }
 
     @Override

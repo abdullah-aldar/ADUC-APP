@@ -95,14 +95,10 @@ public class ADUCCrud {
                 }
                 return false;
             }
-
         } finally {
             cursor.close();
         }
-
-
     }
-
 
     //updaing course
     private void updateCourse(String sectionId, String sectionCode, String courseCode, String courseName,
@@ -117,7 +113,6 @@ public class ADUCCrud {
         sqLiteDatabase.update("CART", values, "courseCode= '" + courseCode + "'", null);
         showToast("Course Updated");
     }
-
 
     //fetching all courses
     public Cursor getAllCourses() {
@@ -156,12 +151,52 @@ public class ADUCCrud {
         } else {
             return false;
         }
+    }
+
+    public void saveAddDrop(String courseCode, String courseName, String sectionId, String section, String addDrop) {
+        if (!checkExistAddDropRecord(courseCode)) {
+            ContentValues values = new ContentValues();
+            values.put("courseCode", courseCode);
+            values.put("courseName", courseName);
+            values.put("sectionId", sectionId);
+            values.put("section", section);
+            values.put("addOrDrop", addDrop);
+            sqLiteDatabase.insert("DROPTABLE", null, values);
+            showToast("Your course saved successfully");
+        } else {
+            updateAddDrop(courseCode, courseName, sectionId, section, addDrop);
+        }
+    }
+
+    //updaing course
+    private void updateAddDrop(String courseCode, String courseName, String sectionId, String section, String addDrop) {
+        ContentValues values = new ContentValues();
+        values.put("courseCode", courseCode);
+        values.put("courseName", courseName);
+        values.put("sectionId", sectionId);
+        values.put("section", section);
+        values.put("addOrDrop", addDrop);
+        sqLiteDatabase.update("DROPTABLE", values, "courseCode= '" + courseCode + "'", null);
+        showToast("Updated");
+    }
+    //check course in a section if exist then it will update it
+    private boolean checkExistAddDropRecord(String courseCode) {
+        boolean isItemAddChart = false;
+        String query = "SELECT * FROM DROPTABLE WHERE courseCode = '" + courseCode + "' ";
+        Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            isItemAddChart = true;
+        }
+        return isItemAddChart;
 
     }
 
 
-    private void showToast(String msg) {
-        Toast.makeText(context, "" + msg, Toast.LENGTH_SHORT).show();
+    //fetching all addandDropCourse
+    public Cursor getAddOrDrop() {
+        String query = "SELECT * FROM DROPTABLE";
+        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
+        return cursor;
     }
 
     private boolean comparingTimings(String myStartTime, String myEndTime, String savedStartTime, String savedEndtime) {
@@ -197,5 +232,9 @@ public class ADUCCrud {
         DateTimeFormatter changeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
 
         return dateTime.format(changeFormat);
+    }
+
+    private void showToast(String msg) {
+        Toast.makeText(context, "" + msg, Toast.LENGTH_SHORT).show();
     }
 }

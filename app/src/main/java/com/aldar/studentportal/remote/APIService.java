@@ -20,6 +20,8 @@ import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
 import com.aldar.studentportal.models.notificationModels.NotificationReponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
+import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseDataModel;
+import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.models.studentInfoModels.StudentResponseModel;
 import com.aldar.studentportal.models.studentProfileModel.ProfileResponseModel;
@@ -180,9 +182,9 @@ public interface APIService {
                                                          @Field("SemId") String semesterID);
 
     @FormUrlEncoded
-    @POST("aduc/GradeConversion")
-    Call<CommonApiResponse> getAdvisedCourses(@Field("StudentId") String studendID,
-                                                    @Field("SemId") String semesterID);
+    @POST("aduc/GetStudentAdvicedSemesterData")
+    Call<AdvisedCourseResponseModel> getAdvisedCourses(@Field("StudentId") String studendID,
+                                                   @Field("SemId") String semesterID);
 
     @FormUrlEncoded
     @POST("aduc/GradeConversionPost")

@@ -11,10 +11,14 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.aldar.studentportal.databases.ADUCCrud;
+import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
+import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseDataModel;
+import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseResponseModel;
 import com.aldar.studentportal.models.selectedCoursesModel.SelectedCoursesModel;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
+import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
@@ -28,97 +32,46 @@ import retrofit2.Response;
 
 public class SelectedCoursesViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> progressBar = new MutableLiveData<>();
-    private MutableLiveData<List<SelectedCoursesModel>> itemsDataLiveData = new MutableLiveData<>();
-    private MutableLiveData<CommonApiResponse> courseRegistraionLiveData = new MutableLiveData<>();
+
+    private MutableLiveData<AdvisedCourseResponseModel> adviceServerData = new MutableLiveData<>();
+    private MutableLiveData<CommonApiResponse> saveCourseAdviseData = new MutableLiveData<>();
 
     public SelectedCoursesViewModel(@NonNull Application application) {
         super(application);
         progressBar.setValue(8);
-        showCart();
     }
 
-    private void showCart() {
-        ADUCCrud dictionaryCrud = new ADUCCrud(getApplication().getApplicationContext());
-        ArrayList<SelectedCoursesModel> arrayListData = new ArrayList<>();
-        Cursor cursor = dictionaryCrud.getAllCourses();
-
-            while (cursor.moveToNext()) {
-                String sectionId = cursor.getString(1).trim();
-                String sectionCode = cursor.getString(2).trim();
-                String courseCode = cursor.getString(3).trim();
-                String courseName = cursor.getString(4).trim();
-                String schedule = cursor.getString(5).trim();
-                String insName = cursor.getString(6).trim();
-
-                SelectedCoursesModel model = new SelectedCoursesModel(
-                        sectionId,
-                        sectionCode,
-                        courseCode,
-                        courseName,
-                        schedule,
-                        insName
-                );
-                arrayListData.add(model);
-            }
-        itemsDataLiveData.setValue(arrayListData);
-    }
-
-    public void apiCallSaveAdvisedCourses(String studentID, String semesterID, String strSectionId) {
+    public void apiCallGetAdvisedCourses(String studentID, String semesterID) {
         progressBar.setValue(0);
         APIService services;
         services = RetroClass.getApiClient().create(APIService.class);
-        Call<CommonApiResponse> allUsers = services.saveCourseAdvice(studentID, semesterID, strSectionId);
-        allUsers.enqueue(new Callback<CommonApiResponse>() {
+        Call<AdvisedCourseResponseModel> allUsers = services.getAdvisedCourses(studentID, semesterID);
+        allUsers.enqueue(new Callback<AdvisedCourseResponseModel>() {
             @Override
-            public void onResponse(@NotNull Call<CommonApiResponse> call, @NotNull Response<CommonApiResponse> response) {
+            public void onResponse(@NotNull Call<AdvisedCourseResponseModel> call, @NotNull Response<AdvisedCourseResponseModel> response) {
                 progressBar.setValue(8);
                 if (response.body() == null) {
                     showServerErrorMessage(response);
 
                 } else {
-                    courseRegistraionLiveData.setValue(response.body());
+                    adviceServerData.setValue(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<CommonApiResponse> call, Throwable t) {
+            public void onFailure(Call<AdvisedCourseResponseModel> call, Throwable t) {
                 progressBar.setValue(8);
                 showToast(getApplication().getApplicationContext(), t.getMessage());
             }
         });
     }
 
-    public void apiCallGetAdvicsedCourses(String studentID, String semesterID) {
-        progressBar.setValue(0);
-        APIService services;
-        services = RetroClass.getApiClient().create(APIService.class);
-        Call<CommonApiResponse> allUsers = services.getAdvisedCourses(studentID, semesterID);
-        allUsers.enqueue(new Callback<CommonApiResponse>() {
-            @Override
-            public void onResponse(@NotNull Call<CommonApiResponse> call, @NotNull Response<CommonApiResponse> response) {
-                progressBar.setValue(8);
-                if (response.body() == null) {
-                    showServerErrorMessage(response);
-
-                } else {
-                    courseRegistraionLiveData.setValue(response.body());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<CommonApiResponse> call, Throwable t) {
-                progressBar.setValue(8);
-                showToast(getApplication().getApplicationContext(), t.getMessage());
-            }
-        });
+    MutableLiveData<AdvisedCourseResponseModel> getAdvisedServerData() {
+        return adviceServerData;
     }
 
-    MutableLiveData<List<SelectedCoursesModel>> getAdvisedCourses() {
-        return itemsDataLiveData;
-    }
-
-    MutableLiveData<CommonApiResponse> getAdvisedCourseResponse() {
-        return courseRegistraionLiveData;
+    MutableLiveData<CommonApiResponse> getSaveAdviseResponse() {
+        return saveCourseAdviseData;
     }
 
     private void showServerErrorMessage(Response response) {

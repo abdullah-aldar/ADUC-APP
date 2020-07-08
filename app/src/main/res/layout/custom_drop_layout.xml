@@ -5,7 +5,7 @@
 
         <variable
             name="registerCoursesModel"
-            type="com.aldar.studentportal.models.addAndDropModel.StudentRegisteredCoursesData" />
+            type="com.aldar.studentportal.models.addAndDropModel.AddDropCoursesModel" />
     </data>
 
     <RelativeLayout
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/small_margin"
-            android:text="Add"
+            android:text="@={registerCoursesModel.courseCode}"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/green" />
 
@@ -101,17 +101,6 @@
             android:textStyle="bold"
             android:text="Instructor  :"
             android:textColor="@color/gray_black" />
-
-        <TextView
-            android:id="@+id/tv_instructor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/courseName"
-            android:layout_marginStart="@dimen/small_margin"
-            android:layout_marginTop="@dimen/text_gap"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            android:layout_toEndOf="@+id/instructor"
-            android:text="@={registerCoursesModel.insName}" />
 
     </RelativeLayout>
 </layout>

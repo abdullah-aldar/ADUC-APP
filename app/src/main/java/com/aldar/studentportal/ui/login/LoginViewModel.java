@@ -59,12 +59,7 @@ public class LoginViewModel extends AndroidViewModel {
                     }
 
                 } else {
-                    LoginResponseModel responseModel = new LoginResponseModel();
-                    responseModel.setStatus(response.body().getStatus());
-                    responseModel.setMessage(response.body().getMessage());
-                    responseModel.setSuccess(response.body().getSuccess());
-                    responseModel.setData(response.body().getData());
-                    loginResponseData.setValue(responseModel);
+                    loginResponseData.setValue(response.body());
                 }
             }
 

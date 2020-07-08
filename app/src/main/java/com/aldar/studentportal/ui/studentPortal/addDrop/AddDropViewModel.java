@@ -134,11 +134,11 @@ public class AddDropViewModel extends AndroidViewModel {
         });
     }
 
-    public MutableLiveData<StudentRegisteredCoursesResponse> getResponseData() {
+    public MutableLiveData<StudentRegisteredCoursesResponse> getRegisterCourses() {
         return registerCoursesData;
     }
 
-    public MutableLiveData<CourseAdviceResponseModel> getAvailableCourseData() {
+    public MutableLiveData<CourseAdviceResponseModel> getAvailableCourse() {
         return availableCoursesData;
     }
 

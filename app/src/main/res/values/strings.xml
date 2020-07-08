@@ -37,6 +37,8 @@
     <string name="academic">Academic calendar</string>
     <string name="logout">Logout</string>
     <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="save">save</string>
     <string name="logout_text">Are you sure to logout ?</string>
     <string name="verify">Verify</string>
     <string name="forgot_text">We will send an email and Message, ensure its your personal and correct Username ID</string>
@@ -107,6 +109,8 @@
     <string name="subject">Subject :</string>
     <string name="message">Message :</string>
     <string name="send">Send</string>
+    <string name="register_course">Registered courses</string>
+    <string name="available_course">Available courses</string>
 
     <string name="aldar_today">ALDAR Today</string>
     <string name="learn_more">Learn more about ALDAR University</string>

@@ -60,7 +60,8 @@ public class InnerCourseAdviceAdapter extends RecyclerView.Adapter<InnerCourseAd
 
 
         holder.tvAdd.setOnClickListener(v -> {
-            checkTimingandData(position, sectionsList, sectionsList.get(position).getTime());
+            addCoursesToCard(sectionsList,position);
+            //checkTimingandData(position, sectionsList, sectionsList.get(position).getTime());
         });
 
 

@@ -1,5 +1,6 @@
 package com.aldar.studentportal.ui.studentPortal.addDrop;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -13,20 +14,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Toast;
-
 import com.aldar.studentportal.R;
-import com.aldar.studentportal.adapters.AddDropAdapter;
 import com.aldar.studentportal.adapters.AvailableCourseAdapter;
-import com.aldar.studentportal.adapters.CourseAdviceAdapter;
 import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
-import com.aldar.studentportal.adapters.GradeConversionAdapter;
 import com.aldar.studentportal.adapters.RegisterCoursesAdapter;
 import com.aldar.studentportal.databinding.FragmentAddDropBinding;
 import com.aldar.studentportal.interfaces.SectionIDInterface;
 import com.aldar.studentportal.models.addAndDropModel.StudentRegisteredCoursesResponse;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
-import com.aldar.studentportal.models.gradeConversionModel.GradeConversionResponse;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
@@ -57,24 +52,24 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
         binding.tvPrograme.setText(SharedPreferencesManager.getInstance(getActivity()).getStringValue("student_programe"));
 
         getSemesterData(viewModel.getSemsterData());
-        getCourseData(viewModel.getResponseData());
+        viewModel.apiCallRegisteredCourseData();
+        viewModel.apiCallAvailableCourses();
+
+        getRegisteredCourseData(viewModel.getRegisterCourses());
 
         binding.btnRegisterCourse.setOnClickListener(view -> {
-         binding.btnRegisterCourse.setBackgroundResource(R.drawable.gradient);
-            binding.btnAvailableCourse.setBackgroundResource(R.drawable.round_background);
-            binding.btnAvailableCourse.setTextColor(getResources().getColor(R.color.gray_black));
-            binding.btnRegisterCourse.setTextColor(getResources().getColor(R.color.white));
-            viewModel.apiCallRegisteredCourseData();
+            getRegisteredCourseData(viewModel.getRegisterCourses());
+            highlightButton(view);
         });
 
         binding.btnAvailableCourse.setOnClickListener(view -> {
-            binding.btnAvailableCourse.setBackgroundResource(R.drawable.gradient);
-            binding.btnRegisterCourse.setBackgroundResource(R.drawable.round_background);
-            binding.btnAvailableCourse.setTextColor(getResources().getColor(R.color.white));
-            binding.btnRegisterCourse.setTextColor(getResources().getColor(R.color.gray_black));
-            getAvailableCourseData(viewModel.getAvailableCourseData());
-            viewModel.apiCallAvailableCourses();
+            getAvailableCourseData(viewModel.getAvailableCourse());
+            highlightButton(view);
 
+        });
+
+        binding.tvHistory.setOnClickListener(view -> {
+           startActivity(new Intent(getActivity(),AddDropHistoryActivity.class));
         });
 
         binding.ivBack.setOnClickListener(view -> {
@@ -83,7 +78,7 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
     }
 
 
-
+    //getting semester
     private void getSemesterData(MutableLiveData<SemesterResponseModel> semsterData) {
         semsterData.observe(getViewLifecycleOwner(), semesterResponseModel -> {
             if (semesterResponseModel.getData().size() > 0) {
@@ -109,7 +104,8 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
         });
     }
 
-    private void getCourseData(MutableLiveData<StudentRegisteredCoursesResponse> responseData) {
+    //showing registered courses
+    private void getRegisteredCourseData(MutableLiveData<StudentRegisteredCoursesResponse> responseData) {
         responseData.observe(getViewLifecycleOwner(), gradeConversionResponse -> {
             if (gradeConversionResponse.getData() != null) {
                 binding.recyclerView.setVisibility(View.VISIBLE);
@@ -123,11 +119,11 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
         });
     }
 
+    //showing Available course from advise API
     private void getAvailableCourseData(MutableLiveData<CourseAdviceResponseModel> availableCourseData) {
         availableCourseData.observe(getViewLifecycleOwner(), courseAdviceResponseModel -> {
 
             if(courseAdviceResponseModel.getData() != null){
-//                binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 AvailableCourseAdapter adapter = new AvailableCourseAdapter(getActivity(),courseAdviceResponseModel.getData());
                 binding.recyclerView.setAdapter(adapter);
             }
@@ -138,6 +134,29 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
 
     @Override
     public void setSectionID(String sectionID) {
+    }
 
+    private void highlightButton(View view){
+        int id = view.getId();
+        switch (id){
+            case R.id.btn_available_course:
+                binding.btnAvailableCourse.setBackgroundResource(R.drawable.gradient);
+                binding.btnRegisterCourse.setBackgroundResource(R.drawable.round_background);
+                binding.btnAvailableCourse.setTextColor(getResources().getColor(R.color.white));
+                binding.btnRegisterCourse.setTextColor(getResources().getColor(R.color.gray_black));
+                break;
+            case R.id.btn_register_course:
+                binding.btnRegisterCourse.setBackgroundResource(R.drawable.gradient);
+                binding.btnAvailableCourse.setBackgroundResource(R.drawable.round_background);
+                binding.btnAvailableCourse.setTextColor(getResources().getColor(R.color.gray_black));
+                binding.btnRegisterCourse.setTextColor(getResources().getColor(R.color.white));
+                break;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        binding = null;
+        super.onDestroy();
     }
 }

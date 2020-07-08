@@ -7,12 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ADUCDatabase extends SQLiteOpenHelper {
 
     private static String DB_NAME = "ADUC_DB";
-    private static int DB_VERSION = 2;
+    private static int DB_VERSION = 1;
 
     public ADUCDatabase(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -20,14 +19,18 @@ public class ADUCDatabase extends SQLiteOpenHelper {
 
         String timingTable = "CREATE TABLE TIMING (ID INTEGER PRIMARY KEY AUTOINCREMENT,courseCode,sectionID,dayName,startTime,endTime)";
 
+        String addDropTable = "CREATE TABLE DROPTABLE (ID INTEGER PRIMARY KEY AUTOINCREMENT,courseCode,courseName,sectionId,section,addOrDrop)";
+
         sqLiteDatabase.execSQL(courseTable);
         sqLiteDatabase.execSQL(timingTable);
+        sqLiteDatabase.execSQL(addDropTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS CART");
         db.execSQL("DROP TABLE IF EXISTS TIMING");
+        db.execSQL("DROP TABLE IF EXISTS DROPTABLE");
         onCreate(db);
     }
 }

@@ -34,6 +34,7 @@ public class RegisterCoursesAdapter extends RecyclerView.Adapter<RegisterCourses
     private Context context;
 
     public RegisterCoursesAdapter(Context context, List<Sections> GradeConversionDataList) {
+        this.context = context;
         mDataList = GradeConversionDataList;
 
         for (int i = 0; i < mDataList.size(); i++) {
@@ -54,7 +55,7 @@ public class RegisterCoursesAdapter extends RecyclerView.Adapter<RegisterCourses
         Sections model = mDataList.get(position);
 
         holder.tvSemester.setText(model.getSemester());
-        InnerCourseRegisterAdapter itemInnerRecyclerView = new InnerCourseRegisterAdapter(mDataList.get(position).getCourses());
+        InnerCourseRegisterAdapter itemInnerRecyclerView = new InnerCourseRegisterAdapter(context,mDataList.get(position).getCourses());
         holder.cardRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         holder.cardView.setOnClickListener(view -> {

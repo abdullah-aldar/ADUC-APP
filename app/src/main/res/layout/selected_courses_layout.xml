@@ -6,7 +6,7 @@
 
         <variable
             name="selectModel"
-            type="com.aldar.studentportal.models.selectedCoursesModel.SelectedCoursesModel" />
+            type="com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseDataModel" />
     </data>
 
     <RelativeLayout

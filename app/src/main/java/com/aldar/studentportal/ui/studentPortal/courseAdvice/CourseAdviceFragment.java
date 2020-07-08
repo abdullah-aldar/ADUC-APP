@@ -22,6 +22,7 @@ import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
 import com.aldar.studentportal.databinding.FragmentMyCourseAdviceBinding;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
+import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 
@@ -39,28 +40,30 @@ public class CourseAdviceFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(CourseAdviceViewModel.class);
-        binding.rvCourseAdvice.setLayoutManager(new LinearLayoutManager(getActivity()));
         binding.setLifecycleOwner(getViewLifecycleOwner());
         binding.setAdviceViewModel(viewModel);
 
         getSemesterData(viewModel.getSemsterScheduleData());
         coursesData(viewModel.getCourseAdviceData());
 
-        binding.ivBack.setOnClickListener(v -> {
-            getActivity().onBackPressed();
+        binding.tvSave.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt("semesterID",viewModel.semesterID.getValue());
+            GeneralUtilities.connectFragmentWithBackWithAnimation(getContext(),new AdvisedCartFragment()).setArguments(bundle);
         });
 
-        binding.btnSeeCourses.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), SelectedCoursesActivity.class));
+        binding.ivBack.setOnClickListener(v -> {
+            getActivity().onBackPressed();
         });
     }
 
     private void coursesData(MutableLiveData<CourseAdviceResponseModel> mutableLiveData) {
         mutableLiveData.observe(getViewLifecycleOwner(), adviceResponseModel -> {
             if (adviceResponseModel.getData() != null) {
+                binding.rvCourseAdvice.setLayoutManager(new LinearLayoutManager(getActivity()));
                 adapter = new CourseAdviceAdapter(getActivity(), adviceResponseModel.getData());
                 binding.rvCourseAdvice.setAdapter(adapter);
                 binding.tvNoData.setVisibility(View.GONE);

@@ -1,5 +1,6 @@
 package com.aldar.studentportal.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -7,10 +8,13 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
+import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.databinding.CustomConversionLayoutBinding;
 import com.aldar.studentportal.databinding.CustomDropLayoutBinding;
 import com.aldar.studentportal.interfaces.SectionIDInterface;
+import com.aldar.studentportal.models.addAndDropModel.AddDropCoursesModel;
 import com.aldar.studentportal.models.gradeConversionModel.GradeConversionData;
+import com.aldar.studentportal.models.selectedCoursesModel.SelectedCoursesModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -19,14 +23,14 @@ import java.util.List;
 
 
 public class AddDropAdapter extends RecyclerView.Adapter<AddDropAdapter.MyViewHolder> {
+    private Context context;
+    private List<? extends AddDropCoursesModel> selectedCoursesModelList;
+    private ADUCCrud dictionaryCrud;
 
-    private List<? extends GradeConversionData> mDataList;
-    private SectionIDInterface sectionIDListener;
-    ArrayList<String> listSectionIDs = new ArrayList<>();
+    public AddDropAdapter(List<? extends AddDropCoursesModel> SelectedCoursesModelList, Context context) {
+        this.context = context;
+        this.selectedCoursesModelList = SelectedCoursesModelList;
 
-    public AddDropAdapter(List<? extends GradeConversionData> GradeConversionDataList, SectionIDInterface sectionIDListener) {
-        mDataList = GradeConversionDataList;
-        this.sectionIDListener = sectionIDListener;
     }
 
     @NotNull
@@ -40,14 +44,15 @@ public class AddDropAdapter extends RecyclerView.Adapter<AddDropAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        GradeConversionData model = mDataList.get(position);
+        AddDropCoursesModel model = selectedCoursesModelList.get(position);
+        holder.binding.setRegisterCoursesModel(model);
 
 
     }
 
     @Override
     public int getItemCount() {
-        return mDataList.size();
+        return selectedCoursesModelList.size();
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -57,17 +62,5 @@ public class AddDropAdapter extends RecyclerView.Adapter<AddDropAdapter.MyViewHo
             super(binding.getRoot());
             this.binding = binding;
         }
-    }
-
-    private String setListSectionIDs(ArrayList<String> listSectionIDs) {
-        String strSectionIDs = "";
-        for (int i = 0; i < listSectionIDs.size(); i++) {
-            if (i == 0) {
-                strSectionIDs += listSectionIDs.get(i);
-            } else {
-                strSectionIDs += "," + listSectionIDs.get(i);
-            }
-        }
-        return strSectionIDs;
     }
 }

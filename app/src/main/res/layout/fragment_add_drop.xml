@@ -38,6 +38,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Check"
+            android:textColor="@color/gray_black"
+            android:textSize="@dimen/large_text_size"
+            android:padding="@dimen/text_gap"
+            android:layout_marginEnd="@dimen/standarize_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <RelativeLayout
             android:id="@+id/header"
             app:layout_constraintTop_toBottomOf="@+id/tv_title"
@@ -176,7 +189,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/gradient"
                 android:gravity="center"
-                android:text="REGISTERD COURSES"
+                android:text="@string/register_course"
                 android:textSize="@dimen/medium_text"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
@@ -190,7 +203,7 @@
                 android:background="@drawable/round_background"
                 android:gravity="center"
                 android:textSize="@dimen/medium_text"
-                android:text="AVAILABLE COURSES"
+                android:text="@string/available_course"
                 android:textAllCaps="false"
                 android:textColor="@color/gray_black" />
         </LinearLayout>

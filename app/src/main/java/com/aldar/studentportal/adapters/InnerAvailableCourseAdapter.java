@@ -27,15 +27,12 @@ import java.util.Objects;
 public class InnerAvailableCourseAdapter extends RecyclerView.Adapter<InnerAvailableCourseAdapter.ViewHolder> {
     private Context context;
     private ADUCCrud aducCrud;
-    private List<CoursesDataModel> coursesDataList;
     private List<Sections> sectionsList;
-    private List<Time> timingModelList = new ArrayList<>();
-    private String courseCode, courseName, strTiming = "";
+    private String courseCode, courseName;
 
-    public InnerAvailableCourseAdapter(Context context, List<CoursesDataModel> coursesDataList, String courseCode, String courseName, List<Sections> nameList) {
+    public InnerAvailableCourseAdapter(Context context, String courseCode, String courseName, List<Sections> sectionsList) {
         this.context = context;
-        this.coursesDataList = coursesDataList;
-        this.sectionsList = nameList;
+        this.sectionsList = sectionsList;
         this.courseCode = courseCode;
         this.courseName = courseName;
     }
@@ -53,6 +50,8 @@ public class InnerAvailableCourseAdapter extends RecyclerView.Adapter<InnerAvail
     public void onBindViewHolder(ViewHolder holder, int position) {
         aducCrud = new ADUCCrud(context);
 
+        String sections = sectionsList.get(position).getSectionCode();
+
         holder.tvSectionCode.setText(String.valueOf(sectionsList.get(position).getSectionId()));
         holder.tvCourseName.setText(courseName);
         holder.tvSchedule.setText(sectionsList.get(position).getSchedule());
@@ -60,7 +59,7 @@ public class InnerAvailableCourseAdapter extends RecyclerView.Adapter<InnerAvail
 
 
         holder.tvAdd.setOnClickListener(v -> {
-
+            aducCrud.saveAddDrop(courseCode,courseName,sections,courseCode,"Add");
         });
 
 
