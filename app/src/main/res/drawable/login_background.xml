@@ -3,11 +3,7 @@
     android:shape="rectangle">
 
     <corners
-        android:topLeftRadius="@dimen/small_margin"
-        android:topRightRadius="@dimen/title_text_size"
-        android:bottomRightRadius="@dimen/small_margin"
-        android:bottomLeftRadius="@dimen/title_text_size"
-        />
+        android:topLeftRadius="30dp"/>
     <stroke
         android:width="2px"
         android:color="@color/white" />

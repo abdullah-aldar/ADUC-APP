@@ -21,7 +21,6 @@ import android.widget.Toast;
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.SelectedCoursesAdapter;
 import com.aldar.studentportal.databinding.FragmentAdvisedCartBinding;
-import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
 
@@ -71,7 +70,7 @@ public class AdvisedCartFragment extends Fragment {
         binding.btnSeeCourses.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             bundle.putInt("semesterID",100);
-            startActivity(new Intent(getActivity(), SelectedCoursesActivity.class).putExtras(bundle));
+            startActivity(new Intent(getActivity(), SavedCoursesActivity.class).putExtras(bundle));
         });
 
         binding.tvSave.setOnClickListener(view1 -> {

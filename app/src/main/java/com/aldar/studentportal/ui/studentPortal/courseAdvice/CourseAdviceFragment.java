@@ -50,9 +50,7 @@ public class CourseAdviceFragment extends Fragment {
         coursesData(viewModel.getCourseAdviceData());
 
         binding.tvSave.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putInt("semesterID",viewModel.semesterID.getValue());
-            GeneralUtilities.connectFragmentWithBackWithAnimation(getContext(),new AdvisedCartFragment()).setArguments(bundle);
+            GeneralUtilities.connectFragmentWithBackWithAnimation(getContext(),new AdvisedCartFragment());
         });
 
         binding.ivBack.setOnClickListener(v -> {

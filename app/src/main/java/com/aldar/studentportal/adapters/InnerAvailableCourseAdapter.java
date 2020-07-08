@@ -15,12 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databases.ADUCCrud;
-import com.aldar.studentportal.models.coursesAdviceModels.CoursesDataModel;
 import com.aldar.studentportal.models.coursesAdviceModels.Sections;
 import com.aldar.studentportal.models.coursesAdviceModels.Time;
-import com.aldar.studentportal.ui.studentPortal.courseAdvice.SelectedCoursesActivity;
+import com.aldar.studentportal.ui.studentPortal.courseAdvice.SavedCoursesActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -127,7 +125,7 @@ public class InnerAvailableCourseAdapter extends RecyclerView.Adapter<InnerAvail
 
         btnReview.setOnClickListener(v -> {
             dialog.dismiss();
-            context.startActivity(new Intent(context, SelectedCoursesActivity.class));
+            context.startActivity(new Intent(context, SavedCoursesActivity.class));
         });
 
         dialog.show();

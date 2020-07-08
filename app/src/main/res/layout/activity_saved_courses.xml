@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@color/colorPrimary"
+            android:src="@color/colorPrimaryDark"
             android:contentDescription="@string/image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,15 +73,22 @@
 
         </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_courseslist"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:background="@drawable/login_background"
             android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            app:layout_constraintTop_toBottomOf="@+id/header" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_courseslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin"
+                android:layoutAnimation="@anim/fade_animation"/>
+        </RelativeLayout>
 
 
         <ProgressBar

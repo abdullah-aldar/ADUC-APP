@@ -32,7 +32,7 @@
             android:name=".ui.activities.common.faq.FaqActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
-            android:name=".ui.studentPortal.courseAdvice.SelectedCoursesActivity"
+            android:name=".ui.studentPortal.courseAdvice.SavedCoursesActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
             android:name=".ui.activities.common.SplashActivity"
