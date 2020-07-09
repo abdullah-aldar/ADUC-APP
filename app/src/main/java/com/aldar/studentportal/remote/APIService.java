@@ -5,6 +5,7 @@ import com.aldar.studentportal.models.announcementModel.AnnouncementReponseModel
 import com.aldar.studentportal.models.chequesModels.ChequeResponseModel;
 import com.aldar.studentportal.models.courseScheduleModels.CourseScheduleResponseModel;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
+import com.aldar.studentportal.models.feeCalculation.FeeCalResponse;
 import com.aldar.studentportal.models.financeModel.FinanceResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.ForgotPasswordResponseModel;
 import com.aldar.studentportal.models.forgotPasswordModels.UpdatePasswordResponseModel;
@@ -185,6 +186,11 @@ public interface APIService {
     @POST("aduc/GetStudentAdvicedSemesterData")
     Call<AdvisedCourseResponseModel> getAdvisedCourses(@Field("StudentId") String studendID,
                                                    @Field("SemId") String semesterID);
+
+    @FormUrlEncoded
+    @POST("aduc/GetStudentFeeCalculation")
+    Call<FeeCalResponse> getFeeCalculation(@Field("StudentId") String studendID,
+                                           @Field("SemId") String semesterID);
 
     @FormUrlEncoded
     @POST("aduc/GradeConversionPost")

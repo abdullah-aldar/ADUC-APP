@@ -9,7 +9,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-
 import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.models.addAndDropModel.AddDropCoursesModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
@@ -44,14 +43,20 @@ public class AddDropHistoryViewModel extends AndroidViewModel {
             String sectionCode = cursor.getString(2).trim();
             String courseCode = cursor.getString(3).trim();
             String courseName = cursor.getString(4).trim();
-            String schedule = cursor.getString(5).trim();
+            String creditHour = cursor.getString(5).trim();
+            String invoice = cursor.getString(6).trim();
+            String semesterID = cursor.getString(7).trim();
+            String addDrop = cursor.getString(8).trim();
 
             AddDropCoursesModel model = new AddDropCoursesModel(
                     sectionId,
                     sectionCode,
                     courseCode,
                     courseName,
-                    schedule
+                    creditHour,
+                    invoice,
+                    semesterID,
+                    addDrop
             );
             arrayListData.add(model);
 

@@ -53,7 +53,7 @@
     <string name="select_semester">Please Select Semester</string>
     <string name="selected_course_advise">الحالة الاكاديمية</string>
     <string name="your_marks">الدرجات</string>
-    <string name="instructor_msg">Messages From Instructors</string>
+    <string name="instructor_msg">Messages From\nInstructors</string>
     <string name="compose_write">Compose/Write Mail</string>
     <string name="financial_statement">الحسابات</string>
     <string name="profile_statement">ملف الطالب</string>

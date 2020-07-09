@@ -6,22 +6,14 @@
     <data>
         <variable
             name="cartCoursesViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.courseAdvice.CourseAdviceViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.courseAdvice.advising.CourseAdviceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/screen_color">
+        android:background="@color/colorPrimary">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@color/colorPrimaryDark"
-            android:contentDescription="@string/image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_back"
@@ -99,7 +91,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/large_margin"
             android:background="@drawable/login_background"
             android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:text="Profile"
-            android:textColor="@color/gray"
+            android:textColor="@color/screen_color"
             android:textSize="@dimen/large_text_size"
             android:fontFamily="@font/poppins_regular"
             android:textStyle="bold"
@@ -60,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:text="@string/logout"
-            android:textColor="@color/gray" />
+            android:textColor="@color/screen_color" />
 
         <RelativeLayout
             android:id="@+id/header"
@@ -86,7 +86,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:text="@string/profile_statement"
-                android:textColor="@color/gray" />
+                android:textColor="@color/screen_color" />
 
         </RelativeLayout>
 
@@ -105,15 +105,19 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shadow">
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:background="@drawable/login_background">
 
                 <!-- personal layout -->
                 <RelativeLayout
                     android:id="@+id/personal_info_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/small_margin"
-                    android:background="@color/white"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/standarize_spacing"
+                    android:layout_marginBottom="@dimen/small_margin"
                     tools:layout_editor_absoluteY="28dp">
 
                     <RelativeLayout
@@ -289,6 +293,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/small_margin"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:text="PERSONAL INFORMATION"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
@@ -302,7 +307,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/personal_info_layout"
                     android:layout_margin="@dimen/small_margin"
-                    android:background="@color/white"
                     tools:layout_editor_absoluteY="28dp">
 
                     <RelativeLayout
@@ -404,7 +408,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/contact_layout"
                     android:layout_margin="@dimen/small_margin"
-                    android:background="@color/white"
                     tools:layout_editor_absoluteY="28dp">
 
                     <RelativeLayout
@@ -513,7 +516,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/high_school_layout"
                     android:layout_margin="@dimen/small_margin"
-                    android:background="@color/white"
                     tools:layout_editor_absoluteY="28dp">
 
                     <RelativeLayout

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="feeCalculationViewModel"
+            type="com.aldar.studentportal.ui.studentPortal.courseAdvice.feeCalculation.FeeCalculationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:src="@drawable/back_white"
+            android:contentDescription="@string/image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="Saved courses"
+            android:textColor="@color/screen_color"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingBottom="@dimen/medium_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:text="You've selected \nthese courses"
+                android:textColor="@color/screen_color"/>
+
+            <TextView
+                android:id="@+id/btn_fee_calculation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_light_dark"
+                android:padding="@dimen/medium_margin"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:text="Pay online" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/large_margin"
+            android:background="@drawable/login_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" >
+
+            <RelativeLayout
+                android:id="@+id/fee_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/standarize_spacing">
+
+
+                <TextView
+                    android:id="@+id/tution_fee"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:text="Tution Fee :"
+                    android:textColor="@color/gray_black" />
+
+                <TextView
+                    android:id="@+id/tv_tution_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/tution_fee"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/admin_fee"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tution_fee"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:text="Admin Fee  :"
+                    android:textColor="@color/gray_black" />
+
+                <TextView
+                    android:id="@+id/tv_admin_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tution_fee"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:layout_toEndOf="@+id/admin_fee"
+                    android:paddingEnd="@dimen/medium_margin"
+                    android:text="" />
+
+
+                <TextView
+                    android:id="@+id/books"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_admin_fee"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:text="Books :"
+                    android:textColor="@color/gray_black" />
+
+                <TextView
+                    android:id="@+id/tv_books"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_admin_fee"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:layout_toEndOf="@+id/books"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/vat"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_books"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:text="Vat 5 % :"
+                    android:textColor="@color/gray_black" />
+
+                <TextView
+                    android:id="@+id/tv_vat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_books"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:layout_toEndOf="@+id/vat"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/previous_balance"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_vat"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:text="Previous balance :"
+                    android:textColor="@color/gray_black" />
+
+                <TextView
+                    android:id="@+id/tv_previous_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_vat"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/text_gap"
+                    android:layout_toEndOf="@+id/previous_balance"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tv_net_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_previous_balance"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/gray_black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    android:text="NET FEE" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_courseslist"
+                android:layout_below="@id/fee_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/medium_margin"
+                android:layoutAnimation="@anim/fade_animation"/>
+        </RelativeLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/green"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibility="@{feeCalculationViewModel.progressBar}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

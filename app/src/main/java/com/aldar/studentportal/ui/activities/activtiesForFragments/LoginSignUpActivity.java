@@ -12,7 +12,7 @@ import com.aldar.studentportal.ui.studentPortal.inbox.InboxFragment;
 import com.aldar.studentportal.ui.studentPortal.letterRequest.LetterRequestFragment;
 import com.aldar.studentportal.ui.studentPortal.library.LibraryFragment;
 import com.aldar.studentportal.ui.studentPortal.mainDashboardScreen.StudentDashboardFragment;
-import com.aldar.studentportal.ui.studentPortal.courseAdvice.CourseAdviceFragment;
+import com.aldar.studentportal.ui.studentPortal.courseAdvice.advising.CourseAdviceFragment;
 import com.aldar.studentportal.ui.studentPortal.myCourseSchedule.CourseScheduleFragment;
 import com.aldar.studentportal.ui.studentPortal.myFinance.MyFinanceFragment;
 import com.aldar.studentportal.ui.studentPortal.myMarks.MyMarksFragment;

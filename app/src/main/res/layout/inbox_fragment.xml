@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/screen_color">
+        android:background="@color/colorPrimary">
 
         <ImageView
             android:layout_width="match_parent"
@@ -53,10 +53,7 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:paddingTop="@dimen/medium_margin"
+            android:layout_margin="@dimen/standarize_spacing"
             android:paddingBottom="@dimen/medium_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,9 +64,9 @@
                 android:id="@+id/tv_student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="center"
+                android:layout_marginStart="@dimen/small_margin"
                 android:text="@string/instructor_msg"
                 android:textColor="@color/white" />
 
@@ -77,38 +74,41 @@
             <TextView
                 android:id="@+id/tv_compose_email"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/high_margin"
-                android:layout_below="@id/tv_student_name"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/round_background"
-                android:fontFamily="@font/poppins_light"
+                android:background="@drawable/round_light_dark"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/small_margin"
                 android:gravity="center"
-                android:paddingStart="@dimen/medium_margin"
-                android:paddingEnd="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/medium_margin"
+                android:padding="@dimen/medium_margin"
                 android:text="@string/compose_write"
-                android:textColor="@color/gray_black"
-                android:textSize="12sp" />
+                android:textColor="@color/screen_color"/>
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/large_margin"
+            android:background="@drawable/login_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_inbox"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
-
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_margin"
+            android:layoutAnimation="@anim/fade_animation"/>
+        </RelativeLayout>
 
         <ProgressBar
             android:id="@+id/progess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/green"
+            android:indeterminateTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

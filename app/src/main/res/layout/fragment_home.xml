@@ -4,26 +4,27 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
             android:background="@color/screen_color">
 
             <ImageView
-                android:id="@+id/iv_header"
+                android:id="@+id/iv_banner"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
                 android:src="@drawable/dubai"
-                app:layout_constraintBottom_toTopOf="@+id/layout_blog"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent=".23"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHeight_percent=".25"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/layout_blog"/>
 
 
             <!-- Blog start region -->
@@ -31,7 +32,6 @@
                 android:id="@+id/layout_blog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="14dp"
@@ -39,11 +39,10 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="@dimen/small_margin"
+                app:layout_constraintTop_toBottomOf="@+id/iv_banner"
                 app:layout_constraintBottom_toTopOf="@id/portal_layout"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.69"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_header">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
                     android:id="@+id/iv_aldar"
@@ -84,7 +83,9 @@
                 android:layout_marginEnd="@dimen/standarize_spacing"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_blog">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_blog"
+                app:layout_constraintBottom_toTopOf="@id/feedback_layout">
 
 
                 <LinearLayout

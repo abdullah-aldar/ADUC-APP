@@ -6,22 +6,14 @@
     <data>
         <variable
             name="selectedCoursesViewModel"
-            type="com.aldar.studentportal.ui.studentPortal.courseAdvice.SelectedCoursesViewModel" />
+            type="com.aldar.studentportal.ui.studentPortal.courseAdvice.registeredCourses.SelectedCoursesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/screen_color">
+        android:background="@color/colorPrimary">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@color/colorPrimaryDark"
-            android:contentDescription="@string/image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_back"
@@ -52,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/large_margin"
             android:layout_marginEnd="@dimen/medium_margin"
             android:paddingTop="@dimen/medium_margin"
             android:paddingBottom="@dimen/medium_margin"
@@ -62,23 +54,32 @@
 
             <TextView
                 android:id="@+id/title_text"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:text="your selected courses saved\n in our system"
-                android:textColor="@color/screen_color"
-                android:textSize="12sp" />
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:text="You've selected \nthese courses"
+                android:textColor="@color/screen_color"/>
+
+            <TextView
+                android:id="@+id/btn_fee_calculation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_light_dark"
+                android:padding="@dimen/medium_margin"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:text="Fee calculation" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/large_margin"
             android:background="@drawable/login_background"
-            android:layoutAnimation="@anim/fade_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header" >
 

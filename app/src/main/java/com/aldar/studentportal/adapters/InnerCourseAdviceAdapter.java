@@ -18,7 +18,7 @@ import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.models.coursesAdviceModels.CoursesDataModel;
 import com.aldar.studentportal.models.coursesAdviceModels.Time;
 import com.aldar.studentportal.models.coursesAdviceModels.Sections;
-import com.aldar.studentportal.ui.studentPortal.courseAdvice.SavedCoursesActivity;
+import com.aldar.studentportal.ui.studentPortal.courseAdvice.registeredCourses.SavedCoursesActivity;
 
 import java.util.ArrayList;
 import java.util.List;

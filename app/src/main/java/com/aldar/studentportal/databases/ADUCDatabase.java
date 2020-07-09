@@ -19,7 +19,7 @@ public class ADUCDatabase extends SQLiteOpenHelper {
 
         String timingTable = "CREATE TABLE TIMING (ID INTEGER PRIMARY KEY AUTOINCREMENT,courseCode,sectionID,dayName,startTime,endTime)";
 
-        String addDropTable = "CREATE TABLE DROPTABLE (ID INTEGER PRIMARY KEY AUTOINCREMENT,courseCode,courseName,sectionId,section,addOrDrop)";
+        String addDropTable = "CREATE TABLE DROPTABLE (ID INTEGER PRIMARY KEY AUTOINCREMENT,courseCode,courseName,sectionId,section,crediteHour,Invoice,semesterId,addOrDrop)";
 
         sqLiteDatabase.execSQL(courseTable);
         sqLiteDatabase.execSQL(timingTable);

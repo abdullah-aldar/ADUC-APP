@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/screen_color">
+        android:background="@color/colorPrimary">
 
         <ImageView
             android:layout_width="match_parent"
@@ -70,20 +70,27 @@
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="@string/financial_statement"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textColor="@color/white"/>
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/large_margin"
+            android:background="@drawable/login_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_finance"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fade_animation"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_margin"
+            android:layoutAnimation="@anim/fade_animation"/>
+
+        </RelativeLayout>
 
 
         <ProgressBar

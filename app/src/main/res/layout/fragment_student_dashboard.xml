@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/screen_color">
+        android:background="@color/colorPrimary">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standarize_spacing"
             android:layout_marginTop="@dimen/medium_margin"
-            android:src="@drawable/back_black"
+            android:src="@drawable/back_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +32,7 @@
             android:layout_marginTop="@dimen/medium_margin"
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/dashboard"
-            android:textColor="@color/gray_black"
+            android:textColor="@color/screen_color"
             android:textSize="@dimen/large_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
                 android:layout_marginStart="@dimen/small_margin"
                 android:scaleType="fitXY"
                 android:src="@drawable/bell"
-                android:tint="@color/dark" />
+                android:tint="@color/screen_color" />
 
             <TextView
                 android:id="@+id/tv_count_notification"
@@ -77,13 +77,10 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/margin_arrow"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            android:background="@drawable/gradient"
-            android:paddingTop="@dimen/margin_arrow"
-            android:paddingBottom="@dimen/standarize_spacing"
-            app:layout_constraintBottom_toTopOf="@+id/rv_dashboard_item"
+            android:layout_margin="@dimen/medium_margin"
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingBottom="@dimen/small_margin"
+            app:layout_constraintBottom_toTopOf="@+id/data_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
@@ -93,7 +90,6 @@
                 android:id="@+id/iv_profile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
                 android:layout_marginEnd="@dimen/small_margin"
                 android:src="@drawable/user" />
 
@@ -103,12 +99,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:layout_toStartOf="@+id/iv_profile"
+                android:layout_toEndOf="@+id/iv_profile"
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="start"
-                android:textStyle="bold"
                 android:text="@{studnetDasboarViewModel.studentName}"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_student_code"
@@ -116,11 +112,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_student_name"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:layout_toStartOf="@+id/iv_profile"
+                android:layout_toEndOf="@+id/iv_profile"
                 android:fontFamily="@font/poppins_regular"
-                android:textStyle="bold"
                 android:text="@{studnetDasboarViewModel.studentGivenID}"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/adviser"
@@ -131,8 +127,8 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Advisor "
-                android:textStyle="bold"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_student_adviser"
@@ -153,8 +149,8 @@
                 android:layout_marginStart="@dimen/medium_margin"
                 android:fontFamily="@font/poppins_regular"
                 android:text="@string/major"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_concentration"
@@ -174,8 +170,8 @@
                 android:layout_marginStart="@dimen/medium_margin"
                 android:fontFamily="@font/poppins_regular"
                 android:text="@string/student_course"
-                android:textStyle="bold"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_course_name"
@@ -191,31 +187,45 @@
                 android:id="@+id/layout_announcement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/standarize_spacing"
-                android:layout_marginEnd="@dimen/standarize_spacing"
-                android:gravity="center"
-                android:text="Announcement"
-                android:textColor="@color/white"
                 android:layout_below="@+id/tv_course_name"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:background="@drawable/round_light_dark"
+                android:gravity="center"
+                android:paddingStart="@dimen/standarize_spacing"
+                android:paddingEnd="@dimen/standarize_spacing"
+                android:paddingTop="@dimen/medium_margin"
+                android:paddingBottom="@dimen/medium_margin"
+                android:text="@string/announcement"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
         </RelativeLayout>
 
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_dashboard_item"
+        <RelativeLayout
+            android:id="@+id/data_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/ten_dp"
             android:layout_marginTop="@dimen/small_margin"
-            android:layout_marginEnd="@dimen/ten_dp"
-            android:layout_marginBottom="@dimen/medium_margin"
-            android:layoutAnimation="@anim/fall_down_animation_layout"
+            android:background="@drawable/login_background"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header" />
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_dashboard_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginBottom="@dimen/small_margin"
+                android:layoutAnimation="@anim/fall_down_animation_layout" />
+
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

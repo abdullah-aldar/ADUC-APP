@@ -1,30 +1,17 @@
 package com.aldar.studentportal.models.addAndDropModel;
 
 public class AddDropCoursesModel {
-    String sectionId,sectionCode , courseCode, courseName,schedule;
+    String  courseCode, courseName,sectionId,section ,creditHour,invoice ,semesterID,addOrDrop;
 
-    public AddDropCoursesModel(String sectionId, String sectionCode, String courseCode, String courseName, String schedule) {
-        this.sectionId = sectionId;
-        this.sectionCode = sectionCode;
+    public AddDropCoursesModel(String courseCode, String courseName, String sectionId, String section, String creditHour, String invoice, String semesterID, String addOrDrop) {
         this.courseCode = courseCode;
         this.courseName = courseName;
-        this.schedule = schedule;
-    }
-
-    public String getSectionId() {
-        return sectionId;
-    }
-
-    public void setSectionId(String sectionId) {
         this.sectionId = sectionId;
-    }
-
-    public String getSectionCode() {
-        return sectionCode;
-    }
-
-    public void setSectionCode(String sectionCode) {
-        this.sectionCode = sectionCode;
+        this.section = section;
+        this.creditHour = creditHour;
+        this.invoice = invoice;
+        this.semesterID = semesterID;
+        this.addOrDrop = addOrDrop;
     }
 
     public String getCourseCode() {
@@ -43,13 +30,51 @@ public class AddDropCoursesModel {
         this.courseName = courseName;
     }
 
-    public String getSchedule() {
-        return schedule;
+    public String getSectionId() {
+        return sectionId;
     }
 
-    public void setSchedule(String schedule) {
-        this.schedule = schedule;
+    public void setSectionId(String sectionId) {
+        this.sectionId = sectionId;
     }
 
+    public String getSection() {
+        return section;
+    }
 
+    public void setSection(String section) {
+        this.section = section;
+    }
+
+    public String getCreditHour() {
+        return creditHour;
+    }
+
+    public void setCreditHour(String creditHour) {
+        this.creditHour = creditHour;
+    }
+
+    public String getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(String invoice) {
+        this.invoice = invoice;
+    }
+
+    public String getSemesterID() {
+        return semesterID;
+    }
+
+    public void setSemesterID(String semesterID) {
+        this.semesterID = semesterID;
+    }
+
+    public String getAddOrDrop() {
+        return addOrDrop;
+    }
+
+    public void setAddOrDrop(String addOrDrop) {
+        this.addOrDrop = addOrDrop;
+    }
 }

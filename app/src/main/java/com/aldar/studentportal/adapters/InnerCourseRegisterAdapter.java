@@ -21,7 +21,7 @@ public class InnerCourseRegisterAdapter extends RecyclerView.Adapter<InnerCourse
     private List<StudentRegisteredCoursesData> coursesDataList;
     private Context context;
 
-    public InnerCourseRegisterAdapter(Context context,List<StudentRegisteredCoursesData> coursesDataList) {
+    public InnerCourseRegisterAdapter(Context context, List<StudentRegisteredCoursesData> coursesDataList) {
         this.context = context;
         this.coursesDataList = coursesDataList;
     }
@@ -41,7 +41,10 @@ public class InnerCourseRegisterAdapter extends RecyclerView.Adapter<InnerCourse
 
         String courseCode = coursesDataList.get(position).getCourseCode();
         String courseName = coursesDataList.get(position).getCourseName();
+        String sectionId = String.valueOf(coursesDataList.get(position).getSectionId());
         String sections = coursesDataList.get(position).getSectionCode();
+        String creditHour = String.valueOf(coursesDataList.get(position).getCh());
+        String invoice = coursesDataList.get(position).getInvoiceCode();
 
         holder.tvCourseCode.setText(courseCode);
         holder.tvCourseName.setText(courseName);
@@ -49,7 +52,7 @@ public class InnerCourseRegisterAdapter extends RecyclerView.Adapter<InnerCourse
 
         holder.tvAdd.setOnClickListener(v -> {
             String sectionCode = coursesDataList.get(position).getSectionCode();
-            aducCrud.saveAddDrop(courseCode,courseName,sections,sectionCode,sectionCode);
+            aducCrud.saveAddDrop(courseCode, courseName,sectionId, sections, creditHour,invoice, "Drop");
         });
 
 
@@ -61,7 +64,7 @@ public class InnerCourseRegisterAdapter extends RecyclerView.Adapter<InnerCourse
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvCourseCode, tvCourseName,  tvSection, tvAdd;
+        TextView tvCourseCode, tvCourseName, tvSection, tvAdd;
 
         public ViewHolder(View itemView) {
             super(itemView);

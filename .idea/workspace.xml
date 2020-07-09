@@ -3,13 +3,15 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
-        <device id="pixel_3a_xl" />
-        <device id="pixel" />
         <device id="pixel_3_xl" />
+        <device id="pixel" />
+        <device id="Nexus 7" />
+        <device id="pixel_c" />
         <device id="Nexus 10" />
+        <device id="wear_square" />
+        <device id="pixel_3a_xl" />
         <device id="Nexus 6" />
         <device id="pixel_2_xl" />
-        <device id="pixel_c" />
         <device id="Nexus 7 2013" />
         <pickBest>false</pickBest>
         <target>android-R</target>
@@ -23,6 +25,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="256f8899-a1d6-453c-a7ee-fbc0909573a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/FeeCalCourseAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/feeCalculation/CoursesFeeModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/feeCalculation/FeeCalResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/feeCalculation/FeeDataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/feeCalculation/FeeCalculationActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/feeCalculation/FeeCalculationViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fee_calculation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_courses_fee_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fee_calculation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -33,27 +45,51 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerAvailableCourseAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerAvailableCourseAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseAdviceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseAdviceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseRegisterAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/adapters/InnerCourseRegisterAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/databases/ADUCCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/databases/ADUCCrud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/databases/ADUCDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/databases/ADUCDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/addAndDropModel/AddDropCoursesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/models/addAndDropModel/AddDropCoursesModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/remote/APIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/remote/APIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/activtiesForFragments/LoginSignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/activtiesForFragments/LoginSignUpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/activities/common/SplashActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropHistoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropHistoryActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/AdvisedCartFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/AdvisedCartFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/CourseAdviceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/CourseAdviceFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/SelectedCoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/SavedCoursesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropHistoryViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/addDrop/AddDropHistoryViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/AdvisedCartFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/cart/AdvisedCartFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/CourseAdviceFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/advising/CourseAdviceFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/CourseAdviceViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/advising/CourseAdviceViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/SavedCoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/registeredCourses/SavedCoursesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/SelectedCoursesViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/aldar/studentportal/ui/studentPortal/courseAdvice/registeredCourses/SelectedCoursesViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/login_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_selected_courses.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_saved_courses.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_saved_courses.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_saved_courses.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_drop_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_drop_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_advised_cart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_advised_cart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_course_schedule.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_course_advice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_finance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_marks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_marks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_study_plan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_dashboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/inbox_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/inbox_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Latest" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="26EBB18415153131" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -130,11 +166,11 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DEBUGGABLE_DEVICE" value="Latest [emulator-5554]" />
+    <property name="DEBUGGABLE_DEVICE" value="huawei-ldn_l21-26EBB18415153131" />
     <property name="DEBUGGABLE_PROCESS" value="com.aldar.studentportal" />
     <property name="DEBUGGER_ID" value="Java" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="26EBB18415153131" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-08T14:03:43.878Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-09T13:11:11.024Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -145,7 +181,7 @@
     <property name="format" value="PNG" />
     <property name="lastFolderRoot" value="$USER_HOME$/Downloads/call.png" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="method" value="Automatic" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
@@ -159,15 +195,53 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.-1774075351">
+      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="android.template.993788812">
+      <recent name="com.aldar.studentportal.ui.studentPortal.courseAdvice.feeCalculation" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/anim" />
+      <recent name="$PROJECT_DIR$/app/libs" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
+    </key>
+    <key name="android.template.-1729699476">
+      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.aldar.studentportal.ui.fragments.navigations" />
+      <recent name="com.aldar.studentportal.ui.studentPortal" />
+    </key>
+    <key name="android.template.-1460322189">
+      <recent name="com.aldar.studentportal.ui.activities.common" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.aldar.studentportal.ui.activities" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
+    </key>
     <key name="android.template.-931884364">
       <recent name="com.aldar.studentportal.ui.studentPortal.courseAdvice" />
       <recent name="com.aldar.studentportal.ui.studentPortal.addDrop" />
     </key>
-    <key name="android.template.-1774075351">
-      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.aldar.studentportal.ui.activities" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.aldar.studentportal.adapters" />
+      <recent name="com.aldar.studentportal.models.addAndDropModel" />
+      <recent name="com.aldar.studentportal.models.notificationModels" />
+      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myProfile" />
+      <recent name="com.aldar.studentportal.ui.studentPortal.activities" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.inbox" />
@@ -176,43 +250,8 @@
       <recent name="com.aldar.studentportal.ui.fragments.login" />
       <recent name="com.aldar.studentportal.ui.activities.forgotPassword" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
-    </key>
-    <key name="android.template.-1460322189">
-      <recent name="com.aldar.studentportal.ui.activities.common" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="android.template.-1729699476">
-      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.notifications" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.aldar.studentportal.ui.fragments.navigations" />
-      <recent name="com.aldar.studentportal.ui.studentPortal" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.aldar.studentportal.models.addAndDropModel" />
-      <recent name="com.aldar.studentportal.adapters" />
-      <recent name="com.aldar.studentportal.models.notificationModels" />
-      <recent name="com.aldar.studentportal.ui.studentPortal.studentDashboardFragments.myProfile" />
-      <recent name="com.aldar.studentportal.ui.studentPortal.activities" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/anim" />
-      <recent name="$PROJECT_DIR$/app/libs" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
-    </key>
     <key name="android.template.-856708019">
       <recent name="com.aldar.studentportal.ui.studentPortal.addDrop" />
-    </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -428,13 +467,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580041110932</updated>
-    </task>
-    <task id="LOCAL-00014" summary="design updated">
-      <created>1582205162708</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1582205162708</updated>
     </task>
     <task id="LOCAL-00015" summary="design updated">
       <created>1582205239883</created>
@@ -772,7 +804,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594212614524</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="course advice work updated as per EAIS">
+      <created>1594217055171</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1594217055171</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -831,10 +870,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="642" y="123" key="#app/0.0.1920.1080@0.0.1920.1080" timestamp="1592809938549" />
-    <state x="729" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1593937158492">
+    <state x="729" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1594283867600">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="729" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593937158492" />
+    <state x="729" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594283867600" />
     <state x="648" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594186409568">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -843,10 +882,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="356" y="462" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593863744141" />
-    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594125914159">
+    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594299544002">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594125914159" />
+    <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594299544002" />
     <state x="635" y="237" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.974@0.23.1920.974" timestamp="1593340103097" />
     <state x="635" y="238" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.977@0.23.1920.977" timestamp="1592634814197" />
     <state x="695" y="370" key="#xdebugger.evaluate" timestamp="1594128298849">
@@ -858,46 +897,47 @@
     </state>
     <state x="548" y="297" key="AndroidCreateResourceFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594042004709" />
     <state x="548" y="291" key="AndroidCreateResourceFileDialog/0.23.1920.974@0.23.1920.974" timestamp="1593340525533" />
-    <state x="814" y="300" key="AndroidProcessChooserDialog" timestamp="1593849045362">
+    <state x="814" y="300" key="AndroidProcessChooserDialog" timestamp="1594301485905">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="814" y="300" key="AndroidProcessChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593849045362" />
-    <state x="385" y="17" key="CommitChangelistDialog2" timestamp="1594212611695">
+    <state x="814" y="300" key="AndroidProcessChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594301485905" />
+    <state x="385" y="17" key="CommitChangelistDialog2" timestamp="1594302161678">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1591783247010" />
-    <state x="385" y="17" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594212611695" />
+    <state x="385" y="17" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594302161678" />
     <state x="211" y="66" key="CommitChangelistDialog2/0.23.1920.969@0.0.1920.992" timestamp="1593604934951" />
+    <state x="385" y="38" key="CommitChangelistDialog2/0.23.1920.971@0.23.1920.971" timestamp="1594217053411" />
     <state x="797" y="445" key="Github.Dialog.Accounts.Choose" timestamp="1593433562596">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="797" y="445" key="Github.Dialog.Accounts.Choose/0.0.1920.1080@0.0.1920.1080" timestamp="1593433562596" />
-    <state width="1868" height="291" key="GridCell.Tab.0.bottom" timestamp="1594216708656">
-      <screen x="0" y="23" width="1920" height="974" />
+    <state width="1868" height="291" key="GridCell.Tab.0.bottom" timestamp="1594301687318">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1591875805978" />
-    <state width="1868" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594215771375" />
+    <state width="1868" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594301687318" />
     <state width="1868" height="291" key="GridCell.Tab.0.bottom/0.23.1920.971@0.23.1920.971" timestamp="1592643409071" />
     <state width="1868" height="291" key="GridCell.Tab.0.bottom/0.23.1920.974@0.23.1920.974" timestamp="1594216708656" />
-    <state width="1868" height="291" key="GridCell.Tab.0.center" timestamp="1594216708655">
-      <screen x="0" y="23" width="1920" height="974" />
+    <state width="1868" height="291" key="GridCell.Tab.0.center" timestamp="1594301687317">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1591875805970" />
-    <state width="1868" height="291" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594215771374" />
+    <state width="1868" height="291" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594301687317" />
     <state width="1868" height="291" key="GridCell.Tab.0.center/0.23.1920.971@0.23.1920.971" timestamp="1592643409070" />
     <state width="1868" height="291" key="GridCell.Tab.0.center/0.23.1920.974@0.23.1920.974" timestamp="1594216708655" />
-    <state width="1868" height="291" key="GridCell.Tab.0.left" timestamp="1594216708655">
-      <screen x="0" y="23" width="1920" height="974" />
+    <state width="1868" height="291" key="GridCell.Tab.0.left" timestamp="1594301687316">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1591875805969" />
-    <state width="1868" height="291" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594215771374" />
+    <state width="1868" height="291" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594301687316" />
     <state width="1868" height="291" key="GridCell.Tab.0.left/0.23.1920.971@0.23.1920.971" timestamp="1592643409069" />
     <state width="1868" height="291" key="GridCell.Tab.0.left/0.23.1920.974@0.23.1920.974" timestamp="1594216708655" />
-    <state width="1868" height="291" key="GridCell.Tab.0.right" timestamp="1594216708655">
-      <screen x="0" y="23" width="1920" height="974" />
+    <state width="1868" height="291" key="GridCell.Tab.0.right" timestamp="1594301687317">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1228" height="374" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1591875805976" />
-    <state width="1868" height="291" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594215771375" />
+    <state width="1868" height="291" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594301687317" />
     <state width="1868" height="291" key="GridCell.Tab.0.right/0.23.1920.971@0.23.1920.971" timestamp="1592643409070" />
     <state width="1868" height="291" key="GridCell.Tab.0.right/0.23.1920.974@0.23.1920.974" timestamp="1594216708655" />
     <state x="50" y="0" key="SettingsEditor" timestamp="1594186553615">
@@ -906,16 +946,17 @@
     <state x="33" y="0" key="SettingsEditor/0.0.1280.749@0.0.1280.749" timestamp="1591090016669" />
     <state x="33" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1591515841045" />
     <state x="50" y="0" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594186553615" />
-    <state x="210" y="104" key="Vcs.Push.Dialog.v2" timestamp="1594212619612">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="210" y="117" key="Vcs.Push.Dialog.v2" timestamp="1594217056681">
+      <screen x="0" y="23" width="1920" height="971" />
     </state>
     <state x="140" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1591783250312" />
     <state x="210" y="104" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594212619612" />
-    <state x="603" y="234" key="chooseDestDirectoryDialog" timestamp="1593946273067">
+    <state x="210" y="117" key="Vcs.Push.Dialog.v2/0.23.1920.971@0.23.1920.971" timestamp="1594217056681" />
+    <state x="603" y="234" key="chooseDestDirectoryDialog" timestamp="1594300255961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="402" y="174" key="chooseDestDirectoryDialog/0.0.1280.800@0.0.1280.800" timestamp="1591517531867" />
-    <state x="603" y="234" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593946273067" />
+    <state x="603" y="234" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594300255961" />
     <state x="603" y="235" key="chooseDestDirectoryDialog/0.23.1920.977@0.23.1920.977" timestamp="1592634932890" />
     <state x="150" y="124" width="1620" height="899" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594215899176">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -923,25 +964,29 @@
     <state x="100" y="100" width="1080" height="600" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1280.800@0.0.1280.800" timestamp="1591089034191" />
     <state x="150" y="124" width="1620" height="899" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594215899176" />
     <state x="150" y="135" width="1620" height="810" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1920.974@0.23.1920.974" timestamp="1592113931104" />
-    <state x="381" y="250" key="com.intellij.ide.util.TipDialog" timestamp="1594185330019">
+    <state x="381" y="250" key="com.intellij.ide.util.TipDialog" timestamp="1594284319794">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="254" y="172" key="com.intellij.ide.util.TipDialog/0.0.1280.744@0.0.1280.744" timestamp="1591875627786" />
     <state x="254" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.747@0.0.1280.747" timestamp="1591081481966" />
     <state x="254" y="185" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1591876594790" />
-    <state x="381" y="250" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594185330019" />
+    <state x="381" y="250" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594284319794" />
     <state x="381" y="247" key="com.intellij.ide.util.TipDialog/0.23.1920.971@0.23.1920.971" timestamp="1592631501766" />
     <state x="381" y="248" key="com.intellij.ide.util.TipDialog/0.23.1920.974@0.23.1920.974" timestamp="1592480209375" />
     <state x="381" y="248" key="com.intellij.ide.util.TipDialog/0.23.1920.977@0.23.1920.977" timestamp="1593085904975" />
+    <state x="660" y="95" key="refactoring.ChangeSignatureDialog" timestamp="1594283375122">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="660" y="95" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594283375122" />
     <state x="541" y="252" width="838" height="1032" key="run.anything.popup" timestamp="1594201153911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="541" y="252" width="838" height="1032" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594201153911" />
-    <state x="332" y="23" width="1257" height="971" key="search.everywhere.popup" timestamp="1594216906082">
-      <screen x="0" y="23" width="1920" height="971" />
+    <state x="332" y="23" width="1257" height="971" key="search.everywhere.popup" timestamp="1594301514244">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="221" y="0" width="838" height="800" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1592856941442" />
-    <state x="332" y="0" width="1257" height="1080" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594215593336" />
+    <state x="332" y="23" width="1257" height="971" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594301514244" />
     <state x="332" y="23" width="1257" height="971" key="search.everywhere.popup/0.23.1920.971@0.23.1920.971" timestamp="1594216906082" />
     <state x="332" y="23" width="1257" height="974" key="search.everywhere.popup/0.23.1920.974@0.23.1920.974" timestamp="1593341138704" />
     <state x="332" y="23" width="1257" height="977" key="search.everywhere.popup/0.23.1920.977@0.23.1920.977" timestamp="1594216321680" />

@@ -17,7 +17,7 @@ import com.aldar.studentportal.R;
 import com.aldar.studentportal.databases.ADUCCrud;
 import com.aldar.studentportal.models.coursesAdviceModels.Sections;
 import com.aldar.studentportal.models.coursesAdviceModels.Time;
-import com.aldar.studentportal.ui.studentPortal.courseAdvice.SavedCoursesActivity;
+import com.aldar.studentportal.ui.studentPortal.courseAdvice.registeredCourses.SavedCoursesActivity;
 
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +48,7 @@ public class InnerAvailableCourseAdapter extends RecyclerView.Adapter<InnerAvail
     public void onBindViewHolder(ViewHolder holder, int position) {
         aducCrud = new ADUCCrud(context);
 
+        String sectionId = String.valueOf(sectionsList.get(position).getSectionId());
         String sections = sectionsList.get(position).getSectionCode();
 
         holder.tvSectionCode.setText(String.valueOf(sectionsList.get(position).getSectionId()));
@@ -57,7 +58,7 @@ public class InnerAvailableCourseAdapter extends RecyclerView.Adapter<InnerAvail
 
 
         holder.tvAdd.setOnClickListener(v -> {
-            aducCrud.saveAddDrop(courseCode,courseName,sections,courseCode,"Add");
+            aducCrud.saveAddDrop(courseCode,courseName,sectionId,sections,"","","Add");
         });
 
 

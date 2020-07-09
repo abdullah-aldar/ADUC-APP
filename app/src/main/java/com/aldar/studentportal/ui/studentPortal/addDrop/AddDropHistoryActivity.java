@@ -14,8 +14,7 @@ import java.util.List;
 
 public class AddDropHistoryActivity extends AppCompatActivity {
     private AddDropAdapter adapter;
-
-    ActivityAddDropHistoryBinding binding;
+    private ActivityAddDropHistoryBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +29,16 @@ public class AddDropHistoryActivity extends AppCompatActivity {
         viewModel.getAdvisedCourses().observe(this, addDropCoursesModels -> {
             if (addDropCoursesModels != null) {
                 loadFromLocal(addDropCoursesModels);
-            } else {
-                loadFromServer();
             }
         });
-    }
 
+        binding.tvSave.setOnClickListener(view -> {
+            saveStudentData();
+        });
+        binding.ivBack.setOnClickListener(view -> {
+            onBackPressed();
+        });
+    }
 
     private void loadFromLocal(List<AddDropCoursesModel> selectedCoursesModels) {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -44,6 +47,8 @@ public class AddDropHistoryActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    private void loadFromServer() {
+    private void saveStudentData() {
+
     }
+
 }

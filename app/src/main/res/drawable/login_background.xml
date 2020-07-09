@@ -6,10 +6,10 @@
         android:topLeftRadius="30dp"/>
     <stroke
         android:width="2px"
-        android:color="@color/white" />
+        android:color="@color/screen_color" />
 
     <solid
-        android:color="@color/white" />
+        android:color="@color/screen_color" />
 
 
 </shape>

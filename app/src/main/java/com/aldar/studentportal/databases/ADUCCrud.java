@@ -153,13 +153,16 @@ public class ADUCCrud {
         }
     }
 
-    public void saveAddDrop(String courseCode, String courseName, String sectionId, String section, String addDrop) {
+    public void saveAddDrop(String courseCode, String courseName, String sectionId, String section,String crediteHour,String invoice, String addDrop) {
         if (!checkExistAddDropRecord(courseCode)) {
             ContentValues values = new ContentValues();
             values.put("courseCode", courseCode);
             values.put("courseName", courseName);
             values.put("sectionId", sectionId);
             values.put("section", section);
+            values.put("crediteHour", crediteHour);
+            values.put("Invoice", invoice);
+            values.put("semesterId", section);
             values.put("addOrDrop", addDrop);
             sqLiteDatabase.insert("DROPTABLE", null, values);
             showToast("Your course saved successfully");
