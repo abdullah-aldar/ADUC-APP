@@ -75,9 +75,7 @@ public class CourseAdviceViewModel extends AndroidViewModel {
     }
 
     public void apiCallCourseAdvice() {
-        if(progressBar != null){
-            progressBar.setValue(0);
-        }
+        progressBar.setValue(0);
         APIService services = RetroClass.getApiClient().create(APIService.class);
         Call<CourseAdviceResponseModel> allUsers = services.getCourseAdvice(Integer.parseInt(studentID.getValue()), 100);
         allUsers.enqueue(new Callback<CourseAdviceResponseModel>() {

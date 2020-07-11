@@ -17,8 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".ui.studentPortal.courseAdvice.feeCalculation.FeeCalculationActivity"
+        <activity android:name=".ui.studentPortal.courseAdvice.cart.AdvisedCartActivity"
+            android:theme="@style/AppTheme.Splash" />
+        <activity
+            android:name=".ui.studentPortal.courseAdvice.feeCalculation.FeeCalculationActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
             android:name=".ui.studentPortal.addDrop.AddDropHistoryActivity"

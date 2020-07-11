@@ -19,9 +19,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClass {
 
-    public static final String BASE_URL = "http://5.101.139.188:81/";
+    //public static final String BASE_URL = "http://5.101.139.188:81/";
     private static Retrofit retrofit = null;
 
+    public static final String BASE_URL = "http://kuedoz-api-2.kuedoz.com/";
 
     public static Retrofit getApiClient() {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder().readTimeout(60, TimeUnit.SECONDS)
@@ -63,6 +64,7 @@ public class RetroClass {
         HttpLoggingInterceptor interceptor1 = new HttpLoggingInterceptor()
                 .setLevel(HttpLoggingInterceptor.Level.HEADERS);
 
+
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
                 .readTimeout(60, TimeUnit.SECONDS)
                 .connectTimeout(30, TimeUnit.SECONDS)
@@ -76,8 +78,9 @@ public class RetroClass {
                         // Customize the request
 
                         Request request = original.newBuilder()
-                                .header("Accept", "application/json")
                                 .header("Authorization", "Bearer " + token)
+                                .header("Accept", "application/json")
+                                .header("Content-Type", "application/json")
                                 .method(original.method(), original.body())
                                 .build();
 

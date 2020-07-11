@@ -44,7 +44,7 @@ public class AdvisedCartFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         viewModel = new ViewModelProvider(this).get(CourseAdviceViewModel.class);
-        binding.setLifecycleOwner(getViewLifecycleOwner());
+        binding.setLifecycleOwner(this);
         binding.setCartCoursesViewModel(viewModel);
         viewModel.showCart();
 
@@ -115,7 +115,6 @@ public class AdvisedCartFragment extends Fragment {
 
     private boolean validate() {
         boolean valid;
-
         if (strSectionId.isEmpty()) {
             valid = false;
             Toast.makeText(getActivity(), "you have no course selected", Toast.LENGTH_SHORT).show();

@@ -49,6 +49,10 @@ public class FeeCalculationActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+        binding.ivBack.setOnClickListener(view1 -> {
+            onBackPressed();
+        });
+
 
     }
 }

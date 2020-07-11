@@ -7,13 +7,20 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+
+import com.aldar.studentportal.interfaces.My;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
+import com.aldar.studentportal.utilities.MainObjectClass;
+import com.aldar.studentportal.utilities.TestResponse;
+import com.google.gson.JsonObject;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import kotlin.reflect.jvm.internal.impl.load.java.Constant;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,7 +35,7 @@ public class FeedbackViewModel extends AndroidViewModel {
     private MutableLiveData<CommonApiResponse> feedBackData = new MutableLiveData<>();
     private boolean valid = false;
 
-
+    public MutableLiveData<String> test = new MutableLiveData<>();
 
     public FeedbackViewModel(@NonNull Application application) {
         super(application);
@@ -37,7 +44,7 @@ public class FeedbackViewModel extends AndroidViewModel {
 
     public void onClick() {
         if (validate()) {
-            apiCallFeedback();
+            //apiCallFeedback();
         }
     }
 
@@ -64,6 +71,37 @@ public class FeedbackViewModel extends AndroidViewModel {
 
             @Override
             public void onFailure(Call<CommonApiResponse> call, Throwable t) {
+                progressBar.setValue(8);
+                showToast(getApplication().getApplicationContext(),t.getMessage());
+            }
+        });
+    }
+
+    public void apiCallArray(JsonObject list){
+        progressBar.setValue(0);
+        APIService services = RetroClass.getApiClient(My.token).create(APIService.class);
+        Call<TestResponse> allUsers = services.test(list);
+        allUsers.enqueue(new Callback<TestResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<TestResponse> call, @NotNull Response<TestResponse> response) {
+                progressBar.setValue(8);
+
+                if(response.isSuccessful()){
+                    showToast(getApplication(),""+response.body().getData().getEmail());
+                }
+                else {
+                    try {
+                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+                        showToast(getApplication().getApplicationContext(),jObjError.getString("msg"));
+                    } catch (Exception e) {
+                        showToast(getApplication(),"error "+e.getMessage());
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<TestResponse> call, Throwable t) {
                 progressBar.setValue(8);
                 showToast(getApplication().getApplicationContext(),t.getMessage());
             }

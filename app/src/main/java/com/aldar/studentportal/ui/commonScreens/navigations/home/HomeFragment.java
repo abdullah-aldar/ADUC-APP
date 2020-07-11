@@ -62,7 +62,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         binding.layoutBlog.setOnClickListener(this);
         binding.layoutPortal.setOnClickListener(this);
         binding.layoutFee.setOnClickListener(this);
-        binding.layoutFaq.setOnClickListener(this);
         binding.ivWhatsapp.setOnClickListener(this);
         binding.ivCall.setOnClickListener(this);
         binding.ivFacebook.setOnClickListener(this);
@@ -106,16 +105,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.layout_blog:
                 startActivity(new Intent(getActivity(), LearnMoreActivity.class));
-                //new LeakyClass(getActivity()).redirectToWebview("https://www.aldar.ac.ae/category/english-content-blog/");
                 break;
             case R.id.layout_portal:
                 startActivity(new Intent(getActivity(), LoginSignUpActivity.class));
                 break;
             case R.id.layout_fee:
                 startActivity(new Intent(getActivity(), OnlinePaymentActivity.class));
-                break;
-            case R.id.layout_faq:
-                new LeakyClass(getActivity()).redirectToFAQ();
                 break;
             case R.id.iv_whatsapp:
                 showWhatsApp();

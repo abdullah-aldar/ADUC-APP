@@ -37,8 +37,8 @@ public class SavedCoursesActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(SelectedCoursesViewModel.class);
         binding.setLifecycleOwner(this);
         binding.setSelectedCoursesViewModel(viewModel);
-        viewModel.apiCallGetAdvisedCourses(studentId, String.valueOf(100));
 
+        viewModel.apiCallGetAdvisedCourses(studentId, String.valueOf(100));
         viewModel.getAdvisedServerData().observe(this, advisedCourseResponseModel -> {
             if (advisedCourseResponseModel.getData().get(0).getCourses().size() > 0) {
                 loadFromServer(advisedCourseResponseModel.getData().get(0).getCourses());

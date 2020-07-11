@@ -9,224 +9,224 @@
             type="com.aldar.studentportal.ui.studentPortal.mainDashboardScreen.StudentDashboradViewmodel" />
     </data>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
-
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:src="@drawable/back_white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:fontFamily="@font/montserrat_semibold"
-            android:text="@string/dashboard"
-            android:textColor="@color/screen_color"
-            android:textSize="@dimen/large_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <RelativeLayout
-            android:id="@+id/layout_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            android:paddingStart="@dimen/text_gap"
-            android:paddingEnd="@dimen/text_gap"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark">
 
 
             <ImageView
-                android:id="@+id/iv_alaram"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/small_margin"
-                android:scaleType="fitXY"
-                android:src="@drawable/bell"
-                android:tint="@color/screen_color" />
-
-            <TextView
-                android:id="@+id/tv_count_notification"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/circle_red"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_margin"
-            android:paddingTop="@dimen/medium_margin"
-            android:paddingBottom="@dimen/small_margin"
-            app:layout_constraintBottom_toTopOf="@+id/data_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title">
-
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_profile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="@dimen/small_margin"
-                android:src="@drawable/user" />
-
-            <TextView
-                android:id="@+id/tv_student_name"
-                android:layout_width="match_parent"
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/small_margin"
-                android:layout_toEndOf="@+id/iv_profile"
-                android:fontFamily="@font/poppins_regular"
-                android:gravity="start"
-                android:text="@{studnetDasboarViewModel.studentName}"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_student_code"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_name"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:layout_toEndOf="@+id/iv_profile"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@{studnetDasboarViewModel.studentGivenID}"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/adviser"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_code"
-                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Advisor "
-                android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:src="@drawable/back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_student_adviser"
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_code"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:layout_toEndOf="@+id/adviser"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@{studnetDasboarViewModel.advisor}"
-                android:textColor="@color/white" />
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/dashboard"
+                android:textColor="@color/screen_color"
+                android:textSize="@dimen/large_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/concentration"
-                android:layout_width="80dp"
+            <RelativeLayout
+                android:id="@+id/layout_notification"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_adviser"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/major"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_concentration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_student_adviser"
-                android:layout_toEndOf="@+id/concentration"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@{studnetDasboarViewModel.major}"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/course_name"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_concentration"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/student_course"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_course_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_concentration"
-                android:layout_toEndOf="@id/course_name"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@{studnetDasboarViewModel.course}"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/layout_announcement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_course_name"
-                android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginEnd="@dimen/standarize_spacing"
-                android:background="@drawable/round_light_dark"
-                android:gravity="center"
-                android:paddingStart="@dimen/standarize_spacing"
-                android:paddingEnd="@dimen/standarize_spacing"
-                android:paddingTop="@dimen/medium_margin"
-                android:paddingBottom="@dimen/medium_margin"
-                android:text="@string/announcement"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </RelativeLayout>
+                android:paddingStart="@dimen/text_gap"
+                android:paddingEnd="@dimen/text_gap"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-        <RelativeLayout
-            android:id="@+id/data_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/small_margin"
-            android:background="@drawable/login_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header">
+                <ImageView
+                    android:id="@+id/iv_alaram"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bell"
+                    android:tint="@color/screen_color" />
 
+                <TextView
+                    android:id="@+id/tv_count_notification"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/circle_red"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_dashboard_item"
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/small_margin"
-                android:layout_marginEnd="@dimen/small_margin"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/small_margin"
-                android:layoutAnimation="@anim/fall_down_animation_layout" />
+                android:layout_margin="@dimen/medium_margin"
+                android:background="@drawable/round_light_dark"
+                android:paddingStart="@dimen/medium_margin"
+                android:paddingTop="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
+                android:paddingBottom="@dimen/small_margin"
+                app:layout_constraintBottom_toTopOf="@+id/data_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
-        </RelativeLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:src="@drawable/user" />
+
+                <TextView
+                    android:id="@+id/tv_student_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:layout_toEndOf="@+id/iv_profile"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start"
+                    android:text="@{studnetDasboarViewModel.studentName}"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_student_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_student_name"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_toEndOf="@+id/iv_profile"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{studnetDasboarViewModel.studentGivenID}"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/adviser"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_student_code"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Advisor "
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_student_adviser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_student_code"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_toEndOf="@+id/adviser"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{studnetDasboarViewModel.advisor}"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/concentration"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_student_adviser"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/major"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_concentration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_student_adviser"
+                    android:layout_toEndOf="@+id/concentration"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{studnetDasboarViewModel.major}"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/course_name"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_concentration"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/student_course"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_course_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_concentration"
+                    android:layout_toEndOf="@id/course_name"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{studnetDasboarViewModel.course}"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/layout_announcement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_course_name"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:background="@drawable/round_light_dark"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/standarize_spacing"
+                    android:paddingTop="@dimen/medium_margin"
+                    android:paddingEnd="@dimen/standarize_spacing"
+                    android:paddingBottom="@dimen/medium_margin"
+                    android:text="@string/announcement"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/screen_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_dashboard_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:layoutAnimation="@anim/fall_down_animation_layout" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

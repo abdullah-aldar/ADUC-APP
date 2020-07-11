@@ -1,5 +1,6 @@
 package com.aldar.studentportal.ui.studentPortal.courseAdvice.advising;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -20,7 +21,9 @@ import com.aldar.studentportal.adapters.CustomSpinnerAdapter;
 import com.aldar.studentportal.databinding.FragmentMyCourseAdviceBinding;
 import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
+import com.aldar.studentportal.ui.studentPortal.courseAdvice.cart.AdvisedCartActivity;
 import com.aldar.studentportal.ui.studentPortal.courseAdvice.cart.AdvisedCartFragment;
+import com.aldar.studentportal.ui.studentPortal.courseAdvice.registeredCourses.SavedCoursesActivity;
 import com.aldar.studentportal.utilities.GeneralUtilities;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
@@ -42,14 +45,14 @@ public class CourseAdviceFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(CourseAdviceViewModel.class);
-        binding.setLifecycleOwner(getViewLifecycleOwner());
+        binding.setLifecycleOwner(this);
         binding.setAdviceViewModel(viewModel);
 
         getSemesterData(viewModel.getSemsterScheduleData());
         coursesData(viewModel.getCourseAdviceData());
 
         binding.tvSave.setOnClickListener(v -> {
-            GeneralUtilities.connectFragmentWithBackWithAnimation(getContext(),new AdvisedCartFragment());
+            startActivity(new Intent(getActivity(), AdvisedCartActivity.class));
         });
 
         binding.ivBack.setOnClickListener(v -> {
