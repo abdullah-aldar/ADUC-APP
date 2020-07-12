@@ -39,16 +39,21 @@ public class FeeCalculationActivity extends AppCompatActivity {
                 binding.tvBooks.setText(String.valueOf(feeCalResponse.getData().get(0).getBookFees()));
                 binding.tvVat.setText(String.valueOf(feeCalResponse.getData().get(0).getVat()));
                 binding.tvPreviousBalance.setText(String.valueOf(feeCalResponse.getData().get(0).getPreviousBalance()));
-                binding.tvNetFee.setText("Net Fees = "+ feeCalResponse.getData().get(0).getNetFees());
+                binding.tvNetFee.setText("Net Fees = " + feeCalResponse.getData().get(0).getNetFees());
             }
 
-            if(feeCalResponse.getData().get(0).getCourses() != null){
-                binding.rvCourseslist.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
+            if (feeCalResponse.getData().get(0).getCourses() != null) {
+                binding.rvCourseslist.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
                 FeeCalCourseAdapter adapter = new FeeCalCourseAdapter(feeCalResponse.getData().get(0).getCourses());
                 binding.rvCourseslist.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
         });
+
+        binding.btnPayOnline.setOnClickListener(view -> {
+
+        });
+
         binding.ivBack.setOnClickListener(view1 -> {
             onBackPressed();
         });

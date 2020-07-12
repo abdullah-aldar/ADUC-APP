@@ -7,7 +7,6 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -94,6 +93,7 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         viewModel.semesterID.setValue(String.valueOf(semesterResponseModel.getData().get(position).getSemID()));
                         viewModel.apiCallRegisteredCourseData();
+                        SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("semester_id", semesterResponseModel.getData().get(position).getSemID());
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {

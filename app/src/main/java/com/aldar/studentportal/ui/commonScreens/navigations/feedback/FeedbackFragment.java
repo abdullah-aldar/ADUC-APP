@@ -16,14 +16,8 @@ import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.databinding.FeedbackFragmentBinding;
-import com.aldar.studentportal.utilities.ServiceId;
-import com.aldar.studentportal.utilities.MainObjectClass;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class FeedbackFragment extends Fragment {
     private FeedbackFragmentBinding binding;
@@ -49,39 +43,8 @@ public class FeedbackFragment extends Fragment {
         });
 
         binding.btnFeedback.setOnClickListener(v -> {
-//            mViewModel.stars.setValue(binding.rattingbar.getRating());
-//            mViewModel.onClick();
-
-            ServiceId serviceId = new ServiceId();
-            MainObjectClass mainObjectClass;
-            JsonArray list = null;
-
-            JsonObject jsonOBJ = new JsonObject();
-            try {
-                 list = new JsonArray();
-                jsonOBJ.addProperty("userId", "5f06ca75ce77e8e2cdd2f320");
-
-
-
-                String[] dataArray = {"5eeb4d5f2d4f7288d8959f68","5eeb5b942b567b6a8fee6b00"};
-                for( int i=0;i<dataArray.length;i++) {
-                    JsonObject internalObject = new JsonObject();
-                    internalObject.addProperty("serviceId",dataArray[i]);
-                    list.add(internalObject);
-
-                }
-                serviceId.setServiceId("5eeb4d5f2d4f7288d8959f68");
-                jsonOBJ.add("services", list);
-
-
-            } catch (Exception e) {
-                Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
-
-
-            mViewModel.apiCallArray(jsonOBJ);
-
+            mViewModel.stars.setValue(binding.rattingbar.getRating());
+            mViewModel.onClick();
         });
     }
 

@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.aldar.studentportal.R;
 
+import org.jetbrains.annotations.NotNull;
+
 public class CustomSpinnerAdapter extends ArrayAdapter<String> {
 
     Context context;
@@ -23,12 +25,12 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
         super(context, textViewResourceId, list);
         this.context = context;
         this.list = list;
-        // this.isFirstTime = true;
+         this.isFirstTime = true;
         setDefaultText(defaultText);
     }
 
     @Override
-    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+    public View getDropDownView(int position, View convertView, @NotNull ViewGroup parent) {
         if (isFirstTime) {
             list[0] = firstElement;
             isFirstTime = false;
@@ -36,8 +38,9 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
         return getCustomView(position, convertView, parent);
     }
 
+    @NotNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NotNull ViewGroup parent) {
         notifyDataSetChanged();
         return getCustomView(position, convertView, parent);
     }
@@ -50,10 +53,14 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
     public View getCustomView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
         LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = inflater.inflate(R.layout.spinner_layout, parent, false);
-        TextView label = (TextView) view.findViewById(R.id.spinner_text);
-        label.setText(list[position]);
-        return view;
+        convertView = inflater.inflate(R.layout.spinner_layout, parent, false);
+        TextView textView = convertView.findViewById(R.id.spinner_text);
+        textView.setText(list[position]);
+
+        if(isFirstTime){
+
+        }
+        return convertView;
     }
 
 }

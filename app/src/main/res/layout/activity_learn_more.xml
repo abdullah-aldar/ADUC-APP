@@ -18,7 +18,7 @@
     <LinearLayout
         android:id="@+id/toggle"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/youtube_player_view"
         android:layout_marginStart="@dimen/standarize_spacing"
         android:layout_marginTop="@dimen/standarize_spacing"

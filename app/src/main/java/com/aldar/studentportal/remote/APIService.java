@@ -21,31 +21,19 @@ import com.aldar.studentportal.models.newDataModels.NewsResponseModel;
 import com.aldar.studentportal.models.notificationModels.NotificationReponseModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.models.registerationModels.RegisterResponseModel;
-import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseDataModel;
 import com.aldar.studentportal.models.selectedCoursesModel.AdvisedCourseResponseModel;
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.models.studentInfoModels.StudentResponseModel;
 import com.aldar.studentportal.models.studentProfileModel.ProfileResponseModel;
 import com.aldar.studentportal.models.studyplan.StudyPlanResponseModel;
 import com.aldar.studentportal.models.updateProfileModel.UpdateProfileModel;
-import com.aldar.studentportal.utilities.MainObjectClass;
-import com.aldar.studentportal.utilities.TestResponse;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 /**
@@ -222,8 +210,8 @@ public interface APIService {
     @GET("aduc/News")
     Call<NewsResponseModel> getNews();
 
-    @POST("profile/update-interests")
-    Call<TestResponse> test(@Body JsonObject jsonObject);
+    @POST("aduc/SaveStudentAddDrop")
+    Call<CommonApiResponse> saveAddDropCourses(@Body JsonObject jsonObject);
 
 
 }

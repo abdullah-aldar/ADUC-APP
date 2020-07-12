@@ -40,8 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_news"
                 android:layout_margin="@dimen/medium_margin"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="title"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Title"
                 android:textColor="@color/gray_black"
                 android:textSize="@dimen/large_text_size"
                 android:textStyle="bold" />
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_news_title"
                 android:layout_margin="@dimen/medium_margin"
-                android:text="body" />
+                android:text="" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

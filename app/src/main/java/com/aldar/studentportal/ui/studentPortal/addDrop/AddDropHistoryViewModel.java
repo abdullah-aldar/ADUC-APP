@@ -14,6 +14,8 @@ import com.aldar.studentportal.models.addAndDropModel.AddDropCoursesModel;
 import com.aldar.studentportal.models.registerationModels.CommonApiResponse;
 import com.aldar.studentportal.remote.APIService;
 import com.aldar.studentportal.remote.RetroClass;
+import com.google.gson.JsonObject;
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -64,11 +66,11 @@ public class AddDropHistoryViewModel extends AndroidViewModel {
         itemsDataLiveData.setValue(arrayListData);
     }
 
-    public void apiCallSaveAddDrop(String studentID, String semesterID, String strSectionId) {
+    public void apiCallSaveAddDrop(JsonObject jsonObject) {
         progressBar.setValue(0);
         APIService services;
         services = RetroClass.getApiClient().create(APIService.class);
-        Call<CommonApiResponse> allUsers = services.saveCourseAdvice(studentID, semesterID, strSectionId);
+        Call<CommonApiResponse> allUsers = services.saveAddDropCourses(jsonObject);
         allUsers.enqueue(new Callback<CommonApiResponse>() {
             @Override
             public void onResponse(@NotNull Call<CommonApiResponse> call, @NotNull Response<CommonApiResponse> response) {

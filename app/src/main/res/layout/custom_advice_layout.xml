@@ -17,7 +17,7 @@
         android:layout_marginEnd="@dimen/standarize_spacing"
         android:paddingLeft="@dimen/small_margin"
         android:paddingRight="@dimen/small_margin"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/opensans_bold"
         android:background="@drawable/button_state"
         android:text="ADD"
         android:textColor="@color/green" />
@@ -27,7 +27,7 @@
         android:id="@+id/sectionCode"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/opensans_bold"
         android:layout_marginTop="@dimen/small_margin"
         android:text="Section Code :"
         android:textColor="@color/gray_black" />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/sectionCode"
         android:layout_marginTop="@dimen/text_gap"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/opensans_bold"
         android:text="Course Name :"
         android:textColor="@color/gray_black" />
 
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/courseName"
         android:layout_marginTop="@dimen/text_gap"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/opensans_bold"
         android:text="Credit Hours :"
         android:visibility="gone"
         android:textColor="@color/gray_black" />
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/creditHours"
         android:layout_marginTop="@dimen/text_gap"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/opensans_bold"
         android:text="Remark 1 :"
         android:visibility="gone"
         android:textColor="@color/gray_black" />
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_remark1"
         android:layout_marginTop="@dimen/text_gap"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/opensans_bold"
         android:text="schedule :"
         android:textColor="@color/gray_black" />
 
@@ -134,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_schedule"
         android:layout_marginTop="@dimen/text_gap"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/opensans_bold"
         android:text="InsName :"
         android:textColor="@color/gray_black" />
 

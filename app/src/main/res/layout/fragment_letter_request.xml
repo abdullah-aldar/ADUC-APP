@@ -13,15 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@color/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/colorPrimary">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -54,7 +46,7 @@
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/medium_margin"
-            android:paddingTop="@dimen/medium_margin"
+            android:paddingTop="@dimen/standarize_spacing"
             android:paddingBottom="@dimen/medium_margin"
             app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,10 +88,7 @@
             android:id="@+id/rv_course_schedule"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:layout_marginBottom="@dimen/medium_margin"
-            android:background="@drawable/shadow"
+            android:background="@drawable/login_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header">
 
@@ -134,7 +123,7 @@
                 android:layout_below="@id/radio_group"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/small_margin"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/opensans_bold"
                 android:text="Letter To :"
                 android:textColor="@color/black" />
 
@@ -155,7 +144,7 @@
                 android:layout_below="@id/et_whom_concern"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/small_margin"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/opensans_bold"
                 android:text="Note :"
                 android:textColor="@color/black" />
 

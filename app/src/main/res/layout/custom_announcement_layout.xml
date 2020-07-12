@@ -35,7 +35,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/small_margin"
             android:layout_toEndOf="@+id/iv_bell"
-            android:fontFamily="@font/poppins_light"
+            android:fontFamily="@font/opensans_regular"
             android:text="@{annoucementDataModel.alert}"
             android:textColor="@color/gray_black" />
     </RelativeLayout>

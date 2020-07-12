@@ -43,11 +43,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_arrow"
-            android:layout_marginTop="@dimen/standarize_spacing"
+            android:layout_marginTop="@dimen/high_margin"
             android:layout_marginEnd="@dimen/margin_arrow"
             android:paddingTop="@dimen/medium_margin"
             android:paddingBottom="@dimen/medium_margin"
-            android:background="@drawable/round_light_dark"
+            android:background="@drawable/round_background"
             app:layout_constraintBottom_toTopOf="@+id/data_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,17 +56,17 @@
 
                 <TextView
                     android:id="@+id/select"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_centerHorizontal="true"
                     android:textStyle="bold"
-                    android:text="Please select semester"
-                    android:textColor="@color/screen_color" />
+                    android:text="@string/select_semester"
+                    android:textColor="@color/gray_black" />
 
                 <Spinner
                     android:id="@+id/schedule_spinner"
-                    android:layout_width="match_parent"
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/select"
                     android:layout_centerHorizontal="true"
@@ -82,7 +82,7 @@
             android:id="@+id/data_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
             android:background="@drawable/login_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header">

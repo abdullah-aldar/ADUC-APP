@@ -1,5 +1,6 @@
 package com.aldar.studentportal.ui.commonScreens.navigations.home;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -21,7 +21,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.NewsAdapter;
 import com.aldar.studentportal.databinding.FragmentHomeBinding;
@@ -33,11 +32,9 @@ import com.aldar.studentportal.ui.activities.activtiesForFragments.LoginSignUpAc
 import com.aldar.studentportal.ui.activities.common.WebActivity;
 import com.aldar.studentportal.utilities.PermissionUtil;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Calendar;
-
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
@@ -49,8 +46,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private FragmentHomeBinding binding;
-    private ArrayList<ContactDataModel> contactList = new ArrayList<>();
     private final CompositeDisposable disposables = new CompositeDisposable();
+    ArrayList<ContactDataModel> contactList = new ArrayList<>();
     private HomeViewModel viewModel;
     private String android_id;
 
@@ -72,10 +69,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return binding.getRoot();
     }
 
+    @SuppressLint("HardwareIds")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+
         android_id = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
         int checkContact = SharedPreferencesManager.getInstance(getActivity()).getIntValue("contactStore");

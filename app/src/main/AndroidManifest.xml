@@ -15,8 +15,7 @@
         android:networkSecurityConfig="@xml/network"
         android:roundIcon="@mipmap/round"
         android:supportsRtl="true"
-        android:theme="@style/MaterialTheme"
-        android:usesCleartextTraffic="true">
+        android:theme="@style/MaterialTheme">
         <activity android:name=".ui.studentPortal.courseAdvice.cart.AdvisedCartActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity

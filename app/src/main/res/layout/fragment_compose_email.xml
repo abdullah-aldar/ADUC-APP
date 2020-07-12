@@ -140,7 +140,7 @@
                 android:layout_below="@id/radio_group"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/small_margin"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/opensans_bold"
                 android:text="@string/subject"
                 android:textColor="@color/black" />
 
@@ -162,7 +162,7 @@
                 android:layout_below="@id/et_subject"
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/small_margin"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/opensans_bold"
                 android:text="@string/message"
                 android:textColor="@color/black" />
 

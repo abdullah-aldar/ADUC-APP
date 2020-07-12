@@ -24,7 +24,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/small_margin"
             android:checked="false"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:textColor="@color/green" />
 
 
@@ -33,7 +33,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:text="Section Code :"
             android:textColor="@color/gray_black" />
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/sectionCode"
             android:layout_marginTop="@dimen/text_gap"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:text="Course Name :"
             android:textColor="@color/gray_black" />
 
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/courseName"
             android:layout_marginTop="@dimen/text_gap"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:text="Instructor :"
             android:textColor="@color/gray_black" />
 
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_instructor"
             android:layout_marginTop="@dimen/text_gap"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:text="CW :"
             android:textColor="@color/gray_black" />
 
@@ -117,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cw"
             android:layout_marginTop="@dimen/text_gap"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:text="FM :"
             android:textColor="@color/gray_black" />
 
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_fm"
             android:layout_marginTop="@dimen/text_gap"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:text="Symbol :"
             android:textColor="@color/gray_black" />
 
@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_symbol"
             android:layout_marginTop="@dimen/text_gap"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:text="Status :"
             android:textColor="@color/gray_black" />
 

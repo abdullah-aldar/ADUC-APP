@@ -24,7 +24,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/small_margin"
             android:text="@={registerCoursesModel.addOrDrop}"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/opensans_bold"
             android:textColor="@color/green" />
 
 
