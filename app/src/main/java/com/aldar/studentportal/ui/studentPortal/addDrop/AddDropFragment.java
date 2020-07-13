@@ -24,17 +24,18 @@ import com.aldar.studentportal.models.coursesAdviceModels.CourseAdviceResponseMo
 import com.aldar.studentportal.models.semesterScheduleModel.SemesterResponseModel;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 
+import org.jetbrains.annotations.NotNull;
+
 public class AddDropFragment extends Fragment implements SectionIDInterface {
 
     private AddDropViewModel viewModel;
     private FragmentAddDropBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_drop, container, false);
-
         return binding.getRoot();
     }
 
@@ -67,13 +68,9 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
 
         });
 
-        binding.tvHistory.setOnClickListener(view -> {
-           startActivity(new Intent(getActivity(),AddDropHistoryActivity.class));
-        });
+        binding.tvHistory.setOnClickListener(view ->  startActivity(new Intent(getActivity(),AddDropHistoryActivity.class)));
 
-        binding.ivBack.setOnClickListener(view -> {
-            getActivity().onBackPressed();
-        });
+        binding.ivBack.setOnClickListener(view -> getActivity().onBackPressed());
     }
 
 
@@ -122,12 +119,9 @@ public class AddDropFragment extends Fragment implements SectionIDInterface {
     //showing Available course from advise API
     private void getAvailableCourseData(MutableLiveData<CourseAdviceResponseModel> availableCourseData) {
         availableCourseData.observe(getViewLifecycleOwner(), courseAdviceResponseModel -> {
-
             if(courseAdviceResponseModel.getData() != null){
                 AvailableCourseAdapter adapter = new AvailableCourseAdapter(getActivity(),courseAdviceResponseModel.getData());
                 binding.recyclerView.setAdapter(adapter);
-            }
-            else {
             }
         });
     }

@@ -15,6 +15,7 @@
     <string name="pay_now">Pay Now</string>
     <string name="payment">Online Payment</string>
     <string name="studt_id">Student ID *</string>
+    <string name="id">ID</string>
     <string name="program">Program</string>
     <string name="balance">Current Balance</string>
     <string name="payment_against">Payment</string>
@@ -50,7 +51,7 @@
     <string name="student_course">Programe</string>
     <string name="first_name">Name</string>
     <string name="concentration">Concentration</string>
-    <string name="select_semester">Please Select Semester</string>
+    <string name="select_semester">Select Semester</string>
     <string name="selected_course_advise">الحالة الاكاديمية</string>
     <string name="your_marks">الدرجات</string>
     <string name="instructor_msg">Messages From\nInstructors</string>
@@ -59,8 +60,10 @@
     <string name="profile_statement">ملف الطالب</string>
     <string name="announcement">Announcement</string>
     <string name="notificaion">Notification</string>
-    <string name="announcement_text">Latest announcement\nأحدث إعلان</string>
-    <string name="faq_text">Frequently Asked Questions\nأسئلة مكررة</string>
+    <string name="add_drop">Add Drop</string>
+    <string name="check">Check</string>
+    <string name="announcement_text">Latest announcement\nآخر الأخبار</string>
+    <string name="faq_text">Frequently Asked Questions\nالأسئلة المتكررة</string>
     <string name="feedback">Your feedback helps enhance the ALDAR Experience\nيرجى مشاركتنا بملاحظاتك</string>
     <string name="books_available">Books Available In Library</string>
     <string name="search_books">Search book by!</string>
@@ -103,6 +106,7 @@
     <string name="advisor_academic">Academic Advisor :</string>
     <string name="arabic_name">Arabic Student Name :</string>
     <string name="std_name">Student Name :</string>
+    <string name="name">Name</string>
     <string name="std_id">Student ID :</string>
     <string name="sections">Please Select section</string>
     <string name="instructor">Instructor Name</string>

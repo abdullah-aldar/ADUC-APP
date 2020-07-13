@@ -143,13 +143,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             this.weakReference = new WeakReference<>(activity);
         }
 
-        private void redirectToFAQ() {
-            Activity activity = weakReference.get();
-            if (activity != null) {
-                activity.startActivity(new Intent(activity, FaqActivity.class));
-            }
-        }
-
         private void redirectToWebview(String message) {
             Activity activity = weakReference.get();
             if (activity != null) {
@@ -310,5 +303,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        binding = null;
     }
 }

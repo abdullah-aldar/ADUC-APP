@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="Add Drop"
+            android:text="@string/add_drop"
             android:textColor="@color/gray_black"
             android:textSize="@dimen/large_text_size"
             android:fontFamily="@font/poppins_regular"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="Check"
+            android:text="@string/check"
             android:textColor="@color/gray_black"
             android:textSize="@dimen/large_text_size"
             android:padding="@dimen/text_gap"
@@ -70,7 +70,7 @@
                 android:layout_height="@dimen/high_margin"
                 android:fontFamily="@font/opensans_semibold"
                 android:textSize="@dimen/medium_text_size"
-                android:gravity="center|left"
+                android:gravity="center|start"
                 android:text="@string/student_info"
                 android:textColor="@color/white" />
 
@@ -79,9 +79,8 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_margin"
-                android:layout_toEndOf="@+id/iv_profile"
                 android:layout_below="@+id/student_information"
-                android:text="ID"
+                android:text="@string/id"
                 android:textStyle="bold"
                 android:textColor="@color/white" />
 
@@ -94,7 +93,7 @@
                 android:maxLines="1"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:text="BMC1412383"
+                android:text=""
                 android:textColor="@color/white" />
 
 
@@ -104,8 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_student_id"
                 android:layout_marginTop="@dimen/small_margin"
-                android:layout_toEndOf="@+id/iv_profile"
-                android:text="Name"
+                android:text="@string/name"
                 android:textStyle="bold"
                 android:textColor="@color/white" />
 
@@ -118,7 +116,7 @@
                 android:maxLines="1"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:text="Abdullah khan "
+                android:text=""
                 android:textColor="@color/white" />
 
             <TextView
@@ -127,8 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_student_name"
                 android:layout_marginTop="@dimen/small_margin"
-                android:layout_toEndOf="@+id/iv_profile"
-                android:text="Programe"
+                android:text="@string/program"
                 android:textStyle="bold"
                 android:textColor="@color/white" />
 
@@ -141,7 +138,7 @@
                 android:maxLines="1"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/small_margin"
-                android:text="BBA"
+                android:text=""
                 android:textColor="@color/white" />
 
             <TextView
@@ -152,7 +149,7 @@
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_below="@+id/tv_programe"
                 android:layout_centerVertical="true"
-                android:text="Select Semester"
+                android:text="@string/select_semester"
                 android:textStyle="bold"
                 android:textColor="@color/white" />
 
@@ -170,52 +167,60 @@
         </RelativeLayout>
 
 
-
-        <LinearLayout
-            android:id="@+id/check"
+        <RelativeLayout
+            android:id="@+id/data_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/small_margin"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            android:layout_marginBottom="@dimen/medium_margin"
-            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/standarize_spacing"
+            android:background="@drawable/login_background"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header">
 
-            <Button
-                android:id="@+id/btn_register_course"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/btn"
-                android:layout_weight="1"
-                android:background="@drawable/gradient"
-                android:gravity="center"
-                android:text="@string/register_course"
-                android:textSize="@dimen/medium_text"
-                android:textAllCaps="false"
-                android:textColor="@color/screen_color" />
 
-            <Button
-                android:id="@+id/btn_available_course"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/btn"
-                android:layout_weight="1"
-                android:layout_marginStart="@dimen/medium_margin"
-                android:background="@drawable/round_background"
-                android:gravity="center"
-                android:textSize="@dimen/medium_text"
-                android:text="@string/available_course"
-                android:textAllCaps="false"
-                android:textColor="@color/gray_black" />
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"
+                android:orientation="horizontal">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standarize_spacing"
-            android:layout_marginEnd="@dimen/standarize_spacing"
-            app:layout_constraintTop_toBottomOf="@+id/check"
-            />
+                <Button
+                    android:id="@+id/btn_register_course"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn"
+                    android:layout_weight="1"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:text="@string/register_course"
+                    android:textSize="@dimen/medium_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/screen_color" />
+
+                <Button
+                    android:id="@+id/btn_available_course"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btn"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:background="@drawable/round_background"
+                    android:gravity="center"
+                    android:textSize="@dimen/medium_text"
+                    android:text="@string/available_course"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_black" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/check"
+                android:layout_marginStart="@dimen/standarize_spacing"
+                android:layout_marginEnd="@dimen/standarize_spacing"/>
+
+        </RelativeLayout>
+
 
         <ProgressBar
             android:id="@+id/progess"

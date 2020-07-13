@@ -40,7 +40,7 @@
                 android:orientation="horizontal"
                 android:padding="@dimen/small_margin"
                 app:layout_constraintTop_toBottomOf="@+id/iv_banner"
-                app:layout_constraintBottom_toTopOf="@id/portal_layout"
+                app:layout_constraintBottom_toTopOf="@id/portal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -72,27 +72,21 @@
             </LinearLayout>
             <!-- Blog en region -->
 
-
             <!-- portal & payment start region -->
-            <RelativeLayout
-                android:id="@+id/portal_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/standarize_spacing"
-                android:layout_marginTop="@dimen/standarize_spacing"
-                android:layout_marginEnd="@dimen/standarize_spacing"
-                android:gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_blog"
-                app:layout_constraintBottom_toTopOf="@id/feedback_layout">
-
-
                 <LinearLayout
-                    android:id="@+id/layout_combine"
+                    android:id="@+id/portal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/standarize_spacing"
+                    android:layout_marginTop="@dimen/standarize_spacing"
+                    android:layout_marginEnd="@dimen/standarize_spacing"
+                    android:gravity="center"
+                    android:baselineAligned="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_blog"
+                    app:layout_constraintBottom_toTopOf="@id/feedback_layout">
 
                     <LinearLayout
                         android:id="@+id/layout_portal"
@@ -151,7 +145,6 @@
 
                 </LinearLayout>
 
-            </RelativeLayout>
             <!-- portal & payment end region -->
 
             <!-- feedback start region -->
@@ -164,7 +157,7 @@
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:background="@drawable/gradient"
                 app:layout_constraintBottom_toTopOf="@id/tv_news"
-                app:layout_constraintTop_toBottomOf="@id/portal_layout">
+                app:layout_constraintTop_toBottomOf="@id/portal">
 
                 <TextView
                     android:id="@+id/tv_today"
@@ -216,6 +209,7 @@
                 android:layout_marginStart="@dimen/standarize_spacing"
                 android:layout_marginTop="@dimen/standarize_spacing"
                 android:paddingStart="@dimen/small_margin"
+                android:paddingEnd="@dimen/small_margin"
                 android:fontFamily="@font/opensans_bold"
                 android:text="@string/news_event"
                 android:textColor="@color/gray_black"

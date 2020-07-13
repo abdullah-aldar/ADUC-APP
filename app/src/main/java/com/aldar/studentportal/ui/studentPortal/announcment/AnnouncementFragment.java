@@ -57,7 +57,6 @@ public class AnnouncementFragment extends Fragment {
     @Override
     public void onDestroy() {
         binding = null;
-        adapter = null;
         super.onDestroy();
     }
 }
