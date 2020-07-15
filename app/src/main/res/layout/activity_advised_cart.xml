@@ -55,9 +55,9 @@
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/medium_margin"
             android:paddingTop="@dimen/medium_margin"
             android:paddingBottom="@dimen/medium_margin"
@@ -72,6 +72,7 @@
                 android:fontFamily="@font/opensans_regular"
                 android:layout_marginStart="@dimen/small_margin"
                 android:layout_marginEnd="@dimen/small_margin"
+                android:layout_centerVertical="true"
                 android:text="you can add or remove\nyour course here"
                 android:textColor="@color/screen_color"/>
 
@@ -82,6 +83,7 @@
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/round_light_dark"
                 android:padding="@dimen/medium_margin"
+                android:layout_centerVertical="true"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:text="Advised courses" />

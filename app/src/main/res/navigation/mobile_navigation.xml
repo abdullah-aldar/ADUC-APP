@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
     <fragment
@@ -14,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_academic"
-        android:name="com.aldar.studentportal.ui.activities.common.academics.AcademicFragment"
+        android:name="com.aldar.studentportal.ui.commonScreens.navigations.academics.AcademicFragment"
         android:label="@string/menu_academic"
         tools:layout="@layout/fragment_academic" />
 
@@ -41,6 +40,12 @@
         android:name="com.aldar.studentportal.ui.commonScreens.navigations.feedback.FeedbackFragment"
         android:label="Feedback"
         tools:layout="@layout/feedback_fragment" />
+
+    <fragment
+        android:id="@+id/nav_faq"
+        android:name="com.aldar.studentportal.ui.commonScreens.navigations.faq.FaqFragment"
+        android:label="Faq"
+        tools:layout="@layout/fragment_faq" />
 
 
     <activity

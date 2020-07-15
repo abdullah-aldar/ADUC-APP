@@ -41,7 +41,7 @@
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginStart="@dimen/margin_arrow"
             android:layout_marginTop="@dimen/high_margin"
             android:layout_marginEnd="@dimen/margin_arrow"

@@ -42,24 +42,18 @@
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginStart="@dimen/medium_margin"
             android:layout_marginTop="@dimen/standarize_spacing"
             android:layout_marginEnd="@dimen/medium_margin"
-            android:paddingTop="@dimen/standarize_spacing"
             android:paddingBottom="@dimen/medium_margin"
+            android:padding="@dimen/standarize_spacing"
+            android:background="@drawable/round_background"
             app:layout_constraintBottom_toTopOf="@+id/rv_course_schedule"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/round_background"
-                android:padding="@dimen/standarize_spacing">
 
                 <TextView
                     android:id="@+id/select"
@@ -80,7 +74,6 @@
                     android:backgroundTint="@color/gray_black"
                     android:gravity="center"
                     android:textColor="@color/gray_black" />
-            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -88,6 +81,7 @@
             android:id="@+id/rv_course_schedule"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/large_margin"
             android:background="@drawable/login_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header">

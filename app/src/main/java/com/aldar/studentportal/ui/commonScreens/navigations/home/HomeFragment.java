@@ -25,16 +25,17 @@ import com.aldar.studentportal.R;
 import com.aldar.studentportal.adapters.NewsAdapter;
 import com.aldar.studentportal.databinding.FragmentHomeBinding;
 import com.aldar.studentportal.models.contactsModel.ContactDataModel;
+import com.aldar.studentportal.models.newDataModels.NewsDataModel;
 import com.aldar.studentportal.ui.activities.common.LearnMoreActivity;
-import com.aldar.studentportal.ui.activities.common.faq.FaqActivity;
 import com.aldar.studentportal.ui.activities.common.fee.OnlinePaymentActivity;
 import com.aldar.studentportal.ui.activities.activtiesForFragments.LoginSignUpActivity;
-import com.aldar.studentportal.ui.activities.common.WebActivity;
 import com.aldar.studentportal.utilities.PermissionUtil;
 import com.aldar.studentportal.utilities.SharedPreferencesManager;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
@@ -47,7 +48,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private FragmentHomeBinding binding;
     private final CompositeDisposable disposables = new CompositeDisposable();
-    ArrayList<ContactDataModel> contactList = new ArrayList<>();
+    private ArrayList<ContactDataModel> contactList = new ArrayList<>();
     private HomeViewModel viewModel;
     private String android_id;
 
@@ -84,7 +85,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
         viewModel.getNews().observe(getViewLifecycleOwner(), newsResponseModel -> {
-            if (newsResponseModel != null) {
+            if (newsResponseModel.getData() != null) {
                 binding.rvNews.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
                 NewsAdapter newsAdapter = new NewsAdapter(newsResponseModel.getData());
                 binding.rvNews.setAdapter(newsAdapter);
@@ -94,7 +95,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         viewModel.getContact().observe(getViewLifecycleOwner(), commonApiResponse -> {
             if (commonApiResponse != null) {
                 Toast.makeText(getActivity(), "" + commonApiResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                SharedPreferencesManager.getInstance(getContext()).setIntValueInEditor("contactStore", 1);
+                SharedPreferencesManager.getInstance(getActivity()).setIntValueInEditor("contactStore", 1);
             }
         });
     }
@@ -103,13 +104,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.layout_blog:
-                startActivity(new Intent(getActivity(), LearnMoreActivity.class));
+                new InnerClass(getActivity()).redirectToMore();
                 break;
             case R.id.layout_portal:
-                startActivity(new Intent(getActivity(), LoginSignUpActivity.class));
+                new InnerClass(getActivity()).redirectToLogin();
                 break;
             case R.id.layout_fee:
-                startActivity(new Intent(getActivity(), OnlinePaymentActivity.class));
+                new InnerClass(getActivity()).redirectToPayment();
                 break;
             case R.id.iv_whatsapp:
                 showWhatsApp();
@@ -127,31 +128,42 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 loadEmail();
                 break;
             case R.id.btn_share_feedback:
-                new LeakyClass(getActivity()).redirectToFeedback();
+                new InnerClass(getActivity()).redirectToFeedback();
                 break;
             case R.id.btn_inquire_us:
-                new LeakyClass(getActivity()).redirectToInqureUS();
+                new InnerClass(getActivity()).redirectToInqureUS();
                 break;
         }
     }
 
-    private static class LeakyClass {
+    private static class InnerClass {
 
         private final WeakReference<Activity> weakReference;
 
-        private LeakyClass(Activity activity) {
+        private InnerClass(Activity activity) {
             this.weakReference = new WeakReference<>(activity);
         }
 
-        private void redirectToWebview(String message) {
+        private void redirectToMore() {
             Activity activity = weakReference.get();
             if (activity != null) {
-                Bundle bundle = new Bundle();
-                bundle.putString("link", message);
-                activity.startActivity(new Intent(activity, WebActivity.class).putExtras(bundle));
+                activity.startActivity(new Intent(activity, LearnMoreActivity.class));
             }
         }
 
+        private void redirectToLogin() {
+            Activity activity = weakReference.get();
+            if (activity != null) {
+                activity.startActivity(new Intent(activity, LoginSignUpActivity.class));
+            }
+        }
+
+        private void redirectToPayment() {
+            Activity activity = weakReference.get();
+            if (activity != null) {
+                activity.startActivity(new Intent(activity, OnlinePaymentActivity.class));
+            }
+        }
 
         private void redirectToInqureUS() {
             Activity activity = weakReference.get();
@@ -279,30 +291,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return contactList;
     }
 
-    private void loadAcademicCalendar(){
-        String myPdfUrl = "https://www.aldar.ac.ae/wp-content/uploads/2019/06/Academic-Calendar.pdf";
-        String url = "https://docs.google.com/gview?embedded=true&url=" + myPdfUrl;
-        new LeakyClass(getActivity()).redirectToWebview(url);
-    }
-
-    private void greetingMessage() {
-        Calendar c = Calendar.getInstance();
-        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
-
-        if (timeOfDay >= 0 && timeOfDay < 12) {
-            Toast.makeText(getContext(), "Good Morning", Toast.LENGTH_SHORT).show();
-        } else if (timeOfDay >= 12 && timeOfDay < 16) {
-            Toast.makeText(getContext(), "Good Afternoon", Toast.LENGTH_SHORT).show();
-        } else if (timeOfDay >= 16 && timeOfDay < 21) {
-            Toast.makeText(getContext(), "Good Evening", Toast.LENGTH_SHORT).show();
-        } else if (timeOfDay >= 21 && timeOfDay < 24) {
-            Toast.makeText(getContext(), "Good Night", Toast.LENGTH_SHORT).show();
-        }
-    }
-
     @Override
     public void onDestroy() {
-        super.onDestroy();
         binding = null;
+        super.onDestroy();
+
     }
 }

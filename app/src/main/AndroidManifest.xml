@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
-        android:name="com.aldar.studentportal.ui.App"
+        android:name=".ui.App"
         android:allowBackup="false"
         android:icon="@mipmap/square_icon"
         android:label="@string/app_name"
@@ -35,9 +35,6 @@
             android:theme="@style/AppTheme.Splash" />
         <activity
             android:name=".ui.activities.common.fee.OnlinePaymentActivity"
-            android:theme="@style/AppTheme.Splash" />
-        <activity
-            android:name=".ui.activities.common.faq.FaqActivity"
             android:theme="@style/AppTheme.Splash" />
         <activity
             android:name=".ui.studentPortal.courseAdvice.registeredCourses.SavedCoursesActivity"

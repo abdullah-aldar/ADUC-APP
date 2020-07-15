@@ -57,11 +57,11 @@
             <RelativeLayout
                 android:id="@+id/header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/round_background"
                 android:padding="@dimen/medium_margin"
-                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginTop="@dimen/standarize_spacing"
                 android:layout_marginStart="@dimen/medium_margin"
                 android:layout_marginEnd="@dimen/medium_margin"
                 app:layout_constraintEnd_toEndOf="parent"
